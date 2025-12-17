@@ -39,20 +39,3 @@ h1,h2,h3,h4,h5,h6{
 ::-webkit-scrollbar { 
   display: none; 
 }
-
-/* .parallax-inner img {
-  will-change: transform;
-  backface-visibility: hidden;
-  transform-origin: center center;
-}
-
-.bg-panel,
-.parallax-bg,
-.parallax-inner {
-  will-change: transform, opacity;
-} */
-
-/* keep sticky-text visually above panels */
-/* .sticky-text {
-  position: relative;
-} */

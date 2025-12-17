@@ -17,19 +17,19 @@ export default function PortfolioLayout({ children }) {
     // LayoutGroup keeps shared layout animations working for all children.
     <LayoutGroup>
       {/* AnimatePresence helps choreograph exit/enter. mode="wait" makes it wait for exit to finish. */}
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait"> */}
         {/* Key by pathname so AnimatePresence knows when the route inside /portfolio changed */}
-        <motion.div
+        {/* <motion.div
           key={pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
           style={{ minHeight: "100vh" }}
-        >
+        > */}
           {children}
-        </motion.div>
-      </AnimatePresence>
+        {/* </motion.div> */}
+      {/* </AnimatePresence> */}
     </LayoutGroup>
   );
 }

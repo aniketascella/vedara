@@ -8,8 +8,6 @@ import { ArrowForwardOutlined } from "@mui/icons-material";
 import StickyPanelScroller from "./StickyPanelScroller";
 
 const page = () => {
-
-  // const [panelsActive, setPanelsActive] = useState(false);
   
   const ITEMS = [
     {
