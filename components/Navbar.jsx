@@ -55,7 +55,7 @@ export default function Navbar() {
           <Link href="/portfolio"><p className="cursor-pointer">portfolio</p></Link>
           <Link href="/atelier"><p className="cursor-pointer">studio</p></Link>
           <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link>
-          <Link href="/dynasty"><p className="cursor-pointer">dyanasty</p></Link>
+          <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link>
           <Link href="/inquire"><p className="cursor-pointer">inquire</p></Link>
         </motion.nav>
 

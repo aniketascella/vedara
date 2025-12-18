@@ -26,9 +26,9 @@ const page = () => {
   // const scale2 = useTransform(footerScroll, [0, 1], [1, 4]);
 
   // Optional: if you want route to scroll to top on arrival
-  useEffect(() => {
-    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "auto" });
+  // }, []);
 
   return (
     <div>
@@ -96,10 +96,18 @@ const page = () => {
       </section>
 
       <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-25">
+        <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px]">Selhaya World’s First Luxury Abaya Maison</p>
+        <div className="flex flex-col lg:flex-row w-[300px] lg:w-[600px] relative gap-6">
+          <p className="uppercase font-semibold lg:absolute -left-50">our objective</p>
+          <p className="text-[12px] lg:text-[20px]">
+            Vedara’s objective with Selhaya was to evolve a beautiful concept into a fully realized couture identity, one that could stand confidently beside established luxury houses while retaining the soul of its origin.
+          </p>
+        </div>
         <img src="/antara/img1.png" alt="img1" className="w-[300px] lg:w-[480px]"/>
-        <div className="flex gap-42 ml-50">
-          <img src="/antara/img2.png" alt="img2" className="w-[300px] lg:w-[224px]"/>
-          <div className="space-y-4">
+        <div className="flex w-[300px] lg:w-screen lg:justify-center items-center lg:gap-42">
+          <img src="/antara/img2.png" alt="img2" className="w-[155px] lg:w-[224px]"/>
+
+          <div className="hidden lg:block space-y-4">
             <p className="uppercase font-semibold">core challenges</p>
             <p className='w-103'>
               Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
@@ -107,13 +115,22 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex justify-end gap-36 ml-50 relative">
-          <img src="/antara/img4.png" alt="img4" className="absolute w-[300px] lg:w-56 h-[336px] top-[143px] left-0"/>
-          <div className="w-[300px] lg:w-56 h-[336px]"/>
-          <img src="/antara/img3.png" alt="img3" className="w-[300px] lg:w-[480px]"/>
+        <img src="/antara/img3.png" alt="img3" className="lg:hidden w-[300px]"/>
+
+        <div className="flex w-[300px] lg:w-screen justify-end items-center lg:pl-20 lg:justify-center lg:gap-56">
+
+          <img src="/antara/img4.png" alt="img4" className="lg:hidden relative w-[155px]"/>
+          <img src="/antara/img4.png" alt="img4" className="hidden lg:flex relative w-56 top-[143px]"/>
+          <img src="/antara/img3.png" alt="img3" className="hidden lg:flex w-[300px] lg:w-[480px]"/>
+        </div>
+        <div className="lg:hidden space-y-4">
+          <p className="uppercase font-semibold">core challenges</p>
+          <p className='w-70 text-[12px]'>
+            Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
+          </p>
         </div>
 
-        <div ref={container} className="w-screen h-[300vh] -mt-30 relative">
+        <div ref={container} className="w-screen h-[300vh] -mt-70 lg:-mt-30 relative">
           <div className="sticky overflow-hidden top-0 h-screen">
             <motion.div style={{scale: scale1}} className='w-full h-full top-0 absolute flex justify-center items-center'>
               <div className="relative w-[25vw]">
@@ -124,10 +141,10 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center py-26 bg-black">
-        <div className="flex justify-center gap-24">
-          <p className='uppercase'>Our solution</p>
-          <p className="lg:w-120">
+      <section className="flex flex-col items-center pb-26 bg-black">
+        <div className="flex flex-col lg:flex-row justify-center w-70 lg:w-screen gap-10 lg:gap-24">
+          <p className='uppercase text-[18px] lg:text-[20px]'>Our solution</p>
+          <p className="lg:w-120 text-[12px] lg:text-[18px]">
             Vedara distilled Selhaya’s fragmented presence into a coherent, luxurious digital universe, one defined by intention, restraint, and emotional precision. We rebuilt the brand’s narrative system, visual language, and website architecture. The result was a platform not just redesigned, but re-imagined.
           </p>
         </div>
@@ -184,16 +201,27 @@ const page = () => {
         </div>
       </section>
 
-      <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-55">
+      <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-30 lg:gap-y-55">
         <img src="/antara/img11.png" alt="img11" className="w-[300px] lg:w-[480px]"/>
 
-        <div className="flex justify-end gap-36 ml-50 relative">
-          <img src="/antara/img12.png" alt="img12" className="absolute w-[300px] lg:w-[224px] h-[336px] -top-20 left-0"/>
-          <div className="w-[300px] lg:w-[224px] h-[336px]"/>
+        <div className="hidden lg:flex justify-between gap-36 relative">
+          <img src="/antara/img12.png" alt="img12" className="relative w-[300px] lg:w-[224px] -top-20"/>
           <img src="/antara/img13.png" alt="img13" className="w-[300px] lg:w-[480px]"/>
         </div>
 
-        <div className="flex gap-42 ml-50">
+        <img src="/antara/img13.png" alt="img13" className="w-[300px] lg:hidden"/>
+
+        <img src="/antara/img12.png" alt="img12" className="w-[155px] lg:hidden"/>
+
+        <div className="lg:hidden flex flex-col gap-y-4 w-70 mx-auto">
+            <p className="uppercase font-semibold text-[18px]">A Precise Showcase</p>
+            <p className='text-[12px]'>
+              Every product, narrative, and detail was re-presented with clarity, intention, and aesthetic precision.
+              We ensured the digital display became an extension of Selhaya’s craftsmanship, not merely a catalogue.
+            </p>
+        </div>
+
+        <div className="hidden lg:flex gap-42 ml-50">
           <div className="space-y-4">
             <p className="uppercase font-semibold">A Precise Showcase</p>
             <p className='w-103'>
@@ -201,10 +229,12 @@ const page = () => {
               We ensured the digital display became an extension of Selhaya’s craftsmanship, not merely a catalogue.
             </p>
           </div>
-          <img src="/antara/img14.png" alt="img14" className="w-[300px] lg:w-[224px]"/>
+          <img src="/antara/img14.png" alt="img14" className="w-[224px]"/>
         </div>
 
-        <img src="/antara/img15.png" alt="img15" className="w-[300px] lg:w-[480px] -mt-85 -ml-40"/>
+        <img src="/antara/img14.png" alt="img14" className='w-[300px] lg:hidden'/>
+
+        <img src="/antara/img15.png" alt="img15" className="hidden lg:block w-[300px] lg:w-[480px] -mt-85 -ml-40"/>
       </section>
 
       <Footer/>

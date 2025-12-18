@@ -97,7 +97,7 @@ const page = () => {
       </section>
 
       <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-25">
-        <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px] border">Selhaya World’s First Luxury Abaya Maison</p>
+        <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px]">Selhaya World’s First Luxury Abaya Maison</p>
         <div className="flex flex-col lg:flex-row w-[300px] lg:w-[600px] relative gap-6">
           <p className="uppercase font-semibold lg:absolute -left-50">our objective</p>
           <p className="text-[12px] lg:text-[20px]">
@@ -105,9 +105,8 @@ const page = () => {
           </p>
         </div>
         <img src="/selhaya/img1.png" alt="img1" className="w-[300px] lg:w-[480px]"/>
-        <div className="flex w-screen justify-between lg:justify-center lg:gap-42 lg:ml-50">
+        <div className="flex w-[300px] lg:w-screen lg:justify-center items-center lg:gap-42">
           <img src="/selhaya/img2.png" alt="img2" className="w-[155px] lg:w-[224px]"/>
-          <img src="/selhaya/img3.png" alt="img3" className="lg:hidden w-[300px]"/>
 
           <div className="hidden lg:block space-y-4">
             <p className="uppercase font-semibold">core challenges</p>
@@ -117,15 +116,19 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex w-screen justify-between items-end pl-20 border lg:justify-center lg:gap-56">
-          <div className="lg:hidden space-y-4">
-            <p className="uppercase font-semibold">core challenges</p>
-            <p className='w-70 text-[12px]'>
-              Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
-            </p>
-          </div>
-          <img src="/selhaya/img4.png" alt="img4" className="relative w-[155px] lg:w-56 lg:top-[143px]"/>
+        <img src="/selhaya/img3.png" alt="img3" className="lg:hidden w-[300px]"/>
+
+        <div className="flex w-[300px] lg:w-screen justify-end items-center lg:pl-20 lg:justify-center lg:gap-56">
+
+          <img src="/selhaya/img4.png" alt="img4" className="lg:hidden relative w-[155px]"/>
+          <img src="/selhaya/img4.png" alt="img4" className="hidden lg:flex relative w-56 top-[143px]"/>
           <img src="/selhaya/img3.png" alt="img3" className="hidden lg:flex w-[300px] lg:w-[480px]"/>
+        </div>
+        <div className="lg:hidden space-y-4">
+          <p className="uppercase font-semibold">core challenges</p>
+          <p className='w-70 text-[12px]'>
+            Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
+          </p>
         </div>
 
         <div ref={container} className="w-screen h-[300vh] -mt-30 relative">
@@ -154,11 +157,20 @@ const page = () => {
 
         <img src="/selhaya/img6.png" alt="img6" className="w-[300px] lg:w-[813px] mx-auto"/>
 
-        <div className="flex justify-between mt-32 lg:mt-68">
-          <img src="/selhaya/img7.png" alt="img7" className="w-[300px] lg:w-[915px] relative -left-10 lg:-left-70"/>
+        <div className="flex md:hidden flex-col mx-auto mt-32 gap-4 text-black w-72">
+          <p className="uppercase font-semibold">
+            From Aesthetically Nice to Unforgettable
+          </p>
+          <p className="text-[12px] lg:text-[18px]">
+            The transformation began with a complete reinvention of Selhaya’s website, a digital maison crafted with obsessive detail. Thoughtful micro-interactions that brought the brand to life.
+          </p>
+        </div>
 
-          <div className="flex flex-col justify-between">
-            <div className="flex flex-col gap-4 text-black w-54 lg:w-103">
+        <div className="flex justify-between mt-32 lg:mt-68">
+          <img src="/selhaya/img7.png" alt="img7" className="w-[150px] md:w-[300px] lg:w-[915px] relative -left-10 md:-left-30 lg:-left-70"/>
+
+          <div className="flex flex-col justify-end md:justify-between">
+            <div className="hidden md:flex flex-col md:gap-4 text-black w-54 lg:w-103">
               <p className="uppercase font-semibold">
                 From Aesthetically Nice to Unforgettable
               </p>
@@ -166,7 +178,7 @@ const page = () => {
                 The transformation began with a complete reinvention of Selhaya’s website, a digital maison crafted with obsessive detail. Thoughtful micro-interactions that brought the brand to life.
               </p>
             </div>
-            <img src="/selhaya/img8.png" alt="img8" className="w-[300px] lg:w-[915px] relative "/>
+            <img src="/selhaya/img8.png" alt="img8" className="w-[150px] md:w-[300px] lg:w-[915px] relative"/>
 
           </div>
         </div>
@@ -208,15 +220,21 @@ const page = () => {
       <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-30 lg:gap-y-55">
         <img src="/selhaya/img11.png" alt="img11" className="w-[300px] lg:w-[480px]"/>
 
-        <div className="hidden lg:flex justify-end gap-36 ml-50 relative">
-          <img src="/selhaya/img14.png" alt="img14" className="absolute w-[300px] lg:w-[224px] h-[336px] -top-20 left-0"/>
-          <div className="w-[300px] lg:w-[224px] h-[336px]"/>
+        <div className="hidden lg:flex justify-between gap-36 relative">
+          <img src="/selhaya/img14.png" alt="img14" className="relative w-[300px] lg:w-[224px] -top-20"/>
           <img src="/selhaya/img12.png" alt="img12" className="w-[300px] lg:w-[480px]"/>
         </div>
 
-        <div className="flex justify-between w-screen px-10 lg:hidden">
-          <img src="/selhaya/img14.png" alt="img14" className="w-[155px] relative top-20"/>
-          <img src="/selhaya/img13.png" alt="img13" className="w-[300px]"/>
+        <img src="/selhaya/img13.png" alt="img13" className="w-[300px] lg:hidden"/>
+
+        <img src="/selhaya/img15.png" alt="img15" className="w-[155px] lg:hidden"/>
+
+        <div className="lg:hidden flex flex-col gap-y-4 w-70 mx-auto">
+            <p className="uppercase font-semibold text-[18px]">A Precise Showcase</p>
+            <p className='text-[12px]'>
+              Every product, narrative, and detail was re-presented with clarity, intention, and aesthetic precision.
+              We ensured the digital display became an extension of Selhaya’s craftsmanship, not merely a catalogue.
+            </p>
         </div>
 
         <div className="hidden lg:flex gap-42 ml-50">
@@ -230,7 +248,7 @@ const page = () => {
           <img src="/selhaya/img15.png" alt="img15" className="w-[300px] lg:w-[224px]"/>
         </div>
 
-        <img src="/selhaya/img14.png" alt="img14" className='w-[155px] mt-30 lg:hidden'/>
+        <img src="/selhaya/img14.png" alt="img14" className='w-[300px] lg:hidden'/>
 
         <img src="/selhaya/img13.png" alt="img13" className="hidden lg:block w-[300px] lg:w-[480px] -mt-85 -ml-40"/>
       </section>
