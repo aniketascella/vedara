@@ -42,7 +42,7 @@ const page = () => {
     setOpenIndex((prev) => (prev === index ? null : index));
   }
   const container1 = useRef(null);
-  const container2 = useRef(null);
+  // const container2 = useRef(null);
   const container3 = useRef(null);
   const container4 = useRef(null);
 
@@ -51,10 +51,10 @@ const page = () => {
     offset: ["start start", "end start"]
   });
 
-  const {scrollYProgress: section2} = useScroll({
-    target: container2,
-    offset: ["start start", "end start"]
-  });
+  // const {scrollYProgress: section2} = useScroll({
+  //   target: container2,
+  //   offset: ["start start", "end start"]
+  // });
 
   const {scrollYProgress: section3} = useScroll({
     target: container3,
@@ -68,8 +68,8 @@ const page = () => {
 
   const s1 = useTransform(section1, [0,1], [0,-300]);
   const s1bg= useTransform(section1, [0,1], [0,500]);
-  const s2 = useTransform(section2, [0,1], [0,-200]);
-  const s2bg = useTransform(section2, [0,1], [0,500]);
+  // const s2 = useTransform(section2, [0,1], [0,-200]);
+  // const s2bg = useTransform(section2, [0,1], [0,500]);
   const s3 = useTransform(section3, [0,1], [0,-200]);
   const s4 = useTransform(section4, [0,1], [-300,300]);
 
@@ -110,7 +110,7 @@ const page = () => {
       </section>
 
       {/* section 2 */}
-      <section ref={container2} className="flex flex-col justify-center items-center w-screen bg-primary relative py-30 lg:py-42 overflow-hidden">
+      {/* <section ref={container2} className="flex flex-col justify-center items-center w-screen bg-primary relative py-30 lg:py-42 overflow-hidden">
         <motion.div style={{y:s2bg}} className="absolute inset-0 w-full h-full">
           <img
             src={bgImg.src}
@@ -171,14 +171,14 @@ const page = () => {
             </p>
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* section 3 */}
       <section className="flex flex-col justify-center items-center bg-black  ">
         <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20">
           <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[40px] uppercase">
-            <p>Branding</p>
-            <p>09</p>
+            <p>All Projects</p>
+            <p>01</p>
           </div>
 
           <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[16px]">
@@ -189,21 +189,21 @@ const page = () => {
         </div>
       <StickyPanelScroller panels={
         [
-          {
-            bg: "/portfolio/img3.png", cardImg: "/portfolio/img4.png", link: "/portfolio/antara", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
-          }, 
+          // {
+          //   bg: "/portfolio/img3.png", cardImg: "/portfolio/img4.png", link: "/portfolio/antara", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
+          // }, 
         {
           bg: "/portfolio/img5.png", cardImg: "/portfolio/img12.png", link: "/portfolio/selhaya", number: "02", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
         },
-        {
-          bg: "/portfolio/img7.png", cardImg: "/portfolio/img8.png", link: "/portfolio", number: "03", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
-        }
+        // {
+        //   bg: "/portfolio/img7.png", cardImg: "/portfolio/img8.png", link: "/portfolio", number: "03", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
+        // }
       ]
         } />
       </section>
 
       {/* section 4 */}
-      <section className="flex flex-col justify-center items-center bg-primary">
+      {/* <section className="flex flex-col justify-center items-center bg-primary">
 
         <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20 text-black">
           <div className="flex justify-between w-[300px] lg:w-[800px] max-w-screen text-[28px] lg:text-[40px] uppercase">
@@ -225,10 +225,10 @@ const page = () => {
           }
         ]
         } />
-      </section>
+      </section> */}
 
       {/* section 5 */}
-      <section className="flex flex-col justify-center items-center bg-black">
+      {/* <section className="flex flex-col justify-center items-center bg-black">
         <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20">
           <div className="flex justify-between w-[300px] lg:w-[800px] max-w-screen text-[28px] lg:text-[40px] uppercase">
             <p>Web Development & Tech</p>
@@ -252,7 +252,7 @@ const page = () => {
         }
         ]
         } />
-      </section>
+      </section> */}
 
       {/* section 6 */}
       <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 bg-black relative overflow-hidden">

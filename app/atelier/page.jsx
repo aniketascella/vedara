@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import WhatWeDo from './WhatWeDo'
 
 const page = () => {
   return (
@@ -59,6 +60,8 @@ const page = () => {
       </div>
 
     </section>
+
+    <WhatWeDo/>
 
     <section className="bg-primary text-black py-30 px-10 flex flex-col justify-center items-center gap-y-10">
       <div className="flex items-center gap-x-23 mb-10">
