@@ -96,7 +96,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-25">
+      <section className="py-45 flex flex-col justify-center items-center gap-y-25">
         <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px]">Selhaya World’s First Luxury Abaya Maison</p>
         <div className="flex flex-col lg:flex-row w-[300px] lg:w-[600px] relative gap-6">
           <p className="uppercase font-semibold lg:absolute -left-50">our objective</p>
@@ -142,7 +142,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center py-26 bg-black">
+      <section className="flex flex-col items-center py-26">
         <div className="flex flex-col lg:flex-row justify-center gap-24">
           <p className='uppercase'>Our solution</p>
           <p className="w-70 text-[12px] lg:text-[18px] lg:w-120">
@@ -217,7 +217,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="py-45 bg-black flex flex-col justify-center items-center gap-y-30 lg:gap-y-55">
+      <section className="py-45 flex flex-col justify-center items-center gap-y-30 lg:gap-y-55">
         <img src="/selhaya/img11.png" alt="img11" className="w-[300px] lg:w-[480px]"/>
 
         <div className="hidden lg:flex justify-between gap-36 relative">

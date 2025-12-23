@@ -13,17 +13,17 @@ const principles = [
   {
     id: "02",
     title: "DEMONSTRATE\nGENERATIONAL PURPOSE",
-    image: "/dynasty/img2.png",
+    image: "/dynasty/scrollImg2.png",
   },
   {
     id: "03",
     title: "DESIGNED TO ENDURE",
-    image: "/dynasty/img3.png",
+    image: "/dynasty/scrollImg3.png",
   },
   {
     id: "04",
     title: "CONTINUITY IN PURPOSE",
-    image: "/dynasty/img4.png",
+    image: "/dynasty/scrollImg4.png",
   },
 ];
 
@@ -188,7 +188,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className='bg-black flex flex-col justify-center py-35 gap-7 lg:gap-11 pl-8 md:pl-19 lg:pl-37'>
+      <section className='flex flex-col justify-center py-35 gap-7 lg:gap-11 pl-8 md:pl-19 lg:pl-37'>
         <p className="uppercase w-[300px] md:w-100 lg:w-202 text-[20px] md:text-[24px] lg:text-[36px] pl-8 md:pl-19 lg:pl-37">
           Where Brands Become Cultural Contributors, Not Market Participants
         </p>
@@ -203,7 +203,7 @@ const page = () => {
             </p>
           </div>
 
-          <div className="bg-background flex flex-col gap-21 lg:gap-44 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+          <div className="bg-secondary flex flex-col gap-21 lg:gap-44 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
             <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
             <p className="">
               Investors face low-quality deal flow + overwhelming noise
@@ -249,7 +249,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col bg-black text-white w-screen">
+      <section className="flex flex-col text-white w-screen">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-screen">
           <div className="flex flex-col gap-3 w-1/2 px-10 lg:pl-27 py-21 lg:pb-39">
             <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">
@@ -315,7 +315,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="bg-black flex flex-col justify-center items-center lg:items-start gap-12 lg:gap-18 lg:pl-65 pt-27 pb-55">
+      <section className="flex flex-col justify-center items-center lg:items-start gap-12 lg:gap-18 lg:pl-65 pt-27 pb-55">
         <p className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
           Confidentiality & Access Protocol
         </p>

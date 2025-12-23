@@ -2,23 +2,26 @@
 @import 'lenis/dist/lenis.css';
 
 :root {
-  --background: #2A2927;
+  --background: #000000;
   --foreground: #171717;
   --primary: #AEA797;
+  --secondary: #2A2927;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2A2927;
+    --background: #000000;
     --foreground: #ededed;
     --primary: #AEA797;
+    --secondary: #2A2927;
   }
 }
 

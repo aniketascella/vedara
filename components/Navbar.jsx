@@ -11,6 +11,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolledPastVH, setScrolledPastVH] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [active, setActive] = useState(false);
   const btnRef = useRef(null);
 
   useEffect(() => {
@@ -36,6 +37,19 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(()=>{
+
+    if(pathname === "/atelier"){
+      setActive("atelier");
+    }
+    else if(pathname === "/dynasty"){
+      setActive("dynasty");
+    }
+    else{
+      setActive(false);
+    }
+  },[])
+
   return (
     <header className="w-screen fixed top-0 z-50"> 
       <div
@@ -43,20 +57,57 @@ export default function Navbar() {
           pathname === "/" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
         } w-screen h-28 flex justify-between items-center px-8 lg:px-24 text-[18px] leading-relaxed`}
       >
+        <div className="flex gap-8">
+
         <h1 className="text-[24px]">
-          VEDARA {pathname === "/atelier" && <span className="italic">Atelier</span>} {pathname === "/dynasty" && <span className="italic">Dynasty</span>}
+          VEDARA
         </h1>
+        {pathname==="/atelier" && <h2 className="lg:hidden text-[24px] italic">Atelier</h2>}
+        {pathname==="/dynasty" && <h2 className="lg:hidden text-[24px] italic">Dynasty</h2>}
+        <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
+          {/* Sliding background */}
+          <span
+            className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
+              active === "dynasty" ? "translate-x-full" : "translate-x-0"
+            }`}
+          />
+
+          <Link href={"/atelier"} className="hover:cursor-pointer">
+            <button
+              onClick={() => setActive("atelier")}
+              className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                active === "atelier" ? "text-white" : "text-[#b8b1a7]"
+              }`}
+            >
+              Atelier
+            </button> 
+          </Link>
+
+          <Link href={"/dynasty"} className="hover:cursor-pointer">
+            <button
+              onClick={() => setActive("dynasty")}
+              className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
+              }`}
+            >
+              Dynasty
+            </button>
+          </Link>
+        </div>
+        </div>
+
 
         <motion.nav
+          initial={false}
           className="hidden lg:flex items-center gap-5 uppercase"
-          animate={scrolledPastVH ? { x: 0, opacity: 0 } : { x: 10, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          animate={{opacity: scrolledPastVH?0:1}}
+          transition={{ duration: 0.5, ease:"easeOut"}}
         >
-          <Link href="/portfolio"><p className="cursor-pointer">portfolio</p></Link>
-          <Link href="/atelier"><p className="cursor-pointer">studio</p></Link>
-          <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link>
-          <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link>
-          <Link href="/inquire"><p className="cursor-pointer">inquire</p></Link>
+          <Link href="/portfolio"><p className="cursor-pointer">case study</p></Link>
+          {/* <Link href="/atelier"><p className="cursor-pointer">studio</p></Link> */}
+          {/* <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link> */}
+          {/* <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link> */}
+          <Link href="/contact"><p className="cursor-pointer">contact</p></Link>
         </motion.nav>
 
         <button
@@ -77,12 +128,8 @@ export default function Navbar() {
               exit={{ x: -20, opacity: 0, }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className={`hidden z-40 lg:flex items-center justify-center w-6 h-6 backdrop-blur cursor-pointer focus:outline-none`}
-            >
-              <div className="absolute top-0 left-0 w-1 h-1 bg-white"></div> 
-              <div className="absolute top-0 right-0 w-1 h-1 bg-white"></div> 
-              <div className="absolute bottom-0 left-0 w-1 h-1 bg-white"></div> 
-              <div className="absolute bottom-0 right-0 w-1 h-1 bg-white"></div>
-              {sidebarOpen && (<p>x</p>)} 
+            > 
+              {sidebarOpen ? (<p>x</p>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />)} 
             </motion.button>
           </AnimatePresence>
         )}
@@ -118,7 +165,7 @@ export default function Navbar() {
                   transition={{ type: "spring", stiffness: 250 }}
                   className="hover:text-black"
                   onClick={() => setSidebarOpen(false)}>
-                  Portfolio
+                  Case Study
                 </motion.p>
               </Link>
               <Link href="/dynasty">
@@ -139,13 +186,13 @@ export default function Navbar() {
                   Blogs
                 </motion.p>
               </Link>
-              <Link href="/inquire">
+              <Link href="/contact">
                 <motion.p
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 250 }}
                   className="hover:text-black"
                   onClick={() => setSidebarOpen(false)}>
-                  Inquire
+                  Contact
                 </motion.p>
               </Link>
             </nav>

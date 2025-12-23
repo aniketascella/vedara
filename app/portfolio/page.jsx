@@ -174,7 +174,7 @@ const page = () => {
       </section> */}
 
       {/* section 3 */}
-      <section className="flex flex-col justify-center items-center bg-black  ">
+      <section className="flex flex-col justify-center items-center">
         <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20">
           <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[40px] uppercase">
             <p>All Projects</p>
@@ -255,7 +255,7 @@ const page = () => {
       </section> */}
 
       {/* section 6 */}
-      <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 bg-black relative overflow-hidden">
+      <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative overflow-hidden">
         <motion.p style={{y:s3}} className="font-editorial text-[36px]">FAQs</motion.p>
 
         <motion.section style={{y:s3}} className="w-full max-w-5xl mx-auto px-6 py-12 text-gray-200">

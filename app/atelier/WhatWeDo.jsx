@@ -80,11 +80,11 @@ export default function WhatWeDo() {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="relative h-[300vh] w-screen">
+    <section ref={sectionRef} className="relative h-[250vh] w-screen">
       <div className="sticky top-0 h-screen w-screen px-12 lg:px-24 flex flex-col justify-center">
         {/* Header */}
         <div className="flex justify-between mb-16">
-          <h3 className="italic lg:text-[22px">What We Do</h3>
+          <h3 className="italic lg:text-[22px]">What We Do</h3>
           <p className="lg:w-[370px] text-right">
             We develop identity, strategy, and digital infrastructure that takes
             your brand from competition to cultural dominion.
