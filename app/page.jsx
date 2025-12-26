@@ -23,9 +23,9 @@ show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] 
 export default function Home() {
   return (
     <motion.div 
-      // variants={container}
-      // initial= "hidden"
-      // animate= "show"
+      variants={container}
+      initial= "hidden"
+      animate= "show"
       className="w-screen h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center"
     >
       <img src="/homeImg.png" alt="home" className="lg:hidden absolute -z-1 inset-0 w-screen h-screen object-cover object-center" />

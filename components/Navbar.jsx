@@ -62,38 +62,40 @@ export default function Navbar() {
         <h1 className="text-[24px]">
           VEDARA
         </h1>
+        {pathname==="atelier" || "dynasty" && 
+          <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
+            {/* Sliding background */}
+            <span
+              className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
+                active === "dynasty" ? "translate-x-full" : "translate-x-0"
+              }`}
+            />
+
+            <Link href={"/atelier"} className="hover:cursor-pointer">
+              <button
+                onClick={() => setActive("atelier")}
+                className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                  active === "atelier" ? "text-white" : "text-[#b8b1a7]"
+                }`}
+              >
+                Atelier
+              </button> 
+            </Link>
+
+            <Link href={"/dynasty"} className="hover:cursor-pointer">
+              <button
+                onClick={() => setActive("dynasty")}
+                className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                  active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
+                }`}
+              >
+                Dynasty
+              </button>
+            </Link>
+          </div>
+        }
         {pathname==="/atelier" && <h2 className="lg:hidden text-[24px] italic">Atelier</h2>}
         {pathname==="/dynasty" && <h2 className="lg:hidden text-[24px] italic">Dynasty</h2>}
-        <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
-          {/* Sliding background */}
-          <span
-            className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
-              active === "dynasty" ? "translate-x-full" : "translate-x-0"
-            }`}
-          />
-
-          <Link href={"/atelier"} className="hover:cursor-pointer">
-            <button
-              onClick={() => setActive("atelier")}
-              className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
-                active === "atelier" ? "text-white" : "text-[#b8b1a7]"
-              }`}
-            >
-              Atelier
-            </button> 
-          </Link>
-
-          <Link href={"/dynasty"} className="hover:cursor-pointer">
-            <button
-              onClick={() => setActive("dynasty")}
-              className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
-                active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
-              }`}
-            >
-              Dynasty
-            </button>
-          </Link>
-        </div>
         </div>
 
 

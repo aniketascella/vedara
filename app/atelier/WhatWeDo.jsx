@@ -1,5 +1,7 @@
 "use client";
 
+import { slideInFromLeft,slideInFromBottom,slideInFromRight,slideInFromTop } from "@/utils/motion";
+import Reveal from "@/utils/Reveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
@@ -82,13 +84,26 @@ export default function WhatWeDo() {
   return (
     <section ref={sectionRef} className="relative h-[250vh] w-screen">
       <div className="sticky top-0 h-screen w-screen px-12 lg:px-24 flex flex-col justify-center">
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/rovineArt.png"
+            alt="bg overlay"
+            className="w-full h-full object-cover will-change-transform"
+            style={{ transformOrigin: "center center" }}
+          />
+        </div>
         {/* Header */}
         <div className="flex justify-between mb-16">
-          <h3 className="italic lg:text-[22px]">What We Do</h3>
-          <p className="lg:w-[370px] text-right">
-            We develop identity, strategy, and digital infrastructure that takes
-            your brand from competition to cultural dominion.
-          </p>
+          <Reveal variants={slideInFromLeft(0.2)}>
+            <h3 className="italic lg:text-[22px]">What We Do</h3>
+          </Reveal>
+
+          <Reveal variants={slideInFromRight(0.2)}>
+            <p className="lg:w-[370px] text-right">
+              We develop identity, strategy, and digital infrastructure that takes
+              your brand from competition to cultural dominion.
+            </p>
+          </Reveal>
         </div>
 
         {/* Sections */}

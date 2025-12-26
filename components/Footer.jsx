@@ -7,26 +7,19 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const Footer = () => {
   return (
-    <div className="w-screen pt-42 flex flex-col justify-center items-center bg-[linear-gradient(rgba(0,0,0,0.57)),url('/home-bg.png')] bg-cover bg-center">
-      <h2 className="w-[300px] lg:w-[941px] text-[16px] lg:text-[32px] text-center leading-normal">
-        True luxury is Not Ornament, It is the Mastery of Intention Expressed with Such Precision that It Becomes Impossible to Ignore!
+    <div className="w-screen h-screen pt-23 px-23 flex flex-col justify-center bg-[linear-gradient(rgba(0,0,0,0.57)),url('/home-bg.png')] bg-cover bg-center">
+      <h2 className="w-[300px] lg:w-[514px] text-[16px] lg:text-[38px] leading-normal">
+        Begin <span className="font-semibold italic">Building</span> What the Future Will <span className="font-semibold italic">Remember</span>
       </h2>
 
-      <p className="mt-10 w-[250px] lg:w-[520px] text-center text-[14px] lg:text-[16px]">
-        For the founders who refuse dilution. We offer a path toward building something sovereign, influential, and uncompromising.
+      <p className="mt-10 w-[250px] lg:w-[518px] text-[14px] lg:text-[16px]">
+        True luxury is Not Ornament, It is the Mastery of Intention Expressed with Such Precision that It Becomes Impossible to Ignore!
       </p>
 
-      <button className="mt-10 w-40 h-10 lg:w-70 lg:h-14 rounded-full backdrop-blur-xl text-[14px] lg:text-[16px]">
-        <Link href='/atelier'>
-          <div className="flex justify-center items-center gap-4 lg:gap-6">
-            Begin Your Empire
-            <ArrowForwardIosOutlinedIcon/>
-          </div>
-        </Link>
-      </button>
+      <div className="w-full mt-10 border-t border-white"></div>
 
-      <div className="mt-15 pt-5 lg:pt-26 pb-11 backdrop-blur-xs w-screen flex flex-col justify-end items-center lg:items-end gap-y-8">
-        <div className='flex flex-col-reverse lg:flex-row lg:justify-between w-screen px-10'>
+      <div className="mt-10 pt-5 lg:pt-15 pb-11 flex flex-col justify-end items-center lg:items-end gap-y-8">
+        <div className='flex flex-col-reverse lg:flex-row lg:justify-between w-full'>
           <div className="font-editorial flex flex-col items-center lg:items-start gap-4 lg:gap-2">
             <p className='text-[18px] lg:text-[36px]'>VEDARA</p>
             <div className="flex flex-col lg:flex-row items-center gap-2">
@@ -66,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <p className='font-editorial text-[12px] lg:mr-10'>
+        <p className='font-editorial text-[12px]'>
           © Vedara — Building Brands Worth Inheriting
         </p>
       </div>
