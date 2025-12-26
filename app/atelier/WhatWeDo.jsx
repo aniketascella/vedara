@@ -82,14 +82,13 @@ export default function WhatWeDo() {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="relative h-[250vh] w-screen">
+    <section ref={sectionRef} className="h-[250vh] w-screen">
       <div className="sticky top-0 h-screen w-screen px-12 lg:px-24 flex flex-col justify-center">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/rovineArt.png"
             alt="bg overlay"
-            className="w-full h-full object-cover will-change-transform"
-            style={{ transformOrigin: "center center" }}
+            className="w-full h-full object-cover"
           />
         </div>
         {/* Header */}

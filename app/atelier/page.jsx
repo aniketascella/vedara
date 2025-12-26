@@ -46,7 +46,7 @@ const page = () => {
     return unsubscribe;
   }, [scrollYProgress]);
   return (
-    <div className="overflow-x-hidden">
+    <div className="text-white">
     <section className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-center items-start gap-y-15">
     <Reveal variants={slideInFromRight(0.2)}>
     <div className='lg:hidden flex justify-between w-screen px-10 text-[16px]'>
