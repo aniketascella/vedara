@@ -12,14 +12,14 @@ const inter= Inter({
 
 const ppEditorial = localFont({
   src: [
-    { path: "../public/fonts/PPEditorialNew-Ultralight.otf", weight: "200", style: "normal" },
-    { path: "../public/fonts/PPEditorialNew-UltralightItalic.otf", weight: "200", style: "italic" },
+    { path: "./fonts/PPEditorialNew-Ultralight.otf", weight: "200", style: "normal" },
+    { path: "./fonts/PPEditorialNew-UltralightItalic.otf", weight: "200", style: "italic" },
 
-    { path: "../public/fonts/PPEditorialNew-Regular.otf", weight: "200", style: "normal" },
-    { path: "../public/fonts/PPEditorialNew-Italic.otf", weight: "400", style: "italic" },
+    { path: "./fonts/PPEditorialNew-Regular.otf", weight: "600", style: "normal" },
+    { path: "./fonts/PPEditorialNew-Italic.otf", weight: "600", style: "italic" },
 
-    { path: "../public/fonts/PPEditorialNew-Ultrabold.otf", weight: "800", style: "extrabold" },
-    { path: "../public/fonts/PPEditorialNew-UltraboldItalic.otf", weight: "800", style: "italic" },
+    { path: "./fonts/PPEditorialNew-Ultrabold.otf", weight: "700", style: "normal" },
+    { path: "./fonts/PPEditorialNew-UltraboldItalic.otf", weight: "700", style: "italic" },
   ],
   variable: "--font-editorial",
   display: "swap",

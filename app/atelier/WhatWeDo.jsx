@@ -92,7 +92,7 @@ export default function WhatWeDo() {
           />
         </div>
         {/* Header */}
-        <div className="flex justify-between mb-16">
+        <div className="flex flex-col lg:flex-row gap-y-4 justify-between mb-16">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h3 className="italic lg:text-[22px]">What We Do</h3>
           </Reveal>
@@ -123,7 +123,7 @@ export default function WhatWeDo() {
                 {/* Heading */}
                 <div className={`flex ${i==1 ? `justify-start pl-[12vw]`: `justify-center`} items-center gap-6`}>
                   <span className="text-sm opacity-60">[{section.id}]</span>
-                  <p className="text-2xl lg:text-3xl tracking-wide">
+                  <p className="text-[18px] font-semibold lg:text-3xl tracking-wide">
                     {section.title}
                   </p>
                 </div>
@@ -140,10 +140,10 @@ export default function WhatWeDo() {
                 >
                   {section.items.map((item, idx) => (
                     <div key={idx} className="space-y-3">
-                      <p className="text-md uppercase">
+                      <p className="text-md text-center lg:text-left font-bold uppercase">
                         {item.heading}
                       </p>
-                      <p className="text-sm leading-relaxed opacity-80">
+                      <p className="text-sm text-center lg:text-left leading-relaxed opacity-80">
                         {item.text}
                       </p>
                     </div>
