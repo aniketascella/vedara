@@ -71,7 +71,7 @@ const page = () => {
   // const s2 = useTransform(section2, [0,1], [0,-200]);
   // const s2bg = useTransform(section2, [0,1], [0,500]);
   const s3 = useTransform(section3, [0,1], [0,-200]);
-  const s4 = useTransform(section4, [0,1], [-300,300]);
+  const s4 = useTransform(section4, [0,1], [-200,300]);
 
   return (
     <div>
@@ -255,7 +255,7 @@ const page = () => {
       </section> */}
 
       {/* section 6 */}
-      <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative overflow-hidden">
+      <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative bg-black overflow-hidden">
         <motion.p style={{y:s3}} className="font-editorial text-[36px]">FAQs</motion.p>
 
         <motion.section style={{y:s3}} className="w-full max-w-5xl mx-auto px-6 py-12 text-gray-200">

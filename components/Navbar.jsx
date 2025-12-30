@@ -38,12 +38,11 @@ export default function Navbar() {
   }, []);
 
   const isVisible = pathname === "/atelier" || pathname === "/dynasty";
-  if (!isVisible) return null;
 
   const active = pathname === "/atelier" ? "atelier" : "dynasty";
 
   return (
-    <header className="w-screen fixed top-0 z-50"> 
+    <header className="w-screen fixed top-0 z-50">
       <div
         className={`${
           pathname === "/" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
@@ -54,7 +53,7 @@ export default function Navbar() {
         <h1 className="text-[24px]">
           VEDARA
         </h1>
-        {pathname==="atelier" || "dynasty" && 
+        {isVisible && 
           <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
             <span
               className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${

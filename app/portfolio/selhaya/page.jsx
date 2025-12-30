@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 
 const page = () => {
   const container= useRef(null);
-  const footer = useRef(null);
+  // const footer = useRef(null);
   const hasNavigated = useRef(false);
   const router = useRouter();
 
@@ -19,22 +19,22 @@ const page = () => {
 
   const scale1 = useTransform(containerScroll, [0, 1], [1, 4]);
 
-  const { scrollYProgress:footerScroll } = useScroll({
-    target: footer,
-    offset: ["start start", "end end"],
-  });
+  // const { scrollYProgress:footerScroll } = useScroll({
+  //   target: footer,
+  //   offset: ["start start", "end end"],
+  // });
 
-  const scale2 = useTransform(footerScroll, [0, 1], [1, 4]);
+  // const scale2 = useTransform(footerScroll, [0, 1], [1, 4]);
 
-  useMotionValueEvent(footerScroll, "change", (latest) => {
-  if (latest > 0.98 && !hasNavigated.current) {
-    hasNavigated.current = true;
+//   useMotionValueEvent(footerScroll, "change", (latest) => {
+//   if (latest > 0.98 && !hasNavigated.current) {
+//     hasNavigated.current = true;
 
-    window.scrollTo({ top: 0, behavior: "auto" });
+//     window.scrollTo({ top: 0, behavior: "auto" });
 
-    router.push("/portfolio/antara", {scroll:false});
-  }
-});
+//     router.push("/portfolio/antara", {scroll:false});
+//   }
+// });
   return (
     <div>
       <section className="flex flex-col justify-center items-start w-screen min-h-screen relative overflow-hidden">
