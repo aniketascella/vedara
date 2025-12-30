@@ -271,7 +271,6 @@ const page = () => {
 
                   <div
                     className="flex items-start gap-6 py-8"
-                    // keyboard accessibility handled on button
                   >
                     {/* Left number */}
                     <div className="w-12 shrink-0">
@@ -366,7 +365,7 @@ const page = () => {
       </motion.section>
 
       {/* footer */}
-      <motion.div ref={container4} style={{y:s4}} className="relative -z-10">
+      <motion.div ref={container4} style={{y:s4}} className="relative -z-100">
         <Footer />
       </motion.div>
     </div>

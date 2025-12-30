@@ -19,7 +19,7 @@ export function InvestorForm() {
 
       <button
         type="submit"
-        className="mt-8 px-10 py-3 rounded-full border border-black"
+        className="mt-8 px-10 py-3 font-editorial rounded-full border border-black"
       >
         Submit
       </button>
@@ -51,7 +51,7 @@ export function VisionForm() {
 
       <button
         type="submit"
-        className="mt-8 px-10 py-3 rounded-full border border-black"
+        className="mt-8 px-10 py-3 font-editorial rounded-full border border-black"
       >
         Submit
       </button>

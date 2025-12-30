@@ -33,7 +33,7 @@ export default function Home() {
         <h1 className='relative top-[26px] lg:left-7 w-[82px] h-[26px] lg:w-[209px] lg:h-[69px] text-[24px]'> VEDARA </h1>
         
         <motion.h2 variants={item} className="w-100 md:w-[364px] lg:w-[554px] text-[24px] lg:text-[36px] text-center lg:text-left leading-normal mx-auto">
-          We Sculpt Your <span className="font-bold italic">Values and Vision</span> Into a Legacy Capable of Withstanding <span className="font-bold italic">Trends and Time</span>
+          We Sculpt Your <span className=" italic">Values and Vision</span> Into a Legacy Capable of Withstanding <span className=" italic">Trends and Time</span>
         </motion.h2>
 
         <motion.p variants={item} className="lg:hidden w-[250px] lg:w-[354px] text-center text-[14px] lg:text-[18px]">
@@ -42,7 +42,7 @@ export default function Home() {
 
         <motion.div variants={item} className="lg:hidden flex flex-col gap-y-7 justify-center items-center text-[16px] lg:text-[24px] w-full">
           <Link href='/atelier'>
-            <button className="pl-9 pr-4 py-4 rounded-full backdrop-blur-[10px]">
+            <button className="pl-9 pr-4 py-4 rounded-full backdrop-blur-[10px] ">
               <div className="flex justify-between items-center">
                 Vedara Atelier 
                 <ArrowForwardIosOutlinedIcon/>
@@ -71,8 +71,8 @@ export default function Home() {
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col justify-center items-center text-[16px] lg:text-[24px] mt-4 w-full">
-          <Link href='/dynasty'>
-            <button className="w-40 lg:w-180 backdrop-blur-[10px]">
+          <button className="w-40 lg:w-180 backdrop-blur-[10px]">
+            <Link href='/dynasty'>
               <div className="flex justify-between items-center pl-15 pr-13 py-10">
                 <div className="flex flex-col gap-y-1">
                   <p className="text-[22px] text-left">Vedara Dynasty</p>
@@ -80,11 +80,11 @@ export default function Home() {
                 </div>
                 <ArrowForwardIosOutlinedIcon/>
               </div>
-            </button>
-          </Link>
+            </Link>
+          </button>
 
-          <Link href='/atelier'>
-            <button className="w-50 lg:w-180 backdrop-blur-[10px]">
+          <button className="w-50 lg:w-180 backdrop-blur-[10px]">
+            <Link href='/atelier'>
               <div className="flex justify-between items-center pl-15 pr-13 py-10">
                 <div className="flex flex-col gap-y-1">
                   <p className="text-[22px] text-left">Vedara Atelier</p>
@@ -92,8 +92,8 @@ export default function Home() {
                 </div>
                 <ArrowForwardIosOutlinedIcon/>
               </div>  
-            </button>
-          </Link>
+            </Link>
+          </button>
         </motion.div>
       </motion.div>
     </motion.div>

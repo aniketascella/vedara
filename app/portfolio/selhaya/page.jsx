@@ -3,6 +3,7 @@
 import {useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useScroll, useTransform, motion, useMotionValueEvent } from 'framer-motion'
 import { useRouter } from 'next/navigation'
+import Footer from '@/components/Footer'
 
 const page = () => {
   const container= useRef(null);
@@ -253,7 +254,7 @@ const page = () => {
         <img src="/selhaya/img13.png" alt="img13" className="hidden lg:block w-[300px] lg:w-[480px] -mt-85 -ml-40"/>
       </section>
 
-      <section ref={footer} className="w-screen h-[300vh] relative">
+      {/* <section ref={footer} className="w-screen h-[300vh] relative">
         <div  className="sticky top-0 w-screen h-screen overflow-hidden flex justify-center items-center bg-[linear-gradient(rgba(0,0,0,0.5)),url('/antara/img5.png')] bg-cover bg-center bg-no-repeat">
           <div className="flex justify-center items-center relative w-full">
             <div className="flex flex-col left-48 top-10 absolute z-10">
@@ -272,7 +273,8 @@ const page = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <Footer/>
 
     </div>
   )

@@ -1,6 +1,6 @@
 "use client";
 
-import { slideInFromLeft,slideInFromBottom,slideInFromRight,slideInFromTop } from "@/utils/motion";
+import { slideInFromLeft,slideInFromRight } from "@/utils/motion";
 import Reveal from "@/utils/Reveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
@@ -92,13 +92,13 @@ export default function WhatWeDo() {
           />
         </div>
         {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-y-4 justify-between mb-16">
+        <div className="flex flex-col lg:flex-row gap-y-4 justify-between mb-4 lg:mb-16">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h3 className="italic lg:text-[22px]">What We Do</h3>
+            <h3 className="italic text-[16px] lg:text-[22px]">What We Do</h3>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="lg:w-[370px] text-right">
+            <p className="text-[14px] lg:text-[16px] lg:w-[370px] text-right">
               We develop identity, strategy, and digital infrastructure that takes
               your brand from competition to cultural dominion.
             </p>
@@ -106,7 +106,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* Sections */}
-        <div className="space-y-20">
+        <div className="space-y-5 lg:space-y-20">
           {SECTIONS.map((section, i) => {
             const isActive = i === active;
 
@@ -118,10 +118,10 @@ export default function WhatWeDo() {
                   opacity: isActive ? 1 : 0.25,
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="space-y-8"
+                className="space-y-4 lg:space-y-8"
               >
                 {/* Heading */}
-                <div className={`flex ${i==1 ? `justify-start pl-[12vw]`: `justify-center`} items-center gap-6`}>
+                <div className={`flex ${i==1 ? `justify-start pl-[12vw]`: `justify-center`} items-center gap-x-6`}>
                   <span className="text-sm opacity-60">[{section.id}]</span>
                   <p className="text-[18px] font-semibold lg:text-3xl tracking-wide">
                     {section.title}
@@ -136,14 +136,14 @@ export default function WhatWeDo() {
                     opacity: isActive ? 1 : 0,
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="overflow-hidden grid grid-cols-1 lg:grid-cols-3 gap-12 pl-10"
+                  className="overflow-hidden grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12 pl-10"
                 >
                   {section.items.map((item, idx) => (
                     <div key={idx} className="space-y-3">
-                      <p className="text-md text-center lg:text-left font-bold uppercase">
+                      <p className="text-[16px] text-left lg:font-bold uppercase">
                         {item.heading}
                       </p>
-                      <p className="text-sm text-center lg:text-left leading-relaxed opacity-80">
+                      <p className="text-[12px] lg:text-[16px] font-light text-left leading-relaxed opacity-80 lg:w-[293px]">
                         {item.text}
                       </p>
                     </div>

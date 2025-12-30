@@ -3,15 +3,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, Twitter } from "@mui/icons-material";
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolledPastVH, setScrolledPastVH] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [active, setActive] = useState(false);
   const btnRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +29,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [sidebarOpen]);
 
-  // Close sidebar when pressing Escape
   useEffect(() => {
     function onKey(e) {
       if (e.key === "Escape") setSidebarOpen(false);
@@ -37,18 +37,10 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(()=>{
+  const isVisible = pathname === "/atelier" || pathname === "/dynasty";
+  if (!isVisible) return null;
 
-    if(pathname === "/atelier"){
-      setActive("atelier");
-    }
-    else if(pathname === "/dynasty"){
-      setActive("dynasty");
-    }
-    else{
-      setActive(false);
-    }
-  },[])
+  const active = pathname === "/atelier" ? "atelier" : "dynasty";
 
   return (
     <header className="w-screen fixed top-0 z-50"> 
@@ -64,7 +56,6 @@ export default function Navbar() {
         </h1>
         {pathname==="atelier" || "dynasty" && 
           <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
-            {/* Sliding background */}
             <span
               className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
                 active === "dynasty" ? "translate-x-full" : "translate-x-0"
@@ -73,7 +64,7 @@ export default function Navbar() {
 
             <Link href={"/atelier"} className="hover:cursor-pointer">
               <button
-                onClick={() => setActive("atelier")}
+                onClick={() => router.push("/atelier")}
                 className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
                   active === "atelier" ? "text-white" : "text-[#b8b1a7]"
                 }`}
@@ -84,7 +75,7 @@ export default function Navbar() {
 
             <Link href={"/dynasty"} className="hover:cursor-pointer">
               <button
-                onClick={() => setActive("dynasty")}
+                onClick={() => router.push("/dynasty")}
                 className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
                   active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
                 }`}
@@ -131,7 +122,7 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className={`hidden z-40 lg:flex items-center justify-center w-6 h-6 backdrop-blur cursor-pointer focus:outline-none`}
             > 
-              {sidebarOpen ? (<p>x</p>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />)} 
+              {sidebarOpen ? (<CloseIcon className="text-black" fontSize="large"/>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />)} 
             </motion.button>
           </AnimatePresence>
         )}

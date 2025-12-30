@@ -7,6 +7,7 @@ import Image from 'next/image';
 import {InvestorForm, VisionForm} from './components/Forms';
 import Reveal from '@/utils/Reveal';
 import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 const principles = [
   {
@@ -119,26 +120,10 @@ const page = () => {
   const formRef2 = useRef(null);
   const itemRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const prevIndexRef = useRef(0);
+  const [direction, setDirection] = useState(1);
   const scrollRef = useRef(null);
   const imagesRef = useRef(null);
-
-  const { scrollYProgress: scrollInvestment } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end end"],
-  });
-
-  const [index, setIndex] = useState(0);
-
-  // Map scroll progress → active index
-  useEffect(() => {
-    return scrollInvestment.on("change", (v) => {
-      const i = Math.min(
-        investment.length - 1,
-        Math.floor(v * investment.length)
-      );
-      setIndex(i);
-    });
-  }, [scrollInvestment]);
 
   const {scrollYProgress: images} =useScroll({
     target: imagesRef,
@@ -175,14 +160,19 @@ const page = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = Number(entry.target.dataset.index);
-            setActiveIndex(index);
+            const nextIndex = Number(entry.target.dataset.index);
+            const prevIndex = prevIndexRef.current;
+            if (nextIndex !== prevIndex) {
+              setDirection(nextIndex > prevIndex ? 1 : -1);
+              prevIndexRef.current = nextIndex;
+              setActiveIndex(nextIndex);
+            }
           }
         });
       },
       {
         rootMargin: "-45% 0px -45% 0px",
-        threshold: 0,
+        // threshold: 0,
       }
     );
 
@@ -195,7 +185,7 @@ const page = () => {
   const segmentTop = activeIndex * segmentHeight;
 
   return (
-    <div className='text-white'>
+    <div className='text-white w-screen'>
       <section className="flex flex-col justify-center items-center gap-5 w-screen py-50 relative">
         <div className="absolute -z-1 w-full h-full">
           <img
@@ -206,29 +196,29 @@ const page = () => {
           />
         </div>
         <Reveal variants={slideInFromTop(0.2)}>
-          <h1 className='w-screen lg:w-[720px] text-center text-[22px] lg:text-[36px] px-10 lg:px-0'>
-            Vedara selects <span className='italic'>creations</span> that hold within them the <span className="italic">architecture</span> of a civilization yet to emerge
+          <h1 className='w-screen lg:w-[720px] lg:text-center text-[26px] lg:text-[36px] px-10 lg:px-0'>
+            Vedara selects <span className='italic font-semibold'>creations</span> that hold within them the <span className="italic font-semibold">architecture</span> of a civilization yet to emerge
           </h1>
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <p className='w-screen lg:w-[579px] text-center text-[16px] lg:text-[18px] px-20 lg:px-0'>
+        <p className='w-screen lg:w-[579px] lg:text-center text-[16px] lg:text-[18px] px-10 lg:px-0 font-light'>
           Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
         </p>
         </Reveal>
 
         <div className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className='flex flex-col gap-6 w-[345px] py-14 px-8 rounded-2xl backdrop-blur-lg'>
-              <p className='w-[284px] font-semibold'>For Visionaries - Present Your Masterwork</p>
-              <button className='w-43 lg:w-60 border rounded-full text-[16px] py-3 lg:px-12'><h3>Enter the Threshold</h3></button>
+            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-14 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
+              <p className='w-[191px] lg:w-[284px] font-medium text-[16px] lg:text-[22px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
+              <button className='w-43 lg:w-60 backdrop-blur-2xl rounded-full text-[14px] lg:text-[18px] px-7 py-3 lg:px-12'><h3 className='lg:italic font-extralight'>Enter the Threshold</h3></button>
             </div>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className='flex flex-col gap-4 w-[345px] py-14 px-8 rounded-2xl backdrop-blur-lg'>
-              <p className='w-[284px] font-semibold'>For Collectors - Discover the Future Classics</p>
-              <button className='border w-43 lg:w-60 rounded-full text-[16px] py-3'> <h3>Enter the Threshold</h3></button>
+            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] bg-[#9D8C7D]/15 p-4 lg:py-14 lg:px-8 rounded-2xl backdrop-blur-lg'>
+              <p className='w-[191px] lg:w-[284px] font-medium text-[16px] lg:text-[22px]'><span className="font-bold">For Collectors</span> - Discover the Future Classics</p>
+              <button className='w-43 lg:w-60 backdrop-blur-2xl rounded-full text-[14px] lg:text-[18px] px-7 py-3 lg:px-12'> <h3 className='lg:italic font-extralight'>Enter the Threshold</h3></button>
             </div>
           </Reveal>
         </div>
@@ -324,16 +314,30 @@ const page = () => {
               </div>
 
 
-              <div className="hidden lg:block relative top-20 h-fit">
+              <div className="hidden lg:block sticky top-20 h-fit">
                 <div className="relative w-[435px] h-[420px] rounded-xl overflow-hidden">
-                  <Image
-                  key={principles[activeIndex].id}
-                    src={principles[activeIndex].image}
-                    alt="Dynasty principle"
-                    fill
-                    className="object-cover transition-opacity duration-500"
-                    priority
-                  />
+                  <AnimatePresence>
+                    <motion.div
+                      key={principles[activeIndex].image}
+                      className="absolute inset-0"
+                      initial={{ y: direction === 1 ? "100%" : "-100%", }}
+                      animate={{ y: "0%" }}
+                      exit={{ y: direction === 1 ? "-20%" : "20%", }}
+                      transition={{
+                        duration: 1.5,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      <Image
+                      key={principles[activeIndex].id}
+                        src={principles[activeIndex].image}
+                        alt="Dynasty principle"
+                        fill
+                        className="object-cover transition-opacity duration-500"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
@@ -435,8 +439,8 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col text-white w-screen">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-screen">
+      <section className="flex flex-col text-white w-screen lg:h-[200vh]">
+        <div className="lg:sticky lg:top-0 flex flex-col lg:flex-row lg:justify-between lg:items-center w-screen">
           <div className="flex flex-col gap-3 w-screen lg:w-[502px] px-10 lg:pl-27 py-21 lg:pb-39">
             <Reveal variants={slideInFromLeft(0.2)}>
               <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">
@@ -453,14 +457,6 @@ const page = () => {
                 Every opportunity is presented through a lens of long-term stewardship. Here, investment is something that carries your principles forward into time.
               </p>
             </Reveal>
-            <Reveal variants={slideInFromLeft(0.2)}>
-              <button
-                onClick={() => setOpenForm1(true)}
-                className="hidden lg:flex border-b border-white pb-1 w-60"
-              >
-                Explore Curated Opportunities
-              </button>
-            </Reveal>
           </div>
   
           <div className="relative w-screen lg:w-180 h-screen overflow-hidden">
@@ -476,9 +472,10 @@ const page = () => {
                 >
                   <button
                     onClick={() => setOpenForm1(true)}
-                    className="lg:hidden z-1 py-6 px-15 text-center rounded-full backdrop-blur-xl"
+                    className="flex justify-between z-1 py-6 px-6 text-center rounded-full backdrop-blur-xl"
                   >
                     Explore Curated Opportunities
+                    <ArrowForwardIosOutlinedIcon/>
                   </button>
                   <img
                     src="/dynasty/img13.png"
@@ -502,7 +499,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row-reverse lg:justify-between w-screen">
+        <div className="flex flex-col lg:flex-row-reverse lg:justify-between w-screen relative z-2 bg-black">
           <div className="flex flex-col gap-3 w-screen lg:w-[470px] px-10 lg:px-0 py-21 lg:pt-39 lg:mr-40">
             <Reveal variants={slideInFromRight(0.2)}>
               <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">
@@ -521,15 +518,6 @@ const page = () => {
                 Your project is not listed; it is honoured, refined, and positioned to meet investors who value soul, longevity, and significance.
               </p>
             </Reveal>
-
-            <Reveal variants={slideInFromRight(0.2)}>
-              <button
-                onClick={() => setOpenForm2(true)}
-                className="hidden lg:flex border-b border-white pb-1 w-40"
-              >
-                Submit Your Vision 
-              </button>
-            </Reveal>
           </div>
         
           <div className="relative w-screen lg:w-180 h-screen overflow-hidden">
@@ -545,7 +533,7 @@ const page = () => {
                 >
                   <button
                     onClick={() => setOpenForm2(true)}
-                    className="lg:hidden z-1 py-6 px-15 text-center rounded-full backdrop-blur-xl"
+                    className="z-1 py-6 px-15 text-center rounded-full backdrop-blur-xl"
                   >
                     Submit Your Vision
                   </button>
@@ -572,42 +560,29 @@ const page = () => {
         </div>
       </section>
 
-      <section ref={scrollRef} className="relative flex flex-col justify-center lg:justify-start w-screen lg:h-[300vh] items-center gap-x-12 py-34 lg:py-0 text-black bg-primary">
-        <div className="sticky top-0 h-screen hidden lg:flex justify-center items-center">
-          <div className="flex gap-26 lg:gap-37 lg:py-21 px-[5vw] lg:border-t lg:border-b lg:border-[#2A2927]">
-            <Reveal variants={slideInFromLeft(0.2)}>
-              <p className="uppercase md:w-[373px] text-center lg:text-left lg:text-[36px]">
-                Investment Circle Shaped for the Next Century
-              </p>
-            </Reveal>
+      <section ref={scrollRef} className="relative flex flex-col justify-center w-screen h-screen items-center gap-x-12 py-34 lg:px-20 lg:py-41 text-black bg-primary">
+        <div className=" hidden lg:flex justify-between gap-26 lg:gap-37 lg:py-10 px-[5vw] lg:border-t lg:border-b lg:border-[#2A2927] w-full">
+          <Reveal variants={slideInFromLeft(0.2)}>
+            <p className="uppercase md:w-[373px] text-center lg:text-left lg:text-[36px]">
+              Investment Circle Shaped for the Next Century
+            </p>
+          </Reveal>
 
-            <div className="relative w-[420px] h-[200px] overflow-hidden">
-              <AnimatePresence mode="wait">
-                <Reveal variants={slideInFromRight(0.2)}>
-                  <motion.div
-                    key={index}
-                    initial={{ y: 80, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -80, opacity: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.25, 0.8, 0.25, 1],
-                    }}
-                    className="absolute inset-0 flex flex-col gap-6"
-                  >
-                    <p className="text-[14px] lg:text-[22px] leading-relaxed">
-                      {investment[index].text1}
-                    </p>
-                  
-                    {investment[index].text2 && (
-                      <button className="uppercase text-[14px] border-b w-fit">
-                        {investment[index].text2}
-                      </button>
-                    )}
-                  </motion.div>
-                </Reveal>
-              </AnimatePresence>
-            </div>
+          <div className="relative flex flex-col justify-center w-[441px] font-light text-[22px] gap-y-20">
+            {investment.map((text,idx)=> (
+              <Reveal key={idx} variants={slideInFromRight(0.2)}>
+              <div className="flex flex-col gap-6">
+                <p className="leading-tight">
+                  {text.text1}
+                </p>
+              
+                {text.text2 && (
+                  <button className="uppercase text-[14px] border-b w-fit">
+                    {text.text2}
+                  </button>
+                )}
+              </div>
+            </Reveal>))}
           </div>
         </div>
         <Reveal variants={slideInFromTop(0.2)}>
@@ -648,7 +623,7 @@ const page = () => {
           </p>
         </Reveal>
 
-        <div className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-18">
+        <div className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-12 lg:gap-3 text-[16px] lg:text-[22px]">
               <p className="w-60 lg:w-75 lg:mb-17">
