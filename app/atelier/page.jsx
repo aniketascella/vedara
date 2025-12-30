@@ -78,7 +78,7 @@ const page = () => {
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="hidden lg:flex justify-between gap-x-5 text-[16px]">
               <p className="">info@vedaracollective.ca</p>
-              <p className="hidden lg:flex uppercase">Toronto</p>
+              <p className="uppercase">Toronto</p>
             </div>
           </Reveal>
         </div>

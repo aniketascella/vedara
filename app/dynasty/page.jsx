@@ -50,7 +50,7 @@ const imageText =[
     text2: {
       txtLeft:"Invitation Only",
       txtRight:" Access",
-      width: "w-[195px] lg:w-[342px]",
+      width: "w-[150px] lg:w-[300px]",
     },
     image: "/dynasty/img6.png",
   },
@@ -58,13 +58,13 @@ const imageText =[
     text1: {
       txtLeft:"Confidential",
       txtRight:"NDA",
-      width: "w-[103px] lg:w-[218px]",
+      width: "w-[103px] md:w-[143px] lg:w-[218px]",
     },
     image: "/dynasty/img7.png",
     text2: {
       txtLeft:"Onboarding + ",
       txtRight:"Encryption",
-      width: "w-[143px] lg:w-[412px]",
+      width: "w-[143px] lg:w-[300px]",
     }
   },
   {
@@ -79,7 +79,7 @@ const imageText =[
     text2: {
       txtLeft:"Investor Profiling",
       txtRight:"& Matching",
-      width: "w-[159px] lg:w-[450px]",
+      width: "w-[159px] lg:w-[350px]",
     },
     image: "/dynasty/img9.png",
   },
@@ -92,7 +92,7 @@ const imageText =[
     text2:{
       txtLeft: "Concierge",
       txtRight: "Coordination",
-      width: "w-[128px] lg:w-[412px]",
+      width: "w-[128px] lg:w-[300px]",
     }
   },
   {
@@ -397,7 +397,7 @@ const page = () => {
       </section>
 
       <section ref={imagesRef} className='relative h-[700vh]'>
-        <div className="sticky top-0 flex flex-col justify-center items-center gap-5 lg:gap-37 w-screen h-screen py-35">
+        <div className="sticky top-0 flex flex-col justify-center items-center gap-5 lg:gap-37 w-screen h-screen lg:py-35">
           <div className="absolute -z-1 w-full h-full">
             <img
               src="/dynasty/img5.png"
@@ -407,7 +407,7 @@ const page = () => {
             />
           </div>
           <Reveal variants={slideInFromTop(0.2)}>
-            <p className="relative -top-60 text-center uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px]">
+            <p className="relative lg:text-center uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px]">
               A Private Ecosystem Engineered for Enduring Value
             </p>
           </Reveal>
@@ -422,16 +422,16 @@ const page = () => {
                 duration: 0.6,
                 ease: [0.25, 0.8, 0.25, 1],
               }}
-              className="absolute flex flex-col justify-center items-center gap-5 lg:gap-37"
+              className="flex flex-col justify-center items-center gap-5 lg:gap-37"
             >
 
               <div className="flex justify-center items-center gap-4 lg:gap-10">
                 {imageText[imageIndex].text1 &&(
-                  <h2 className={`${imageText[imageIndex].text1.width} lg:text-[28px]`}><span className={`${imageIndex===5?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtLeft}</span> <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtRight}</span></h2>
+                  <h2 className={`${imageText[imageIndex].text1.width} lg:text-[28px] font-extralight`}><span className={`${imageIndex===5?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtLeft}</span> <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtRight}</span></h2>
                 )}
                 <img src={imageText[imageIndex].image} alt="imageText" className="w-35 lg:w-53" />
                 {imageText[imageIndex].text2 && (
-                  <h2 className={`${imageText[imageIndex].text2.width} lg:text-[28px]`}><span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtLeft}</span> <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtRight}</span></h2>)}
+                  <h2 className={`${imageText[imageIndex].text2.width} lg:text-[28px] font-extralight`}><span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtLeft}</span> <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtRight}</span></h2>)}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -499,7 +499,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row-reverse lg:justify-between w-screen relative z-2 bg-black">
+        <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center w-screen relative z-2 bg-black">
           <div className="flex flex-col gap-3 w-screen lg:w-[470px] px-10 lg:px-0 py-21 lg:pt-39 lg:mr-40">
             <Reveal variants={slideInFromRight(0.2)}>
               <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">

@@ -50,42 +50,42 @@ export default function Navbar() {
       >
         <div className="flex gap-8">
 
-        <h1 className="text-[24px]">
-          VEDARA
-        </h1>
-        {isVisible && 
-          <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
-            <span
-              className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
-                active === "dynasty" ? "translate-x-full" : "translate-x-0"
-              }`}
-            />
-
-            <Link href={"/atelier"} className="hover:cursor-pointer">
-              <button
-                onClick={() => router.push("/atelier")}
-                className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
-                  active === "atelier" ? "text-white" : "text-[#b8b1a7]"
+          <h1 className="text-[24px]">
+            <Link href="/">VEDARA</Link>
+          </h1>
+          {isVisible && 
+            <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
+              <span
+                className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
+                  active === "dynasty" ? "translate-x-full" : "translate-x-0"
                 }`}
-              >
-                Atelier
-              </button> 
-            </Link>
+              />
 
-            <Link href={"/dynasty"} className="hover:cursor-pointer">
-              <button
-                onClick={() => router.push("/dynasty")}
-                className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
-                  active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
-                }`}
-              >
-                Dynasty
-              </button>
-            </Link>
-          </div>
-        }
-        {pathname==="/atelier" && <h2 className="lg:hidden text-[24px] italic">Atelier</h2>}
-        {pathname==="/dynasty" && <h2 className="lg:hidden text-[24px] italic">Dynasty</h2>}
+              <Link href={"/atelier"} className="hover:cursor-pointer">
+                <button
+                  onClick={() => router.push("/atelier")}
+                  className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                    active === "atelier" ? "text-white" : "text-[#b8b1a7]"
+                  }`}
+                >
+                  Atelier
+                </button> 
+              </Link>
+
+              <Link href={"/dynasty"} className="hover:cursor-pointer">
+                <button
+                  onClick={() => router.push("/dynasty")}
+                  className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                    active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
+                  }`}
+                >
+                  Dynasty
+                </button>
+              </Link>
+            </div>
+          }
+          {pathname==="/atelier" && <h2 className="lg:hidden text-[24px] italic">Atelier</h2>}
+          {pathname==="/dynasty" && <h2 className="lg:hidden text-[24px] italic">Dynasty</h2>}
         </div>
 
 
@@ -102,29 +102,28 @@ export default function Navbar() {
           <Link href="/contact"><p className="cursor-pointer">contact</p></Link>
         </motion.nav>
 
-        <button
+        {/* <button
           className="lg:hidden z-40 w-10 h-10 flex items-center justify-center focus:outline-none"
           onClick={() => setSidebarOpen((s) => !s)}
         >
-          <Image alt="menu" width={37} height={9} src="/menuIcon.svg" />
-        </button>
+        </button> */}
        
-        {scrolledPastVH && (
-          <AnimatePresence>
-            <motion.button
-              ref={btnRef}
-              key="box-btn" 
-              onClick={() => setSidebarOpen((s) => !s)}
-              initial={{ x: 0, opacity: 0, rotate: 0 }}
-              animate={{ x: 0, opacity: 1, rotate: sidebarOpen ? 180 : 0 }}
-              exit={{ x: -20, opacity: 0, }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className={`hidden z-40 lg:flex items-center justify-center w-6 h-6 backdrop-blur cursor-pointer focus:outline-none`}
-            > 
-              {sidebarOpen ? (<CloseIcon className="text-black" fontSize="large"/>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />)} 
-            </motion.button>
-          </AnimatePresence>
-        )}
+        <AnimatePresence>
+          <motion.button
+            ref={btnRef}
+            key="box-btn" 
+            onClick={() => setSidebarOpen((s) => !s)}
+            initial={{ x: 0, opacity: 0, rotate: 0 }}
+            animate={{ x: 0, opacity: 1, rotate: sidebarOpen ? 180 : 0 }}
+            exit={{ x: -20, opacity: 0, }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className={`z-40 ${scrolledPastVH ? `lg:flex`: `lg:hidden`} items-center justify-center w-6 h-6 backdrop-blur cursor-pointer focus:outline-none`}
+          > 
+            {sidebarOpen ? (
+              <CloseIcon className="text-black" fontSize="large"/>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />
+            )} 
+          </motion.button>
+        </AnimatePresence>
       </div>
 
       <AnimatePresence>
