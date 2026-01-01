@@ -14,6 +14,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --font-inter: var(--font-inter);
+  --breakpoint-xl: 106rem;
 }
 
 @media (prefers-color-scheme: dark) {

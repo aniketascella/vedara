@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, easeInOut } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import WhatWeDo from "./WhatWeDo";
 import { CARDS, SLIDES } from "./data";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
@@ -21,6 +21,45 @@ const page = () => {
     target: sectionRef,
     offset: ["start center", "end end"],
   });
+
+  const container1 = useRef(null);
+  const container2 = useRef(null);
+  const container3 = useRef(null);
+  const container4 = useRef(null);
+  const container5 = useRef(null);
+
+  const {scrollYProgress: section1} = useScroll({
+    target: container1,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section2} = useScroll({
+    target: container2,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section3} = useScroll({
+    target: container3,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section4} = useScroll({
+    target: container4,
+    offset: ["start end", "end start"]
+  });
+
+  const {scrollYProgress: section5} = useScroll({
+    target:container5,
+    offset:["start start", "end start"]
+  })
+
+  const s1 = useTransform(section1, [0,1], [0,-300]);
+  const s1bg= useTransform(section1, [0,1], [0,500]);
+  const s2 = useTransform(section2, [0,1], [0,-200]);
+  const s2bg = useTransform(section2, [0,1], [0,500]);
+  const s3 = useTransform(section3, [0,1], [0,-200]);
+  const s4 = useTransform(section4, [0,1], [0,-100]);
+  const s5 = useTransform(section5, [0,1], [0,-90]);
 
   const [index, setIndex] = useState(0);
 
@@ -60,14 +99,14 @@ const page = () => {
 
   return (
     <div className="text-white relative w-screen">
-      <section className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-center items-start gap-y-15">
+      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-center items-start gap-y-15">
         <Reveal variants={slideInFromRight(0.2)}>
-          <div className="lg:hidden flex justify-between w-screen px-10 text-[16px]">
+          <motion.div style={{y:s1}} className="lg:hidden flex justify-between w-screen px-10 text-[16px]">
             <p className="text-[18px]">Toronto</p>
             <p className="">info@vedaracollective.ca</p>
-          </div>
+          </motion.div>
         </Reveal>
-        <div className="flex w-screen justify-between items-center lg:items-start px-10 lg:px-30">
+        <motion.div style={{y:s1}} className="flex w-screen justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic">
               A cultural studio for the ultra-conscious, those who understand
@@ -81,12 +120,12 @@ const page = () => {
               <p className="uppercase">Toronto</p>
             </div>
           </Reveal>
-        </div>
+        </motion.div>
         <Reveal variants={slideInFromLeft(0.2)}>
-          <button className="flex justify-between items-center rounded-full backdrop-blur-[10px] py-4 pl-6 pr-5 text-[14px] lg:text-[16px] ml-10 lg:ml-30">
+          <motion.button style={{y:s1}} className="flex justify-between items-center rounded-full backdrop-blur-[10px] py-4 pl-6 pr-5 text-[14px] lg:text-[16px] ml-10 lg:ml-30">
             <p>Enter the World of Vedara</p>
             <ArrowForwardIosOutlinedIcon />
-          </button>
+          </motion.button>
         </Reveal>
       </section>
 
@@ -182,9 +221,9 @@ const page = () => {
         </div>
       </section>
 
-      <section className="bg-primary text-black py-30 px-6 lg:px-10 flex flex-col justify-center lg:items-center gap-y-10">
+      <section ref={container2} className="bg-primary text-black py-30 px-6 lg:px-10 flex flex-col justify-center lg:items-center gap-y-10">
 
-        <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-x-23 gap-y-4 mb-10">
+        <motion.div style={{y:s2}} className="flex flex-col-reverse lg:flex-row lg:items-center gap-x-23 gap-y-4 mb-10">
           <div className="lg:hidden text-right flex justify-end font-light w-full">
             <p className="w-[343px]">Your brand deserves to become a reference point, not another
             participant.</p>
@@ -217,33 +256,33 @@ const page = () => {
               </p>
             </Reveal>
           </div>
-        </div>
+        </motion.div>
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <p className="lg:text-center text-[16px] lg:w-[526px]">
+          <motion.p style={{y:s2}} className="lg:text-center text-[16px] lg:w-[526px]">
             Every brand we shape begins as an idea, then evolves into a Legacy a
             narrative powerful enough to influence culture, shape desire, <br />and
             endure long after its originator has stepped aside.
-          </p>
+          </motion.p>
         </Reveal>
         <Reveal variants={slideInFromBottom(0.2)}>
-          <p className="border-b border-black pb-1 w-34 text-[16px]">Share Your Vision</p>
+          <motion.p style={{y:s2}} className="border-b border-black pb-1 w-34 text-[16px]">Share Your Vision</motion.p>
         </Reveal>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-y-45 lg:gap-y-68 py-30">
+      <section ref={container3} className="flex flex-col justify-center items-center gap-y-45 lg:gap-y-68 py-30">
         <Reveal variants={slideInFromTop(0.2)}>
-          <div className="flex flex-col lg:text-center gap-7">
+          <motion.div style={{y:s3}} className="flex flex-col lg:text-center gap-7">
             <h1 className="text-[16px] lg:text-[22px] italic">Our Approach</h1>
             <p className="w-99 text-[18px] lg:w-160 lg:text-[28px]">
               We create a complete universe identity, narrative, digital
               presence, and experience. <br /> So your story is not just seen, but
               felt, remembered, and passed down.
             </p>
-          </div>
+          </motion.div>
         </Reveal>
 
-        <div className="flex flex-row justify-between gap-x-4 lg:gap-x-20">
+        <motion.div style={{y:s3}} className="flex flex-row justify-between gap-x-4 lg:gap-x-20">
           <h1 className="text-[22px] font-extralight">
             <Reveal variants={slideInFromLeft(0.2)}>
               [01]
@@ -273,9 +312,9 @@ const page = () => {
               className="hidden lg:block bottom-24 relative"
             />
           </Reveal>
-        </div>
+        </motion.div>
 
-        <div className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
+        <motion.div style={{y:s3}} className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromRight(0.2)}>
             <h1 className="text-[22px] font-extralight">[02]</h1>
           </Reveal>
@@ -303,9 +342,9 @@ const page = () => {
               className="hidden lg:block top-24 relative"
             />
           </Reveal>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-row justify-between gap-x-0 lg:gap-x-25 w-screen lg:w-auto">
+        <motion.div style={{y:s3}} className="flex flex-row justify-between gap-x-0 lg:gap-x-25 w-screen lg:w-auto">
           <h1 className="text-[22px] font-extralight">
             <Reveal variants={slideInFromLeft(0.2)}>
               [03]
@@ -333,9 +372,9 @@ const page = () => {
               className="hidden lg:block bottom-24 relative"
             />
           </Reveal>
-        </div>
+        </motion.div>
 
-        <div className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
+        <motion.div style={{y:s3}} className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromRight(0.2)}>
             <h1 className="text-[22px] font-extralight">[04]</h1>
           </Reveal>
@@ -361,9 +400,9 @@ const page = () => {
               className="hidden lg:block top-24 relative"
             />
           </Reveal>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-row gap-x-4 lg:gap-x-25">
+        <motion.div style={{y:s3}} className="flex flex-row gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h1 className="text-[22px] font-extralight">[05]</h1>
           </Reveal>
@@ -389,11 +428,11 @@ const page = () => {
               className="hidden lg:block bottom-24 relative"
             />
           </Reveal>
-        </div>
+        </motion.div>
       </section>
 
-      <section className="flex flex-col gap-y-11 lg:flex-row w-screen bg-primary text-black">
-        <div className="flex flex-col w-full h-[40vh] lg:w-1/2 lg:h-full px-[6vw] lg:px-23 pt-12 lg:pt-23 gap-y-8">
+      <section ref={container4} className="flex flex-col gap-y-11 lg:flex-row w-screen bg-primary text-black">
+        <motion.div style={{y:s4}} className="flex flex-col w-full h-[40vh] lg:w-1/2 lg:h-full px-[6vw] lg:px-23 pt-12 lg:pt-23 gap-y-8">
           <Reveal variants={slideInFromTop(0.2)}>
             <h2 className="italic text-[18px] lg:text-[22px]">
               Featured Projects
@@ -414,7 +453,7 @@ const page = () => {
               Explore All Projects
             </p>
           </Reveal>
-        </div>
+        </motion.div>
 
         <div className="relative w-full lg:w-1/2  lg:h-screen overflow-hidden">
           <Reveal variants={slideInFromRight(0.2)}>
@@ -441,19 +480,19 @@ const page = () => {
       </section>
 
 
-      <section className="flex flex-col justify-center items-center gap-y-25 pt-30 pb-60">
+      <section ref={container5} className="flex flex-col justify-center items-center gap-y-25 pt-30 pb-60">
         <Reveal variants={slideInFromTop(0.2)}>
-          <div className="flex flex-col justify-center items-center text-center gap-y-7">
+          <motion.div style={{y:s5}} className="flex flex-col justify-center items-center text-center gap-y-7">
             <p className="text-[22px]">Blogs</p>
             <p className="w-100 lg:w-150 text-[28px]">
               Where perspective becomes power, and knowledge becomes a creative
               asset.
             </p>
             <p className="w-25 border-b border-white pb-1">Explore</p>
-          </div>
+          </motion.div>
         </Reveal>
 
-        <div className="relative flex items-center justify-center lg:hidden">
+        <motion.div style={{y:s5}} className="relative flex items-center justify-center lg:hidden">
           {/* LEFT ARROW */}
           <button
             onClick={() => paginate(-1)}
@@ -512,9 +551,9 @@ const page = () => {
           >
             <ArrowForwardIosOutlinedIcon/>
           </button>
-        </div>
+        </motion.div>
 
-        <div className="hidden lg:flex gap-6">
+        <motion.div style={{y:s5}} className="hidden lg:flex gap-6">
           {CARDS.map((card,idx) => (
             <Reveal variants={slideInFromLeft(0.2 + (idx)/5)} key={idx}>
               <div className="flex flex-col w-[396px] h-[566px] p-10 gap-y-13 relative">
@@ -536,7 +575,7 @@ const page = () => {
               </div>
             </Reveal>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <Footer/>

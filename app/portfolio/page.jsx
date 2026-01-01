@@ -4,7 +4,8 @@ import bgImg from "../../public/portfolio/bgImg.png";
 import Footer from "@/components/Footer";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowForwardOutlined } from "@mui/icons-material";
+import Reveal from "@/utils/Reveal";
+import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import StickyPanelScroller from "./StickyPanelScroller";
 
 const page = () => {
@@ -86,27 +87,35 @@ const page = () => {
           />
         </motion.div>
 
-        <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[18px]">
-          info@vedaracollective.ca
-        </motion.p>
+        <Reveal variants={slideInFromRight(0.2)}>
+          <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[18px]">
+            info@vedaracollective.ca
+          </motion.p>
+        </Reveal>
 
         <motion.div style={{y:s1}} className="flex flex-col gap-y-20 pl-15 lg:flex-row lg:justify-between lg:items-center w-screen">
-          <div className="flex flex-col">
-            <h1 className="text-[38px]">Our Portfolio</h1>
-            <p className="text-[16px]">Work That Outlives Seasons</p>
-          </div>
-          <p className="w-[300px] md:w-[560px] lg:pr-15 font-light lg:text-right text-[16px]">
-            Each project is a world we constructed with intention. Here strategy
-            becomes culture, design becomes memory, and vision becomes
-            permanence.
-          </p>
+          <Reveal variants={slideInFromLeft(0.2)}>
+            <div className="flex flex-col"> 
+              <h1 className="text-[38px]">Our Portfolio</h1>
+              <p className="text-[16px]">Work That Outlives Seasons</p>
+            </div>
+          </Reveal>
+          <Reveal variants={slideInFromRight(0.2)}>
+            <p className="w-[300px] md:w-[560px] lg:pr-15 font-light lg:text-right text-[16px]">
+              Each project is a world we constructed with intention. Here strategy
+              becomes culture, design becomes memory, and vision becomes
+              permanence.
+            </p>
+          </Reveal>
         </motion.div>
 
-        <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12">
-          <p>Branding 09</p>
-          <p>Digital Marketing 03</p>
-          <p>Development 05</p>
-        </motion.div>
+        <Reveal variants={slideInFromLeft(0.2)}>
+          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12">
+            <p>Branding 09</p>
+            <p>Digital Marketing 03</p>
+            <p>Development 05</p>
+          </motion.div>
+        </Reveal>
       </section>
 
       {/* section 2 */}
@@ -177,15 +186,17 @@ const page = () => {
       <section className="flex flex-col justify-center items-center">
         <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20">
           <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[40px] uppercase">
-            <p>All Projects</p>
-            <p>01</p>
+            <Reveal variants={slideInFromLeft(0.2)}><p>All Projects</p></Reveal>
+            <Reveal variants={slideInFromRight(0.2)}><p>01</p></Reveal>
           </div>
 
+          <Reveal variants={slideInFromRight(0.2)}>
           <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[16px]">
             Every identity is built to endure, designed with the precision of an
             archivist and the vision of a futurist. What emerges is not a
             “brand,” but a cultural marker.
           </p>
+          </Reveal>
         </div>
       <StickyPanelScroller panels={
         [
@@ -256,112 +267,114 @@ const page = () => {
 
       {/* section 6 */}
       <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative bg-black overflow-hidden">
-        <motion.p style={{y:s3}} className="font-editorial text-[36px]">FAQs</motion.p>
+        <Reveal variants={slideInFromTop(0.2)}><motion.p style={{y:s3}} className="font-editorial text-[36px]">FAQs</motion.p></Reveal>
 
-        <motion.section style={{y:s3}} className="w-full max-w-5xl mx-auto px-6 py-12 text-gray-200">
-          <div className="space-y-8">
-            {ITEMS.map((item, i) => {
-              const indexLabel = String(i + 1).padStart(2, "0");
-              const isOpen = openIndex === i;
+        <Reveal variants={slideInFromBottom(0.2)}>
+          <motion.section style={{y:s3}} className="w-full max-w-5xl mx-auto px-6 py-12 text-gray-200">
+            <div className="space-y-8">
+              {ITEMS.map((item, i) => {
+                const indexLabel = String(i + 1).padStart(2, "0");
+                const isOpen = openIndex === i;
 
-              return (
-                <div key={i} className="relative">
-                  {/* top divider */}
-                  <div className="border-t border-gray-600/40"></div>
+                return (
+                  <div key={i} className="relative">
+                    {/* top divider */}
+                    <div className="border-t border-gray-600/40"></div>
 
-                  <div
-                    className="flex items-start gap-6 py-8"
-                  >
-                    {/* Left number */}
-                    <div className="w-12 shrink-0">
-                      <div className="text-2xl font-[\'PlayfairDisplay\',serif] italic text-gray-300">
-                        {indexLabel}
+                    <div
+                      className="flex items-start gap-6 py-8"
+                    >
+                      {/* Left number */}
+                      <div className="w-12 shrink-0">
+                        <div className="text-2xl font-[\'PlayfairDisplay\',serif] italic text-gray-300">
+                          {indexLabel}
+                        </div>
+                      </div>
+
+                      {/* Content area (title + body) */}
+                      <div className="flex-1 min-w-0">
+                        <button
+                          type="button"
+                          onClick={() => toggle(i)}
+                          aria-expanded={isOpen}
+                          aria-controls={`faq-panel-${i}`}
+                          className="flex items-start w-full text-left gap-4 focus:outline-none"
+                        >
+                          <p className="flex-1 text-lg md:text-xl leading-snug">
+                            {item.title}
+                          </p>
+
+                          {/* Icon */}
+                          <div className="shrink-0">
+                            <motion.span
+                              animate={{ rotate: isOpen ? 45 : 0 }}
+                              transition={{
+                                type: "spring",
+                                stiffness: 300,
+                                damping: 22,
+                              }}
+                              className="w-7 h-7 flex items-center justify-center"
+                              aria-hidden="true"
+                            >
+                              {/* plus icon made with two lines (SVG) so rotation -> cross */}
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                className="text-gray-300"
+                              >
+                                <path
+                                  d="M12 5v14"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                                <path
+                                  d="M5 12h14"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </motion.span>
+                          </div>
+                        </button>
+
+                        {/* Expandable panel */}
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              id={`faq-panel-${i}`}
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.35, ease: "easeInOut" }}
+                              className="overflow-hidden mt-4 text-sm leading-relaxed"
+                            >
+                              {/* content paragraph(s) */}
+                              {item.body.split("\n").map((para, idx) => (
+                                <p
+                                  key={idx}
+                                  className={idx === 0 ? "mb-3" : "mb-2"}
+                                >
+                                  {para}
+                                </p>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     </div>
-
-                    {/* Content area (title + body) */}
-                    <div className="flex-1 min-w-0">
-                      <button
-                        type="button"
-                        onClick={() => toggle(i)}
-                        aria-expanded={isOpen}
-                        aria-controls={`faq-panel-${i}`}
-                        className="flex items-start w-full text-left gap-4 focus:outline-none"
-                      >
-                        <p className="flex-1 text-lg md:text-xl leading-snug">
-                          {item.title}
-                        </p>
-
-                        {/* Icon */}
-                        <div className="shrink-0">
-                          <motion.span
-                            animate={{ rotate: isOpen ? 45 : 0 }}
-                            transition={{
-                              type: "spring",
-                              stiffness: 300,
-                              damping: 22,
-                            }}
-                            className="w-7 h-7 flex items-center justify-center"
-                            aria-hidden="true"
-                          >
-                            {/* plus icon made with two lines (SVG) so rotation -> cross */}
-                            <svg
-                              viewBox="0 0 24 24"
-                              width="20"
-                              height="20"
-                              fill="none"
-                              stroke="currentColor"
-                              className="text-gray-300"
-                            >
-                              <path
-                                d="M12 5v14"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M5 12h14"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </motion.span>
-                        </div>
-                      </button>
-
-                      {/* Expandable panel */}
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            id={`faq-panel-${i}`}
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.35, ease: "easeInOut" }}
-                            className="overflow-hidden mt-4 text-sm leading-relaxed"
-                          >
-                            {/* content paragraph(s) */}
-                            {item.body.split("\n").map((para, idx) => (
-                              <p
-                                key={idx}
-                                className={idx === 0 ? "mb-3" : "mb-2"}
-                              >
-                                {para}
-                              </p>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
 
-          <div className="mt-2 border-t border-gray-600/40"></div>
-        </motion.section>
+            <div className="mt-2 border-t border-gray-600/40"></div>
+          </motion.section>
+        </Reveal>
       </motion.section>
 
       {/* footer */}

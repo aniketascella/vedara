@@ -2,7 +2,7 @@
 
 import Footer from '@/components/Footer';
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence ,useScroll } from "framer-motion";
+import { motion, AnimatePresence ,useScroll, useTransform } from "framer-motion";
 import Image from 'next/image';
 import {InvestorForm, VisionForm} from './components/Forms';
 import Reveal from '@/utils/Reveal';
@@ -125,6 +125,38 @@ const page = () => {
   const scrollRef = useRef(null);
   const imagesRef = useRef(null);
 
+  const container1 = useRef(null);
+  const container2 = useRef(null);
+  const container3 = useRef(null);
+  const container4 = useRef(null);
+
+  const {scrollYProgress: section1} = useScroll({
+    target: container1,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section2} = useScroll({
+    target: container2,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section3} = useScroll({
+    target: container3,
+    offset: ["start start", "end start"]
+  });
+
+  const {scrollYProgress: section4} = useScroll({
+    target: container4,
+    offset: ["start end", "end start"]
+  });
+
+  const s1 = useTransform(section1, [0,1], [0,-300]);
+  const s1bg= useTransform(section1, [0,1], [0,500]);
+  const s2 = useTransform(section2, [0,1], [0,-200]);
+  const s2bg = useTransform(section2, [0,1], [0,500]);
+  const s3 = useTransform(section3, [0,1], [0,-200]);
+  const s4 = useTransform(section4, [0,1], [0,-70]);
+
   const {scrollYProgress: images} =useScroll({
     target: imagesRef,
     offset:["start start", "end end"]
@@ -171,8 +203,7 @@ const page = () => {
         });
       },
       {
-        rootMargin: "-45% 0px -45% 0px",
-        // threshold: 0,
+        rootMargin: "-45% 0px -45% 0px"
       }
     );
 
@@ -186,28 +217,28 @@ const page = () => {
 
   return (
     <div className='text-white w-screen'>
-      <section className="flex flex-col justify-center items-center gap-5 w-screen py-50 relative">
-        <div className="absolute -z-1 w-full h-full">
+      <section ref={container1} className="flex flex-col justify-center items-center gap-5 w-screen py-50 relative">
+        <motion.div style={{y:s1bg}} className="absolute -z-1 w-full h-full">
           <img
             src="/dynasty/heroImg.png"
             alt="hero"
             className="w-full h-full will-change-transform object-center object-cover"
             style={{ transformOrigin: "center center" }}
           />
-        </div>
+        </motion.div>
         <Reveal variants={slideInFromTop(0.2)}>
-          <h1 className='w-screen lg:w-[720px] lg:text-center text-[26px] lg:text-[36px] px-10 lg:px-0'>
+          <motion.h1 style={{y:s1}} className='w-screen lg:w-[720px] lg:text-center text-[26px] lg:text-[36px] px-10 lg:px-0'>
             Vedara selects <span className='italic font-semibold'>creations</span> that hold within them the <span className="italic font-semibold">architecture</span> of a civilization yet to emerge
-          </h1>
+          </motion.h1>
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <p className='w-screen lg:w-[579px] lg:text-center text-[16px] lg:text-[18px] px-10 lg:px-0 font-light'>
+        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[16px] lg:text-[18px] px-10 lg:px-0 font-light'>
           Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
-        </p>
+        </motion.p>
         </Reveal>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
+        <motion.div style={{y:s1}} className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-14 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
               <p className='w-[191px] lg:w-[284px] font-medium text-[16px] lg:text-[22px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
@@ -221,12 +252,12 @@ const page = () => {
               <button className='w-43 lg:w-60 backdrop-blur-2xl rounded-full text-[14px] lg:text-[18px] px-7 py-3 lg:px-12'> <h3 className='lg:italic font-extralight'>Enter the Threshold</h3></button>
             </div>
           </Reveal>
-        </div>
+        </motion.div>
 
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-5 w-screen py-35 relative bg-primary text-black">
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:w-screen gap-y-6 px-15 lg:px-23">
+      <section ref={container2} className="flex flex-col justify-center items-center gap-5 w-screen py-35 relative bg-primary text-black">
+        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row lg:justify-between lg:w-screen gap-y-6 px-15 lg:px-23">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-8">
               <p className="uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[445px] lg:w-[674px] leading-snug">
@@ -242,11 +273,11 @@ const page = () => {
               Every project is vetted for meaning, resonance, and a future measured in decades.
             </p>
           </Reveal>
-        </div>
+        </motion.div>
 
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <div className=" min-h-screen mt-21 lg:mt-34 lg:py-24">
+          <motion.div style={{y:s2}} className=" min-h-screen mt-21 lg:mt-34 lg:py-24">
             {/* Header */}
             <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[34px] leading-tight mb-24">
               The Dynasty Is Governed By Principles
@@ -256,7 +287,7 @@ const page = () => {
 
             <div className="grid grid-cols-2">
               {/* LEFT – Scrollable principles */}
-              <div className="relative w-screen lg:w-127 lg:h-[70vh] overflow-y-scroll">
+              <div className="relative w-screen lg:w-127 lg:h-full overflow-y-scroll">
                 <div className="absolute left-10 lg:left-0 top-0 h-full w-0.5 bg-black/10">
                   <div
                     className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
@@ -267,7 +298,7 @@ const page = () => {
                   />
                 </div>
 
-                <div className="flex flex-col gap-28 pl-10">
+                <div className="flex flex-col gap-28 pl-10 py-10">
                   {principles.map((item, i) => (
                     <div
                       key={item.id}
@@ -314,18 +345,18 @@ const page = () => {
               </div>
 
 
-              <div className="hidden lg:block sticky top-20 h-fit">
+              <div className="hidden lg:block sticky top-[0.7vh] h-fit">
                 <div className="relative w-[435px] h-[420px] rounded-xl overflow-hidden">
                   <AnimatePresence>
                     <motion.div
                       key={principles[activeIndex].image}
-                      className="absolute inset-0"
+                      className="absolute inset-0 rounded-xl"
                       initial={{ y: direction === 1 ? "100%" : "-100%", }}
                       animate={{ y: "0%" }}
                       exit={{ y: direction === 1 ? "-20%" : "20%", }}
                       transition={{
                         duration: 1.5,
-                        ease: [0.22, 1, 0.36, 1],
+                        ease: [0.22, 1.5, 0.36, 1],
                       }}
                     >
                       <Image
@@ -341,22 +372,22 @@ const page = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Reveal>
       </section>
 
-      <section className='flex flex-col justify-center py-35 gap-7 lg:gap-11 pl-8 md:pl-19 lg:pl-37'>
+      <section ref={container3} className='flex flex-col justify-center py-35 gap-7 lg:gap-11 pl-8 md:pl-19 lg:pl-37'>
         <Reveal variants={slideInFromTop(0.2)}>
-          <p className="uppercase w-[300px] md:w-100 lg:w-202 text-[20px] md:text-[24px] lg:text-[36px] pl-8 md:pl-19 lg:pl-37 leading-tight">
+          <motion.p style={{y:s3}} className="uppercase w-[300px] md:w-100 lg:w-202 text-[20px] md:text-[24px] lg:text-[36px] pl-8 md:pl-19 lg:pl-37 leading-tight">
             Where Brands Become Cultural Contributors, Not Market Participants
-          </p>
+          </motion.p>
         </Reveal>
         <Reveal variants={slideInFromTop(0.2)}>
-          <p className="lg:w-122 text-[14px] lg:text-[16px] pl-8 md:pl-19 lg:pl-37">
+          <motion.p style={{y:s3}} className="lg:w-122 text-[14px] lg:text-[16px] pl-8 md:pl-19 lg:pl-37">
             Vedara shapes identities that influence categories, shift language, and imprint on collective memory.
-          </p>
+          </motion.p>
         </Reveal>
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-12">
+        <motion.div style={{y:s3}} className="flex flex-col lg:flex-row justify-center items-center gap-12">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="bg-primary flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/img2.png" alt="img2" className="relative w-full object-cover" />
@@ -393,7 +424,7 @@ const page = () => {
               </div>
             </div>
           </Reveal>
-        </div>
+        </motion.div>
       </section>
 
       <section ref={imagesRef} className='relative h-[700vh]'>
@@ -616,14 +647,14 @@ const page = () => {
       </section>
 
 
-      <section className="flex flex-col justify-center items-start gap-12 lg:gap-18 pl-10 lg:pl-65 py-20 lg:pt-27 lg:pb-55">
+      <section ref={container4} className="flex flex-col justify-center items-start gap-12 lg:gap-18 pl-10 lg:pl-65 py-20 lg:pt-27 lg:pb-55">
         <Reveal variants={slideInFromTop(0.2)}>
-          <p className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
+          <motion.p style={{y:s4}} className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
             Confidentiality & Access Protocol
-          </p>
+          </motion.p>
         </Reveal>
 
-        <div className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
+        <motion.div style={{y:s4}} className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-12 lg:gap-3 text-[16px] lg:text-[22px]">
               <p className="w-60 lg:w-75 lg:mb-17">
@@ -645,7 +676,7 @@ const page = () => {
           <Reveal variants={slideInFromLeft(0.2)}>
             <img src="/dynasty/img15.png" alt="img15" className="w-[300px] md:w-115" />
           </Reveal>
-        </div>
+        </motion.div>
       </section>
 
       <Footer/>
