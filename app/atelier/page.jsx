@@ -99,24 +99,24 @@ const page = () => {
 
   return (
     <div className="text-white relative w-screen">
-      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-center items-start gap-y-15">
+      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-15 pb-20">
         <Reveal variants={slideInFromRight(0.2)}>
           <motion.div style={{y:s1}} className="lg:hidden flex justify-between w-screen px-10 text-[16px]">
             <p className="text-[18px]">Toronto</p>
-            <p className="">info@vedaracollective.ca</p>
+            <p className="">info@vedaracollective.com</p>
           </motion.div>
         </Reveal>
         <motion.div style={{y:s1}} className="flex w-screen justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic">
+            <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic leading-tight">
               A cultural studio for the ultra-conscious, those who understand
               that a brand is a contribution to the ongoing narrative of human
               excellence.
             </h3>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="hidden lg:flex justify-between gap-x-5 text-[16px]">
-              <p className="">info@vedaracollective.ca</p>
+            <div className="hidden lg:flex flex-col justify-between items-end gap-y-5 text-[16px]">
+              <p className="">info@vedaracollective.com</p>
               <p className="uppercase">Toronto</p>
             </div>
           </Reveal>
@@ -155,7 +155,7 @@ const page = () => {
             </div>
 
             {/* CARDS */}
-            <div className="flex flex-col lg:mr-20 gap-y-4 justify-center items-end">
+            <div className="flex flex-col xl:mr-95 lg:mr-50 gap-y-4 justify-center items-end">
               <div className="flex justify-between w-[385px] lg:w-[952px]">
                 <p>Ideal Clients</p>
                 <div className="flex gap-4">

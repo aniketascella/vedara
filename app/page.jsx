@@ -83,8 +83,8 @@ export default function Home() {
           <button className="w-40 lg:w-180 backdrop-blur-[10px]">
             <Link href='/dynasty'>
               <div className="flex justify-between items-center pl-15 pr-13 py-6">
-                <motion.div className="flex flex-col gap-y-1"
-                  whileHover={{ scale: 1.15 }}
+                <motion.div className="flex flex-col gap-y-1 origin-left"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <p className="text-[22px] text-left">Vedara Dynasty</p>
@@ -98,8 +98,8 @@ export default function Home() {
           <button className="w-50 lg:w-180 backdrop-blur-[10px]">
             <Link href='/atelier'>
               <div className="flex justify-between items-center pl-15 pr-13 py-6">
-                <motion.div className="flex flex-col gap-y-1"
-                  whileHover={{ scale: 1.15 }}
+                <motion.div className="flex flex-col gap-y-1 origin-left"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <p className="text-[22px] text-left">Vedara Atelier</p>

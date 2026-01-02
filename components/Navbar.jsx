@@ -54,28 +54,28 @@ export default function Navbar() {
             <Link href="/">VEDARA</Link>
           </h1>
           {isVisible && 
-            <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1">
+            <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1 hover:cursor-pointer">
               <span
-                className={`absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
+                className={`hover:cursor-pointer absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
                   active === "dynasty" ? "translate-x-full" : "translate-x-0"
                 }`}
               />
 
-              <Link href={"/atelier"} className="hover:cursor-pointer">
+              <Link href="/atelier" className="hover:cursor-pointer">
                 <button
                   onClick={() => router.push("/atelier")}
                   className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
                     active === "atelier" ? "text-white" : "text-[#b8b1a7]"
-                  }`}
+                  } hover:cursor-pointer`}
                 >
                   Atelier
                 </button> 
               </Link>
 
-              <Link href={"/dynasty"} className="hover:cursor-pointer">
+              <Link href="/dynasty" className="hover:cursor-pointer">
                 <button
                   onClick={() => router.push("/dynasty")}
-                  className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                  className={`hover:cursor-pointer relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
                     active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
                   }`}
                 >
@@ -90,23 +90,17 @@ export default function Navbar() {
 
 
         <motion.nav
-          initial={false}
+          initial={{opacity:1}}
           className="hidden lg:flex items-center gap-5 uppercase"
           animate={{opacity: scrolledPastVH?0:1}}
-          transition={{ duration: 0.5, ease:"easeOut"}}
+          transition={{ duration: 0.8, ease:"easeOut"}}
         >
           <Link href="/portfolio"><p className="cursor-pointer">case study</p></Link>
-          {/* <Link href="/atelier"><p className="cursor-pointer">studio</p></Link> */}
-          {/* <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link> */}
-          {/* <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link> */}
+          <Link href="/atelier"><p className="cursor-pointer">studio</p></Link>
+          <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link>
+          <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link>
           <Link href="/contact"><p className="cursor-pointer">contact</p></Link>
         </motion.nav>
-
-        {/* <button
-          className="lg:hidden z-40 w-10 h-10 flex items-center justify-center focus:outline-none"
-          onClick={() => setSidebarOpen((s) => !s)}
-        >
-        </button> */}
        
         <AnimatePresence>
           <motion.button
@@ -143,45 +137,45 @@ export default function Navbar() {
             <nav className="p-15 flex flex-col gap-6 text-[30px] font-editorial italic text-neutral-500">
               <Link href="/atelier">
                 <motion.p
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
-                  className="hover:text-black"
+                  className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
                   Studio
                 </motion.p>
               </Link>
               <Link href="/portfolio">
                 <motion.p 
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
-                  className="hover:text-black"
+                  className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
                   Case Study
                 </motion.p>
               </Link>
               <Link href="/dynasty">
                 <motion.p
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
-                  className="hover:text-black"
+                  className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
                   Dynasty
                 </motion.p>
               </Link>
               <Link href="/blogs">
                 <motion.p
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
-                  className="hover:text-black"
+                  className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
                   Blogs
                 </motion.p>
               </Link>
               <Link href="/contact">
                 <motion.p
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
-                  className="hover:text-black"
+                  className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
                   Contact
                 </motion.p>

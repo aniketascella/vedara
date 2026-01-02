@@ -77,7 +77,7 @@ const page = () => {
   return (
     <div>
       {/* section hero */}
-      <section ref={container1} className="flex flex-col justify-start pt-100 items-start w-screen h-[150vh] relative overflow-hidden">
+      <section ref={container1} className="flex flex-col justify-end items-start w-screen h-screen relative overflow-hidden">
         <motion.div style={{y:s1bg}} className="parallax-bg absolute inset-0 -z-1 w-full h-full">
           <img
             src="/portfolio/heroImg.png"
@@ -89,7 +89,7 @@ const page = () => {
 
         <Reveal variants={slideInFromRight(0.2)}>
           <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[18px]">
-            info@vedaracollective.ca
+            info@vedaracollective.com
           </motion.p>
         </Reveal>
 
@@ -110,7 +110,7 @@ const page = () => {
         </motion.div>
 
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12">
+          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20">
             <p>Branding 09</p>
             <p>Digital Marketing 03</p>
             <p>Development 05</p>

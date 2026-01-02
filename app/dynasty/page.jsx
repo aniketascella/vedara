@@ -427,7 +427,7 @@ const page = () => {
         </motion.div>
       </section>
 
-      <section ref={imagesRef} className='relative h-[700vh]'>
+      <section ref={imagesRef} className='relative h-[490vh]'>
         <div className="sticky top-0 flex flex-col justify-center items-center gap-5 lg:gap-37 w-screen h-screen lg:py-35">
           <div className="absolute -z-1 w-full h-full">
             <img
@@ -470,8 +470,8 @@ const page = () => {
         </div>
       </section>
 
-      <section className="flex flex-col text-white w-screen lg:h-[200vh]">
-        <div className="lg:sticky lg:top-0 flex flex-col lg:flex-row lg:justify-between lg:items-center w-screen">
+      <section className="flex flex-col text-white w-screen">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-screen">
           <div className="flex flex-col gap-3 w-screen lg:w-[502px] px-10 lg:pl-27 py-21 lg:pb-39">
             <Reveal variants={slideInFromLeft(0.2)}>
               <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">
