@@ -2,7 +2,7 @@
 
 import Footer from '@/components/Footer';
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence ,useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence ,useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import Image from 'next/image';
 import {InvestorForm, VisionForm} from './components/Forms';
 import Reveal from '@/utils/Reveal';
@@ -120,8 +120,9 @@ const page = () => {
   const formRef2 = useRef(null);
   const itemRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const prevIndexRef = useRef(0);
+  const prevIndex = useRef(0);
   const [direction, setDirection] = useState(1);
+  const sectionRef = useRef(null);
   const scrollRef = useRef(null);
   const imagesRef = useRef(null);
 
@@ -162,6 +163,11 @@ const page = () => {
     offset:["start start", "end end"]
   })
 
+  const { scrollYProgress } = useScroll({
+  target: sectionRef,
+  offset: ["start start", "end end"],
+});
+
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
@@ -187,33 +193,48 @@ const page = () => {
     return () => document.removeEventListener("mousedown", onClick);
   }, [openForm1, openForm2]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const nextIndex = Number(entry.target.dataset.index);
-            const prevIndex = prevIndexRef.current;
-            if (nextIndex !== prevIndex) {
-              setDirection(nextIndex > prevIndex ? 1 : -1);
-              prevIndexRef.current = nextIndex;
-              setActiveIndex(nextIndex);
-            }
-          }
-        });
-      },
-      {
-        rootMargin: "-45% 0px -45% 0px"
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           const nextIndex = Number(entry.target.dataset.index);
+  //           const prevIndex = prevIndexRef.current;
+  //           if (nextIndex !== prevIndex) {
+  //             setDirection(nextIndex > prevIndex ? 1 : -1);
+  //             prevIndexRef.current = nextIndex;
+  //             setActiveIndex(nextIndex);
+  //           }
+  //         }
+  //       });
+  //     },
+  //     {
+  //       rootMargin: "-45% 0px -45% 0px"
+  //     }
+  //   );
 
-    itemRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  //   itemRefs.current.forEach((el) => el && observer.observe(el));
+  //   return () => observer.disconnect();
+  // }, []);
 
   const total = principles.length;
   const segmentHeight = 100 / total;
   const segmentTop = activeIndex * segmentHeight;
+
+useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  const total = principles.length;
+
+  const index = Math.min(
+    total - 1,
+    Math.floor(latest * total)
+  );
+
+  if (index !== prevIndex.current) {
+    setDirection(index > prevIndex.current ? 1 : -1);
+    prevIndex.current = index;
+    setActiveIndex(index);
+  }
+});
 
   return (
     <div className='text-white w-screen'>
@@ -257,7 +278,7 @@ const page = () => {
       </section>
 
       <section ref={container2} className="flex flex-col justify-center items-center gap-5 w-screen py-35 relative bg-primary text-black">
-        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row lg:justify-between lg:w-screen gap-y-6 px-15 lg:px-23">
+        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row lg:justify-between lg:w-full gap-y-6 px-15 lg:px-23">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-8">
               <p className="uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[445px] lg:w-[674px] leading-snug">
@@ -277,102 +298,104 @@ const page = () => {
 
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.div style={{y:s2}} className=" min-h-screen mt-21 lg:mt-34 lg:py-24">
-            {/* Header */}
-            <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[34px] leading-tight mb-24">
-              The Dynasty Is Governed By Principles
-              <br />
-              That Protect Purity, Rarity, And Meaning.
-            </p>
+        <section ref={sectionRef} className="relative h-[250vh]">
+          <div className="sticky top-0 h-screen overflow-hidden">
+            <motion.div className="h-auto mt-0 lg:mt-10 py-5">
+              <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[34px] leading-tight mb-24">
+                The Dynasty Is Governed By Principles
+                <br />
+                That Protect Purity, Rarity, And Meaning.
+              </p>
 
-            <div className="grid grid-cols-2">
-              {/* LEFT – Scrollable principles */}
-              <div className="relative w-screen lg:w-127 lg:h-full overflow-y-scroll">
-                <div className="absolute left-10 lg:left-0 top-0 h-full w-0.5 bg-black/10">
-                  <div
-                    className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
-                    style={{
-                      height: `${segmentHeight}%`,
-                      top: `${segmentTop}%`,
-                    }}
-                  />
-                </div>
-
-                <div className="flex flex-col gap-28 pl-10 py-10">
-                  {principles.map((item, i) => (
+              <div className="grid grid-cols-2">
+                <div className="relative w-screen lg:w-127 lg:h-full overflow-y-scroll">
+                  <div className="absolute left-10 lg:left-0 top-0 h-full w-0.5 bg-black/10">
                     <div
-                      key={item.id}
-                      ref={(el) => (itemRefs.current[i] = el)}
-                      data-index={i}
-                      className="flex flex-col lg:flex-row gap-6 items-start pl-10"
-                    >
-                      <div className="flex gap-4">
-                        <span
-                          className={`text-sm transition-opacity duration-300 ${
-                            activeIndex === i ? "text-black" : "text-black/30"
-                          }`}
-                        >
-                          ({item.id})
-                        </span>
+                      className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
+                      style={{
+                        height: `${segmentHeight}%`,
+                        top: `${segmentTop}%`,
+                      }}
+                    />
+                  </div>
 
-                        <p
-                          className={` text-[16px] leading-relaxed transition-opacity duration-300 ${
-                            activeIndex === i ? "opacity-100" : "opacity-30"
-                          }`}
-                        >
-                          {item.title}
-                        </p>
-                      </div>
-
+                  <div className="flex flex-col gap-28 pl-10 py-10">
+                    {principles.map((item, i) => (
                       <div
-                        className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
-                          activeIndex === i
-                            ? "max-h-60 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        key={item.id}
+                        ref={(el) => (itemRefs.current[i] = el)}
+                        data-index={i}
+                        className="flex flex-col lg:flex-row gap-6 items-start pl-10"
                       >
-                        <div className="relative w-full h-[220px] rounded-xl overflow-hidden">
-                          <img
-                            src={item.image}
-                            alt="principle image"
-                            className="w-[300px] object-cover"
-                          />
+                        <div className="flex gap-4">
+                          <span
+                            className={`text-sm transition-opacity duration-300 ${
+                              activeIndex === i ? "text-black" : "text-black/30"
+                            }`}
+                          >
+                            ({item.id})
+                          </span>
+
+                          <p
+                            className={` text-[16px] leading-relaxed transition-opacity duration-300 ${
+                              activeIndex === i ? "opacity-100" : "opacity-30"
+                            }`}
+                          >
+                            {item.title}
+                          </p>
+                        </div>
+
+                        <div
+                          className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
+                            activeIndex === i
+                              ? "max-h-60 opacity-100"
+                              : "max-h-0 opacity-0"
+                          }`}
+                        >
+                          <div className="relative w-full h-[220px] rounded-xl overflow-hidden">
+                            <img
+                              src={item.image}
+                              alt="principle image"
+                              className="w-[300px] object-cover"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
 
-              <div className="hidden lg:block sticky top-[0.7vh] h-fit">
-                <div className="relative w-[435px] h-[420px] rounded-xl overflow-hidden">
-                  <AnimatePresence>
-                    <motion.div
-                      key={principles[activeIndex].image}
-                      className="absolute inset-0 rounded-xl"
-                      initial={{ y: direction === 1 ? "100%" : "-100%", }}
-                      animate={{ y: "0%" }}
-                      exit={{ y: direction === 1 ? "-20%" : "20%", }}
-                      transition={{
-                        duration: 1.5,
-                        ease: [0.22, 1.5, 0.36, 1],
-                      }}
-                    >
-                      <Image
-                      key={principles[activeIndex].id}
-                        src={principles[activeIndex].image}
-                        alt="Dynasty principle"
-                        fill
-                        className="object-cover transition-opacity duration-500"
-                        priority
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
+                {/* <div className="hidden lg:block sticky top-[0.7vh] h-fit"> */}
+                  <div className="hidden lg:block relative w-[435px] h-[420px] rounded-xl overflow-hidden">
+                    <AnimatePresence>
+                      <motion.div
+                        key={principles[activeIndex].image}
+                        className="absolute inset-0 rounded-xl"
+                        initial={{ y: direction === 1 ? "100%" : "-100%", }}
+                        animate={{ y: "0%" }}
+                        exit={{ y: direction === 1 ? "-20%" : "20%", }}
+                        transition={{
+                          duration: 1.5,
+                          ease: [0.22, 1.5, 0.36, 1],
+                        }}
+                      >
+                        <Image
+                        key={principles[activeIndex].id}
+                          src={principles[activeIndex].image}
+                          alt="Dynasty principle"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                          priority
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                {/* </div> */}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+        </section>
         </Reveal>
       </section>
 

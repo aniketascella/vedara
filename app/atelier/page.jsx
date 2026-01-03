@@ -99,14 +99,14 @@ const page = () => {
 
   return (
     <div className="text-white relative w-screen">
-      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-15 pb-20">
+      <section ref={container1} className="w-full h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-15 pb-20">
         <Reveal variants={slideInFromRight(0.2)}>
-          <motion.div style={{y:s1}} className="lg:hidden flex justify-between w-screen px-10 text-[16px]">
+          <motion.div style={{y:s1}} className="lg:hidden flex justify-between w-full px-10 text-[16px]">
             <p className="text-[18px]">Toronto</p>
             <p className="">info@vedaracollective.com</p>
           </motion.div>
         </Reveal>
-        <motion.div style={{y:s1}} className="flex w-screen justify-between items-center lg:items-start px-10 lg:px-30">
+        <motion.div style={{y:s1}} className="flex w-full justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic leading-tight">
               A cultural studio for the ultra-conscious, those who understand
@@ -133,9 +133,9 @@ const page = () => {
 
       <section className="relative flex flex-col justify-center items-center lg:items-end">
         {/* SCROLL DRIVER */}
-        <div ref={sectionRef} className="relative h-[300vh] w-screen">
+        <div ref={sectionRef} className="relative h-[300vh] w-full">
           {/* STICKY WRAPPER */}
-          <div className="sticky top-0 pt-10 w-screen min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
+          <div className="sticky top-0 pt-10 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
             {/* HEADER — NOW STICKY */}
             <div className="flex flex-col lg:flex-row w-screen gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
               <Reveal variants={slideInFromBottom(0.2)}>
@@ -344,7 +344,7 @@ const page = () => {
           </Reveal>
         </motion.div>
 
-        <motion.div style={{y:s3}} className="flex flex-row justify-between gap-x-0 lg:gap-x-25 w-screen lg:w-auto">
+        <motion.div style={{y:s3}} className="flex flex-row justify-between gap-x-0 lg:gap-x-25 w-full lg:w-auto">
           <h1 className="text-[22px] font-extralight">
             <Reveal variants={slideInFromLeft(0.2)}>
               [03]
@@ -431,7 +431,7 @@ const page = () => {
         </motion.div>
       </section>
 
-      <section ref={container4} className="flex flex-col gap-y-11 lg:flex-row w-screen bg-primary text-black">
+      <section ref={container4} className="flex flex-col gap-y-11 lg:flex-row w-full bg-primary text-black">
         <motion.div style={{y:s4}} className="flex flex-col w-full h-[40vh] lg:w-1/2 lg:h-full px-[6vw] lg:px-23 pt-12 lg:pt-23 gap-y-8">
           <Reveal variants={slideInFromTop(0.2)}>
             <h2 className="italic text-[18px] lg:text-[22px]">
@@ -455,7 +455,7 @@ const page = () => {
           </Reveal>
         </motion.div>
 
-        <div className="relative w-full lg:w-1/2  lg:h-screen overflow-hidden">
+        <div className="relative w-full lg:w-1/2 lg:h-screen overflow-hidden">
           <Reveal variants={slideInFromRight(0.2)}>
             <img
               src="/atelier/img7.png"

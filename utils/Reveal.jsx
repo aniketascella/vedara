@@ -8,7 +8,7 @@ export default function Reveal({ children, variants, className }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className={className}
+      className={`${className} overflow-x-hidden`}
     >
       {children}
     </motion.div>
