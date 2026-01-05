@@ -13,6 +13,7 @@ import {
 } from "@/utils/motion";
 import Footer from "@/components/Footer";
 import ArrowBackIosNewOutlined from "@mui/icons-material/ArrowBackIosNewOutlined";
+import Link from "next/link";
 
 
 const page = () => {
@@ -58,7 +59,7 @@ const page = () => {
   const s2 = useTransform(section2, [0,1], [0,-200]);
   const s2bg = useTransform(section2, [0,1], [0,500]);
   const s3 = useTransform(section3, [0,1], [0,-200]);
-  const s4 = useTransform(section4, [0,1], [0,-100]);
+  const s4 = useTransform(section4, [0,1], [0,-80]);
   const s5 = useTransform(section5, [0,1], [0,-90]);
 
   const [index, setIndex] = useState(0);
@@ -98,14 +99,16 @@ const page = () => {
   const card = CARDS[cardIdx];
 
   return (
-    <div className="text-white relative w-screen">
+    <div className="text-white">
       <section ref={container1} className="w-full h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-15 pb-20">
-        <Reveal variants={slideInFromRight(0.2)}>
-          <motion.div style={{y:s1}} className="lg:hidden flex justify-between w-full px-10 text-[16px]">
+        <motion.div style={{y:s1}} className="lg:hidden flex justify-between px-10 w-screen text-[16px]">
+          <Reveal variants={slideInFromRight(0.2)}>
             <p className="text-[18px]">Toronto</p>
+          </Reveal>
+          <Reveal variants={slideInFromRight(0.2)}>
             <p className="">info@vedaracollective.com</p>
-          </motion.div>
-        </Reveal>
+          </Reveal>
+        </motion.div>
         <motion.div style={{y:s1}} className="flex w-full justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic leading-tight">
@@ -137,7 +140,7 @@ const page = () => {
           {/* STICKY WRAPPER */}
           <div className="sticky top-0 pt-10 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
             {/* HEADER — NOW STICKY */}
-            <div className="flex flex-col lg:flex-row w-screen gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
+            <div className="flex flex-col lg:flex-row w-full gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
               <Reveal variants={slideInFromBottom(0.2)}>
                 <p className="hidden lg:flex italic text-[16px]">Vedara</p>
               </Reveal>
@@ -449,9 +452,11 @@ const page = () => {
           </Reveal>
 
           <Reveal variants={slideInFromBottom(0.2)}>
+            <Link href="/portfolio">
             <p className="border-b border-black pb-1 w-fit lg:mt-65 text-[14px] lg:text-[16px]">
               Explore All Projects
             </p>
+            </Link>
           </Reveal>
         </motion.div>
 
@@ -463,6 +468,7 @@ const page = () => {
               className="w-full h-full object-cover object-right"
             />
 
+            <Link href="/portfolio/selhaya">
             <div className="absolute flex justify-between items-center bottom-0 backdrop-blur-[15px] w-full py-9 px-11 text-white">
               <div className="flex flex-col">
               <h3 className="text-[18px] lg:text-[20px] font-medium">
@@ -475,6 +481,7 @@ const page = () => {
               </div>
               <ArrowForwardIosOutlinedIcon/>
             </div>
+            </Link>
           </Reveal>
         </div>
       </section>

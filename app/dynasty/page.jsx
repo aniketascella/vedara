@@ -451,17 +451,16 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
       </section>
 
       <section ref={imagesRef} className='relative h-[490vh]'>
-        <div className="sticky top-0 flex flex-col justify-center items-center gap-5 lg:gap-37 w-screen h-screen lg:py-35">
+        <div className="sticky top-0 flex flex-col justify-start items-center gap-5 lg:gap-37 w-screen h-screen">
           <div className="absolute -z-1 w-full h-full">
             <img
               src="/dynasty/img5.png"
               alt="img5"
               className="w-full h-full will-change-transform object-top object-cover"
-              style={{ transformOrigin: "center center" }}
             />
           </div>
           <Reveal variants={slideInFromTop(0.2)}>
-            <p className="relative lg:text-center uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px]">
+            <p className="relative lg:text-center uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px] lg:mt-30">
               A Private Ecosystem Engineered for Enduring Value
             </p>
           </Reveal>
