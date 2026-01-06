@@ -14,6 +14,8 @@ export default function Navbar() {
   const [scrolledPastVH, setScrolledPastVH] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const btnRef = useRef(null);
+  const [showMenuIcon, setShowMenuIcon] = useState(false);
+  const [navEnabled, setNavEnabled] = useState(true);
 
   useEffect(() => {
     function onScroll() {
@@ -36,6 +38,16 @@ export default function Navbar() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  useEffect(() => {
+    if (!scrolledPastVH) {
+      setShowMenuIcon(false);
+      setTimeout(() => setNavEnabled(true),80);
+    }
+    else{
+      setNavEnabled(false);
+    }
+  }, [scrolledPastVH]);
 
   const isVisible = pathname === "/atelier" || pathname === "/dynasty";
 
@@ -90,10 +102,20 @@ export default function Navbar() {
 
 
         <motion.nav
-          initial={{opacity:1}}
+          initial={{x:0, opacity:1}}
           className="hidden lg:flex items-center gap-5 uppercase"
-          animate={{opacity: scrolledPastVH?0:1}}
-          transition={{ duration: 0.8, ease:"easeOut"}}
+          animate={
+            navEnabled
+            ? { x: 0, opacity: 1 }
+            : { x: -24, opacity: 0 }
+          }
+          
+          transition={{ duration: 0.5, ease:"easeOut"}}
+          onAnimationComplete={() => {
+            if (scrolledPastVH) {
+              setTimeout(() => setShowMenuIcon(true),80);
+            }
+          }}
         >
           <Link href="/portfolio"><p className="cursor-pointer">case study</p></Link>
           <Link href="/atelier"><p className="cursor-pointer">studio</p></Link>
@@ -103,20 +125,24 @@ export default function Navbar() {
         </motion.nav>
        
         <AnimatePresence>
-          <motion.button
-            ref={btnRef}
-            key="box-btn" 
-            onClick={() => setSidebarOpen((s) => !s)}
-            initial={{ x: 0, opacity: 0, rotate: 0 }}
-            animate={{ x: 0, opacity: 1, rotate: sidebarOpen ? 180 : 0 }}
-            exit={{ x: -20, opacity: 0, }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`z-40 ${scrolledPastVH ? `lg:flex`: `lg:hidden`} items-center justify-center w-6 h-6 backdrop-blur cursor-pointer focus:outline-none`}
-          > 
-            {sidebarOpen ? (
-              <CloseIcon className="text-black" fontSize="large"/>): (<Image alt="menu" width={37} height={9} src="/menuIcon.svg" />
-            )} 
-          </motion.button>
+          {showMenuIcon && scrolledPastVH && (
+            <motion.button
+              key="box-btn"
+              ref={btnRef}
+              onClick={() => setSidebarOpen((s) => !s)}
+              initial={{ x: 24, opacity: 0, rotate: 0 }}
+              animate={{ x: 0, opacity: 1,  rotate: sidebarOpen ? 180 : 0 }}
+              exit={{ x: 24, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="hidden lg:flex z-40 items-center justify-center w-6 h-6 backdrop-blur cursor-pointer"
+            >
+              {sidebarOpen ? (
+                <CloseIcon className="text-black" fontSize="large" />
+              ) : (
+                <Image alt="menu" width={37} height={9} src="/menuIcon.svg" />
+              )}
+            </motion.button>
+          )}
         </AnimatePresence>
       </div>
 
