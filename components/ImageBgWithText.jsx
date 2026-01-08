@@ -19,7 +19,7 @@ const ImageBgWithText = ({img, bgcolor ="bg-[#AEA797]", txtcolor="text-black", h
         <p className="hidden lg:block mt-auto text-[20px]">{number}</p>
       </div>
 
-      <Image alt="img1" className="h-[310px] lg:h-[470px]" width={457} height={470} src={img}/>
+      <Image alt="img1" width={457} height={455} src={img}/>
     </div>
   )
 }

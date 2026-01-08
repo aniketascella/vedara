@@ -42,7 +42,7 @@ const page = () => {
   const s1bg= useTransform(section1, [0,1], [0,500]);
   const s2 = useTransform(section2, [0,1], [0,-200]);
   const s2bg = useTransform(section2, [0,1], [0,500]);
-  const s3 = useTransform(section3, [0,1], [0,-200]);
+  const s3 = useTransform(section3, [0,1], [0,-150]);
   const s4 = useTransform(section4, [0,1], [0,-70]);
 
   
@@ -90,8 +90,8 @@ const page = () => {
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
-          <div className="flex flex-col justify-end items-end text-right lg:text-left gap-6">
-            <p className="w-full md:w-[325px] font-light lg:text-right text-[14px] lg:text-[16px]">
+          <div className="flex flex-col justify-end items-end lg:text-right text-left gap-6">
+            <p className="w-full md:w-[325px] font-light text-[14px] lg:text-[16px] mt-6 lg:mt-0">
               Selhaya entered Vedara’s closed-circle ecosystem to evolve from a promising luxury brand into an unforgettable maison.
             </p>
             {/* <button className="w-40 h-10 lg:w-45 lg:h-13 rounded-full backdrop-blur-xl">
@@ -138,8 +138,8 @@ const page = () => {
             </div>
           </Reveal>
         </motion.div>
-        <Reveal variants={slideInFromBottom(0.2)} className="mx-auto mb-30 mt-12">
-          <motion.button style={{y:s1}} className="w-40 h-10 lg:w-45 lg:h-13 rounded-full bg-[#6b6256]/20 backdrop-blur-lg text-[12px] lg:text-[14px]">
+        <Reveal variants={slideInFromBottom(0.2)} className={`mx-auto`}>
+          <motion.button style={{y:s1}} className="w-40 h-10 lg:w-45 lg:h-13 rounded-full bg-[#6b6256]/20 backdrop-blur-lg text-[12px] lg:text-[14px] mb-20 lg:mb-30 mt-12 relative">
             <div className='flex justify-between items-center px-5'>
               Visit Website
               <ArrowForwardIosOutlined/>
@@ -148,7 +148,7 @@ const page = () => {
         </Reveal>
       </section>
 
-      <section className="py-45 flex flex-col justify-center items-center gap-y-25">
+      <section className="py-25 lg:py-45 flex flex-col justify-center items-center gap-y-25">
         <Reveal variants={slideInFromTop(0.2)}>
           <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px]">Selhaya World’s First Luxury Abaya Maison</p>
         </Reveal>
@@ -202,7 +202,11 @@ const page = () => {
           </div>
         </Reveal>
 
-        <div ref={container} className="w-screen h-[300vh] -mt-30 relative">
+        <Reveal variants={slideInFromRight(0.2)}>
+          <img src="/selhaya/img5.png" alt="img5" className="lg:hidden w-[300px]"/>
+        </Reveal>
+
+        <div ref={container} className="w-screen h-[300vh] -mt-30 relative hidden lg:block">
           <div className="sticky overflow-hidden top-0 h-screen">
             <motion.div style={{scale: scale1}} className='w-full h-full top-0 absolute flex justify-center items-center'>
               <div className="relative w-[25vw]">
@@ -230,7 +234,7 @@ const page = () => {
 
       </section>
 
-      <section ref={container3} className="py-34 bg-primary relative overflow-x-hidden">
+      <section ref={container3} className="py-10 lg:py-34 bg-primary relative overflow-x-hidden">
 
         <motion.img style={{y:s3}} src="/selhaya/img6.png" alt="img6" className="w-[300px] lg:w-[813px] mx-auto"/>
 
@@ -264,12 +268,12 @@ const page = () => {
 
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.video style={{y:s3}} src="/selhaya/vid2.mp4" autoPlay muted loop className="w-[300px] lg:w-[813px] mx-auto mt-32 lg:mt-80"/>
+          <motion.video style={{y:s3}} src="/selhaya/vid2.mp4" autoPlay muted loop className="w-[300px] lg:w-[813px] mx-auto mt-32 lg:mt-45"/>
         </Reveal>
 
-        <motion.div style={{y:s3}} className="flex flex-col items-center lg:flex-row justify-between gap-y-6 lg:pl-25 mt-32 lg:mt-80 w-screen">
+        <motion.div style={{y:s3}} className="flex flex-col items-center lg:items-start lg:flex-row justify-end gap-x-32 gap-y-22 mt-22 lg:mt-50 w-auto">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className="flex flex-col gap-4 w-62 lg:w-103 text-black">
+            <div className="flex flex-col gap-4 w-62 lg:w-103 text-black lg:mt-12">
               <h5 className="font-semibold italic text-[16px] lg:text-[20px]">
                 From Aesthetically Nice to Unforgettable
               </h5>
@@ -282,17 +286,17 @@ const page = () => {
             <img src="/selhaya/img9.png" alt="img9" className="w-[300px]"/>
           </div>
           <Reveal variants={slideInFromRight(0.2)}>
-            <img src="/selhaya/img9.png" alt="img9" className="hidden lg:block w-[480px]"/>
+            <img src="/selhaya/img9.png" alt="img9" className="hidden lg:block w-full"/>
           </Reveal>
         </motion.div>
 
-        <motion.div style={{y:s3}} className="flex flex-col items-center lg:flex-row-reverse justify-between gap-y-6 lg:pr-25 mt-32 lg:mt-80 w-screen">
+        <motion.div style={{y:s3}} className="flex flex-col items-center lg:flex-row-reverse justify-end lg:items-start gap-x-32  gap-y-22 mt-26 lg:mt-40 w-auto">
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="flex flex-col gap-4 w-62 lg:w-103 text-black">
+            <div className="flex flex-col gap-4 w-62 lg:w-121 text-black">
               <h5 className="font-semibold italic text-[16px] lg:text-[20px]">
                 Our Eye For Detail
               </h5>
-              <p className="text-[12px] lg:text-[14px] font-light">
+              <p className="text-[12px] lg:text-[14px] font-light ml-18">
                 Design moments that slow the visitor down, exactly how luxury should feel. This level of detail is not optional; it is what separates a premium brand from a luxury house.
               </p>
             </div>
@@ -301,7 +305,7 @@ const page = () => {
             <img src="/selhaya/img10.png" alt="img10" className="w-[300px]"/>
           </div>
           <Reveal variants={slideInFromLeft(0.2)}>
-            <img src="/selhaya/img10.png" alt="img10" className="hidden lg:block w-[480px]"/>
+            <img src="/selhaya/img10.png" alt="img10" className="hidden lg:block w-full"/>
           </Reveal>
         </motion.div>
       </section>

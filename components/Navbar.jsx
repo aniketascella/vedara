@@ -12,24 +12,32 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [scrolledPastVH, setScrolledPastVH] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const btnRef = useRef(null);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
   const [navEnabled, setNavEnabled] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
-      // When window.scrollY >= 100vh -> treat as scrolled
-      const vh = window.innerHeight || 1;
-      setScrolledPastVH(window.scrollY >= vh);
-      // If user scrolls back to top, close the sidebar as requested
-      if (window.scrollY < vh && sidebarOpen && window.innerWidth>=1024) setSidebarOpen(false);
-    }
+    setMounted(true);
+  }, []);
 
-    onScroll();
+  useEffect(() => {
+    if (!mounted) return;
+
+    const isPast = window.scrollY >= window.innerHeight;
+
+    setScrolledPastVH(isPast);
+    setShowMenuIcon(isPast);
+    setNavEnabled(!isPast);
+
+    const onScroll = () => {
+      const past = window.scrollY >= window.innerHeight;
+      setScrolledPastVH(past);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [sidebarOpen]);
+  }, [mounted]);
 
   useEffect(() => {
     function onKey(e) {
@@ -38,16 +46,6 @@ export default function Navbar() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
-
-  useEffect(() => {
-    if (!scrolledPastVH) {
-      setShowMenuIcon(false);
-      setTimeout(() => setNavEnabled(true),60);
-    }
-    else{
-      setNavEnabled(false);
-    }
-  }, [scrolledPastVH]);
 
   const isVisible = pathname === "/atelier" || pathname === "/dynasty";
 
@@ -128,7 +126,6 @@ export default function Navbar() {
           {showMenuIcon && scrolledPastVH && (
             <motion.button
               key="box-btn"
-              ref={btnRef}
               onClick={() => setSidebarOpen((s) => !s)}
               initial={{ x: 24, opacity: 0, rotate: 0 }}
               animate={{ x: 0, opacity: 1,  rotate: sidebarOpen ? 180 : 0 }}
@@ -147,8 +144,6 @@ export default function Navbar() {
 
         <AnimatePresence>
           <motion.button
-            key="box-btn"
-            ref={btnRef}
             onClick={() => setSidebarOpen((s) => !s)}
             initial={{ x: 24, opacity: 0, rotate: 0 }}
             animate={{ x: 0, opacity: 1,  rotate: sidebarOpen ? 180 : 0 }}

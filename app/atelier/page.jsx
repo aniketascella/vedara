@@ -269,7 +269,11 @@ const page = () => {
           </motion.p>
         </Reveal>
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.p style={{y:s2}} className="border-b border-black pb-1 w-34 text-[12px] lg:text-[14px]">Share Your Vision</motion.p>
+          <motion.p style={{y:s2}} className="border-b border-black pb-1 text-[12px] lg:text-[14px] text-center">
+            <Link href="/contact">
+              Share Your Vision        
+            </Link>
+          </motion.p>
         </Reveal>
       </section>
 

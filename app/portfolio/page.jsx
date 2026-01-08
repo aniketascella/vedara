@@ -202,7 +202,7 @@ const page = () => {
           //   bg: "/portfolio/img3.png", cardImg: "/portfolio/img4.png", link: "/portfolio/antara", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
           // }, 
         {
-          bg: "/portfolio/img5.png", cardImg: "/portfolio/img12.png", link: "/portfolio/selhaya", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
+          bg: "/portfolio/img11.png", cardImg: "/portfolio/img12.png", link: "/portfolio/selhaya", number: "01", heading: "SELHAYA", text: "We reimagined Selhaya’s foundational identity with refined narrative, elevated language, and cultural intelligence.Vedara shaped a distinct luxury persona that feels timeless, confident, and unmistakably Selhaya.",explore:"Explore"
         },
         // {
         //   bg: "/portfolio/img7.png", cardImg: "/portfolio/img8.png", link: "/portfolio", number: "03", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
