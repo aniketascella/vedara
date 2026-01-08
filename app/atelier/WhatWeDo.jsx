@@ -83,7 +83,7 @@ export default function WhatWeDo() {
 
   return (
     <section ref={sectionRef} className="h-[210vh] w-screen">
-      <div className="sticky top-0 h-screen w-screen px-12 lg:px-24 flex flex-col justify-center">
+      <div className="sticky top-0 min-h-screen w-screen px-12 lg:px-24 pt-15 pb-30 flex flex-col justify-center">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/rovineArt.png"
@@ -92,13 +92,13 @@ export default function WhatWeDo() {
           />
         </div>
         {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-y-4 justify-between mb-4 lg:mb-16">
+        <div className="flex flex-col lg:flex-row gap-y-4 justify-between mb-4 lg:mb-16 z-2 relative">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h3 className="italic text-[16px] lg:text-[22px]">What We Do</h3>
+            <h3 className="italic text-[16px] lg:text-[20px]">What We Do</h3>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="text-[14px] lg:text-[16px] lg:w-[370px] text-right">
+            <p className="text-[12px] lg:text-[14px] lg:w-[370px] text-right">
               We develop identity, strategy, and digital infrastructure that takes
               your brand from competition to cultural dominion.
             </p>
@@ -123,7 +123,7 @@ export default function WhatWeDo() {
                 {/* Heading */}
                 <div className={`flex ${i==1 ? `justify-start pl-[12vw]`: `justify-center`} items-center gap-x-6`}>
                   <span className="text-sm opacity-60">[{section.id}]</span>
-                  <p className="text-[18px] font-semibold lg:text-3xl tracking-wide">
+                  <p className="text-[18px] font-semibold lg:text-[28px] tracking-wide">
                     {section.title}
                   </p>
                 </div>
@@ -140,10 +140,10 @@ export default function WhatWeDo() {
                 >
                   {section.items.map((item, idx) => (
                     <div key={idx} className="space-y-3">
-                      <p className="text-[16px] text-left lg:font-bold uppercase">
+                      <p className="text-[14px] lg:text-[16px] text-left lg:font-bold uppercase">
                         {item.heading}
                       </p>
-                      <p className="text-[12px] lg:text-[16px] font-light text-left leading-relaxed opacity-80 lg:w-[293px]">
+                      <p className="text-[12px] lg:text-[14px] font-light text-left leading-relaxed opacity-80 lg:w-[300px]">
                         {item.text}
                       </p>
                     </div>

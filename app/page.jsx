@@ -30,7 +30,7 @@ export default function Home() {
     >
       <img src="/homeImg.png" alt="home" className="lg:hidden opacity-55 absolute -z-1 inset-0 w-screen h-screen object-cover object-top" />
       <motion.div className="w-screen lg:w-[calc(100vw-720px)] h-screen flex flex-col justify-between items-center lg:items-start">
-        <Link href="/" className="relative top-[26px] lg:left-20 flex justify-center items-center lg:gap-4">
+        <Link href="/" className="relative top-[26px] lg:left-20 xl:left-40 flex justify-center items-center lg:gap-4">
           <img src="/vedara_logo.svg" alt="logo" />
           <h1 className='w-[82px] lg:w-[209px] text-[24px]'>
             VEDARA  
@@ -38,7 +38,7 @@ export default function Home() {
         </Link>
         
         <div className="flex flex-col gap-y-6 mx-auto lg:mx-0 w-90">
-        <motion.h2 variants={item} className="w-80 md:w-[364px] lg:w-[554px] text-[24px] lg:text-[36px] leading-normal lg:ml-40">
+        <motion.h2 variants={item} className="w-80 md:w-[364px] lg:w-[554px] text-[24px] lg:text-[36px] leading-normal lg:ml-20 xl:ml-40">
           We Sculpt Your <span className="font-semibold italic">Values and <br /> Vision</span> Into a Legacy Capable of Withstanding <span className="font-semibold italic">Trends and Time</span>
         </motion.h2>
 
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
 
-        <motion.p variants={item} className="w-[350px] text-center lg:text-left lg:w-[554px] lg:ml-40 mb-10 font-extralight font-editorial">© VEDARA <span className="italic">Building Brands Worth Inheriting.</span></motion.p>
+        <motion.p variants={item} className="w-[350px] text-center lg:text-left lg:w-[554px] lg:ml-20 xl:ml-40 mb-10 font-extralight font-editorial">© VEDARA <span className="italic">Building Brands Worth Inheriting.</span></motion.p>
       </motion.div>
 
 
@@ -79,16 +79,16 @@ export default function Home() {
           Let’s align your heritage with modern relevance.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-col justify-center items-center text-[16px] lg:text-[24px] mt-4 w-full">
+        <motion.div variants={item} className="flex flex-col justify-center items-center mt-4 w-full">
           <button className="w-40 lg:w-180 backdrop-blur-[10px]">
-            <Link href='/dynasty'>
+            <Link href='/atelier'>
               <div className="flex justify-between items-center pl-15 pr-13 py-6">
                 <motion.div className="flex flex-col gap-y-1 origin-left"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="text-[22px] text-left">Vedara Dynasty</p>
-                  <p className="text-[14px]">Curated visionary projects, cultural properties, investor alignment.</p>
+                  <p className="text-[20px] text-left">Vedara Atelier</p>
+                  <p className="text-[14px]"> Luxury BrandStrategy & Design, Website & Marketing.</p>
                 </motion.div>
                 <ArrowForwardIosOutlinedIcon/>
               </div>
@@ -96,14 +96,14 @@ export default function Home() {
           </button>
 
           <button className="w-50 lg:w-180 backdrop-blur-[10px]">
-            <Link href='/atelier'>
+            <Link href='/dynasty'>
               <div className="flex justify-between items-center pl-15 pr-13 py-6">
                 <motion.div className="flex flex-col gap-y-1 origin-left"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="text-[22px] text-left">Vedara Atelier</p>
-                  <p className="text-[14px]"> Luxury BrandStrategy & Design, Website & Marketing.</p>
+                  <p className="text-[20px] text-left">Vedara Dynasty</p>
+                  <p className="text-[14px]">Curated visionary projects, cultural properties, investor alignment.</p>
                 </motion.div>
                 <ArrowForwardIosOutlinedIcon/>
               </div>  

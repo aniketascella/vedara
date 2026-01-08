@@ -42,7 +42,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!scrolledPastVH) {
       setShowMenuIcon(false);
-      setTimeout(() => setNavEnabled(true),80);
+      setTimeout(() => setNavEnabled(true),60);
     }
     else{
       setNavEnabled(false);
@@ -58,15 +58,15 @@ export default function Navbar() {
       <div
         className={`${
           pathname === "/" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
-        } w-screen h-28 flex justify-between items-center px-8 lg:px-24 text-[18px] leading-relaxed`}
+        } w-screen h-28 flex justify-between items-center px-8 lg:px-24 text-[16px] xl:text-[18px] leading-relaxed`}
       >
-        <div className="flex gap-8">
+        <div className="flex justify-center items-end gap-x-8">
 
           <h1 className="text-[24px]">
             <Link href="/">VEDARA</Link>
           </h1>
           {isVisible && 
-            <div className="relative hidden lg:flex items-center rounded-full bg-[#3a332b] py-1 hover:cursor-pointer">
+            <div className="relative hidden lg:flex lg:items-center rounded-full bg-[#3a332b] py-2 hover:cursor-pointer">
               <span
                 className={`hover:cursor-pointer absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
                   active === "dynasty" ? "translate-x-full" : "translate-x-0"
@@ -76,7 +76,7 @@ export default function Navbar() {
               <Link href="/atelier" className="hover:cursor-pointer">
                 <button
                   onClick={() => router.push("/atelier")}
-                  className={`relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                  className={`relative font-editorial z-10 px-6 text-sm italic transition-colors duration-300 ${
                     active === "atelier" ? "text-white" : "text-[#b8b1a7]"
                   } hover:cursor-pointer`}
                 >
@@ -87,7 +87,7 @@ export default function Navbar() {
               <Link href="/dynasty" className="hover:cursor-pointer">
                 <button
                   onClick={() => router.push("/dynasty")}
-                  className={`hover:cursor-pointer relative font-editorial z-10 px-6 py-2 text-sm italic transition-colors duration-300 ${
+                  className={`hover:cursor-pointer relative font-editorial z-10 px-6 text-sm italic transition-colors duration-300 ${
                     active === "dynasty" ? "text-white" : "text-[#b8b1a7]"
                   }`}
                 >
@@ -103,25 +103,25 @@ export default function Navbar() {
 
         <motion.nav
           initial={{x:0, opacity:1}}
-          className="hidden lg:flex items-center gap-5 uppercase"
+          className="hidden lg:flex items-center gap-5 uppercase "
           animate={
             navEnabled
-            ? { x: 0, opacity: 1 }
+            ? { x: 24, opacity: 1 }
             : { x: -24, opacity: 0 }
           }
           
           transition={{ duration: 0.5, ease:"easeOut"}}
           onAnimationComplete={() => {
             if (scrolledPastVH) {
-              setTimeout(() => setShowMenuIcon(true),80);
+              setTimeout(() => setShowMenuIcon(true),60);
             }
           }}
         >
-          <Link href="/portfolio"><p className="cursor-pointer">case study</p></Link>
-          <Link href="/atelier"><p className="cursor-pointer">studio</p></Link>
-          <Link href="/blogs"><p className="cursor-pointer">blogs</p></Link>
-          <Link href="/dynasty"><p className="cursor-pointer">dynasty</p></Link>
-          <Link href="/contact"><p className="cursor-pointer">contact</p></Link>
+          <Link href="/portfolio"><p className="">case study</p></Link>
+          <Link href="/atelier"><p className="">atelier</p></Link>
+          <Link href="/blogs"><p className="">blogs</p></Link>
+          <Link href="/dynasty"><p className="">dynasty</p></Link>
+          <Link href="/contact"><p className="">contact</p></Link>
         </motion.nav>
        
         <AnimatePresence>
@@ -144,6 +144,25 @@ export default function Navbar() {
             </motion.button>
           )}
         </AnimatePresence>
+
+        <AnimatePresence>
+          <motion.button
+            key="box-btn"
+            ref={btnRef}
+            onClick={() => setSidebarOpen((s) => !s)}
+            initial={{ x: 24, opacity: 0, rotate: 0 }}
+            animate={{ x: 0, opacity: 1,  rotate: sidebarOpen ? 180 : 0 }}
+            exit={{ x: 24, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="lg:hidden z-40 items-center justify-center w-6 h-6 backdrop-blur cursor-pointer"
+          >
+            {sidebarOpen ? (
+              <CloseIcon className="text-black" fontSize="large" />
+            ) : (
+              <Image alt="menu" width={37} height={9} src="/menuIcon.svg" />
+            )}
+          </motion.button>
+        </AnimatePresence>
       </div>
 
       <AnimatePresence>
@@ -155,19 +174,19 @@ export default function Navbar() {
             exit={{ scale: 0.02, opacity: 0 }}
             transition={{ type: "spring", stiffness: 250, damping: 30 }}
             style={{ transformOrigin: "top right" }}
-            className="fixed top-0 right-0 h-screen w-[min(420px,70vw)] flex flex-col justify-center z-35 bg-primary overflow-auto"
+            className="fixed top-0 right-0 h-screen w-[200px] lg:w-[400px] flex flex-col justify-end z-35 bg-primary"
             role="dialog"
             aria-modal="true"
           >
 
-            <nav className="p-15 flex flex-col gap-6 text-[30px] font-editorial italic text-neutral-500">
+            <nav className="p-10 lg:p-15 flex flex-col gap-4 lg:gap-6 text-[16px] lg:text-[30px] font-editorial italic text-neutral-500 mb-30 lg:mb-40">
               <Link href="/atelier">
                 <motion.p
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 250 }}
                   className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
-                  Studio
+                  Atelier
                 </motion.p>
               </Link>
               <Link href="/portfolio">
@@ -208,7 +227,7 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            <div className="fixed flex justify-between gap-x-18 bottom-8 pl-10 text-sm text-black font-editorial italic">
+            <div className="relative flex justify-center lg:gap-x-18 w-full bottom-8 pl-10 text-[14px] text-black font-editorial italic">
               <p>
                 © 2025 Vedara. All Rights Reserved
               </p>

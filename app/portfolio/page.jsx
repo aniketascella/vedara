@@ -1,6 +1,4 @@
 "use client";
-
-import bgImg from "../../public/portfolio/bgImg.png";
 import Footer from "@/components/Footer";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
@@ -88,7 +86,7 @@ const page = () => {
         </motion.div>
 
         <Reveal variants={slideInFromRight(0.2)}>
-          <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[18px]">
+          <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[14px] lg:text-[16px]">
             info@vedaracollective.com
           </motion.p>
         </Reveal>
@@ -96,12 +94,12 @@ const page = () => {
         <motion.div style={{y:s1}} className="flex flex-col gap-y-20 pl-15 lg:flex-row lg:justify-between lg:items-center w-screen">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col"> 
-              <h1 className="text-[38px]">Our Portfolio</h1>
-              <p className="text-[16px]">Work That Outlives Seasons</p>
+              <h1 className="text-[22px] lg:text-[36px]">Our Portfolio</h1>
+              <p className="text-[14px] lg:text-[16px]">Work That Outlives Seasons</p>
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="w-[300px] md:w-[560px] lg:pr-15 font-light lg:text-right text-[16px]">
+            <p className="w-[300px] md:w-[560px] lg:pr-15 font-light lg:text-right text-[14px] lg:text-[16px]">
               Each project is a world we constructed with intention. Here strategy
               becomes culture, design becomes memory, and vision becomes
               permanence.
@@ -110,10 +108,10 @@ const page = () => {
         </motion.div>
 
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20">
-            <p>Branding 09</p>
-            <p>Digital Marketing 03</p>
-            <p>Development 05</p>
+          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20 text-[12px] lg:text-[14px]">
+            <p>Branding 01</p>
+            <p>Digital Marketing 01</p>
+            <p>Development 01</p>
           </motion.div>
         </Reveal>
       </section>
@@ -184,14 +182,14 @@ const page = () => {
 
       {/* section 3 */}
       <section className="flex flex-col justify-center items-center">
-        <div className="sticky top-0 pt-[140px] mb-[140px] space-y-20">
-          <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[40px] uppercase">
+        <div className="top-0 pt-[140px] mb-[140px] space-y-20">
+          <div className="flex justify-between w-[300px] lg:w-[800px] text-[22px] lg:text-[36px] uppercase">
             <Reveal variants={slideInFromLeft(0.2)}><p>All Projects</p></Reveal>
             <Reveal variants={slideInFromRight(0.2)}><p>01</p></Reveal>
           </div>
 
           <Reveal variants={slideInFromRight(0.2)}>
-          <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[16px]">
+          <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[12px] lg:text-[14px]">
             Every identity is built to endure, designed with the precision of an
             archivist and the vision of a futurist. What emerges is not a
             “brand,” but a cultural marker.
@@ -204,7 +202,7 @@ const page = () => {
           //   bg: "/portfolio/img3.png", cardImg: "/portfolio/img4.png", link: "/portfolio/antara", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
           // }, 
         {
-          bg: "/portfolio/img5.png", cardImg: "/portfolio/img12.png", link: "/portfolio/selhaya", number: "02", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
+          bg: "/portfolio/img5.png", cardImg: "/portfolio/img12.png", link: "/portfolio/selhaya", number: "01", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
         },
         // {
         //   bg: "/portfolio/img7.png", cardImg: "/portfolio/img8.png", link: "/portfolio", number: "03", heading: "The Revelation", text: "Through guided dialogue and symbolic inquiry, we uncover the deeper architecture of your identity the myth you were always meant to live.Your cultural territory, archetype, and legacy intention emerge with precision.",explore:"Explore"
@@ -267,10 +265,10 @@ const page = () => {
 
       {/* section 6 */}
       <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative bg-black overflow-hidden">
-        <Reveal variants={slideInFromTop(0.2)}><motion.p style={{y:s3}} className="font-editorial text-[36px]">FAQs</motion.p></Reveal>
+        <Reveal variants={slideInFromTop(0.2)}><motion.p style={{y:s3}} className="font-editorial italic text-[22px] lg:text-[36px]">FAQs</motion.p></Reveal>
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.section style={{y:s3}} className="w-full max-w-5xl mx-auto px-6 py-12 text-gray-200">
+          <motion.section style={{y:s3}} className="w-[380px] lg:w-[1100px] mx-auto px-6 py-12 text-gray-200">
             <div className="space-y-8">
               {ITEMS.map((item, i) => {
                 const indexLabel = String(i + 1).padStart(2, "0");
@@ -279,14 +277,14 @@ const page = () => {
                 return (
                   <div key={i} className="relative">
                     {/* top divider */}
-                    <div className="border-t border-gray-600/40"></div>
+                    <div className="border-t border-white"/>
 
                     <div
                       className="flex items-start gap-6 py-8"
                     >
                       {/* Left number */}
                       <div className="w-12 shrink-0">
-                        <div className="text-2xl font-[\'PlayfairDisplay\',serif] italic text-gray-300">
+                        <div className="text-[16px] lg:text-[24px] italic text-gray-300">
                           {indexLabel}
                         </div>
                       </div>
@@ -300,7 +298,7 @@ const page = () => {
                           aria-controls={`faq-panel-${i}`}
                           className="flex items-start w-full text-left gap-4 focus:outline-none"
                         >
-                          <p className="flex-1 text-lg md:text-xl leading-snug">
+                          <p className="flex-1 text-[16px] md:text-[20px] leading-snug">
                             {item.title}
                           </p>
 
@@ -351,7 +349,7 @@ const page = () => {
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.35, ease: "easeInOut" }}
-                              className="overflow-hidden mt-4 text-sm leading-relaxed"
+                              className="overflow-hidden mt-4 text-[12px] lg:text-[14px] leading-relaxed"
                             >
                               {/* content paragraph(s) */}
                               {item.body.split("\n").map((para, idx) => (
@@ -372,7 +370,7 @@ const page = () => {
               })}
             </div>
 
-            <div className="mt-2 border-t border-gray-600/40"></div>
+            <div className="mt-2 border-t border-white"/>
           </motion.section>
         </Reveal>
       </motion.section>

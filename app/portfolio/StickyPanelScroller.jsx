@@ -77,7 +77,7 @@ export default function StickyPanelScroller({ panels, onActiveChange = () => {} 
                 exit="exit"
                 variants={panelVariants}
                 transition={panelTransition}
-                className={`absolute inset-0 w-screen h-screen flex ${panels[index].alignment ?? `justify-end`} items-center px-5 lg:px-20 py-10`}
+                className={`absolute inset-0 w-screen h-screen flex justify-center lg:justify-end items-center mx- lg:px-20 py-10`}
                 style={{
                   zIndex: panels.length - index,
                   backgroundImage: `url(${panels[index].bg})`,

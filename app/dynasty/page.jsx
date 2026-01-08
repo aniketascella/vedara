@@ -193,30 +193,6 @@ const page = () => {
     return () => document.removeEventListener("mousedown", onClick);
   }, [openForm1, openForm2]);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           const nextIndex = Number(entry.target.dataset.index);
-  //           const prevIndex = prevIndexRef.current;
-  //           if (nextIndex !== prevIndex) {
-  //             setDirection(nextIndex > prevIndex ? 1 : -1);
-  //             prevIndexRef.current = nextIndex;
-  //             setActiveIndex(nextIndex);
-  //           }
-  //         }
-  //       });
-  //     },
-  //     {
-  //       rootMargin: "-45% 0px -45% 0px"
-  //     }
-  //   );
-
-  //   itemRefs.current.forEach((el) => el && observer.observe(el));
-  //   return () => observer.disconnect();
-  // }, []);
-
   const total = principles.length;
   const segmentHeight = 100 / total;
   const segmentTop = activeIndex * segmentHeight;
@@ -254,23 +230,35 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[16px] lg:text-[18px] px-10 lg:px-0 font-light'>
+        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[12px] lg:text-[14px] px-10 lg:px-0 font-light'>
           Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
         </motion.p>
         </Reveal>
 
         <motion.div style={{y:s1}} className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-14 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
-              <p className='w-[191px] lg:w-[284px] font-medium text-[16px] lg:text-[22px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
-              <button className='w-43 lg:w-60 backdrop-blur-2xl rounded-full text-[14px] lg:text-[18px] px-7 py-3 lg:px-12'><h3 className='lg:italic font-extralight'>Enter the Threshold</h3></button>
+            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-12 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
+              <p className='w-[191px] lg:w-[284px] font-light text-[16px] lg:text-[20px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
+              <button className='backdrop-blur-2xl rounded-full text-[12px] lg:text-[14px] px-4 py-3 lg:px-8 hover:cursor-pointer'
+              onClick={()=>{
+                setOpenForm1(true)
+                setTimeout(() => {
+                  formRef1.current?.scrollIntoView({ behavior: "smooth" });
+                }, 80);
+              }}><h3 className='lg:italic font-extralight'>Explore Curated Opportunities</h3></button>
             </div>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] bg-[#9D8C7D]/15 p-4 lg:py-14 lg:px-8 rounded-2xl backdrop-blur-lg'>
-              <p className='w-[191px] lg:w-[284px] font-medium text-[16px] lg:text-[22px]'><span className="font-bold">For Collectors</span> - Discover the Future Classics</p>
-              <button className='w-43 lg:w-60 backdrop-blur-2xl rounded-full text-[14px] lg:text-[18px] px-7 py-3 lg:px-12'> <h3 className='lg:italic font-extralight'>Enter the Threshold</h3></button>
+            <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] bg-[#9D8C7D]/15 p-4 lg:py-12 lg:px-8 rounded-2xl backdrop-blur-lg'>
+              <p className='w-[191px] lg:w-[284px] font-light text-[16px] lg:text-[20px]'><span className="font-bold">For Collectors</span> - Discover the Future Classics</p>
+              <button className='backdrop-blur-2xl rounded-full text-[12px] lg:text-[14px] px-7 py-3 lg:px-8 hover:cursor-pointer'
+              onClick={()=>{
+                setOpenForm2(true)
+                setTimeout(() => {
+                  formRef2.current?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}> <h3 className='lg:italic font-extralight'>Submit Your Vision</h3></button>
             </div>
           </Reveal>
         </motion.div>
@@ -290,7 +278,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="lg:text-right lg:w-[335px]">
+            <p className="lg:text-right lg:w-[335px] text-[14px] lg:text-[16px]">
               Every project is vetted for meaning, resonance, and a future measured in decades.
             </p>
           </Reveal>
@@ -301,7 +289,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <section ref={sectionRef} className="relative h-[250vh]">
           <div className="sticky top-0 h-screen overflow-hidden">
             <motion.div className="h-auto mt-0 lg:mt-10 py-5">
-              <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[34px] leading-tight mb-24">
+              <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[32px] leading-tight mb-24">
                 The Dynasty Is Governed By Principles
                 <br />
                 That Protect Purity, Rarity, And Meaning.
@@ -319,7 +307,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-28 pl-10 py-10">
+                  <div className="flex flex-col gap-4 lg:gap-20 pl-10 py-5 lg:py-10">
                     {principles.map((item, i) => (
                       <div
                         key={item.id}
@@ -352,11 +340,11 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                               : "max-h-0 opacity-0"
                           }`}
                         >
-                          <div className="relative w-full h-[220px] rounded-xl overflow-hidden">
+                          <div className="relative w-full h-[110px] rounded-xl overflow-hidden">
                             <img
                               src={item.image}
                               alt="principle image"
-                              className="w-[300px] object-cover"
+                              className="w-[220px] object-cover"
                             />
                           </div>
                         </div>
@@ -365,33 +353,30 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   </div>
                 </div>
 
-
-                {/* <div className="hidden lg:block sticky top-[0.7vh] h-fit"> */}
-                  <div className="hidden lg:block relative w-[435px] h-[420px] rounded-xl overflow-hidden">
-                    <AnimatePresence>
-                      <motion.div
-                        key={principles[activeIndex].image}
-                        className="absolute inset-0 rounded-xl"
-                        initial={{ y: direction === 1 ? "100%" : "-100%", }}
-                        animate={{ y: "0%" }}
-                        exit={{ y: direction === 1 ? "-20%" : "20%", }}
-                        transition={{
-                          duration: 1.5,
-                          ease: [0.22, 1.5, 0.36, 1],
-                        }}
-                      >
-                        <Image
-                        key={principles[activeIndex].id}
-                          src={principles[activeIndex].image}
-                          alt="Dynasty principle"
-                          fill
-                          className="object-cover transition-opacity duration-500"
-                          priority
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-                {/* </div> */}
+                <div className="hidden lg:block relative w-[435px] h-[420px] rounded-xl overflow-hidden">
+                  <AnimatePresence>
+                    <motion.div
+                      key={principles[activeIndex].image}
+                      className="absolute inset-0 rounded-xl"
+                      initial={{ y: direction === 1 ? "100%" : "-100%", }}
+                      animate={{ y: "0%" }}
+                      exit={{ y: direction === 1 ? "-20%" : "20%", }}
+                      transition={{
+                        duration: 1.5,
+                        ease: [0.22, 1.5, 0.36, 1],
+                      }}
+                    >
+                      <Image
+                      key={principles[activeIndex].id}
+                        src={principles[activeIndex].image}
+                        alt="Dynasty principle"
+                        fill
+                        className="object-cover transition-opacity duration-500"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -412,9 +397,9 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </Reveal>
         <motion.div style={{y:s3}} className="flex flex-col lg:flex-row justify-center items-center gap-12">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className="bg-primary flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-primary text-black flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/img2.png" alt="img2" className="relative w-full object-cover" />
-              <p className="text-right">
+              <p className="text-right text-[12px] lg:text-[14px]">
                 Entrepreneurs struggle to access serious, verified, values-aligned investors.
               </p>
             </div>
@@ -423,14 +408,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           <Reveal variants={slideInFromBottom(0.2)}>
             <div className="bg-secondary flex flex-col gap-21 lg:gap-44 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
-              <p className="">
+              <p className="text-[12px] lg:text-[14px]">
                 Investors face low-quality deal flow + overwhelming noise
               </p>
             </div>
           </Reveal>
           
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="bg-primary flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-primary text-black text-[12px] lg:text-[14px] flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
               <div className="flex gap-6">
                 <img src="/dynasty/img3.png" alt="img3" className="relative object-cover rounded-xl" />
                 <div className="flex flex-col gap-4">
@@ -460,7 +445,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             />
           </div>
           <Reveal variants={slideInFromTop(0.2)}>
-            <p className="relative lg:text-center uppercase text-[24px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px] lg:mt-30">
+            <p className="relative lg:text-center uppercase text-[20px] lg:text-[36px] w-[300px] md:w-[383px] lg:w-[768px] mt-30">
               A Private Ecosystem Engineered for Enduring Value
             </p>
           </Reveal>
@@ -480,11 +465,11 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
               <div className="flex justify-center items-center gap-4 lg:gap-10">
                 {imageText[imageIndex].text1 &&(
-                  <h2 className={`${imageText[imageIndex].text1.width} lg:text-[28px] font-extralight`}><span className={`${imageIndex===5?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtLeft}</span> <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtRight}</span></h2>
+                  <h2 className={`${imageText[imageIndex].text1.width} text-[14px] lg:text-[20px] font-extralight`}><span className={`${imageIndex===5?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtLeft}</span> <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtRight}</span></h2>
                 )}
                 <img src={imageText[imageIndex].image} alt="imageText" className="w-35 lg:w-53" />
                 {imageText[imageIndex].text2 && (
-                  <h2 className={`${imageText[imageIndex].text2.width} lg:text-[28px] font-extralight`}><span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtLeft}</span> <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtRight}</span></h2>)}
+                  <h2 className={`${imageText[imageIndex].text2.width} text-[14px] lg:text-[20px] font-extralight`}><span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtLeft}</span> <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtRight}</span></h2>)}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -501,18 +486,18 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               </p>
             </Reveal>
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className='w-70 md:[323px] lg:w-121 text-[14px] lg:text-[16px]'>
+              <p className='w-70 md:[323px] lg:w-121 text-[12px] lg:text-[14px]'>
                 Ownership, at this level, is not transactional, it is civilizational. Vedara Dynasty offers access to rare, heritage-aligned assets whose value is measured in architectural truth. 
               </p>
             </Reveal>
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className="w-70 md:[323px] lg:w-121 text-[14px] lg:text-[16px]">
+              <p className="w-70 md:[323px] lg:w-121 text-[12px] lg:text-[14px]">
                 Every opportunity is presented through a lens of long-term stewardship. Here, investment is something that carries your principles forward into time.
               </p>
             </Reveal>
           </div>
   
-          <div className="relative w-screen lg:w-180 h-screen overflow-hidden">
+          <div className="relative w-screen lg:w-180 h-screen">
             <AnimatePresence>
               {!openForm1 ? (
                 <motion.div
@@ -539,13 +524,13 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 <motion.div
                   key="form"
                   ref={formRef1}
-                  className="absolute inset-0 bg-[#B9B2A3] flex items-center justify-center px-10"
+                  className="absolute inset-0 bg-[#B9B2A3] flex items-center justify-center"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <InvestorForm />
+                  <InvestorForm onClose={() => setOpenForm1(false)} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -555,19 +540,19 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center w-screen relative z-2 bg-black">
           <div className="flex flex-col gap-3 w-screen lg:w-[470px] px-10 lg:px-0 py-21 lg:pt-39 lg:mr-40">
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[24px] lg:text-[36px] ">
+              <p className="w-[300px] md:w-[373px] lg:w-[509px] text-[22px] lg:text-[36px] ">
                 For Founders Seeking a Worthy Circle
               </p>
             </Reveal> 
 
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className='w-70 md:[323px] lg:w-121 text-[14px] lg:text-[16px]'>
+              <p className='w-70 md:[323px] lg:w-121 text-[12px] lg:text-[14px]'>
                 Visionaries building places worthy of reverence deserve a sanctuary of aligned capital. Vedara Dynasty elevates founders who create with intention and architectural authenticity.
               </p>
             </Reveal>
 
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="w-70 md:[323px] lg:w-121 text-[14px] lg:text-[16px]">
+              <p className="w-70 md:[323px] lg:w-121 text-[12px] lg:text-[14px]">
                 Your project is not listed; it is honoured, refined, and positioned to meet investors who value soul, longevity, and significance.
               </p>
             </Reveal>
@@ -605,7 +590,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   exit={{ x: "-100%" }}
                   transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <VisionForm />
+                  <VisionForm onClose={() => setOpenForm2(false)}/>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -616,12 +601,12 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
       <section ref={scrollRef} className="relative flex flex-col justify-center w-screen h-screen items-center gap-x-12 py-34 lg:px-20 lg:py-41 text-black bg-primary">
         <div className=" hidden lg:flex justify-between gap-26 lg:gap-37 lg:py-10 px-[5vw] lg:border-t lg:border-b lg:border-[#2A2927] w-full">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <p className="uppercase md:w-[373px] text-center lg:text-left lg:text-[36px]">
+            <p className="uppercase md:w-[373px] text-center lg:text-left lg:text-[28px] leading-tight">
               Investment Circle Shaped for the Next Century
             </p>
           </Reveal>
 
-          <div className="relative flex flex-col justify-center w-[441px] font-light text-[22px] gap-y-20">
+          <div className="relative flex flex-col justify-center w-[441px] font-light text-[14px] lg:text-[18px] gap-y-20">
             {investment.map((text,idx)=> (
               <Reveal key={idx} variants={slideInFromRight(0.2)}>
               <div className="flex flex-col gap-6">
@@ -630,7 +615,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 </p>
               
                 {text.text2 && (
-                  <button className="uppercase text-[14px] border-b w-fit">
+                  <button className="uppercase text-[12px] lg:text-[14px] border-b w-fit">
                     {text.text2}
                   </button>
                 )}
@@ -669,36 +654,38 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
       </section>
 
 
-      <section ref={container4} className="flex flex-col justify-center items-start gap-12 lg:gap-18 pl-10 lg:pl-65 py-20 lg:pt-27 lg:pb-55">
-        <Reveal variants={slideInFromTop(0.2)}>
-          <motion.p style={{y:s4}} className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
-            Confidentiality & Access Protocol
-          </motion.p>
-        </Reveal>
-
-        <motion.div style={{y:s4}} className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
-          <Reveal variants={slideInFromRight(0.2)}>
-            <div className="flex flex-col gap-12 lg:gap-3 text-[16px] lg:text-[22px]">
-              <p className="w-60 lg:w-75 lg:mb-17">
-                Vedara Dynasty Operates Within a Closed Circle.
-              </p>
-              <p>(01)</p>
-              <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
-                All dossiers, communications, and project materials are safeguarded under strict mutual NDAs—preserving confidentiality of every interaction.
-              </p>
-
-              <p>(02)</p>
-
-              <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
-                Access is granted exclusively to verified investors, each individually cleared before receiving invitations to alignment sessions.
-              </p>
-            </div>
+      <section ref={container4} className="flex justify-center items-center py-20 lg:pt-27 lg:pb-55">
+        <div className="flex flex-col justify-center gap-12 lg:gap-18">
+          <Reveal variants={slideInFromTop(0.2)}>
+            <motion.p style={{y:s4}} className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
+              Confidentiality & Access Protocol
+            </motion.p>
           </Reveal>
-          
-          <Reveal variants={slideInFromLeft(0.2)}>
-            <img src="/dynasty/img15.png" alt="img15" className="w-[300px] md:w-115" />
-          </Reveal>
-        </motion.div>
+
+          <motion.div style={{y:s4}} className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
+            <Reveal variants={slideInFromRight(0.2)}>
+              <div className="flex flex-col gap-12 lg:gap-3 text-[16px] lg:text-[22px]">
+                <p className="w-60 lg:w-75 lg:mb-17">
+                  Vedara Dynasty Operates Within a Closed Circle.
+                </p>
+                <p>(01)</p>
+                <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
+                  All dossiers, communications, and project materials are safeguarded under strict mutual NDAs—preserving confidentiality of every interaction.
+                </p>
+
+                <p>(02)</p>
+
+                <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
+                  Access is granted exclusively to verified investors, each individually cleared before receiving invitations to alignment sessions.
+                </p>
+              </div>
+            </Reveal>
+            
+            <Reveal variants={slideInFromLeft(0.2)}>
+              <img src="/dynasty/img15.png" alt="img15" className="w-[300px] md:w-115" />
+            </Reveal>
+          </motion.div>
+        </div>
       </section>
 
       <Footer/>

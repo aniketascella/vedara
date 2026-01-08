@@ -111,9 +111,9 @@ const page = () => {
         </motion.div>
         <motion.div style={{y:s1}} className="flex w-full justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h3 className="lg:w-[770px] text-[24px] lg:text-[40px] font-light italic leading-tight">
+            <h3 className="lg:w-[770px] text-[24px] lg:text-[36px] font-light italic leading-10">
               A cultural studio for the ultra-conscious, those who understand
-              that a brand is a contribution to the ongoing narrative of human
+              that a brand is a contribution to the <br /> ongoing narrative of human
               excellence.
             </h3>
           </Reveal>
@@ -125,7 +125,7 @@ const page = () => {
           </Reveal>
         </motion.div>
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.button style={{y:s1}} className="flex justify-between items-center rounded-full backdrop-blur-[10px] py-4 pl-6 pr-5 text-[14px] lg:text-[16px] ml-10 lg:ml-30">
+          <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-[#6b6256]/15 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] ml-10 lg:ml-30">
             <p>Enter the World of Vedara</p>
             <ArrowForwardIosOutlinedIcon />
           </motion.button>
@@ -138,11 +138,11 @@ const page = () => {
         {/* SCROLL DRIVER */}
         <div ref={sectionRef} className="relative h-[300vh] w-full">
           {/* STICKY WRAPPER */}
-          <div className="sticky top-0 pt-10 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
+          <div className="sticky top-0 py-10 lg:py-30 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
             {/* HEADER — NOW STICKY */}
             <div className="flex flex-col lg:flex-row w-full gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
               <Reveal variants={slideInFromBottom(0.2)}>
-                <p className="hidden lg:flex italic text-[16px]">Vedara</p>
+                <h6 className="hidden lg:flex italic text-[16px]">Vedara</h6>
               </Reveal>
 
               <Reveal variants={slideInFromTop(0.2)}>
@@ -150,7 +150,7 @@ const page = () => {
               </Reveal>
 
               <Reveal variants={slideInFromRight(0.2)}>
-                <p className="lg:text-right w-[370px]">
+                <p className="text-[14px] lg:text-[16px] lg:text-right w-[370px]">
                   Vedara works with a rare class of founders and institutions,
                   those building not for seasons, but for generations.
                 </p>
@@ -236,15 +236,15 @@ const page = () => {
           </Reveal>
           <div className="flex flex-col gap-4 lg:w-[650px]">
             <Reveal variants={slideInFromTop(0.2)}>
-              <h3 className="text-[16px] lg:text-[22px] italic">Our Philosophy</h3>
+              <h3 className="text-[16px] lg:text-[20px] italic">Our Philosophy</h3>
             </Reveal>
             <Reveal variants={slideInFromTop(0.2)}>
-              <p className="text-[28px] lg:text-[40px] lg:w-[605px] leading-tight">
+              <p className="text-[28px] lg:text-[36px] lg:w-[605px] leading-tight">
                 Excellence Is Inevitable When You Build With Intention
               </p>
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="text-[12px] lg:text-[16px] lg:w-[430px] text-right lg:text-left">
+              <p className="text-[12px] lg:text-[14px] lg:w-[430px] text-right lg:text-left">
                 We partner with the few who understand that true luxury. While
                 others seek attention, we build authority!
               </p>
@@ -253,7 +253,7 @@ const page = () => {
               <img src="/atelier/img2.png" alt="img2" className="w-full max-w-[320px] lg:my-10 lg:max-w-none" />
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="hidden text-right lg:flex justify-self-end font-semibold lg:w-54">
+              <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-54">
                 Your brand deserves to become a reference point, not another
                 participant.
               </p>
@@ -262,22 +262,23 @@ const page = () => {
         </motion.div>
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.p style={{y:s2}} className="lg:text-center text-[16px] lg:w-[526px]">
+          <motion.p style={{y:s2}} className="lg:text-center text-[12px] lg:text-[14px] lg:w-[526px]">
             Every brand we shape begins as an idea, then evolves into a Legacy a
             narrative powerful enough to influence culture, shape desire, <br />and
             endure long after its originator has stepped aside.
           </motion.p>
         </Reveal>
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.p style={{y:s2}} className="border-b border-black pb-1 w-34 text-[16px]">Share Your Vision</motion.p>
+          <motion.p style={{y:s2}} className="border-b border-black pb-1 w-34 text-[12px] lg:text-[14px]">Share Your Vision</motion.p>
         </Reveal>
       </section>
 
       <section ref={container3} className="flex flex-col justify-center items-center gap-y-45 lg:gap-y-68 py-30">
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s3}} className="flex flex-col lg:text-center gap-7">
-            <h1 className="text-[16px] lg:text-[22px] italic">Our Approach</h1>
-            <p className="w-99 text-[18px] lg:w-160 lg:text-[28px]">
+            <h1 className="text-[16px] lg:text-[20px] italic">Our Approach</h1>
+            {/* questio */}
+            <p className="w-99 text-[18px] lg:w-160 lg:text-[28px] leading-tight">
               We create a complete universe identity, narrative, digital
               presence, and experience. <br /> So your story is not just seen, but
               felt, remembered, and passed down.
@@ -293,7 +294,7 @@ const page = () => {
           </h1>
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-y-11">
-              <p className="uppercase text-[20px] lg:text-[30px] ml-10 text-right w-[204px] lg:w-95 ">the listening</p>
+              <p className="uppercase text-[20px] lg:text-[28px] ml-10 text-right w-[204px] lg:w-95 ">the listening</p>
               <Reveal variants={slideInFromBottom(0.2)}>
                 <img
                   src="/atelier/img3.png"
@@ -301,8 +302,8 @@ const page = () => {
                   className="lg:hidden relative"
                 />
               </Reveal>
-              <p className="w-80 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[16px] lg:font-light opacity-80">
-                <span className="text-[14px] lg:text-[22px] lg:font-medium">We begin by absorbing values, histories, ambitions,
+              <p className="w-80 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[14px] lg:font-light opacity-80">
+                <span className="text-[16px] lg:text-[20px] lg:font-medium">We begin by absorbing values, histories, ambitions,
                 contradictions.</span><br /> Not just what is said, but what is meant.That’s
                 when clarity begins to take form.
               </p>
@@ -323,7 +324,7 @@ const page = () => {
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
-              <p className="uppercase text-[20px] lg:text-[30px] text-right w-56 lg:w-105">the revelation</p>
+              <p className="uppercase text-[20px] lg:text-[28px] text-right w-56 lg:w-105">the revelation</p>
               <Reveal variants={slideInFromBottom(0.2)}>
                 <img
                   src="/atelier/img4.png"
@@ -331,8 +332,8 @@ const page = () => {
                   className="lg:hidden relative left-10 md:left-40"
                 />
               </Reveal>
-              <p className="w-60 lg:w-[430px] lg:pl-21 text-[12px] lg:text-[16px] lg:font-light opacity-80">
-                <span className="text-[14px] lg:text-[22px] lg:font-medium">This is the moment clarity emerges.</span><br />Your cultural identity,
+              <p className="w-60 lg:w-[430px] lg:pl-21 text-[12px] lg:text-[14px] lg:font-light opacity-80">
+                <span className="text-[16px] lg:text-[20px] lg:font-medium">This is the moment clarity emerges.</span><br />Your cultural identity,
                 intention, and emotional promise is understood.We focus on the
                 essence that sets your brand apart from the world.
               </p>
@@ -355,7 +356,7 @@ const page = () => {
           </h1>
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
-              <p className="uppercase text-[20px] lg:text-[30px]">The Design of Meaning</p>
+              <p className="uppercase text-[20px] lg:text-[28px]">The Design of Meaning</p>
               <Reveal variants={slideInFromBottom(0.2)}>
                 <img
                   src="/atelier/img5.png"
@@ -363,8 +364,8 @@ const page = () => {
                   className="lg:hidden relative"
                 />
               </Reveal>
-              <p className="w-80 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[16px] lg:font-light opacity-80">
-                <span className="text-[14px] lg:text-[22px] lg:font-medium">Meaning becomes architecture.</span><br /> We translate philosophy into strategy, aesthetics, and digital expression.Every element, colour, shape, word, interaction becomes a vessel of significance.
+              <p className="w-80 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[14px] lg:font-light opacity-80">
+                <span className="text-[16px] lg:text-[20px] lg:font-medium">Meaning becomes architecture.</span><br /> We translate philosophy into strategy, aesthetics, and digital expression.Every element, colour, shape, word, interaction becomes a vessel of significance.
               </p>
             </div>
           </Reveal>
@@ -383,7 +384,7 @@ const page = () => {
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
-              <p className="uppercase text-[20px] lg:text-[30px] lg:w-105">The Embodiment</p>
+              <p className="uppercase text-[20px] lg:text-[28px] lg:w-105">The Embodiment</p>
               <Reveal variants={slideInFromBottom(0.2)}>
                 <img
                   src="/atelier/img3.png"
@@ -391,8 +392,8 @@ const page = () => {
                   className="lg:hidden relative md:left-48"
                 />
               </Reveal>
-              <p className="w-60 lg:w-[466px] text-[12px] lg:text-[16px] lg:font-light lg:pl-23 opacity-80">
-                <span className="text-[14px] font-medium lg:text-[22px]">The brand takes form.</span><br />Identity systems, digital design, messaging, rituals, and experiences become aligned into a singular, unmistakable presence.
+              <p className="w-60 lg:w-[466px] text-[12px] lg:text-[14px] lg:font-light lg:pl-23 opacity-80">
+                <span className="text-[16px] font-medium lg:text-[20px]">The brand takes form.</span><br />Identity systems, digital design, messaging, rituals, and experiences become aligned into a singular, unmistakable presence.
               </p>
             </div>
           </Reveal>
@@ -411,7 +412,7 @@ const page = () => {
           </Reveal>
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
-              <p className="uppercase text-[20px] lg:text-[30px] lg:text-right lg:w-105">The Continuum</p>
+              <p className="uppercase text-[20px] lg:text-[28px] lg:text-right lg:w-105">The Continuum</p>
               <Reveal variants={slideInFromBottom(0.2)}>
                 <img
                   src="/atelier/img6.png"
@@ -419,8 +420,8 @@ const page = () => {
                   className="lg:hidden relative"
                 />
               </Reveal>
-              <p className="w-80 md:w-100 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[16px] lg:font-light opacity-80">
-                <span className="text-[14px] lg:text-[22px] lg:font-medium">Legacy is a marathon,<br /> not a launch.</span><br /> We refine, evolve, and guide, ensuring the brand remains alive, relevant, and generationally enduring.
+              <p className="w-80 md:w-100 pl-20 md:pl-40 lg:pl-0 lg:w-[318px] text-[12px] lg:text-[14px] lg:font-light opacity-80">
+                <span className="text-[16px] lg:text-[20px] lg:font-medium">Legacy is a marathon,<br /> not a launch.</span><br /> We refine, evolve, and guide, ensuring the brand remains alive, relevant, and generationally enduring.
               </p>
             </div>
           </Reveal>
@@ -437,13 +438,14 @@ const page = () => {
       <section ref={container4} className="flex flex-col gap-y-11 lg:flex-row w-full bg-primary text-black">
         <motion.div style={{y:s4}} className="flex flex-col w-full h-[40vh] lg:w-1/2 lg:h-full px-[6vw] lg:px-23 pt-12 lg:pt-23 gap-y-8">
           <Reveal variants={slideInFromTop(0.2)}>
-            <h2 className="italic text-[18px] lg:text-[22px]">
+            <h2 className="italic text-[18px] lg:text-[20px]">
               Featured Projects
             </h2>
           </Reveal>
 
           <Reveal variants={slideInFromLeft(0.2)}>
-            <p className="font-light text-[18px] leading-snug lg:text-[30px] lg:leading-tight max-w-[520px]">
+            <p className="font-light text-[18px] lg:text-[28px] leading-tight max-w-[520px]"> 
+              {/* reduce letter spacing */}
               Our portfolio is a curated anthology of ideas brought to life,
               from heritage-rooted brands to future-thinking digital ecosystems.
               Every creation reflects our devotion to detail, narrative, and
@@ -453,7 +455,7 @@ const page = () => {
 
           <Reveal variants={slideInFromBottom(0.2)}>
             <Link href="/portfolio">
-            <p className="border-b border-black pb-1 w-fit lg:mt-65 text-[14px] lg:text-[16px]">
+            <p className="border-b border-black pb-1 w-fit lg:mt-65 text-[12px] lg:text-[14px]">
               Explore All Projects
             </p>
             </Link>
@@ -471,10 +473,10 @@ const page = () => {
             <Link href="/portfolio/selhaya">
             <div className="absolute flex justify-between items-center bottom-0 backdrop-blur-[15px] w-full py-9 px-11 text-white">
               <div className="flex flex-col">
-              <h3 className="text-[18px] lg:text-[20px] font-medium">
+              <h3 className="text-[18px] lg:text-[20px] font-medium italic">
                 Selhaya World’s First Luxury Abaya Maison
               </h3>
-              <p className="text-[14px] mt-2 opacity-90 w-[320px] lg:w-[474px]">
+              <p className="text-[12px] lg:text-[14px] mt-2 opacity-90 w-[320px] lg:w-[474px]">
                 Selhaya entered Vedara’s closed-circle ecosystem to evolve
                 from a promising luxury brand into an unforgettable maison.
               </p>
@@ -490,12 +492,12 @@ const page = () => {
       <section ref={container5} className="flex flex-col justify-center items-center gap-y-25 pt-30 pb-60">
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s5}} className="flex flex-col justify-center items-center text-center gap-y-7">
-            <p className="text-[22px]">Blogs</p>
-            <p className="w-100 lg:w-150 text-[28px]">
+            <h3 className="text-[16px] lg:text-[20px] italic">Blogs</h3>
+            <p className="w-100 lg:w-150 text-[20px] lg:text-[28px] leading-tight">
               Where perspective becomes power, and knowledge becomes a creative
               asset.
             </p>
-            <p className="w-25 border-b border-white pb-1">Explore</p>
+            <p className="border-b border-white pb-1 text-[12px] lg:text-[14px]">Explore</p>
           </motion.div>
         </Reveal>
 
@@ -524,7 +526,7 @@ const page = () => {
                 }}
                 className="absolute inset-0"
               >
-                <div className="flex flex-col w-full h-full p-10 gap-y-13 relative text-white">
+                <div className="flex flex-col justify-between w-full h-full p-10 relative text-white">
                   {/* Background Image */}
                   <img
                     src={card.image}
@@ -539,11 +541,11 @@ const page = () => {
                     <p>{card.duration}</p>
                   </div>
 
-                  <h2 className="relative z-10 text-[32px] leading-tight">
+                  <h2 className="relative z-10 text-[2px] leading-tight">
                     {card.title}
                   </h2>
 
-                  <div className="relative z-10 mt-auto w-25 border-b border-white pb-1">
+                  <div className="relative z-10 w-25 border-b border-white pb-1">
                     Read More
                   </div>
                 </div>
@@ -563,20 +565,20 @@ const page = () => {
         <motion.div style={{y:s5}} className="hidden lg:flex gap-6">
           {CARDS.map((card,idx) => (
             <Reveal variants={slideInFromLeft(0.2 + (idx)/5)} key={idx}>
-              <div className="flex flex-col w-[396px] h-[566px] p-10 gap-y-13 relative">
+              <div className="flex flex-col justify-between w-[396px] h-[566px] p-10 relative">
                 <img
                   src={card.image}
                   alt="img8"
-                  className="absolute inset-0"
+                  className="absolute w-full h-full inset-0"
                 />
                 <div className="flex justify-between z-1">
                   <p>{card.date}</p>
                   <p>{card.duration}</p>
                 </div>
-                <h2 className="text-[32px] z-1">
+                <h2 className="text-[32px] z-1 leading-tight">
                   {card.title}
                 </h2>
-                <div className="mt-40 w-25 border-b border-white pb-1 z-1">
+                <div className="border-b w-23 border-white pb-1 z-1">
                   Read More
                 </div>
               </div>

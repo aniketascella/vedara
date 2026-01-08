@@ -1,7 +1,7 @@
 export const CARDS = [
   {
     date: "21 SEP 2025",
-    duration: "12 Mins 8",
+    duration: "12 Mins",
     title: "How Luxury Brands Destroy Their Cultural Authority",
     image: "/atelier/img8.png",
   },
