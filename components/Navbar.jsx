@@ -47,6 +47,16 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    if (!scrolledPastVH) {
+      setShowMenuIcon(false);
+      setTimeout(() => setNavEnabled(true),80);
+    }
+    else{
+      setNavEnabled(false);
+    }
+  }, [scrolledPastVH]);
+
   const isVisible = pathname === "/atelier" || pathname === "/dynasty";
 
   const active = pathname === "/atelier" ? "atelier" : "dynasty";

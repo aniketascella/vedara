@@ -64,10 +64,10 @@ const page = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <h1 className="w-[350px] lg:w-[440px] text-[24px] lg:text-[36px] text-center italic">
-          Together, we architect cultural immortality.
+        <h1 className="w-[350px] lg:w-[440px] text-[22px] lg:text-[36px] text-center italic">
+          Together, we architect <br /> cultural immortality.
         </h1>
-        <p className='text-center lg:w-[570px] text-[14px] lg:text-[16px]'>
+        <p className='text-center w-[300px] lg:w-[570px] text-[12px] lg:text-[14px]'>
           Are you ready to transcend competition and birth a movement that commands reverence? Initiate your sovereignty.
         </p>
 
