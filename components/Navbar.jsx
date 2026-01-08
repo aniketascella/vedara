@@ -76,7 +76,7 @@ export default function Navbar() {
           {isVisible && 
             <div className="relative hidden lg:flex lg:items-center rounded-full bg-[#3a332b] py-2 hover:cursor-pointer">
               <span
-                className={`hover:cursor-pointer absolute h-full w-1/2 rounded-full bg-[#6b6256] transition-transform duration-400 ease-out ${
+                className={`hover:cursor-pointer absolute h-full w-1/2 rounded-full bg-tertiary transition-transform duration-400 ease-out ${
                   active === "dynasty" ? "translate-x-full" : "translate-x-0"
                 }`}
               />

@@ -47,19 +47,19 @@ export default function Home() {
           Let’s align your heritage with modern relevance.
         </motion.p>
 
-        <motion.div variants={item} className="lg:hidden flex  justify-between items-center text-[12px] w-full">
+        <motion.div variants={item} className="lg:hidden flex justify-between items-center text-[12px] w-full">
           <Link href='/atelier'>
-            <button className="pl-9 pr-3 py-4 rounded-full bg-[#CEBFB3]/10bg-[#CEBFB3]/10 backdrop-blur-[20px] ">
-              <div className="flex justify-between items-center">
-                Vedara Atelier 
+            <button className="pl-9 pr-3 py-4 rounded-full bg-tertiary/20 backdrop-blur-lg">
+              <div className="flex justify-between gap-2 items-center">
+                Vedara Atelier
                 <ArrowForwardIosOutlinedIcon/>
               </div>
             </button>
           </Link>
 
           <Link href='/dynasty'>
-            <button className="pl-9 pr-3 py-4 rounded-full bg-[#CEBFB3]/10 backdrop-blur-[10px]">
-              <div className="flex justify-between items-center">
+            <button className="pl-9 pr-3 py-4 rounded-full bg-tertiary/20 backdrop-blur-lg">
+              <div className="flex justify-between gap-2 items-center">
                 Vedara Dynasty 
                 <ArrowForwardIosOutlinedIcon/>
               </div>  

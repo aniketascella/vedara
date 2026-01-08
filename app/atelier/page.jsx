@@ -125,7 +125,7 @@ const page = () => {
           </Reveal>
         </motion.div>
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-[#6b6256]/15 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] ml-10 lg:ml-30">
+          <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-tertiary/15 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] ml-10 lg:ml-30">
             <p>Enter the World of Vedara</p>
             <ArrowForwardIosOutlinedIcon />
           </motion.button>

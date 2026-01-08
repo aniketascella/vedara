@@ -510,7 +510,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 >
                   <button
                     onClick={() => setOpenForm1(true)}
-                    className="flex justify-between z-1 py-6 px-6 text-center rounded-full backdrop-blur-xl"
+                    className="flex justify-between z-1 py-6 px-6 text-center rounded-full bg-tertiary/15 backdrop-blur-xl"
                   >
                     Explore Curated Opportunities
                     <ArrowForwardIosOutlinedIcon/>
@@ -571,7 +571,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 >
                   <button
                     onClick={() => setOpenForm2(true)}
-                    className="z-1 py-6 px-15 text-center rounded-full backdrop-blur-xl"
+                    className="z-1 py-6 px-15 text-center rounded-full bg-tertiary/15 backdrop-blur-lg"
                   >
                     Submit Your Vision
                   </button>
