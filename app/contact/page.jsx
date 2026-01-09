@@ -55,7 +55,7 @@ const page = () => {
   }
 
   return (
-    <div>
+    <div className='relative w-full overflow-x-clip'>
       <div className='flex flex-col items-center justify-center gap-y-7 py-51'>
         <div className="absolute inset-0 w-full h-[2201px] -z-1">
           <img
@@ -64,24 +64,24 @@ const page = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <h1 className="w-[350px] lg:w-[440px] text-[22px] lg:text-[36px] text-center italic">
+        <h1 className="w-[300px] lg:w-[440px] text-[22px] lg:text-[36px] text-center italic">
           Together, we architect <br /> cultural immortality.
         </h1>
         <p className='text-center w-[300px] lg:w-[570px] text-[12px] lg:text-[14px]'>
           Are you ready to transcend competition and birth a movement that commands reverence? Initiate your sovereignty.
         </p>
 
-        <section className="min-h-screen w-[400px] lg:w-[612px] rounded-2xl flex justify-center items-start bg-primary py-20">
+        <section className="min-h-screen w-[400px] lg:w-[612px] rounded-2xl flex justify-center items-start bg-primary  py-20">
           <form
             onSubmit={handleSubmit}
-            className="w-full px-10 lg:px-20 flex flex-col gap-6 text-black"
+            className="w-full px-13 lg:px-10 flex flex-col gap-6 text-black"
           >
             {/* Header */}
             <div className="flex flex-col gap-4 w-[340px] lg:w-[456px]">
-              <p className="text-[18px] lg:text-[22px] font-medium">
+              <p className="text-[16px] lg:text-[20px] font-medium">
                 The Cultural Sovereignty Assessment™
               </p>
-              <p className="text-[14px] leading-relaxed font-light">
+              <p className="text-[12px] lg:text-[14px] w-[300px] lg:w-[500px] leading-tight font-light">
                 We serve 12 cultural empire builders each quarter, not from
                 artificial limitation, but from our covenant to provide the
                 generational thinking and territorial precision that dynasty

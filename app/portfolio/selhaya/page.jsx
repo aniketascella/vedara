@@ -70,7 +70,7 @@ const page = () => {
 //   }
 // });
   return (
-    <div>
+    <div className='relative w-full overflow-x-clip'>
       <section ref={container1} className="flex flex-col justify-end items-start w-screen h-screen relative overflow-hidden">
         <motion.div style={{y:s1bg}} className="absolute -z-1 w-full h-full">
           <img
@@ -217,8 +217,8 @@ const page = () => {
         </div>
       </section>
 
-      <section ref={container2} className="flex flex-col items-center py-26">
-        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row justify-center gap-24">
+      <section ref={container2} className="flex flex-col items-center py-10 lg:py-26">
+        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row justify-center gap-x-24 gap-y-6">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h5 className='italic text-[16px] lg:text-[20px]'>Our Solution</h5>
           </Reveal>
@@ -234,15 +234,15 @@ const page = () => {
 
       </section>
 
-      <section ref={container3} className="py-10 lg:py-34 bg-primary relative overflow-x-hidden">
+      <section ref={container3} className="py-20 lg:py-34 bg-primary relative overflow-x-hidden">
 
         <motion.img style={{y:s3}} src="/selhaya/img6.png" alt="img6" className="w-[300px] lg:w-[813px] mx-auto"/>
 
         <motion.div style={{y:s3}} className="flex md:hidden flex-col mx-auto mt-32 gap-4 text-black w-72">
-          <h5 className="italic text-[14px] lg:text-[18px]">
+          <h5 className="font-semibold italic text-[16px]">
             Vedara’s Strategic Intervention
           </h5>
-          <p className="text-[12px] lg:text-[14px] font-light">
+          <p className="text-[12px] font-light">
             We conducted in-depth alignment sessions, evaluated their long-term vision, and audited their narrative, and experiential gaps.Ensured every page, word, and frame reflected Selhaya’s ethos of craft and elegance.
           </p>
         </motion.div>
@@ -253,7 +253,7 @@ const page = () => {
           <div className="flex flex-col justify-end md:justify-start md:gap-y-19">
             <Reveal variants={slideInFromRight(0.2)}>
               <div className="hidden md:flex flex-col md:gap-4 text-black w-54 lg:w-103 ml-18">
-                <h5 className="relative -left-19 italic text-[16px] lg:text-[20px]">
+                <h5 className="font-semiboldrelative -left-19 italic text-[16px] lg:text-[20px]">
                   Vedara’s Strategic Intervention
                 </h5>
                 <p className="text-[12px] lg:text-[14px] font-light">
@@ -310,7 +310,7 @@ const page = () => {
         </motion.div>
       </section>
 
-      <section ref={container4} className="py-45 flex flex-col justify-center items-center gap-y-[75px] lg:gap-y-0">
+      <section ref={container4} className="py-25 lg:py-45 flex flex-col justify-center items-center gap-y-[75px] lg:gap-y-0">
         <Reveal variants={slideInFromBottom(0.2)}>
           <motion.img style={{y:s4}} src="/selhaya/img11.png" alt="img11" className="w-[300px] lg:w-[480px]"/>
         </Reveal>

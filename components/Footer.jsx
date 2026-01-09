@@ -17,7 +17,8 @@ const Footer = () => {
         <Link href="/" className="cursor-pointer hover:opacity-70">Home</Link>
         <Link href="/" className="cursor-pointer hover:opacity-70">About</Link>
         <Link href="/dynasty" className="cursor-pointer hover:opacity-70">Vedara Dynasty</Link>
-        <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Case Study</Link>
+        <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Portfolio</Link>
+        <Link href="/insight" className="cursor-pointer hover:opacity-70">Insight</Link>
         <Link href="/blog" className="cursor-pointer hover:opacity-70">Blog</Link>
         <Link href="/contact" className="cursor-pointer hover:opacity-70">Contact</Link>
       </div>
@@ -44,12 +45,16 @@ const Footer = () => {
 
             <div className="flex flex-col gap-2">
               <Link href="/dynasty" className="cursor-pointer hover:opacity-70">Vedara Dynasty</Link>
-              <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Case Study</Link>
+              <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Portfolio</Link>
             </div>
 
             <div className="flex flex-col gap-2">
               <Link href="/blog" className="cursor-pointer hover:opacity-70">Blog</Link>
               <Link href="/contact" className="cursor-pointer hover:opacity-70">Contact</Link>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Link href="/insight" className="cursor-pointer hover:opacity-70">Insight</Link>
             </div>
           </div>
 

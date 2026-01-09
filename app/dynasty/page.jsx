@@ -213,7 +213,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 });
 
   return (
-    <div className='text-white w-screen'>
+    <div className='text-white w-screen relative overflow-x-clip'>
       <section ref={container1} className="flex flex-col justify-center items-center gap-5 w-screen py-50 relative">
         <motion.div style={{y:s1bg}} className="absolute -z-1 w-full h-full">
           <img
@@ -289,7 +289,11 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <section ref={sectionRef} className="relative h-[250vh]">
           <div className="sticky top-0 h-screen overflow-hidden">
             <motion.div className="h-auto mt-0 lg:mt-10 py-5">
-              <p className="w-[300px] md:w-[92px] lg:w-170 mx-auto text-[20px] lg:text-[32px] leading-tight mb-24">
+              <p className="lg:hidden w-[300px] md:w-[92px] mx-auto text-[20px] leading-tight mb-24">
+                The Dynasty Is Governed By Principles
+                That Protect Purity, Rarity, And Meaning.
+              </p>
+              <p className="hidden lg:block w-170 mx-auto text-[32px] leading-tight mb-24">
                 The Dynasty Is Governed By Principles
                 <br />
                 That Protect Purity, Rarity, And Meaning.
@@ -333,7 +337,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                           </p>
                         </div>
 
-                        <div
+                        <motion.div
                           className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
                             activeIndex === i
                               ? "max-h-60 opacity-100"
@@ -347,7 +351,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                               className="w-[220px] object-cover"
                             />
                           </div>
-                        </div>
+                        </motion.div>
                       </div>
                     ))}
                   </div>
@@ -386,18 +390,18 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
       <section ref={container3} className='flex flex-col justify-center py-35 gap-7 lg:gap-11 pl-8 md:pl-19 lg:pl-37'>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.p style={{y:s3}} className="uppercase w-[300px] md:w-100 lg:w-202 text-[20px] md:text-[24px] lg:text-[36px] pl-8 md:pl-19 lg:pl-37 leading-tight">
+          <motion.p style={{y:s3}} className="uppercase w-[320px] md:w-100 lg:w-202 text-[20px] md:text-[24px] lg:text-[36px] pl-8 md:pl-19 lg:pl-37 leading-tight">
             Where Brands Become Cultural Contributors, Not Market Participants
           </motion.p>
         </Reveal>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.p style={{y:s3}} className="lg:w-122 text-[14px] lg:text-[16px] pl-8 md:pl-19 lg:pl-37">
+          <motion.p style={{y:s3}} className="w-[320px] lg:w-122 text-[14px] lg:text-[16px] pl-8 md:pl-19 lg:pl-37">
             Vedara shapes identities that influence categories, shift language, and imprint on collective memory.
           </motion.p>
         </Reveal>
         <motion.div style={{y:s3}} className="flex flex-col lg:flex-row justify-center items-center gap-12">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className="bg-primary text-black flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-primary text-black flex flex-col gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/img2.png" alt="img2" className="relative w-full object-cover" />
               <p className="text-right text-[12px] lg:text-[14px]">
                 Entrepreneurs struggle to access serious, verified, values-aligned investors.
@@ -406,7 +410,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           </Reveal>
           
           <Reveal variants={slideInFromBottom(0.2)}>
-            <div className="bg-secondary flex flex-col gap-21 lg:gap-44 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-secondary flex flex-col gap-21 lg:gap-44 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
               <p className="text-[12px] lg:text-[14px]">
                 Investors face low-quality deal flow + overwhelming noise
@@ -415,7 +419,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           </Reveal>
           
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="bg-primary text-black text-[12px] lg:text-[14px] flex flex-col gap-6 w-[300px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-primary text-black text-[12px] lg:text-[14px] flex flex-col gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <div className="flex gap-6">
                 <img src="/dynasty/img3.png" alt="img3" className="relative object-cover rounded-xl" />
                 <div className="flex flex-col gap-4">
@@ -598,7 +602,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </div>
       </section>
 
-      <section ref={scrollRef} className="relative flex flex-col justify-center w-screen h-screen items-center gap-x-12 py-34 lg:px-20 lg:py-41 text-black bg-primary">
+      <section ref={scrollRef} className="relative flex flex-col justify-center w-screen items-center gap-x-12 py-20 lg:px-20 lg:py-31 text-black bg-primary">
         <div className=" hidden lg:flex justify-between gap-26 lg:gap-37 lg:py-10 px-[5vw] lg:border-t lg:border-b lg:border-[#2A2927] w-full">
           <Reveal variants={slideInFromLeft(0.2)}>
             <p className="uppercase md:w-[373px] text-center lg:text-left lg:text-[28px] leading-tight">

@@ -47,15 +47,15 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(() => {
-    if (!scrolledPastVH) {
-      setShowMenuIcon(false);
-      setTimeout(() => setNavEnabled(true),80);
-    }
-    else{
-      setNavEnabled(false);
-    }
-  }, [scrolledPastVH]);
+    useEffect(() => {
+      if (!scrolledPastVH) {
+        setShowMenuIcon(false);
+        setTimeout(() => setNavEnabled(true),80);
+      }
+      else{
+        setNavEnabled(false);
+      }
+    }, [scrolledPastVH]);
 
   const isVisible = pathname === "/atelier" || pathname === "/dynasty";
 
@@ -121,11 +121,12 @@ export default function Navbar() {
           transition={{ duration: 0.5, ease:"easeOut"}}
           onAnimationComplete={() => {
             if (scrolledPastVH) {
-              setTimeout(() => setShowMenuIcon(true),60);
+              setTimeout(() => setShowMenuIcon(true),80);
             }
           }}
         >
-          <Link href="/portfolio"><p className="">case study</p></Link>
+          <Link href="/portfolio"><p className="">portfolio</p></Link>
+          <Link href="/insight"><p className="">insight</p></Link>
           <Link href="/atelier"><p className="">atelier</p></Link>
           <Link href="/blogs"><p className="">blogs</p></Link>
           <Link href="/dynasty"><p className="">dynasty</p></Link>
@@ -178,13 +179,13 @@ export default function Navbar() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.02, opacity: 0 }}
             transition={{ type: "spring", stiffness: 250, damping: 30 }}
-            style={{ transformOrigin: "top right" }}
-            className="fixed top-0 right-0 h-screen w-[200px] lg:w-[400px] flex flex-col justify-end z-35 bg-primary"
+            style={{ transformOrigin: "top" }}
+            className="fixed top-0 right-0 h-screen w-[250px] md:w-[300px] lg:w-[400px] flex flex-col justify-center lg:justify-end z-35 bg-primary"
             role="dialog"
             aria-modal="true"
           >
 
-            <nav className="p-10 lg:p-15 flex flex-col gap-4 lg:gap-6 text-[16px] lg:text-[30px] font-editorial italic text-neutral-500 mb-30 lg:mb-40">
+            <div className="pl-10 lg:pl-15 flex flex-col gap-4 lg:gap-6 text-[16px] lg:text-[30px] font-editorial italic text-black lg:text-neutral-500 mb-30 lg:mb-40">
               <Link href="/atelier">
                 <motion.p
                   whileHover={{ scale: 1.05 }}
@@ -200,7 +201,16 @@ export default function Navbar() {
                   transition={{ type: "spring", stiffness: 250 }}
                   className="hover:text-black origin-left"
                   onClick={() => setSidebarOpen(false)}>
-                  Case Study
+                  Portfolio
+                </motion.p>
+              </Link>
+              <Link href="/insight">
+                <motion.p 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 250 }}
+                  className="hover:text-black origin-left"
+                  onClick={() => setSidebarOpen(false)}>
+                  Insight
                 </motion.p>
               </Link>
               <Link href="/dynasty">
@@ -230,9 +240,9 @@ export default function Navbar() {
                   Contact
                 </motion.p>
               </Link>
-            </nav>
+            </div>
 
-            <div className="relative flex justify-center lg:gap-x-18 w-full bottom-8 pl-10 text-[14px] text-black font-editorial italic">
+            <div className="relative flex justify-center lg:gap-x-18 w-full pl-10 lg:mb-10 text-[14px] text-black font-editorial italic">
               <p>
                 © 2025 Vedara. All Rights Reserved
               </p>

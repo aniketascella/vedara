@@ -73,7 +73,7 @@ const page = () => {
   const s4 = useTransform(section4, [0,1], [-200,300]);
 
   return (
-    <div>
+    <div className="relative w-full overflow-x-clip">
       {/* section hero */}
       <section ref={container1} className="flex flex-col justify-end items-start w-screen h-screen relative overflow-hidden">
         <motion.div style={{y:s1bg}} className="parallax-bg absolute inset-0 -z-1 w-full h-full">
