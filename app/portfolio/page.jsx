@@ -70,7 +70,7 @@ const page = () => {
   // const s2 = useTransform(section2, [0,1], [0,-200]);
   // const s2bg = useTransform(section2, [0,1], [0,500]);
   const s3 = useTransform(section3, [0,1], [0,-200]);
-  const s4 = useTransform(section4, [0,1], [-200,300]);
+  const s4 = useTransform(section4, [0,1], [0,100]);
 
   return (
     <div className="relative w-full overflow-x-clip">
@@ -376,7 +376,7 @@ const page = () => {
       </motion.section>
 
       {/* footer */}
-      <motion.div ref={container4} style={{y:s4}} className="relative -z-100">
+      <motion.div ref={container4} style={{y:s4}} className="relative ">
         <Footer />
       </motion.div>
     </div>

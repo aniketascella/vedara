@@ -521,6 +521,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   </button>
                   <img
                     src="/dynasty/img13.png"
+                    alt='img13'
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </motion.div>
@@ -581,6 +582,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   </button>
                   <img
                     src="/dynasty/img14.png"
+                    alt='img14'
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </motion.div>

@@ -19,7 +19,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="bg-[#0d0d0d] text-white relative w-full overflow-x-clip">
-      <section className="flex flex-col justify-center pl-6 lg:pl-20 my-40">
+      <section className="flex flex-col justify-center pl-6 lg:pl-20 py-40">
         <Reveal variants={slideInFromRight(0.2)}>
         <h1 className="w-[300px] lg:w-auto text-[24px] lg:text-[36px] italic mb-4">
           Cultural Prophecy And Sovereign Wisdom

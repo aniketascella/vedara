@@ -179,7 +179,7 @@ export default function Navbar() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.02, opacity: 0 }}
             transition={{ type: "spring", stiffness: 250, damping: 30 }}
-            style={{ transformOrigin: "top" }}
+            style={{ transformOrigin: "top right" }}
             className="fixed top-0 right-0 h-screen w-[250px] md:w-[300px] lg:w-[400px] flex flex-col justify-center lg:justify-end z-35 bg-primary"
             role="dialog"
             aria-modal="true"
