@@ -214,7 +214,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
   return (
     <div className='text-white w-screen relative overflow-x-clip'>
-      <section ref={container1} className="flex flex-col justify-center items-center gap-5 w-screen py-50 relative">
+      <section ref={container1} className="flex flex-col justify-center items-center gap-5 lg:gap-15 w-screen h-screen py-50 relative">
         <motion.div style={{y:s1bg}} className="absolute -z-1 w-full h-full">
           <img
             src="/dynasty/heroImg.png"
@@ -230,12 +230,12 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[12px] lg:text-[14px] px-10 lg:px-0 font-light'>
+        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[14px] lg:text-[18px] px-10 lg:px-0 font-light'>
           Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
         </motion.p>
         </Reveal>
 
-        <motion.div style={{y:s1}} className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
+        {/* <motion.div style={{y:s1}} className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-12 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
               <p className='w-[191px] lg:w-[284px] font-light text-[16px] lg:text-[20px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
@@ -247,7 +247,10 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               //   }, 80);
               // }}
               >
-                <h3 className='lg:italic font-extralight'>Explore Curated Opportunities</h3></button>
+                <h3 className='lg:italic font-extralight'>
+                  Explore Curated Opportunities
+                </h3>
+              </button>
             </div>
           </Reveal>
 
@@ -265,7 +268,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               <h3 className='lg:italic font-extralight'>Submit Your Vision</h3></button>
             </div>
           </Reveal>
-        </motion.div>
+        </motion.div> */}
+        <Reveal variants={slideInFromBottom(0.2)}>
+          <motion.button style={{y:s1}} className='backdrop-blur-lg bg-[#CEBFB3]/10 rounded-full text-[14px] lg:text-[16px] px-4 py-3 lg:px-8 hover:cursor-pointer'>
+            <h3 className='lg:italic font-extralight'>
+              Coming Soon
+            </h3>
+          </motion.button>
+        </Reveal>
 
       </section>
 
