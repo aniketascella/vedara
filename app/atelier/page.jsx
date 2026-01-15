@@ -14,6 +14,7 @@ import {
 import Footer from "@/components/Footer";
 import ArrowBackIosNewOutlined from "@mui/icons-material/ArrowBackIosNewOutlined";
 import Link from "next/link";
+import LuxuryBrand from "@/components/LuxuryBrand";
 
 
 const page = () => {
@@ -111,9 +112,9 @@ const page = () => {
         </motion.div>
         <motion.div style={{y:s1}} className="flex w-full justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h3 className="lg:w-[770px] text-[24px] lg:text-[36px] font-light italic leading-tight">
-              We design brand experiences that command attention, build trust, and drive high-value connections.
-            </h3>
+            <h1 className="lg:w-[660px] text-[24px] lg:text-[64px] font-extralight italic leading-tight">
+              Beautiful Brands <br /> <span className="font-semibold">Get Forgotten Every Day.</span>
+            </h1>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="hidden lg:flex flex-col justify-between items-end gap-y-5 text-[16px]">
@@ -122,17 +123,22 @@ const page = () => {
             </div>
           </Reveal>
         </motion.div>
+        <Reveal variants={slideInFromLeft(0.2)}>
+          <motion.p style={{y:s1}} className="mx-10 lg:mx-30 w-92 lg:w-[558px] font-light text-[16px] lg:text-[24px] tracking-tight leading-tight">
+            We don't design to impress. We design to make you irreplaceable visually, strategically, generationally.
+          </motion.p>
+        </Reveal>
         <Reveal variants={slideInFromLeft(0.2)} className={`mb-20`}>
           <Link href="/contact">
           <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-tertiary/15 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] ml-10 lg:ml-30">
-            <p>Enter the World of Vedara</p>
+            <p>Begin the Conversation</p>
             <ArrowForwardIosOutlinedIcon />
           </motion.button>
           </Link>
         </Reveal>
       </section>
 
-      <WhatWeDo />
+      <LuxuryBrand/>
 
       <section className="relative flex flex-col justify-center items-center lg:items-end">
         <div ref={sectionRef} className="relative h-[300vh] w-full">
@@ -172,7 +178,7 @@ const page = () => {
                 </div>
               </div>
 
-              <div className="w-[345px] lg:w-[952px] grid grid-cols-1 lg:grid-cols-2 lg:gap-5 bg-primary text-black">
+              <div className="w-[345px] lg:w-[952px] lg:h-[420px] grid grid-cols-1 lg:grid-cols-2 lg:gap-5 bg-primary text-black">
                 <div className="flex p-5 lg:pl-10 lg:pr-0 items-center">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -230,7 +236,7 @@ const page = () => {
             participant.</p>
           </div>
           <Reveal variants={slideInFromLeft(0.2)}>
-            <img src="/atelier/img1.png" alt="img1" className="flex justify-self-end h-[252px] lg:h-full lg:w-full w-[320px] lg:max-w-none object-cover object-top" />
+            <img src="/atelier/img1.png" alt="img1" className="flex justify-self-end h-[252px] lg:h-full lg:w-full w-[320px] lg:max-w-none object-cover object-center lg:object-top" />
           </Reveal>
           <div className="flex flex-col gap-4 lg:w-[650px]">
             <Reveal variants={slideInFromTop(0.2)}>
@@ -248,7 +254,7 @@ const page = () => {
               </p>
             </Reveal>
             <Reveal variants={slideInFromBottom(0.2)}>
-              <img src="/atelier/img2.png" alt="img2" className="w-full max-w-[320px] lg:my-10 lg:max-w-none" />
+              <img src="/atelier/img2.png" alt="img2" className="w-full max-w-[320px] lg:my-10 lg:max-w-none object-cover object-center" />
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
               <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-54">
@@ -498,12 +504,12 @@ const page = () => {
       <section ref={container5} className="flex flex-col justify-center items-center gap-y-25 pt-30 pb-60">
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s5}} className="flex flex-col justify-center items-center text-center gap-y-7">
-            <h3 className="text-[16px] lg:text-[20px] italic">Blogs</h3>
+            <h2 className="text-[16px] lg:text-[20px] italic">Insight</h2>
             <p className="w-100 lg:w-150 text-[20px] lg:text-[28px] leading-tight">
               Where perspective becomes power, and knowledge becomes a creative
               asset.
             </p>
-            <p className="border-b border-white pb-1 text-[12px] lg:text-[14px]">Explore</p>
+            <Link href="/blogs" className="border-b border-white pb-1 text-[12px] lg:text-[14px] px-2">Explore</Link>
           </motion.div>
         </Reveal>
 
@@ -547,13 +553,13 @@ const page = () => {
                     <p>{card.duration}</p>
                   </div>
 
-                  <h2 className="relative z-10 text-[22px] leading-tight">
+                  <h2 className="relative z-10 text-[22px] leading-tight italic">
                     {card.title}
                   </h2>
 
-                  <div className="relative z-10 w-25 border-b border-white pb-1">
+                  <Link href="/" className="relative z-10 w-25 border-b border-white pb-1">
                     Read More
-                  </div>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -581,12 +587,12 @@ const page = () => {
                   <p>{card.date}</p>
                   <p>{card.duration}</p>
                 </div>
-                <h2 className="text-[32px] z-1 leading-tight">
+                <h2 className="text-[32px] z-1 leading-tight italic">
                   {card.title}
                 </h2>
-                <div className="border-b w-23 border-white pb-1 z-1">
+                <Link href="/" className="border-b w-23 border-white pb-1 z-1">
                   Read More
-                </div>
+                </Link>
               </div>
             </Reveal>
           ))}

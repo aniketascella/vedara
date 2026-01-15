@@ -1,0 +1,96 @@
+"use client";
+import { ArrowForwardIosOutlined } from "@mui/icons-material";
+import Link from "next/link";
+import { useEffect } from "react";
+
+const links=[
+  {name:"Home", href:"/"},
+  {name:"Studio", href:"/atelier"},
+  {name:"Capital", href:"/capital"},
+  {name:"Portfolio", href:"/portfolio"},
+  {name:"Insight", href:"/insight"},
+  {name:"Blog", href:"/blogs"},
+]
+
+export default function MobileNavOverlay({ open, onClose, active }) {
+  // Prevent background scroll
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => (document.body.style.overflow = "");
+  }, [open]);
+
+  return (
+    <div
+      className={`
+        fixed inset-0 z-10
+        transition-opacity duration-300 ease-out
+        will-change-opacity backdrop-blur-xl
+        ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+      `}
+    >
+
+      {/* Content */}
+      <div className={`relative h-full w-full flex flex-col items-center justify-center text-white
+      transition-transform duration-300 ease-out
+          will-change-transform
+          ${open ? "translate-y-0 scale-100" : "-translate-y-4 scale-[0.98]"}`}>
+        
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          aria-label="Close menu"
+          className="
+            absolute top-10 left-1/2 -translate-x-1/2
+            text-2xl tracking-widest
+            hover:opacity-70 transition
+          "
+        >
+          ✕
+        </button>
+
+        {/* Divider */}
+        <div className="w-20 h-px bg-white mb-10" />
+
+        {/* Navigation Links */}
+        <nav className="flex flex-col items-center gap-6 text-lg font-semibold">
+          {links.map(
+            (link) => (
+              <h2
+                key={link.name}
+                onClick={onClose}
+                className={`italic ${active===link.href ? "text-white" : "text-primary"}`}
+              >
+                <Link href={link.href}>
+                  {link.name}
+                </Link>
+              </h2>
+            )
+          )}
+        </nav>
+
+        {/* CTA */}
+        <button
+          className="
+            mt-12 px-4 py-2 rounded-full
+            bg-primary text-black transition
+            flex justify-between items-center gap-2
+          "
+        >
+          <h2 className="text-[16px] italic font-semibold">
+            Contact
+          </h2>
+          <ArrowForwardIosOutlined className="h-3"/>
+        </button>
+
+        {/* Footer */}
+        <h2 className="absolute bottom-8 text-[14px] italic font-semibold text-center">
+          © 2025 Vedara. All Rights Reserved.
+        </h2>
+      </div>
+    </div>
+  );
+}

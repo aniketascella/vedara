@@ -1,8 +1,16 @@
 'use client'
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Section2 from "@/components/Section2";
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { motion, useScroll, useTransform } from "framer-motion";
+import ProjectCarousal from "@/components/ProjectCarousal";
+import KeyEngagements from "@/components/KeyEngagements";
+import section2Data from "./constants/section2Data";
+import TeamCarousel from "@/components/TeamCarousel";
+import Reveal from "@/utils/Reveal";
+import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
+import Footer from "@/components/Footer";
 
 const container = {
   hidden: {},
@@ -22,95 +30,112 @@ show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] 
 
 export default function Home() {
   return (
-    <motion.div 
-      variants={container}
-      initial= "hidden"
-      animate= "show"
-      className="w-screen h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center"
-    >
-      <img src="/homeImg.png" alt="home" className="lg:hidden opacity-55 absolute -z-1 inset-0 w-screen h-screen object-cover object-top" />
-      <motion.div className="w-screen lg:w-[calc(100vw-720px)] h-screen flex flex-col justify-between items-center lg:items-start">
-        <Link href="/" className="relative top-[26px] lg:left-20 xl:left-40 flex justify-center items-center lg:gap-4">
-          <img src="/vedara_logo.svg" alt="logo" />
-          <h1 className='w-[82px] lg:w-[209px] text-[24px]'>
-            VEDARA  
+    <div className="overflow-clip">
+      <section className="flex items-end w-screen h-screen relative">
+        <img src="/homeImg.png" alt="home" className="absolute -z-1 inset-0 w-screen h-screen object-cover object-top" />
+        <div className="flex flex-col gap-y-3 lg:gap-y-8 max-w-[364px] lg:max-w-[706px] mb-20 lg:mb-[130px] ml-[67px] lg:ml-[125px]">
+          <h1 className="text-[24px] lg:text-[36px] italic font-semibold">
+            For Those Who <br /> Refuse to Be Forgotten
           </h1>
-        </Link>
-        
-        <div className="flex flex-col gap-y-6 mx-auto lg:mx-0 w-90">
-        <motion.h2 variants={item} className="w-80 md:w-[364px] lg:w-[554px] text-[24px] lg:text-[36px] leading-normal lg:ml-20 xl:ml-40">
-          We Sculpt Your <span className="font-semibold italic">Values and <br /> Vision</span> Into a Legacy Capable of Withstanding <span className="font-semibold italic">Trends and Time</span>
-        </motion.h2>
+          <p className="text-[14px] lg:text-[18px] font-light">
+            We forge brands, sanctuaries, and capital systems for visionaries who build for generations—not quarters.
+          </p>
+        </div>
+      </section>
 
-
-        <motion.p variants={item} className="lg:hidden w-80 lg:w-[354px] text-center text-[14px] lg:text-[18px]">
-          Let’s align your heritage with modern relevance.
-        </motion.p>
-
-        <motion.div variants={item} className="lg:hidden flex justify-between items-center text-[12px] w-full">
-          <Link href='/atelier'>
-            <button className="pl-9 pr-3 py-4 rounded-full bg-tertiary/20 backdrop-blur-lg">
-              <div className="flex justify-between gap-2 items-center">
-                Vedara Atelier
-                <ArrowForwardIosOutlinedIcon/>
-              </div>
-            </button>
-          </Link>
-
-          <Link href='/dynasty'>
-            <button className="pl-9 pr-3 py-4 rounded-full bg-tertiary/20 backdrop-blur-lg">
-              <div className="flex justify-between gap-2 items-center">
-                Vedara Dynasty 
-                <ArrowForwardIosOutlinedIcon/>
-              </div>  
-            </button>
-          </Link>
-        </motion.div>
+      <section className="bg-black py-10 lg:py-19">
+        <div className="flex justify-between w-screen px-16 lg:px-32">
+          <h2 className="italic text-[14px] lg:text-[16px]">
+            About Vedara
+          </h2>
+          <p className="text-[14px] lg:text-[16px]">
+            Our Work
+          </p>
         </div>
 
+        <div className="flex flex-col lg:flex-row justify-between w-screen px-16 lg:px-32 mt-19">
+          <p className="lg:w-[510px] text-[24px] lg:text-[36px] mb-6 lg:mb-0 leading-tight">
+            At Vedara, we exist to build clarity-driven brands and scalable ecosystems.
+          </p>
+          <div className="flex flex-col lg:w-[541px] gap-y-5 lg:gap-y-6 text-[12px] lg:text-[14px]">
+            <p className="">
+              Vedara operates as an integrated ecosystem where strategy, creativity, and capital come together. We work closely with brands at different stages — from early direction-setting to long-term growth and expansion.
+            </p>
+            <p className="">
+              Our work goes beyond execution. We partner deeply with founders and teams to define purpose, design meaningful brand experiences, and create systems that support sustainable scale. Every decision is guided by clarity, intent, and long-term thinking.
+            </p>
+          </div>
+        </div>
 
-        <motion.p variants={item} className="w-[350px] text-center lg:text-left lg:w-[554px] lg:ml-20 xl:ml-40 mb-10 font-extralight font-editorial">© VEDARA <span className="italic">Building Brands Worth Inheriting.</span></motion.p>
-      </motion.div>
+        <ProjectCarousal />
 
+      </section>
 
-      <motion.div className="hidden h-screen lg:flex flex-col justify-end relative">
-        <img src="/homeImg.png" alt="home" className="hidden lg:block absolute -z-1 inset-0 w-[720px] h-screen object-cover object-top" />
-        <motion.p variants={item} className="w-[250px] lg:w-[500px] text-[14px] lg:text-[18px] font-medium pl-15">
-          Let’s align your heritage with modern relevance.
-        </motion.p>
+      <Section2 data={section2Data} />
 
-        <motion.div variants={item} className="flex flex-col justify-center items-center mt-4 w-full">
-          <button className="w-40 lg:w-180 backdrop-blur-[10px]">
-            <Link href='/atelier'>
-              <div className="flex justify-between items-center pl-15 pr-13 py-6">
-                <motion.div className="flex flex-col gap-y-1 origin-left"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <p className="text-[20px] text-left">Vedara Atelier</p>
-                  <p className="text-[14px]"> Luxury BrandStrategy & Design, Website & Marketing.</p>
-                </motion.div>
-                <ArrowForwardIosOutlinedIcon/>
-              </div>
-            </Link>
-          </button>
+      <KeyEngagements/>
+      
+      <TeamCarousel/>
 
-          <button className="w-50 lg:w-180 backdrop-blur-[10px]">
-            <Link href='/dynasty'>
-              <div className="flex justify-between items-center pl-15 pr-13 py-6">
-                <motion.div className="flex flex-col gap-y-1 origin-left"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <p className="text-[20px] text-left">Vedara Dynasty</p>
-                  <p className="text-[14px]">Curated visionary projects, cultural properties, investor alignment.</p>
-                </motion.div>
-                <ArrowForwardIosOutlinedIcon/>
-              </div>  
-            </Link>
-          </button>
+      <section className='flex flex-col justify-center items-center lg:items-start py-35 gap-9 lg:gap-11 pl-8 md:pl-19 lg:px-40'>
+        <Reveal variants={slideInFromTop(0.2)}>
+          <h2 className="italic lg:text-[18px] w-[320px]">
+            How Vedara Works
+          </h2>
+        </Reveal>
+        <div className="flex flex-col gap-y-9 lg:flex-row justify-between items-center">
+          <Reveal variants={slideInFromTop(0.2)}>
+            <motion.p  className=" w-[320px] md:w-100 lg:w-[743px] text-[20px] md:text-[24px] lg:text-[36px]  leading-tight">
+              A Structured Approach To Building, Executing, and Scaling Brands
+            </motion.p>
+          </Reveal>
+          <Reveal variants={slideInFromTop(0.2)}>
+            <motion.p className="w-[320px] lg:w-[336px] text-[14px] lg:text-[16px]">
+              Vedara follows a clear, step-by-step model that connects strategy, execution, and long-term growth. 
+            </motion.p>
+          </Reveal>
+        </div>
+        <motion.div className="flex flex-col lg:flex-row justify-center items-center gap-12">
+          <Reveal variants={slideInFromLeft(0.2)}>
+            <div className="bg-primary text-black flex flex-col items-end gap-4 w-[320px] md:w-120 lg:w-84 rounded-2xl px-5 pt-6 pb-12">
+              <img src="/home/img1.png" alt="img1" className="relative w-full object-cover" />
+              <p className="text-[18px] lg:text-[22px] lg:w-[210px] tracking-tight">
+                Discover & Diagnose
+              </p>
+              <p className="text-right text-[12px] lg:text-[14px] lg:w-[202px] leading-tight">
+                Understand the business, brand, and market.
+              </p>
+            </div>
+          </Reveal>
+          
+          <Reveal variants={slideInFromBottom(0.2)}>
+            <div className="bg-secondary flex flex-col gap-2 lg:gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl px-8 pt-8 pb-13 text-primary">
+              <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
+              <p className="text-[18px] lg:text-[22px] mt-16">
+                Strategize & Align
+              </p>
+              <p className="text-[14px] lg:text-[16px] leading-tight">
+                We define direction through clear strategy — aligning business goals, brand positioning, and operational priorities.
+              </p>
+            </div>
+          </Reveal>
+          
+          <Reveal variants={slideInFromRight(0.2)}>
+            <div className="bg-primary text-black flex flex-col gap-4 w-[320px] md:w-120 lg:w-84 rounded-2xl px-5 py-6">
+              <img src="/home/img2.png" alt="img2" className="relative w-full object-cover" />
+              <h2 className="italic text-[18px] lg:text-[22px] font-semibold">Build & Execute</h2>
+              <p className="text-[14px] lg:text-[16px] leading-tight">
+                We design identities, experiences, and digital systems that move brands from recognition to resonance.
+              </p>
+              <button className="border-black border-b text-[12px] lg:text-[14px] w-[98px] lg:w-[118px] tracking-wide text-left">
+                Enter the Studio
+              </button>
+            </div>
+          </Reveal>
         </motion.div>
-      </motion.div>
-    </motion.div>
+      </section>
+
+      <Footer />
+    </div>
   );
 }

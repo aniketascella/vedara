@@ -1,20 +1,20 @@
 export const CARDS = [
   {
-    date: "21 SEP 2025",
+    date: "August 23,2025",
     duration: "12 Mins",
-    title: "How Luxury Brands Destroy Their Cultural Authority",
+    title: "The Saint Laurent Transformation",
     image: "/atelier/img8.png",
   },
   {
-    date: "05 OCT 2025",
+    date: "September 21,2025",
     duration: "9 Mins",
-    title: "The Illusion of Exclusivity in Modern Luxury",
+    title: "Behind The Velvet Rope: The Six Senses Empire",
     image: "/atelier/img9.png",
   },
   {
-    date: "19 OCT 2025",
+    date: "August 13,2025",
     duration: "7 Mins",
-    title: "Why Most Premium Brands Feel Replaceable",
+    title: "The Hermès Paradox: How Artisan Scarcity Built a €200 Billion Empire",
     image: "/atelier/img10.png",
   },
 ];

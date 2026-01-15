@@ -1,95 +1,83 @@
+"use client";
+
+import { ArrowForwardIosOutlined } from '@mui/icons-material';
 import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isCapitalRoute = pathname === "/capital";
   return (
-    <div className="w-screen lg:p-23 flex flex-col justify-end lg:justify-center items-center lg:items-start bg-[linear-gradient(rgba(0,0,0,0.7)),url('/home-bg.png')] bg-cover bg-center">
-      <h2 className="w-[300px] md:w-[324px] lg:w-[514px] text-[26px] lg:text-[38px] text-center lg:text-left leading-normal">
-        Begin <span className="font-semibold italic">Building</span> What the Future Will <span className="font-semibold italic">Remember</span>
-      </h2>
-
-      <p className="mt-10 w-[300px] md:w-[460px] lg:w-[518px] text-[12px] lg:text-[16px] text-center lg:text-left">
-        True luxury is Not Ornament, It is the Mastery of Intention Expressed with Such Precision that It Becomes Impossible to Ignore!
-      </p>
-
-      <div className="w-full hidden lg:block mt-10 border-t border-white/80"/>
-
-      <div className="lg:hidden mt-12 text-[16px] flex flex-col justify-center items-center gap-2">
-        <Link href="/" className="cursor-pointer hover:opacity-70">Home</Link>
-        <Link href="/" className="cursor-pointer hover:opacity-70">About</Link>
-        <Link href="/dynasty" className="cursor-pointer hover:opacity-70">Vedara Dynasty</Link>
-        <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Portfolio</Link>
-        <Link href="/insight" className="cursor-pointer hover:opacity-70">Insight</Link>
-        <Link href="/blog" className="cursor-pointer hover:opacity-70">Blog</Link>
-        <Link href="/contact" className="cursor-pointer hover:opacity-70">Contact</Link>
-      </div>
-
-      <div className="w-full min-h-[220px] text-white pt-12 hidden lg:flex flex-col justify-between">
+    <div className='w-screen relative h-auto'>
+      {(!isCapitalRoute) && (<div className="w-screen h-[763px] lg:h-screen lg:p-23 flex flex-col justify-center items-center gap-y-8 bg-[url('/footerBG1.png')] bg-cover bg-center">
+        <h2 className="italic text-[20px] md:text-[24px] lg:text-[36px]">Designing presence that moves brands forward.</h2>
+        <div className='h-[133px] border'/>
+        <p className="text-[14px] lg:text-[16px] font-medium w-70 lg:w-[414px] text-center">If you’re ready to build a distinctive brand identity, digital experience, or marketing presence, Vedara Studio is here to bring your vision to life.</p>
+        <button className="bg-primary/36 rounded-full py-[7px] lg:py-3 px-3 lg:px-5 flex items-center gap-2 text-[12px] lg:text-[14px] tracking-wide">
+          Start Your Project
+          <ArrowForwardIosOutlined className='h-[11px] lg:h-[17px]'/>
+        </button>
+      </div>)}
       
-        <div className="flex flex-col lg:flex-row justify-between gap-12 text-[14px] leading-relaxed">
-          
-          {/* Left */}
-          <div className="flex flex-col gap-2 text-[16px] font-extralight">
-            <p>20 Bay Street 11th Floor, Toronto, Canada</p>
-            <p>Vedara Collective Corp.</p>
-            <div className="text-[14px] font-extralight mt-20">
-              © Vedara — Building Brands Worth Inheriting.
-            </div>
+      <div className="w-screen relative flex flex-col justify-center items-center gap-y-13 lg:h-[446px] h-[692px]">
+
+        <img src="/footerBG2.png" alt="footer background" className="absolute inset-0 w-full h-full -z-1 object-cover" />
+
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:items-start gap-y-16 w-screen lg:px-22 relative">
+          <div className="flex flex-col items-center lg:items-start gap-y-1 text-left font-light lg:font-normal">
+            <Link href="/">Home</Link>
+            <Link href="/capital">Vedara Capital</Link>
+            <Link href="/atelier">Vedara Studio</Link>
+            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/blogs">Blogs</Link>
+            <Link href="/contact">Contact</Link>
           </div>
 
-          {/* Center Navigation */}
-          <div className="flex gap-20">
-            <div className="flex flex-col gap-2">
-              <Link href="/" className="cursor-pointer hover:opacity-70">Home</Link>
-              <Link href="/" className="cursor-pointer hover:opacity-70">About</Link>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <Link href="/dynasty" className="cursor-pointer hover:opacity-70">Vedara Dynasty</Link>
-              <Link href="/portfolio" className="cursor-pointer hover:opacity-70">Portfolio</Link>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <Link href="/blog" className="cursor-pointer hover:opacity-70">Blog</Link>
-              <Link href="/contact" className="cursor-pointer hover:opacity-70">Contact</Link>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <Link href="/insight" className="cursor-pointer hover:opacity-70">Insight</Link>
-            </div>
+          <div className="flex flex-col justify-center text-center w-[305px] lg:w-[514px]">
+            <p className='font-light'>Vedara Collective Corp.</p>
+            <h2 className='text-[24px] lg:text-[36px]'>This Is <span className="italic">Not For Everyone</span>.</h2>
+            <p className="font-light text-[14px] lg:text-[16px]">
+              For the few building beyond their lifetime, we should speak.
+            </p>
           </div>
 
-          {/* Right */}
-          <div className="flex flex-col gap-2 text-right">
-            <div className="flex flex-col gap-2">
-              <p className="cursor-pointer hover:opacity-70">LinkedIn</p>
-              <p className="cursor-pointer hover:opacity-70">Instagram</p>
-            </div>
-
-            <div className="flex gap-6 justify-end mt-20 opacity-80">
-              <p className="cursor-pointer hover:opacity-70">Terms</p>
-              <p className="cursor-pointer hover:opacity-70">Privacy Policy</p>
-            </div>
+          <div className="hidden lg:flex flex-col justify-center items-end gap-y-1 text-right">
+            <Link href="/">LinkedIn</Link>
+            <Link href="/">Instagram</Link>
           </div>
-
         </div>
 
-        
+        <div className="hidden lg:flex justify-between items-center w-screen px-22 relative font-extralight text-[12px] lg:text-[14px]">
+          <p className="w-40">
+            H.O : 20 Bay Street 11th Floor, Toronto, Canada
+          </p>
+          <p className='t'>
+            © Vedara — Building Brands Worth Inheriting.
+          </p>
+          <div className="flex flex-col">
+            <p>Privacy Policy</p>
+            <p>Terms</p>
+          </div>
+        </div>
 
+        <div className="lg:hidden flex flex-col justify-center items-center gap-y-4">
+          <div className="flex items-center gap-2">
+            <Link href="/">Instagram</Link>
+            <div className='border h-4'/>
+            <Link href="/">LinkedIn</Link>
+            <div className='border h-4'/>
+            <Link href="/">Privacy Policy</Link>
+            <div className='border h-4'/>
+            <Link href="/">Terms</Link>
+          </div>
+          <p className='font-extralight text-[12px] mt-[18px]'>
+            H.O : 20 Bay Street 11th Floor, Toronto, Canada
+          </p>
+          <p className='font-extralight text-[10px] mt-[9px]'>
+            © Vedara — Building Brands Worth Inheriting.
+          </p>
+        </div>
       </div>
-
-    <div className="mt-12 py-12 backdrop-blur-[10px] w-screen flex flex-col justify-center items-center gap-y-2 text-[10px] lg:text-[16px] lg:hidden">
-      <h2 className='uppercase text-[20px]'>vedara</h2>
-      <p className="font-extralight ">
-        20 Bay Street 11th Floor, Toronto, Canada
-      </p>
-      <p className="font-extralight">
-        © Vedara — Building Brands Worth Inheriting.
-      </p>
-      <div className="flex justify-center gap-2">
-        <Link href="/" className='font-extralight'>LinkedIn</Link>
-        <Link href="/" className='font-extralight'>Instagram</Link>
-      </div>
-    </div>
     </div>
   )
 }

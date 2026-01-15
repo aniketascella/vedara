@@ -180,18 +180,18 @@ const page = () => {
     });
   }, [images]);
 
-  useEffect(() => {
-    function onClick(e) {
-      if (openForm1 && formRef1.current && !formRef1.current.contains(e.target)) {
-        setOpenForm1(false);
-      }
-      if (openForm2 && formRef2.current && !formRef2.current.contains(e.target)) {
-        setOpenForm2(false);
-      }
-    }
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, [openForm1, openForm2]);
+  // useEffect(() => {
+  //   function onClick(e) {
+  //     if (openForm1 && formRef1.current && !formRef1.current.contains(e.target)) {
+  //       setOpenForm1(false);
+  //     }
+  //     if (openForm2 && formRef2.current && !formRef2.current.contains(e.target)) {
+  //       setOpenForm2(false);
+  //     }
+  //   }
+  //   document.addEventListener("mousedown", onClick);
+  //   return () => document.removeEventListener("mousedown", onClick);
+  // }, [openForm1, openForm2]);
 
   const total = principles.length;
   const segmentHeight = 100 / total;
@@ -240,12 +240,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] p-4 lg:py-12 lg:px-8 rounded-2xl bg-[#9D8C7D]/15 backdrop-blur-lg'>
               <p className='w-[191px] lg:w-[284px] font-light text-[16px] lg:text-[20px]'><span className='font-bold'>For Visionaries</span> - Present Your Masterwork</p>
               <button className='backdrop-blur-2xl rounded-full text-[12px] lg:text-[14px] px-4 py-3 lg:px-8 hover:cursor-pointer'
-              onClick={()=>{
-                setOpenForm1(true)
-                setTimeout(() => {
-                  formRef1.current?.scrollIntoView({ behavior: "smooth" });
-                }, 80);
-              }}><h3 className='lg:italic font-extralight'>Explore Curated Opportunities</h3></button>
+              // onClick={()=>{
+              //   setOpenForm1(true)
+              //   setTimeout(() => {
+              //     formRef1.current?.scrollIntoView({ behavior: "smooth" });
+              //   }, 80);
+              // }}
+              >
+                <h3 className='lg:italic font-extralight'>Explore Curated Opportunities</h3></button>
             </div>
           </Reveal>
 
@@ -253,12 +255,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             <div className='flex lg:flex-col justify-between items-center gap-6 w-100 lg:w-[345px] bg-[#9D8C7D]/15 p-4 lg:py-12 lg:px-8 rounded-2xl backdrop-blur-lg'>
               <p className='w-[191px] lg:w-[284px] font-light text-[16px] lg:text-[20px]'><span className="font-bold">For Collectors</span> - Discover the Future Classics</p>
               <button className='backdrop-blur-2xl rounded-full text-[12px] lg:text-[14px] px-7 py-3 lg:px-8 hover:cursor-pointer'
-              onClick={()=>{
-                setOpenForm2(true)
-                setTimeout(() => {
-                  formRef2.current?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
-              }}> <h3 className='lg:italic font-extralight'>Submit Your Vision</h3></button>
+              // onClick={()=>{
+              //   setOpenForm2(true)
+              //   setTimeout(() => {
+              //     formRef2.current?.scrollIntoView({ behavior: "smooth" });
+              //   }, 50);
+              // }}
+              > 
+              <h3 className='lg:italic font-extralight'>Submit Your Vision</h3></button>
             </div>
           </Reveal>
         </motion.div>
@@ -502,7 +506,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           </div>
   
           <div className="relative w-screen lg:w-180 h-screen">
-            <AnimatePresence>
+            {/* <AnimatePresence>
               {!openForm1 ? (
                 <motion.div
                   key="image"
@@ -538,7 +542,28 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   <InvestorForm onClose={() => setOpenForm1(false)} />
                 </motion.div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
+            <motion.div
+                  key="image"
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+                  className='flex w-full h-full items-center justify-center'
+                >
+                  {/* <button
+                    onClick={() => setOpenForm1(true)}
+                    className="flex justify-between z-1 py-6 px-6 text-center rounded-full bg-tertiary/15 backdrop-blur-xl"
+                  >
+                    Explore Curated Opportunities
+                    <ArrowForwardIosOutlinedIcon/>
+                  </button> */}
+                  <img
+                    src="/dynasty/img13.png"
+                    alt='img13'
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </motion.div>
           </div>
         </div>
 
@@ -564,7 +589,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           </div>
         
           <div className="relative w-screen lg:w-180 h-screen overflow-hidden">
-            <AnimatePresence>
+            {/* <AnimatePresence>
               {!openForm2 ? (
                 <motion.div
                   key="image"
@@ -599,7 +624,27 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                   <VisionForm onClose={() => setOpenForm2(false)}/>
                 </motion.div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
+            <motion.div
+              key="image"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+              className='flex w-full h-full items-center justify-center'
+            >
+              {/* <button
+                onClick={() => setOpenForm2(true)}
+                className="z-1 py-6 px-15 text-center rounded-full bg-tertiary/15 backdrop-blur-lg"
+              >
+                Submit Your Vision
+              </button> */}
+              <img
+                src="/dynasty/img14.png"
+                alt='img14'
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </motion.div>
           </div>
         </div>
       </section>

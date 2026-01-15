@@ -7,63 +7,24 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, Twitter } from "@mui/icons-material";
 import CloseIcon from '@mui/icons-material/Close';
+import MobileNavOverlay from "./MobileNavOverlay";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [hovered, setHovered] = useState(null);
   const router = useRouter();
-  const [scrolledPastVH, setScrolledPastVH] = useState(false);
-  const [showMenuIcon, setShowMenuIcon] = useState(false);
-  const [navEnabled, setNavEnabled] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    const isPast = window.scrollY >= window.innerHeight;
-
-    setScrolledPastVH(isPast);
-    setShowMenuIcon(isPast);
-    setNavEnabled(!isPast);
-
-    const onScroll = () => {
-      const past = window.scrollY >= window.innerHeight;
-      setScrolledPastVH(past);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [mounted]);
-
-  useEffect(() => {
-    function onKey(e) {
-      if (e.key === "Escape") setSidebarOpen(false);
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
-    useEffect(() => {
-      if (!scrolledPastVH) {
-        setShowMenuIcon(false);
-        setTimeout(() => setNavEnabled(true),80);
-      }
-      else{
-        setNavEnabled(false);
-      }
-    }, [scrolledPastVH]);
-
-  const isVisible = pathname === "/atelier" || pathname === "/dynasty";
-
-  const active = pathname === "/atelier" ? "atelier" : "dynasty";
+  
+  const active = pathname === "/atelier" ? "atelier" : pathname==="/capital" ? "capital" : pathname === "/" ? "home" : pathname === "/portfolio" ? "portfolio" :  pathname === "/contact" ? "contact" : "insight";
+  
+  const isActiveRoute = pathname === "/atelier" || pathname === "/capital";
+  
 
   return (
-    <header className="w-screen fixed top-0 z-50">
-      <div
+    <header className="w-screen fixed top-[42px] z-50 flex justify-between items-center px-12 lg:px-26">
+      {/* <div
         className={`${
           pathname === "/" ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
         } w-screen h-28 flex justify-between items-center px-8 lg:px-24 text-[16px] xl:text-[18px] leading-relaxed`}
@@ -169,7 +130,53 @@ export default function Navbar() {
             )}
           </motion.button>
         </AnimatePresence>
+      </div> */}
+      <div className="flex items-center gap-1">
+        <img src="/vedara_logo.svg" alt="logo" className="w-10 lg:w-13"/>
+        <Link href="/"><h2 className="text-[22px] lg:text-[30px] font-semibold">VEDARA</h2></Link>
       </div>
+
+      <div className="rounded-full backdrop-blur-[5px] hidden lg:flex gap-14 items-center px-8 py-4 text-white border border-white/25">
+        <Link href="/" className={active === "home" ? "opacity-100" : "opacity-50 hover:opacity-100"}>
+          Home
+        </Link>
+        <Link href="/portfolio" className={active === "portfolio" ? "opacity-100" : "opacity-50 hover:opacity-100"}>
+          Portfolio
+        </Link>
+        <Link href="/insight" className={active === "insight" ? "opacity-100" : "opacity-50 hover:opacity-100"}>
+          Our Insights
+        </Link>
+        <Link href="/contact" className={active === "contact" ? "opacity-100" : "opacity-50 hover:opacity-100"}>
+          Contact Us
+        </Link>
+      </div>
+
+      <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(null)} className="relative rounded-full backdrop-blur-[5px] hidden lg:flex gap-5 items-center py-4 text-white border border-white/25 w-[214px]">
+        {(isActiveRoute) && (
+          <span
+            className={`absolute inset-0 w-1/2 -z-2 rounded-full bg-primary/35 transition-transform duration-400 ease-out ${
+              active === "capital" ? "translate-x-full" : "translate-x-0"
+            }`}
+          />
+        )}
+        {(!isActiveRoute && hovered) && (
+          <span
+            className={`absolute inset-0 w-1/2 -z-2 rounded-full bg-primary/35 transition-transform duration-400 ease-out ${
+              hovered === "capital" ? "translate-x-full" : "translate-x-0"
+            }`}
+          />
+        )}
+        <Link onMouseEnter={()=> setHovered("atelier")} href="/atelier" className={`pl-10 ${active === "atelier" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+          Atelier
+        </Link>
+        <Link onMouseEnter={()=> setHovered("capital")} href="/capital" className={`px-5 ${active === "capital" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+          Capital
+        </Link>
+      </div>
+
+      <img src="/menuIcon.svg" alt="menu" className="lg:hidden" onClick={() => setMenuOpen(true)} />
+
+      <MobileNavOverlay open={menuOpen} onClose={() => setMenuOpen(false)} active ={pathname} />
 
       <AnimatePresence>
         {sidebarOpen && (

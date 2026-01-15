@@ -1,0 +1,105 @@
+"use client"
+
+import { motion, AnimatePresence, useScroll } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
+
+export default function Section2({ data }) {
+  const sectionRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  })
+
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [direction, setDirection] = useState(1)
+  const prevProgress = useRef(0)
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (v) => {
+      const dir = v > prevProgress.current ? 1 : -1
+      prevProgress.current = v
+      setDirection(dir)
+
+      const index = Math.min(
+        data.length - 1,
+        Math.floor(v * data.length)
+      )
+
+      setActiveIndex(index)
+    })
+  }, [scrollYProgress, data.length])
+
+  return (
+    <section ref={sectionRef} className="h-[220vh]">
+      <div className="sticky top-0 h-screen w-screen overflow-hidden">
+        <AnimatePresence mode="sync">
+          <div
+            key={activeIndex}
+            className={`absolute inset-0 flex flex-col lg:flex-row justify-between items-center ${data[activeIndex].style}`}
+          >
+            {/* LEFT TEXT */}
+            <AnimatePresence mode="sync">
+              <motion.div
+                key={`text-${activeIndex}`}
+                initial={{
+                  x: direction === 1 ? -80 : 80,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                }}
+                exit={{
+                  x: direction === 1 ? 80 : -80,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="flex flex-col justify-center px-16 py-20 lg:px-35 gap-y-3 lg:gap-y-8 lg:max-w-[45%] text-[12px] lg:text-[14px]"
+              >
+                <h2 className="italic text-[24px] lg:text-[36px]">
+                  {data[activeIndex].title}
+                </h2>
+                <p>{data[activeIndex].para1}</p>
+                <p>{data[activeIndex].para2}</p>
+                <p className="font-medium">{data[activeIndex].subtitle}</p>
+                <p>{data[activeIndex].para3}</p>
+                <button className={`rounded-full bg-black p-[11px] w-fit ${data[activeIndex].btnTextColor}`}>
+                  {data[activeIndex].btnText}
+                </button>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* RIGHT IMAGE */}
+            <AnimatePresence mode="sync">
+              <motion.img
+                key={`img-${activeIndex}`}
+                src={data[activeIndex].imgSrc}
+                alt={data[activeIndex].title}
+                initial={{
+                  y: direction === 1 ? 120 : -120,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                exit={{
+                  y: direction === 1 ? -120 : 120,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="h-fit lg:max-h-screen"
+              />
+            </AnimatePresence>
+          </div>
+        </AnimatePresence>
+      </div>
+    </section>
+  )
+}

@@ -94,12 +94,12 @@ const page = () => {
         <motion.div style={{y:s1}} className="flex flex-col gap-y-20 pl-15 lg:flex-row lg:justify-between lg:items-center w-screen">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col"> 
-              <h1 className="text-[22px] lg:text-[36px]">Our Portfolio</h1>
+              <h1 className="text-[22px] lg:text-[36px] italic">Our Portfolio</h1>
               <p className="text-[14px] lg:text-[16px]">Work That Outlives Seasons</p>
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="w-[300px] md:w-[560px] lg:pr-15 font-light lg:text-right text-[14px] lg:text-[16px]">
+            <p className="w-[300px] md:w-[405px] lg:pr-15 font-light lg:text-right text-[14px] lg:text-[16px]">
               Each project is a world we constructed with intention. Here strategy
               becomes culture, design becomes memory, and vision becomes
               permanence.
