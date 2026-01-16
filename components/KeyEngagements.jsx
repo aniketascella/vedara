@@ -42,7 +42,7 @@ export default function KeyEngagements() {
       <div className="hidden lg:block pl-30 pr-40 py-32 w-screen">
         {/* Header */}
         <div className="mb-20 flex justify-between">
-          <p className="text-4xl">
+          <p className="text-[36px] leading-tight">
             Strategic Consultancy For <br /> Brands Ready To Scale
           </p>
           <p className="text-sm text-black/70 w-[438px] leading-relaxed">
@@ -52,7 +52,7 @@ export default function KeyEngagements() {
           </p>
         </div>
 
-        <p className="text-xs uppercase tracking-[0.2em] mb-10">
+        <p className="text-[18px] mb-5">
           Key Engagements
         </p>
 
@@ -70,7 +70,7 @@ export default function KeyEngagements() {
               >
                 {/* LEFT TITLE */}
                 <h3
-                  className={`font-serif italic text-[38px] transition-opacity duration-300 ${
+                  className={`italic text-[38px] font-semibold transition-opacity duration-300 ${
                     isActive ? "opacity-100" : "opacity-40"
                   }`}
                 >
@@ -114,8 +114,8 @@ export default function KeyEngagements() {
         </div>
       </div>
 
-      <div className="lg:hidden flex flex-col justify-center p-17 gap-11">
-        <p className="text-[24px] w-[300px]">Strategic consultancy for brands ready to scale</p>
+      <div className="lg:hidden flex flex-col justify-center p-17 gap-7 lg:gap-11">
+        <p className="text-[24px] w-[300px] leading-tight">Strategic consultancy for brands ready to scale</p>
         <p className="font-light text-[12px] w-[260px]">
           Vedara Consultancy works closely with leadership teams to define direction, solve complex challenges, and build frameworks for sustainable growth.We don’t offer generic advice — we work as strategic partners embedded in your vision.
         </p>
@@ -123,11 +123,11 @@ export default function KeyEngagements() {
           Key Engagements
         </p>
 
-        <div className="w-70 border-b border-black/10"/>
+        <div className="-mt-3 w-70 border-b border-black/10"/>
 
         {ENGAGEMENTS.map((item,idx) => (
           <div key={idx} className="flex flex-col justify-center gap-6 border-b border-black/10 pb-14">
-            <h2 className="italic font-semibold text-[18px]">
+            <h2 className="italic font-semibold text-[24px]">
               {item.title}
             </h2>
             <p className="font-light text-[12px]">

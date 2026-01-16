@@ -84,35 +84,30 @@ const page = () => {
         <motion.div style={{y:s1}} className='flex flex-col lg:gap-y-20 px-15 lg:flex-row lg:justify-between lg:items-start w-screen'>
           <Reveal variants={slideInFromLeft(0.2)}>
           <div className="flex flex-col">
-            <h1 className='text-[22px] lg:text-[36px] italic'>Selhaya</h1>
-            <p className='text-[14px] lg:text-[16px] uppercase'>World’s First Luxury Abaya Maison</p>
+            <h1 className='text-[45px] lg:text-[64px] italic font-semibold'>Selhaya</h1>
+            <p className='text-[18px] lg:text-[24px] uppercase'>World’s First Luxury Abaya Maison</p>
           </div>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
           <div className="flex flex-col justify-end items-end lg:text-right text-left gap-6">
-            <p className="w-full md:w-[325px] font-light text-[14px] lg:text-[16px] mt-6 lg:mt-0">
+            <p className="w-full md:w-[360px] font-light text-[14px] lg:text-[18px] mt-6 lg:mt-0 leading-tight">
               Selhaya entered Vedara’s closed-circle ecosystem to evolve from a promising luxury brand into an unforgettable maison.
             </p>
-            {/* <button className="w-40 h-10 lg:w-45 lg:h-13 rounded-full backdrop-blur-xl">
-              <div>
-                Visit Website
-              </div>
-            </button> */}
           </div>
           </Reveal>
         </motion.div>
 
-        <motion.div style={{y:s1}} className="flex flex-col lg:flex-row lg:justify-between w-screen gap-10 px-15 mt-12 text-[12px] lg:text-[14px]">
+        <motion.div style={{y:s1}} className="flex flex-col lg:flex-row lg:justify-between w-screen gap-10 px-15 mt-12 text-[14px] lg:text-[18px]">
           <Reveal variants={slideInFromLeft(0.2)}>
           <div className="flex flex-col gap-4">
             <div className="flex gap-11.5">
-              <p>Client</p>
+              <p className='font-semibold'>Client</p>
               <li className='list-disc list-inside'>Selhaya</li>
             </div>
 
             <div className="flex gap-6">
-              <p>Services</p>
+              <p className='font-semibold'>Services</p>
               <ul className="flex flex-col lg:flex-row gap-4 list-disc list-inside">
                 <li className=''>Visual Design</li>
                 <li className=''>Brand identity </li>
@@ -125,12 +120,12 @@ const page = () => {
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-4">
               <div className="flex gap-6">
-                <p>Industries</p>
+                <p className='font-semibold'>Industries</p>
                 <li className='list-disc list-inside'>Fashion</li>
               </div>
 
-              <div className="flex gap-16">
-                <p>Date</p>
+              <div className="flex gap-15 lg:gap-18">
+                <p className='font-semibold'>Date</p>
                 <ul className="flex gap-4 list-disc list-inside">
                   <li className=''>August ‘2025</li>
                 </ul>
@@ -148,16 +143,16 @@ const page = () => {
         </Reveal>
       </section>
 
-      <section className="py-25 lg:py-45 flex flex-col justify-center items-center gap-y-25">
+      <section className="py-25 lg:py-45 flex flex-col justify-center items-center gap-y-15 lg:gap-y-25">
         <Reveal variants={slideInFromTop(0.2)}>
-          <p className="uppercase text-[20px] lg:text-[36px] w-[300px] lg:w-[665px]">Selhaya World’s First Luxury Abaya Maison</p>
+          <p className="uppercase text-[28px] lg:text-[45px] w-[300px] lg:w-[665px] leading-9 lg:leading-14">Selhaya World’s First Luxury Abaya Maison</p>
         </Reveal>
         <div className="flex flex-col lg:flex-row w-[300px] lg:w-[600px] relative gap-6">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h5 className="lg:absolute -left-50 italic text-[16px] lg:text-[20px]">Our Objective</h5>
+            <h2 className="lg:absolute -left-50 italic text-[18px] lg:text-[24px]">Our Objective</h2>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-          <p className="text-[12px] lg:text-[14px]">
+          <p className="text-[14px] lg:text-[18px] tracking-tighter leading-tight font-light">
             Vedara’s objective with Selhaya was to evolve a beautiful concept into a fully realized couture identity, one that could stand confidently beside established luxury houses while retaining the soul of its origin.
           </p>
           </Reveal>
@@ -168,13 +163,13 @@ const page = () => {
 
         <div className="flex w-[300px] lg:w-screen lg:justify-center items-center lg:gap-42">
           <Reveal variants={slideInFromLeft(0.2)}>
-          <img src="/selhaya/img2.png" alt="img2" className="w-[155px] lg:w-[224px]"/>
+          <img src="/selhaya/img2.png" alt="img2" className="w-[155px] lg:w-56"/>
           </Reveal>
 
           <Reveal variants={slideInFromRight(0.2)}>
           <div className="hidden lg:block space-y-4">
-            <h5 className="font-semibold italic text-[16px]">Core Challenges</h5>
-            <p className='text-[14px] w-103'>
+            <h5 className="font-semibold italic text-[24px]">Core Challenges</h5>
+            <p className='text-[18px] w-103 font-light tracking-tighter leading-tight'>
               Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
             </p>
           </div>
@@ -195,8 +190,8 @@ const page = () => {
         </div>
         <Reveal variants={slideInFromLeft(0.2)}>
           <div className="lg:hidden space-y-4">
-            <h5 className="italic text-[14px]">Core Challenges</h5>
-            <p className='w-70 text-[12px]'>
+            <h5 className="italic text-[18px]">Core Challenges</h5>
+            <p className='w-70 text-[14px]'>
               Selhaya possessed depth and artistic intention but its digital expression lacked the architecture needed to convey true luxury. Our challenge was to honour Selhaya’s soul while taking care of every touchpoint to meet the standards of a world-class luxury house.
             </p>
           </div>
@@ -220,10 +215,10 @@ const page = () => {
       <section ref={container2} className="flex flex-col items-center py-10 lg:py-26">
         <motion.div style={{y:s2}} className="flex flex-col lg:flex-row justify-center gap-x-24 gap-y-6">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h5 className='italic text-[16px] lg:text-[20px]'>Our Solution</h5>
+            <h5 className='italic text-[18px] lg:text-[24px]'>Our Solution</h5>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="w-70 text-[12px] lg:text-[14px] lg:w-120">
+            <p className="w-70 text-[14px] lg:text-[18px] lg:w-120 tracking-tighter leading-tight">
               Vedara distilled Selhaya’s fragmented presence into a coherent, luxurious digital universe, one defined by intention, restraint, and emotional precision. We rebuilt the brand’s narrative system, visual language, and website architecture. The result was a platform not just redesigned, but re-imagined.
             </p>
           </Reveal>
@@ -239,10 +234,10 @@ const page = () => {
         <motion.img style={{y:s3}} src="/selhaya/img6.png" alt="img6" className="w-[300px] lg:w-[813px] mx-auto"/>
 
         <motion.div style={{y:s3}} className="flex md:hidden flex-col mx-auto mt-32 gap-4 text-black w-72">
-          <h5 className="font-semibold italic text-[16px]">
+          <h5 className="font-semibold italic text-[18px]">
             Vedara’s Strategic Intervention
           </h5>
-          <p className="text-[12px] font-light">
+          <p className="text-[14px] font-light">
             We conducted in-depth alignment sessions, evaluated their long-term vision, and audited their narrative, and experiential gaps.Ensured every page, word, and frame reflected Selhaya’s ethos of craft and elegance.
           </p>
         </motion.div>
@@ -252,11 +247,11 @@ const page = () => {
 
           <div className="flex flex-col justify-end md:justify-start md:gap-y-19">
             <Reveal variants={slideInFromRight(0.2)}>
-              <div className="hidden md:flex flex-col md:gap-4 text-black w-54 lg:w-103 ml-18">
-                <h5 className="font-semiboldrelative -left-19 italic text-[16px] lg:text-[20px]">
+              <div className="hidden md:flex flex-col md:gap-4 text-black w-54 lg:w-104 ml-18">
+                <h5 className="font-semibold relative -left-19 italic text-[18px] lg:text-[24px]">
                   Vedara’s Strategic Intervention
                 </h5>
-                <p className="text-[12px] lg:text-[14px] font-light">
+                <p className="text-[14px] lg:text-[18px] font-light tracking-tighter leading-tight">
                   We conducted in-depth alignment sessions, evaluated their long-term vision, and audited their narrative, and experiential gaps.Ensured every page, word, and frame reflected Selhaya’s ethos of craft and elegance.
                 </p>
               </div>
@@ -273,11 +268,11 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex flex-col items-center lg:items-start lg:flex-row justify-end gap-x-32 gap-y-22 mt-22 lg:mt-50 w-auto">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className="flex flex-col gap-4 w-62 lg:w-103 text-black lg:mt-12">
-              <h5 className="font-semibold italic text-[16px] lg:text-[20px]">
+            <div className="flex flex-col gap-4 w-[251px] lg:w-103 text-black lg:mt-12">
+              <h5 className="font-semibold italic text-[18px] lg:text-[24px]">
                 From Aesthetically Nice to Unforgettable
               </h5>
-              <p className="text-[12px] lg:text-[14px] font-light">
+              <p className="text-[14px] lg:text-[18px] font-light tracking-tighter leading-tight">
                 The transformation began with a complete reinvention of Selhaya’s website, a digital maison crafted with obsessive detail. Thoughtful micro-interactions that brought the brand to life.
               </p>
             </div>
@@ -292,11 +287,11 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex flex-col items-center lg:flex-row-reverse justify-end lg:items-start gap-x-32  gap-y-22 mt-26 lg:mt-40 w-auto">
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="flex flex-col gap-4 w-62 lg:w-121 text-black">
-              <h5 className="font-semibold italic text-[16px] lg:text-[20px]">
+            <div className="flex flex-col gap-4 w-[285px] lg:w-121 text-black text-right lg:text-left">
+              <h5 className="font-semibold italic text-[18px] lg:text-[24px]">
                 Our Eye For Detail
               </h5>
-              <p className="text-[12px] lg:text-[14px] font-light ml-18">
+              <p className="text-[14px] lg:text-[18px] font-light tracking-tighter leading-tight">
                 Design moments that slow the visitor down, exactly how luxury should feel. This level of detail is not optional; it is what separates a premium brand from a luxury house.
               </p>
             </div>
@@ -329,9 +324,9 @@ const page = () => {
         <motion.img style={{y:s4}} src="/selhaya/img15.png" alt="img15" className="w-[155px] lg:hidden"/>
 
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.div style={{y:s4}} className="lg:hidden flex flex-col gap-y-4 w-70 mx-auto">
-            <h5 className="italic font-semibold text-[14px]">A Precise Showcase</h5>
-            <p className='text-[12px] font-light'>
+          <motion.div style={{y:s4}} className="lg:hidden flex flex-col gap-y-4 w-72 mx-auto">
+            <h5 className="italic font-semibold text-[18px]">A Precise Showcase</h5>
+            <p className='text-[14px] font-light tracking-tighter leading-tight'>
               Every product, narrative, and detail was re-presented with clarity, intention, and aesthetic precision.
               We ensured the digital display became an extension of Selhaya’s craftsmanship, not merely a catalogue.
             </p>
@@ -341,8 +336,8 @@ const page = () => {
         <motion.div style={{y:s4}} className="hidden lg:flex gap-x-42 mt-24 ml-50">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="space-y-4">
-              <h5 className="relative -left-20 italic font-semibold text-[16px]">A Precise Showcase</h5>
-              <p className='text-[14px] font-light w-103'>
+              <h5 className="relative -left-20 italic font-semibold text-[24px]">A Precise Showcase</h5>
+              <p className='text-[18px] font-light w-103 tracking-tighter leading-tight'>
                 Every product, narrative, and detail was re-presented with clarity, intention, and aesthetic precision.
                 We ensured the digital display became an extension of Selhaya’s craftsmanship, not merely a catalogue.
               </p>

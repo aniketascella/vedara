@@ -57,14 +57,14 @@ export default function Section2({ data }) {
                   duration: 1.5,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex flex-col justify-center px-16 py-20 lg:px-35 gap-y-3 lg:gap-y-8 lg:max-w-[45%] text-[12px] lg:text-[14px]"
+                className="flex flex-col justify-center px-16 pt-25 pb-10 lg:py-20 lg:px-35 gap-y-3 lg:gap-y-4 lg:max-w-[45%] text-[12px] lg:text-[14px]"
               >
-                <h2 className="italic text-[24px] lg:text-[36px]">
+                <h2 className="italic text-[36px] lg:text-[45px] leading-10">
                   {data[activeIndex].title}
                 </h2>
                 <p>{data[activeIndex].para1}</p>
                 <p>{data[activeIndex].para2}</p>
-                <p className="font-medium">{data[activeIndex].subtitle}</p>
+                <p className="font-medium mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p>
                 <p>{data[activeIndex].para3}</p>
                 <button className={`rounded-full bg-black p-[11px] w-fit ${data[activeIndex].btnTextColor}`}>
                   {data[activeIndex].btnText}

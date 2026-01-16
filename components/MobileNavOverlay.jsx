@@ -8,8 +8,7 @@ const links=[
   {name:"Studio", href:"/atelier"},
   {name:"Capital", href:"/capital"},
   {name:"Portfolio", href:"/portfolio"},
-  {name:"Insight", href:"/insight"},
-  {name:"Blog", href:"/blogs"},
+  {name:"Insight", href:"/insights"},
 ]
 
 export default function MobileNavOverlay({ open, onClose, active }) {

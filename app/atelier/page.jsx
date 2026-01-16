@@ -101,36 +101,28 @@ const page = () => {
 
   return (
     <div className="text-white relative w-full overflow-x-clip">
-      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-15">
-        <motion.div style={{y:s1}} className="lg:hidden flex justify-between px-10 w-screen text-[16px]">
-          <Reveal variants={slideInFromRight(0.2)}>
-            <p className="text-[18px]">Toronto</p>
-          </Reveal>
-          <Reveal variants={slideInFromRight(0.2)}>
-            <p className="">info@vedaracollective.com</p>
-          </Reveal>
-        </motion.div>
+      <section ref={container1} className="w-screen h-screen bg-[url('/atelier/heroImg.png')] bg-cover bg-center flex flex-col justify-end items-start gap-y-2 lg:gap-y-8">
+
         <motion.div style={{y:s1}} className="flex w-full justify-between items-center lg:items-start px-10 lg:px-30">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <h1 className="lg:w-[660px] text-[24px] lg:text-[64px] font-extralight italic leading-tight">
+            <h1 className="lg:w-[660px] text-[45px] lg:text-[64px] font-extralight italic leading-14 lg:leading-18">
               Beautiful Brands <br /> <span className="font-semibold">Get Forgotten Every Day.</span>
             </h1>
           </Reveal>
-          <Reveal variants={slideInFromRight(0.2)}>
-            <div className="hidden lg:flex flex-col justify-between items-end gap-y-5 text-[16px]">
-              <p className="">info@vedaracollective.com</p>
-              <p className="uppercase">Toronto</p>
-            </div>
-          </Reveal>
         </motion.div>
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.p style={{y:s1}} className="mx-10 lg:mx-30 w-92 lg:w-[558px] font-light text-[16px] lg:text-[24px] tracking-tight leading-tight">
+          <motion.p style={{y:s1}} className="hidden lg:block mx-10 lg:mx-30 w-92 lg:w-[558px] font-light text-[18px] lg:text-[24px] tracking-tight leading-tight">
+            We don't design to impress. We design to make you irreplaceable visually, strategically, generationally.
+          </motion.p>
+        </Reveal>
+        <Reveal variants={slideInFromLeft(0.2)}>
+          <motion.p style={{y:s1}} className="lg:hidden mx-10 lg:mx-30 w-[320px] lg:w-[558px] font-light text-[18px] lg:text-[24px] tracking-tight leading-tight">
             We don't design to impress. We design to make you irreplaceable visually, strategically, generationally.
           </motion.p>
         </Reveal>
         <Reveal variants={slideInFromLeft(0.2)} className={`mb-20`}>
           <Link href="/contact">
-          <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-tertiary/15 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] ml-10 lg:ml-30">
+          <motion.button style={{y:s1}} className="flex justify-between items-center gap-x-3 rounded-full bg-tertiary/55 backdrop-blur-lg py-4 pl-6 pr-4 text-[12px] lg:text-[14px] mt-8 lg:-mt-10 ml-10 lg:ml-30">
             <p>Begin the Conversation</p>
             <ArrowForwardIosOutlinedIcon />
           </motion.button>
@@ -228,33 +220,33 @@ const page = () => {
         </div>
       </section>
 
-      <section ref={container2} className="bg-primary text-black py-20 lg:py-30 px-6 lg:px-10 flex flex-col justify-center lg:items-center gap-y-10">
+      <section ref={container2} className="bg-primary text-black py-20 lg:py-30 lg:px-10 flex flex-col justify-center items-center gap-y-10">
 
-        <motion.div style={{y:s2}} className="flex flex-col-reverse lg:flex-row lg:items-center gap-x-23 gap-y-4 mb-10">
-          <div className="lg:hidden text-right flex justify-end font-light w-full">
-            <p className="w-[343px]">Your brand deserves to become a reference point, not another
+        <motion.div style={{y:s2}} className="flex flex-col-reverse justify-center items-center lg:flex-row gap-x-23 gap-y-4 lg:mb-10">
+          <div className="lg:hidden text-right flex justify-end font-light w-[320px]">
+            <p className="w-[280px] text-[14px]">Your brand deserves to become a reference point, not another
             participant.</p>
           </div>
           <Reveal variants={slideInFromLeft(0.2)}>
-            <img src="/atelier/img1.png" alt="img1" className="flex justify-self-end h-[252px] lg:h-full lg:w-full w-[320px] lg:max-w-none object-cover object-center lg:object-top" />
+            <img src="/atelier/img1.png" alt="img1" className="flex lg:justify-self-end h-[252px] lg:h-full lg:w-full w-[320px] lg:max-w-none object-cover object-center lg:object-top" />
           </Reveal>
-          <div className="flex flex-col gap-4 lg:w-[650px]">
+          <div className="flex flex-col gap-4 w-[320px] lg:w-[650px]">
             <Reveal variants={slideInFromTop(0.2)}>
               <h3 className="text-[16px] lg:text-[20px] italic">Our Philosophy</h3>
             </Reveal>
             <Reveal variants={slideInFromTop(0.2)}>
-              <p className="text-[28px] lg:text-[36px] lg:w-[605px] leading-tight">
+              <p className="text-[24px] lg:text-[36px] w-[320px] lg:w-[605px] leading-tight">
                 Excellence Is Inevitable When You Build With Intention
               </p>
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="text-[12px] lg:text-[14px] lg:w-[430px] text-right lg:text-left">
+              <p className="text-[12px] lg:text-[14px] w-[320px] lg:w-[430px]">
                 We partner with the few who understand that true luxury. While
                 others seek attention, we build authority!
               </p>
             </Reveal>
             <Reveal variants={slideInFromBottom(0.2)}>
-              <img src="/atelier/img2.png" alt="img2" className="w-full max-w-[320px] lg:my-10 lg:max-w-none object-cover object-center" />
+              <img src="/atelier/img2.png" alt="img2" className="w-[320px] lg:my-10 lg:w-full object-cover object-center" />
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
               <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-54">
@@ -266,7 +258,7 @@ const page = () => {
         </motion.div>
 
         <Reveal variants={slideInFromBottom(0.2)}>
-          <motion.p style={{y:s2}} className="lg:hidden text-[12px]">
+          <motion.p style={{y:s2}} className="lg:hidden text-[12px] w-[320px]">
             Every brand we shape begins as an idea, then evolves into a Legacy a
             narrative powerful enough to influence culture, shape desire, and
             endure long after its originator has stepped aside.
@@ -290,7 +282,7 @@ const page = () => {
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s3}} className="flex flex-col lg:text-center gap-7">
             <h1 className="text-[16px] lg:text-[20px] italic">Our Approach</h1>
-            <p className="w-99 text-[16px] lg:w-160 lg:text-[22px] leading-tight">
+            <p className="w-70 text-[16px] lg:w-160 lg:text-[22px] leading-tight">
               We create a complete universe identity, narrative, digital
               presence, and experience. So your story is not just seen, but
               felt, remembered, and passed down.
@@ -501,15 +493,15 @@ const page = () => {
         </div>
       </section>
 
-      <section ref={container5} className="flex flex-col justify-center items-center gap-y-25 pt-30 pb-60">
+      <section ref={container5} className="flex flex-col justify-center items-center gap-y-15 lg:gap-y-20 pt-30 pb-60">
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s5}} className="flex flex-col justify-center items-center text-center gap-y-7">
-            <h2 className="text-[16px] lg:text-[20px] italic">Insight</h2>
-            <p className="w-100 lg:w-150 text-[20px] lg:text-[28px] leading-tight">
+            <h2 className="text-[16px] lg:text-[24px] uppercase italic">Insights</h2>
+            <p className="w-[322px] lg:w-150 text-[20px] lg:text-[28px] leading-tight">
               Where perspective becomes power, and knowledge becomes a creative
               asset.
             </p>
-            <Link href="/blogs" className="border-b border-white pb-1 text-[12px] lg:text-[14px] px-2">Explore</Link>
+            <Link href="/insights" className="border-b border-white pb-1 text-[12px] lg:text-[14px] px-2">Explore</Link>
           </motion.div>
         </Reveal>
 
@@ -523,7 +515,7 @@ const page = () => {
           </button>
 
           {/* CARD */}
-          <div className="relative w-[322px] h-[566px] overflow-hidden">
+          <div className="relative w-[322px] h-[415px] overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={cardIdx}
@@ -553,7 +545,7 @@ const page = () => {
                     <p>{card.duration}</p>
                   </div>
 
-                  <h2 className="relative z-10 text-[22px] leading-tight italic">
+                  <h2 className="relative z-10 text-[28px] leading-tight italic">
                     {card.title}
                   </h2>
 
@@ -577,7 +569,7 @@ const page = () => {
         <motion.div style={{y:s5}} className="hidden lg:flex gap-6">
           {CARDS.map((card,idx) => (
             <Reveal variants={slideInFromLeft(0.2 + (idx)/5)} key={idx}>
-              <div className="flex flex-col justify-between w-[396px] h-[566px] p-10 relative">
+              <div className="flex flex-col justify-between w-[396px] h-[470px] p-10 relative">
                 <img
                   src={card.image}
                   alt="img8"

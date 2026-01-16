@@ -85,30 +85,35 @@ const page = () => {
           />
         </motion.div>
 
-        <Reveal variants={slideInFromRight(0.2)}>
+        {/* <Reveal variants={slideInFromRight(0.2)}>
           <motion.p style={{y:s1}} className="w-screen text-right mb-12 pr-15 text-[14px] lg:text-[16px]">
             info@vedaracollective.com
           </motion.p>
-        </Reveal>
+        </Reveal> */}
 
-        <motion.div style={{y:s1}} className="flex flex-col gap-y-20 pl-15 lg:flex-row lg:justify-between lg:items-center w-screen">
+        <motion.div style={{y:s1}} className="flex flex-col gap-y-20 px-15 lg:flex-row lg:justify-between w-screen">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col"> 
-              <h1 className="text-[22px] lg:text-[36px] italic">Our Portfolio</h1>
-              <p className="text-[14px] lg:text-[16px]">Work That Outlives Seasons</p>
+              <h1 className="text-[45px] lg:text-[64px] italic font-semibold">Our Portfolio</h1>
+              <p className="text-[16px] lg:text-[18px]">Work That Outlives Seasons</p>
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="w-[300px] md:w-[405px] lg:pr-15 font-light lg:text-right text-[14px] lg:text-[16px]">
-              Each project is a world we constructed with intention. Here strategy
-              becomes culture, design becomes memory, and vision becomes
-              permanence.
-            </p>
+            <motion.div style={{y:s1}} className="flex flex-col items-end justify-end gap-y-11">
+              <p className="text-right text-[16px] lg:text-[18px]">
+                info@vedaracollective.com
+              </p>
+              <p className="w-[300px] md:w-[405px] tracking-tighter font-light lg:text-right text-[16px] lg:text-[18px]">
+                Each project is a world we constructed with intention. Here strategy
+                becomes culture, design becomes memory, and vision becomes
+                permanence.
+              </p>
+            </motion.div>
           </Reveal>
         </motion.div>
 
         <Reveal variants={slideInFromLeft(0.2)}>
-          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20 text-[12px] lg:text-[14px]">
+          <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20 text-[16px] lg:text-[18px]">
             <p>Branding 01</p>
             <p>Digital Marketing 01</p>
             <p>Development 01</p>
@@ -183,13 +188,13 @@ const page = () => {
       {/* section 3 */}
       <section className="flex flex-col justify-center items-center">
         <div className="top-0 pt-[140px] mb-[140px] space-y-20">
-          <div className="flex justify-between w-[300px] lg:w-[800px] text-[22px] lg:text-[36px] uppercase">
+          <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[45px] uppercase">
             <Reveal variants={slideInFromLeft(0.2)}><p>All Projects</p></Reveal>
             <Reveal variants={slideInFromRight(0.2)}><p>01</p></Reveal>
           </div>
 
           <Reveal variants={slideInFromRight(0.2)}>
-          <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[12px] lg:text-[14px]">
+          <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[18px]">
             Every identity is built to endure, designed with the precision of an
             archivist and the vision of a futurist. What emerges is not a
             “brand,” but a cultural marker.
@@ -265,7 +270,11 @@ const page = () => {
 
       {/* section 6 */}
       <motion.section ref={container3} className="flex flex-col justify-center items-center py-42 relative bg-black overflow-hidden">
-        <Reveal variants={slideInFromTop(0.2)}><motion.p style={{y:s3}} className="font-editorial italic text-[22px] lg:text-[36px]">FAQs</motion.p></Reveal>
+        <Reveal variants={slideInFromTop(0.2)}>
+          <motion.h2 style={{y:s3}} className="font-extralight italic text-[28px] lg:text-[45px]">
+            FAQs
+          </motion.h2>
+        </Reveal>
 
         <Reveal variants={slideInFromBottom(0.2)}>
           <motion.section style={{y:s3}} className="w-[380px] lg:w-[1100px] mx-auto px-6 py-12 text-gray-200">
@@ -284,9 +293,9 @@ const page = () => {
                     >
                       {/* Left number */}
                       <div className="w-12 shrink-0">
-                        <div className="text-[16px] lg:text-[24px] italic text-gray-300">
+                        <h2 className="text-[20px] lg:text-[36px] italic font-extralight">
                           {indexLabel}
-                        </div>
+                        </h2>
                       </div>
 
                       {/* Content area (title + body) */}
@@ -298,7 +307,7 @@ const page = () => {
                           aria-controls={`faq-panel-${i}`}
                           className="flex items-start w-full text-left gap-4 focus:outline-none"
                         >
-                          <p className="flex-1 text-[16px] md:text-[20px] leading-snug">
+                          <p className="flex-1 text-[16px] md:text-[24px] leading-snug">
                             {item.title}
                           </p>
 
@@ -349,13 +358,12 @@ const page = () => {
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.35, ease: "easeInOut" }}
-                              className="overflow-hidden mt-4 text-[12px] lg:text-[14px] leading-relaxed"
+                              className="overflow-hidden mt-4 text-[14px] lg:text-[18px] leading-tight"
                             >
                               {/* content paragraph(s) */}
                               {item.body.split("\n").map((para, idx) => (
                                 <p
                                   key={idx}
-                                  className={idx === 0 ? "mb-3" : "mb-2"}
                                 >
                                   {para}
                                 </p>

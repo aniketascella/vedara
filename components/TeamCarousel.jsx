@@ -137,7 +137,7 @@ export default function TeamCarousel() {
     <section className="w-full flex flex-col justify-center py-20 bg-primary overflow-hidden">
       {/* Controls */}
       <div className="flex flex-col lg:flex-row justify-between items-end mb-6 px-17 lg:px-35 text-black">
-        <h2 className="lg:text-[36px] lg:w-[840px] tracking-tight">
+        <h2 className="text-[24px] lg:text-[36px] lg:w-[840px] tracking-tight">
           <span className="italic font-semibold">Our Consultancy</span> Is Led By <span className="italic font-semibold">Experienced Strategists</span> Who Work Closely With Founders, Executives, And Leadership Teams.
         </h2>
         <div className="flex gap-3">
