@@ -224,13 +224,13 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           />
         </motion.div>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.h1 style={{y:s1}} className='w-screen lg:w-[747px] lg:text-center text-[26px] lg:text-[45px] px-10 lg:px-0'>
+          <motion.h1 style={{y:s1}} className='w-screen lg:w-[747px] lg:text-center text-[26px] lg:text-[45px] px-10 lg:px-0 leading-tight tracking-tight'>
             Vedara selects <span className='italic font-semibold'>creations</span> that hold within them the <span className="italic font-semibold">architecture</span> of a civilization yet to emerge
           </motion.h1>
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <motion.p style={{y:s1}} className='w-screen lg:w-[579px] lg:text-center text-[14px] lg:text-[18px] px-10 lg:px-0 font-light'>
+        <motion.p style={{y:s1}} className='w-screen lg:w-150 lg:text-center text-[14px] lg:text-[18px] px-10 lg:px-0 font-light tracking-tight leading-tight'>
           Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
         </motion.p>
         </Reveal>
@@ -401,14 +401,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </Reveal>
       </section>
 
-      <section ref={container3} className='flex flex-col justify-center items-center lg:items-start py-35 gap-7 lg:gap-11 lg:pl-37'>
+      <section ref={container3} className='flex flex-col justify-center items-center py-35 gap-7 lg:gap-11 lg:px-37'>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.p style={{y:s3}} className="uppercase w-[325px] md:w-120 lg:w-202 text-[24px] md:text-[28px] lg:text-[45px] md:pr-20 lg:pr-0 lg:pl-37 leading-tight tracking-tight">
+          <motion.p style={{y:s3}} className="uppercase w-[325px] md:w-120 lg:w-[1104px] text-[24px] md:text-[28px] lg:text-[45px] md:pr-20 lg:pr-[280px] leading-tight tracking-tight">
             Where Brands Become Cultural Contributors, Not Market Participants
           </motion.p>
         </Reveal>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.p style={{y:s3}} className="w-[320px] md:w-120 lg:w-122 text-[14px] lg:text-[16px] md:pr-59 lg:pr-0 lg:pl-37">
+          <motion.p style={{y:s3}} className="w-[320px] md:w-120 lg:w-[1104px] text-[14px] lg:text-[16px] md:pr-59 lg:pr-[614px]">
             Vedara shapes identities that influence categories, shift language, and imprint on collective memory.
           </motion.p>
         </Reveal>
@@ -718,25 +718,25 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
       <section ref={container4} className="flex justify-center items-center py-20 lg:pt-27 lg:pb-55">
         <div className="flex flex-col justify-center gap-12 lg:gap-18">
           <Reveal variants={slideInFromTop(0.2)}>
-            <motion.p style={{y:s4}} className="uppercase w-[300px] md:w-90 lg:w-125 lg:text-[36px]"> 
+            <motion.p style={{y:s4}} className="uppercase w-[300px] md:w-90 lg:w-125 text-[28px] lg:text-[45px] leading-tight"> 
               Confidentiality & Access Protocol
             </motion.p>
           </Reveal>
 
           <motion.div style={{y:s4}} className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
             <Reveal variants={slideInFromRight(0.2)}>
-              <div className="flex flex-col gap-12 lg:gap-3 text-[16px] lg:text-[22px]">
-                <p className="w-60 lg:w-75 lg:mb-17">
+              <div className="flex flex-col gap-6 lg:gap-5 text-[16px] lg:text-[24px]">
+                <p className="w-60 lg:w-75 lg:mb-14">
                   Vedara Dynasty Operates Within a Closed Circle.
                 </p>
-                <p>(01)</p>
-                <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
+                <p className=''>(01)</p>
+                <p className="w-[337px] font-extralight text-[14px] lg:text-[18px]">
                   All dossiers, communications, and project materials are safeguarded under strict mutual NDAs—preserving confidentiality of every interaction.
                 </p>
 
                 <p>(02)</p>
 
-                <p className="w-84 font-extralight text-[12px] lg:text-[16px]">
+                <p className="w-[337px] lg:w-[371px] font-extralight text-[14px] lg:text-[18px] ">
                   Access is granted exclusively to verified investors, each individually cleared before receiving invitations to alignment sessions.
                 </p>
               </div>

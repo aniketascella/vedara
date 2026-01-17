@@ -5,11 +5,11 @@ import {useState}  from 'react'
 
 function Input({ label, ...props }) {
   return (
-    <div className="flex flex-col gap-2">
-      <label className="text-[12px] font-medium">{label}</label>
+    <div className="flex flex-col gap-2 text-black">
+      <label className="text-[14px] lg:text-[18px] font-medium">{label}</label>
       <input
         {...props}
-        className="h-[38px] bg-[#FFFFFF] rounded-[5px] opacity-17 px-3 text-[13px] outline-none text-black"
+        className="h-[38px] bg-[#FFFFFF]/17 rounded-[5px] px-3 text-[12px] lg:text-[14px] outline-none"
       />
     </div>
   );
@@ -17,12 +17,12 @@ function Input({ label, ...props }) {
 
 function Textarea({ label, dotted = false, ...props }) {
   return (
-    <div className="flex flex-col gap-2">
-      <label className="text-[12px]">{label}</label>
+    <div className="flex flex-col gap-2 text-black">
+      <label className="text-[14px] lg:text-[18px] font-medium">{label}</label>
       <textarea
         {...props}
         rows={4}
-        className={`bg-[#FFFFFF] opacity-17 px-3 py-2 text-[13px] resize-none outline-none rounded-[5px] ${
+        className={`bg-[#FFFFFF]/17 px-3 py-2 text-[12px] lg:text-[14px] resize-none outline-none rounded-[5px] ${
           dotted ? "border-b border-dotted border-[#6B6B6B]" : ""
         }`}
       />
@@ -35,11 +35,15 @@ const page = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    industry: "",
     movement: "",
     methodology: "",
     success: "",
-    industry: "",
+    architect:"",
+    commitment: "",
+    investment: "",
     budget: "",
+    culture: "",
     referral: "",
   });
 
@@ -57,7 +61,7 @@ const page = () => {
   return (
     <div className='relative w-full overflow-x-clip'>
       <div className='flex flex-col items-center justify-center gap-y-7 py-51'>
-        <div className="absolute inset-0 w-full h-[2201px] -z-1">
+        <div className="absolute inset-0 w-full h-full -z-1">
           <img
             src="/rovineArt.png"
             alt="bg overlay"
@@ -105,6 +109,13 @@ const page = () => {
               onChange={updateField}
             />
 
+            <Input
+              label="Industry"
+              name="industry"
+              value={form.industry}
+              onChange={updateField}
+            />
+
             <Textarea
               label="Describe the cultural movement you're building, not just the business you're running."
               name="movement"
@@ -127,17 +138,38 @@ const page = () => {
               onChange={updateField}
             />
 
-            <Input
-              label="Industry"
-              name="industry"
-              value={form.industry}
+            <Textarea
+              label="If you could architect your legacy without constraints, what would your brand be known for in 100 years?"
+              name="architect"
+              value={form.architect}
+              onChange={updateField}
+            />
+
+            <Textarea
+              label="What would have to be true for you to commit the next 12–24 months to building something that lasts 100 years?"
+              name="commitment"
+              value={form.commitment}
               onChange={updateField}
             />
 
             <Input
-              label="Project Budget"
+              label="Investment commitment"
+              name="investment"
+              value={form.investment}
+              onChange={updateField}
+            />
+
+            <Textarea
+              label="What investment commitment aligns with the scale of legacy you’re building?"
               name="budget"
               value={form.budget}
+              onChange={updateField}
+            />
+
+            <Textarea
+              label="What would achieving cultural sovereignty be worth to you over the next decade?(Not what you’d pay — what would it mean.)"
+              name="culture"
+              value={form.culture}
               onChange={updateField}
             />
 

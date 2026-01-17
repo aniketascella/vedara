@@ -77,25 +77,25 @@ export default function Home() {
       
       <TeamCarousel/>
 
-      <section className='flex flex-col justify-center items-center py-35 gap-9 lg:gap-11 pl-8 md:pl-19 lg:px-40'>
-        <Reveal variants={slideInFromTop(0.2)}>
-          <h2 className="italic text-[16px] lg:text-[18px] w-[320px] lg:w-full text-left border">
+      <section className='flex flex-col justify-center items-center py-35 gap-9 lg:gap-11 pl-8 md:pl-19 lg:px-50'>
+        <Reveal variants={slideInFromTop(0.2)} className={`w-[320px] md:w-120 lg:w-[1104px] `}>
+          <h2 className="italic text-[16px] lg:text-[18px] text-left">
             How Vedara Works
           </h2>
         </Reveal>
-        <div className="flex flex-col gap-y-9 lg:flex-row justify-between items-center">
+        <div className="flex flex-col gap-y-9 lg:flex-row justify-between items-center w-[320px] md:w-120 lg:w-[1104px]">
           <Reveal variants={slideInFromTop(0.2)}>
-            <motion.p  className=" w-[320px] md:w-100 lg:w-[743px] text-[24px] lg:text-[36px]  leading-tight">
+            <motion.p  className=" w-[320px] md:w-120 lg:w-[743px] text-[24px] lg:text-[36px]  leading-tight">
               A Structured Approach To Building, Executing, and Scaling Brands
             </motion.p>
           </Reveal>
           <Reveal variants={slideInFromTop(0.2)}>
-            <motion.p className="w-[320px] lg:w-[336px] text-[14px] lg:text-[16px]">
+            <motion.p className="w-[320px] md:w-120 lg:w-[336px] text-[14px] lg:text-[16px]">
               Vedara follows a clear, step-by-step model that connects strategy, execution, and long-term growth. 
             </motion.p>
           </Reveal>
         </div>
-        <motion.div className="flex flex-col lg:flex-row justify-center items-center gap-12">
+        <motion.div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="bg-primary text-black flex flex-col items-end gap-4 w-[320px] md:w-120 lg:w-84 rounded-2xl px-5 pt-6 pb-12">
               <img src="/home/img1.png" alt="img1" className="relative w-full object-cover" />

@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import Footer from "@/components/Footer";
 import Reveal from "@/utils/Reveal";
@@ -7,16 +7,10 @@ import { getBlogs } from "./getBlogs";
 import Image from "next/image";
 import Link from "next/link";
 
-// const getBlogsAsync = async () => {
-//   const blogs = await getBlogs();
 
-//   const featuredBlog = blogs.find((b) => b.featured);
-//   const otherBlogs = blogs.filter((b) => !b.featured);
 
-//   return { featuredBlog, otherBlogs };
-// };
-
-const page = () => {
+export default async function page() {
+  const blogs = await getBlogs();
   return (
     <div className="bg-[#0d0d0d] text-white relative w-full overflow-x-clip">
       <section className="flex flex-col justify-center pl-6 lg:pl-20 py-40">
@@ -78,9 +72,9 @@ const page = () => {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* {otherBlogs.map((blog) => (
+          {blogs.map((blog) => (
             <Link key={blog._id} href={`/blogs/${blog.slug}`}>
-              <article className="group cursor-pointer">
+              <div className="group cursor-pointer">
                 
                 <div className="relative h-[320px] overflow-hidden mb-6">
                   <Image
@@ -99,9 +93,12 @@ const page = () => {
                 <h4 className="text-lg font-light leading-snug group-hover:underline">
                   {blog.title}
                 </h4>
-              </article>
+                <p>
+                  {blog.excerpt}
+                </p>
+              </div>
             </Link>
-          ))} */}
+          ))}
         </div>
       </section>
 
@@ -110,4 +107,4 @@ const page = () => {
   )
 }
 
-export default page
+// export default page
