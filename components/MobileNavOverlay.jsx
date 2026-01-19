@@ -1,14 +1,15 @@
 "use client";
 import { ArrowForwardIosOutlined } from "@mui/icons-material";
+import CloseIcon from '@mui/icons-material/Close';
 import Link from "next/link";
 import { useEffect } from "react";
 
 const links=[
   {name:"Home", href:"/"},
-  {name:"Studio", href:"/atelier"},
+  {name:"Atelier", href:"/atelier"},
   {name:"Capital", href:"/capital"},
   {name:"Portfolio", href:"/portfolio"},
-  {name:"Insight", href:"/insights"},
+  {name:"Insights", href:"/insights"},
 ]
 
 export default function MobileNavOverlay({ open, onClose, active }) {
@@ -48,7 +49,7 @@ export default function MobileNavOverlay({ open, onClose, active }) {
             hover:opacity-70 transition
           "
         >
-          ✕
+          <CloseIcon/>
         </button>
 
         {/* Divider */}
@@ -72,7 +73,8 @@ export default function MobileNavOverlay({ open, onClose, active }) {
         </nav>
 
         {/* CTA */}
-        <button
+        <Link
+          href="/contact"
           className="
             mt-12 px-4 py-2 rounded-full
             bg-primary text-black transition
@@ -83,7 +85,7 @@ export default function MobileNavOverlay({ open, onClose, active }) {
             Contact
           </h2>
           <ArrowForwardIosOutlined className="h-3"/>
-        </button>
+        </Link>
 
         {/* Footer */}
         <h2 className="absolute bottom-8 text-[14px] italic font-semibold text-center">

@@ -115,7 +115,7 @@ export default function ProjectCarousal() {
                   <div className="absolute bottom-0 p-6 w-full text-white backdrop-blur-[3px]">
                     <p className="text-[20px] tracking-wide mb-2">{item.title}</p>
                     <div className="flex justify-between items-end w-full">
-                      <p  className="text-[14px] w-62 text-white font-light">{item.description}</p>
+                      <p className="text-[14px] w-62 text-white font-light">{item.description}</p>
                       <button className="w-[37px] h-[37px] rounded-full bg-primary/32 text-center">
                         <ArrowForwardIosOutlined/>
                       </button>
@@ -158,9 +158,9 @@ export default function ProjectCarousal() {
             <div className="absolute inset-0 bg-black/40" />
 
             <div className="absolute bottom-0 p-6 w-full text-white backdrop-blur-[3px]">
-              <h3 className="text-lg font-light mb-2">
+              <h2 className="text-lg font-light mb-2">
                 {projectCarousalData[mobileIndex].title}
-              </h3>
+              </h2>
               <p className="text-sm text-white mb-2">
                 {projectCarousalData[mobileIndex].description}
               </p>

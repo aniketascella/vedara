@@ -214,7 +214,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
   return (
     <div className='text-white w-screen relative overflow-x-clip'>
-      <section ref={container1} className="flex flex-col justify-center items-center gap-5 lg:gap-15 w-screen h-screen py-50 relative">
+      <section ref={container1} className="flex flex-col justify-center items-center gap-5 lg:gap-7 w-screen h-screen py-50 relative">
         <motion.div style={{y:s1bg}} className="absolute -z-1 w-full h-full">
           <img
             src="/dynasty/heroImg.png"
@@ -224,15 +224,15 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           />
         </motion.div>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.h1 style={{y:s1}} className='w-screen lg:w-[747px] lg:text-center text-[26px] lg:text-[45px] px-10 lg:px-0 leading-tight tracking-tight'>
+          <motion.h1 style={{y:s1}} className='w-[300px] md:w-[344px] lg:w-[747px] lg:text-center text-[26px] lg:text-[45px]  leading-tight tracking-tight'>
             Vedara selects <span className='italic font-semibold'>creations</span> that hold within them the <span className="italic font-semibold">architecture</span> of a civilization yet to emerge
           </motion.h1>
         </Reveal>
 
         <Reveal variants={slideInFromTop(0.2)}>
-        <motion.p style={{y:s1}} className='w-screen lg:w-150 lg:text-center text-[14px] lg:text-[18px] px-10 lg:px-0 font-light tracking-tight leading-tight'>
-          Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
-        </motion.p>
+          <motion.p style={{y:s1}} className='w-[300px] md:w-[344px] lg:w-150 lg:text-center text-[14px] lg:text-[18px] font-light tracking-tight leading-tight'>
+            Every creation is chosen for its potential to outlive markets and eras. Vedara Dynasty is an ecosystem where only the rarest concepts earn their place.
+          </motion.p>
         </Reveal>
 
         {/* <motion.div style={{y:s1}} className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-12 text-[16px] lg:text-[20px]">
@@ -269,20 +269,20 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             </div>
           </Reveal>
         </motion.div> */}
-        <Reveal variants={slideInFromBottom(0.2)}>
+        <Reveal variants={slideInFromBottom(0.2)} className={`w-[300px] md:w-[344px] lg:w-full lg:text-center`}>
           <motion.button style={{y:s1}} className='backdrop-blur-lg bg-[#CEBFB3]/10 rounded-full text-[14px] lg:text-[16px] px-4 py-3 lg:px-8 hover:cursor-pointer'>
-            <h3 className='italic font-extralight'>
+            <h2 className='italic font-extralight'>
               Coming Soon
-            </h3>
+            </h2>
           </motion.button>
         </Reveal>
       </section>
 
       <section ref={container2} className="flex flex-col justify-center items-center gap-5 w-screen py-35 relative bg-primary text-black">
-        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row lg:justify-between lg:w-full gap-y-6 px-15 lg:px-23">
+        <motion.div style={{y:s2}} className="flex flex-col lg:flex-row justify-center items-center lg:justify-between lg:w-full gap-y-6 px-15 lg:px-23">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col gap-y-8">
-              <p className="uppercase text-[24px] lg:text-[45px] w-[300px] md:w-[445px] lg:w-[674px] tracking-tight leading-tight">
+              <p className="uppercase text-[24px] lg:text-[45px] w-[300px] md:w-[370px] lg:w-[674px] tracking-tight leading-tight">
                 A Private Ecosystem Engineered for Excellence
               </p>
               <p className="w-70 md:w-[335px] lg:w-116 text-[14px] lg:text-[16px] leading-tight">
@@ -291,7 +291,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <p className="lg:text-right lg:w-[355px] text-[14px] lg:text-[16px] leading-tight">
+            <p className="lg:text-right w-[300px] md:w-[370px] text-[14px] lg:text-[16px] leading-tight">
               Every project is vetted for meaning, resonance, and a future measured in decades.
             </p>
           </Reveal>
@@ -482,11 +482,25 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
               <div className="flex justify-center items-center gap-4 lg:gap-10">
                 {imageText[imageIndex].text1 &&(
-                  <h2 className={`${imageText[imageIndex].text1.width} text-[16px] lg:text-[36px] font-extralight`}><span className={`${imageIndex===5?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtLeft}</span> <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text1.txtRight}</span></h2>
+                  <h2 className={`${imageText[imageIndex].text1.width} text-[16px] lg:text-[36px] font-extralight`}>
+                    <span className={`${imageIndex===5?`font-semibold italic`:``}`}>
+                      {imageText[imageIndex].text1.txtLeft}
+                    </span> 
+                    <span className={`${imageIndex===1 || imageIndex===2 ?`font-semibold italic`:``}`}>
+                      {imageText[imageIndex].text1.txtRight}
+                    </span>
+                  </h2>
                 )}
                 <img src={imageText[imageIndex].image} alt="imageText" className="w-35 lg:w-53" />
                 {imageText[imageIndex].text2 && (
-                  <h2 className={`${imageText[imageIndex].text2.width} text-[16px] lg:text-[36px] font-extralight`}><span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtLeft}</span> <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>{imageText[imageIndex].text2.txtRight}</span></h2>)}
+                  <h2 className={`${imageText[imageIndex].text2.width} text-[16px] lg:text-[36px] font-extralight`}>
+                    <span className={`${imageIndex!=1 ?`font-semibold italic`:``}`}>
+                      {imageText[imageIndex].text2.txtLeft}
+                    </span> 
+                    <span className={`${imageIndex===1 ?`font-semibold italic`:``}`}>
+                      {imageText[imageIndex].text2.txtRight}
+                    </span>
+                  </h2>)}
               </div>
             </motion.div>
           </AnimatePresence>

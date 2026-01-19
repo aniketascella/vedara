@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="flex flex-col items-center lg:items-start gap-y-1 text-left font-light lg:font-normal">
             <Link href="/">Home</Link>
             <Link href="/capital">Vedara Capital</Link>
-            <Link href="/atelier">Vedara Studio</Link>
+            <Link href="/atelier">Vedara Atelier</Link>
             <Link href="/portfolio">Portfolio</Link>
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/insights">Insights</Link>
             <Link href="/contact">Contact</Link>
           </div>
 

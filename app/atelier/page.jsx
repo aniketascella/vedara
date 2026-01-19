@@ -1,7 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import WhatWeDo from "./WhatWeDo";
 import { CARDS, SLIDES } from "./data";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import Reveal from "@/utils/Reveal";
@@ -139,7 +138,7 @@ const page = () => {
           
             <div className="flex flex-col lg:flex-row w-full gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
               <Reveal variants={slideInFromBottom(0.2)}>
-                <h6 className="hidden lg:flex italic text-[16px]">Vedara</h6>
+                <h2 className="hidden lg:flex italic text-[16px]">Vedara</h2>
               </Reveal>
 
               <Reveal variants={slideInFromTop(0.2)}>
@@ -232,7 +231,7 @@ const page = () => {
           </Reveal>
           <div className="flex flex-col gap-4 w-[320px] lg:w-[650px]">
             <Reveal variants={slideInFromTop(0.2)}>
-              <h3 className="text-[16px] lg:text-[20px] italic">Our Philosophy</h3>
+              <h2 className="text-[16px] lg:text-[20px] italic">Our Philosophy</h2>
             </Reveal>
             <Reveal variants={slideInFromTop(0.2)}>
               <p className="text-[24px] lg:text-[36px] w-[320px] lg:w-[605px] leading-tight">
@@ -281,7 +280,7 @@ const page = () => {
       <section ref={container3} className="flex flex-col justify-center items-center gap-y-45 lg:gap-y-68 py-20 lg:py-30">
         <Reveal variants={slideInFromTop(0.2)}>
           <motion.div style={{y:s3}} className="flex flex-col lg:text-center gap-7">
-            <h1 className="text-[16px] lg:text-[20px] italic">Our Approach</h1>
+            <h2 className="text-[16px] lg:text-[20px] italic">Our Approach</h2>
             <p className="w-70 text-[16px] lg:w-160 lg:text-[22px] leading-tight">
               We create a complete universe identity, narrative, digital
               presence, and experience. So your story is not just seen, but
@@ -292,9 +291,9 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex lg:gap-x-20">
           <Reveal variants={slideInFromRight(0.2)}>
-            <h1 className="text-[22px] font-extralight">
+            <h2 className="text-[22px] font-extralight">
               [01]
-            </h1>
+            </h2>
           </Reveal>
             <div className="flex flex-col gap-y-7 lg:gap-y-11">
               <Reveal variants={slideInFromRight(0.2)}>
@@ -326,7 +325,7 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromRight(0.2)}>
-            <h1 className="text-[22px] font-extralight">[02]</h1>
+            <h2 className="text-[22px] font-extralight">[02]</h2>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
@@ -356,9 +355,9 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex gap-x-4 lg:gap-x-25 lg:w-auto">
           <Reveal variants={slideInFromRight(0.2)}>
-            <h1 className="text-[22px] font-extralight">
+            <h2 className="text-[22px] font-extralight">
               [03]
-            </h1>
+            </h2>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
@@ -386,7 +385,7 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex lg:flex-row-reverse gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromRight(0.2)}>
-            <h1 className="text-[22px] font-extralight">[04]</h1>
+            <h2 className="text-[22px] font-extralight">[04]</h2>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
@@ -414,7 +413,7 @@ const page = () => {
 
         <motion.div style={{y:s3}} className="flex gap-x-4 lg:gap-x-25">
           <Reveal variants={slideInFromRight(0.2)}>
-            <h1 className="text-[22px] font-extralight">[05]</h1>
+            <h2 className="text-[22px] font-extralight">[05]</h2>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col gap-y-7 lg:gap-11">
@@ -549,7 +548,7 @@ const page = () => {
                     {card.title}
                   </h2>
 
-                  <Link href="/" className="relative z-10 w-25 border-b border-white pb-1">
+                  <Link href={card.slug} className="relative z-10 w-25 border-b border-white pb-1">
                     Read More
                   </Link>
                 </div>
@@ -582,7 +581,7 @@ const page = () => {
                 <h2 className="text-[32px] z-1 leading-tight italic">
                   {card.title}
                 </h2>
-                <Link href="/" className="border-b w-23 border-white pb-1 z-1">
+                <Link href={card.slug} className="border-b w-23 border-white pb-1 z-1">
                   Read More
                 </Link>
               </div>

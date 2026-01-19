@@ -28,9 +28,9 @@ export default async function BlogDetailPage({ params }) {
               {blog.excerpt}
             </p>
           </div>
-          <div className="text-[18px] lg:text-[24px] font-medium">
+          <p className="text-[18px] lg:text-[24px] font-medium">
             {blog.author}
-          </div>
+          </p>
         </section>
 
         {blog.coverImage && (

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, Twitter } from "@mui/icons-material";
-import CloseIcon from '@mui/icons-material/Close';
 import MobileNavOverlay from "./MobileNavOverlay";
 
 export default function Navbar() {

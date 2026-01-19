@@ -69,13 +69,13 @@ export default function KeyEngagements() {
                 className="relative grid grid-cols-[1fr_172px_1fr] gap-x-20 mx-auto py-12 border-t border-black/20 items-center overflow-visible"
               >
                 {/* LEFT TITLE */}
-                <h3
+                <h2
                   className={`italic text-[38px] font-semibold transition-opacity duration-300 ${
                     isActive ? "opacity-100" : "opacity-40"
                   }`}
                 >
                   {item.title}
-                </h3>
+                </h2>
 
                 {/* CENTER IMAGE WINDOW */}
                 <div className="relative">

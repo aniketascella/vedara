@@ -3,18 +3,21 @@ export const CARDS = [
     date: "August 23,2025",
     duration: "12 Mins",
     title: "The Saint Laurent Transformation",
+    slug: "/insights/the-saint-laurent-transformation-how-a-heritage-brand-redefined-luxury-for-the-digital-age",
     image: "/atelier/img8.png",
   },
   {
     date: "September 21,2025",
     duration: "9 Mins",
     title: "Behind The Velvet Rope: The Six Senses Empire",
+    slug:"/insights/behind-the-velvet-rope",
     image: "/atelier/img9.png",
   },
   {
     date: "August 13,2025",
     duration: "7 Mins",
     title: "The Hermès Paradox: How Artisan Scarcity Built a €200 Billion Empire",
+    slug: "/insights/the-hermes-paradox-how-artisan-scarcity-built-a-e200-billion-empire",
     image: "/atelier/img10.png",
   },
 ];
