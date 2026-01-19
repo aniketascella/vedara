@@ -312,7 +312,7 @@ const page = () => {
 
         <motion.div style={{y:s4}} className="hidden lg:flex justify-between gap-x-36 relative lg:mt-50">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <img src="/selhaya/img14.png" alt="img14" className="relative w-[300px] lg:w-[224px] -top-20"/>
+            <img src="/selhaya/img14.png" alt="img14" className="relative w-[300px] lg:w-56 -top-20"/>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <img src="/selhaya/img12.png" alt="img12" className="w-[300px] lg:w-[480px]"/>
@@ -344,7 +344,7 @@ const page = () => {
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <img src="/selhaya/img15.png" alt="img15" className="relative top-3 w-[300px] lg:w-[224px]"/>
+            <img src="/selhaya/img15.png" alt="img15" className="relative top-3 w-[300px] lg:w-56"/>
           </Reveal>
         </motion.div>
 
