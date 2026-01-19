@@ -46,3 +46,8 @@ h1,h2,h3,h4,h5,h6{
 ::-webkit-scrollbar { 
   display: none; 
 }
+
+.has-x-large-font-size {
+  font-size: 1.75rem;
+  line-height: 1.25;
+}

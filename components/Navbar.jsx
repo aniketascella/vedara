@@ -15,7 +15,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   
-  const active = pathname === "/atelier" ? "atelier" : pathname==="/capital" ? "capital" : pathname === "/" ? "home" : pathname === "/portfolio" ? "portfolio" :  pathname === "/contact" ? "contact" : "insights";
+  const active = pathname.startsWith("/atelier") ? "atelier" : pathname.startsWith("/capital") ? "capital" : pathname === "/" ? "home" : pathname.startsWith("/portfolio") ? "portfolio" :  pathname === "/contact" ? "contact" : "insights";
   
   const isActiveRoute = pathname === "/atelier" || pathname === "/capital";
   

@@ -302,7 +302,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <section ref={sectionRef} className="relative h-[250vh]">
           <div className="sticky top-0 h-screen overflow-hidden">
             <motion.div className="h-auto mt-0 lg:mt-10 py-5">
-              <p className="lg:hidden w-[300px] md:w-[92px] mx-auto text-[20px] leading-tight mb-24">
+              <p className="lg:hidden w-[300px] md:w-[370px] mx-auto text-[20px] leading-tight mb-24">
                 The Dynasty Is Governed By Principles
                 That Protect Purity, Rarity, And Meaning.
               </p>
@@ -312,9 +312,9 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 That Protect Purity, Rarity, And Meaning.
               </p>
 
-              <div className="grid grid-cols-2">
-                <div className="relative w-screen lg:w-127 lg:h-full overflow-y-scroll">
-                  <div className="absolute left-10 lg:left-0 top-0 h-full w-0.5 bg-black/10">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="relative w-[300px] md:w-[370px] lg:w-127 lg:h-full overflow-y-scroll">
+                  <div className="absolute left-0 top-0 h-full w-0.5 bg-black/10">
                     <div
                       className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
                       style={{
