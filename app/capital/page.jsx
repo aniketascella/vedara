@@ -462,7 +462,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             />
           </div>
           <Reveal variants={slideInFromTop(0.2)}>
-            <p className="relative lg:text-center uppercase text-[20px] md:text-[28px] lg:text-[45px] w-[360px] md:w-[383px] lg:w-[768px] leading-tight">
+            <p className="relative lg:text-center uppercase text-[20px] md:text-[28px] lg:text-[45px] w-[360px] md:w-[383px] lg:w-3xl leading-tight">
               A Private Ecosystem Engineered for Enduring Value
             </p>
           </Reveal>
@@ -567,26 +567,26 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               )}
             </AnimatePresence> */}
             <motion.div
-                  key="image"
-                  initial={{ x: "100%" }}
-                  animate={{ x: 0 }}
-                  exit={{ x: "100%" }}
-                  transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-                  className='flex w-full h-full items-center justify-center'
-                >
-                  {/* <button
-                    onClick={() => setOpenForm1(true)}
-                    className="flex justify-between z-1 py-6 px-6 text-center rounded-full bg-tertiary/15 backdrop-blur-xl"
-                  >
-                    Explore Curated Opportunities
-                    <ArrowForwardIosOutlinedIcon/>
-                  </button> */}
-                  <img
-                    src="/dynasty/img13.png"
-                    alt='img13'
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </motion.div>
+              key="image"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+              className='flex w-full h-full items-center justify-center'
+            >
+              {/* <button
+                onClick={() => setOpenForm1(true)}
+                className="flex justify-between z-1 py-6 px-6 text-center rounded-full bg-tertiary/15 backdrop-blur-xl"
+              >
+                Explore Curated Opportunities
+                <ArrowForwardIosOutlinedIcon/>
+              </button> */}
+              <img
+                src="/dynasty/img13.png"
+                alt='img13'
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </motion.div>
           </div>
         </div>
 
