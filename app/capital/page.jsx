@@ -56,28 +56,28 @@ const imageText =[
   },
   {
     text1: {
-      txtLeft:"Confidential",
+      txtLeft:"Confidential ",
       txtRight:"NDA",
-      width: "w-[103px] md:w-[143px] lg:w-[218px]",
+      width: "pl-[10px] w-[90px] md:w-[143px] lg:w-[218px]",
     },
     image: "/dynasty/img7.png",
     text2: {
       txtLeft:"Onboarding + ",
       txtRight:"Encryption",
-      width: "w-[143px] lg:w-[300px]",
+      width: "w-[123px] lg:w-[300px]",
     }
   },
   {
     text1: {
-      txtLeft:"Curated",
+      txtLeft:"Curated ",
       txtRight:"Project Dossiers",
-      width: "w-[153px] lg:w-[313px]",
+      width: "w-[103px] lg:w-[313px]",
     },
     image: "/dynasty/img8.png",
   },
   {
     text2: {
-      txtLeft:"Investor Profiling",
+      txtLeft:"Investor Profiling ",
       txtRight:"& Matching",
       width: "w-[159px] lg:w-[350px]",
     },
@@ -86,18 +86,18 @@ const imageText =[
   {
     text1: {
       txtLeft:"Human-Led",
-      width: "w-[70px] lg:w-[156px]",
+      width: "pl-[10px] w-[70px] lg:w-[156px]",
     },
     image: "/dynasty/img10.png",
     text2:{
       txtLeft: "Concierge",
-      txtRight: "Coordination",
+      txtRight: " Coordination",
       width: "w-[128px] lg:w-[300px]",
     }
   },
   {
     text1: {
-      txtLeft:"Luxury",
+      txtLeft:"Luxury ",
       txtRight:"UX Built For Emotional Resonance",
       width: "w-[119px] lg:w-[280px]",
     },
@@ -224,7 +224,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           />
         </motion.div>
         <Reveal variants={slideInFromTop(0.2)}>
-          <motion.h1 style={{y:s1}} className='w-[300px] md:w-[344px] lg:w-[747px] lg:text-center text-[26px] lg:text-[45px]  leading-tight tracking-tight'>
+          <motion.h1 style={{y:s1}} className='w-[300px] md:w-[344px] lg:w-[760px] lg:text-center text-[36px] md:text-[45px] lg:text-[64px]  leading-tight tracking-tight'>
             Vedara selects <span className='italic font-semibold'>creations</span> that hold within them the <span className="italic font-semibold">architecture</span> of a civilization yet to emerge
           </motion.h1>
         </Reveal>
@@ -299,105 +299,105 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
 
         <Reveal variants={slideInFromBottom(0.2)}>
-        <section ref={sectionRef} className="relative h-[250vh]">
-          <div className="sticky top-0 h-screen overflow-hidden">
-            <motion.div className="h-auto mt-0 lg:mt-10 py-5">
-              <p className="lg:hidden w-[300px] md:w-[370px] mx-auto text-[20px] leading-tight mb-24">
-                The Dynasty Is Governed By Principles
-                That Protect Purity, Rarity, And Meaning.
-              </p>
-              <p className="hidden lg:block w-170 mx-auto text-[32px] leading-tight mb-24">
-                The Dynasty Is Governed By Principles
-                <br />
-                That Protect Purity, Rarity, And Meaning.
-              </p>
+          <section ref={sectionRef} className="relative h-[260vh]">
+            <div className="sticky top-0 h-screen overflow-hidden">
+              <motion.div className="h-auto mt-0 lg:mt-10 py-5">
+                <p className="lg:hidden w-[300px] md:w-[370px] mx-auto text-[20px] leading-tight mb-24">
+                  The Dynasty Is Governed By Principles
+                  That Protect Purity, Rarity, And Meaning.
+                </p>
+                <p className="hidden lg:block w-170 mx-auto text-[32px] leading-tight mb-24">
+                  The Dynasty Is Governed By Principles
+                  <br />
+                  That Protect Purity, Rarity, And Meaning.
+                </p>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative w-[300px] md:w-[370px] lg:w-127 lg:h-full overflow-y-scroll">
-                  <div className="absolute left-0 top-0 h-full w-0.5 bg-black/10">
-                    <div
-                      className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
-                      style={{
-                        height: `${segmentHeight}%`,
-                        top: `${segmentTop}%`,
-                      }}
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-4 lg:gap-20 pl-10 py-5 lg:py-10">
-                    {principles.map((item, i) => (
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="relative w-[300px] md:w-[370px] lg:w-127 lg:h-full overflow-y-scroll">
+                    <div className="absolute left-0 top-0 h-full w-0.5 bg-black/10">
                       <div
-                        key={item.id}
-                        ref={(el) => (itemRefs.current[i] = el)}
-                        data-index={i}
-                        className="flex flex-col lg:flex-row gap-6 items-start pl-10"
-                      >
-                        <div className="flex gap-4">
-                          <span
-                            className={`text-sm transition-opacity duration-300 ${
-                              activeIndex === i ? "text-black" : "text-black/30"
-                            }`}
-                          >
-                            ({item.id})
-                          </span>
+                        className="absolute left-0 w-full bg-black transition-all duration-500 ease-out"
+                        style={{
+                          height: `${segmentHeight}%`,
+                          top: `${segmentTop}%`,
+                        }}
+                      />
+                    </div>
 
-                          <p
-                            className={` text-[16px] leading-relaxed transition-opacity duration-300 ${
-                              activeIndex === i ? "opacity-100" : "opacity-30"
-                            }`}
-                          >
-                            {item.title}
-                          </p>
-                        </div>
-
-                        <motion.div
-                          className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
-                            activeIndex === i
-                              ? "max-h-60 opacity-100"
-                              : "max-h-0 opacity-0"
-                          }`}
+                    <div className="flex flex-col gap-4 lg:gap-20 lg:pl-10 py-5 lg:py-10">
+                      {principles.map((item, i) => (
+                        <div
+                          key={item.id}
+                          ref={(el) => (itemRefs.current[i] = el)}
+                          data-index={i}
+                          className="flex flex-col lg:flex-row gap-6 items-start pl-10"
                         >
-                          <div className="relative w-full h-[110px] rounded-xl overflow-hidden">
-                            <img
-                              src={item.image}
-                              alt="principle image"
-                              className="w-[220px] object-cover"
-                            />
+                          <div className="flex gap-4">
+                            <span
+                              className={`text-sm transition-opacity duration-300 ${
+                                activeIndex === i ? "text-black" : "text-black/30"
+                              }`}
+                            >
+                              ({item.id})
+                            </span>
+
+                            <p
+                              className={` text-[16px] leading-relaxed transition-opacity duration-300 ${
+                                activeIndex === i ? "opacity-100" : "opacity-30"
+                              }`}
+                            >
+                              {item.title}
+                            </p>
                           </div>
-                        </motion.div>
-                      </div>
-                    ))}
+
+                          <motion.div
+                            className={`lg:hidden overflow-hidden transition-all duration-700 ease-out pl-10 ${
+                              activeIndex === i
+                                ? "max-h-60 opacity-100"
+                                : "max-h-0 opacity-0"
+                            }`}
+                          >
+                            <div className="relative w-full h-60 rounded-xl overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt="principle image"
+                                className="w-[220px] object-cover"
+                              />
+                            </div>
+                          </motion.div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="hidden lg:block relative w-[435px] h-[420px] rounded-xl overflow-hidden">
+                    <AnimatePresence>
+                      <motion.div
+                        key={principles[activeIndex].image}
+                        className="absolute inset-0 rounded-xl"
+                        initial={{ y: direction === 1 ? "100%" : "-100%", }}
+                        animate={{ y: "0%" }}
+                        exit={{ y: direction === 1 ? "-20%" : "20%", }}
+                        transition={{
+                          duration: 1.5,
+                          ease: [0.22, 1.5, 0.36, 1],
+                        }}
+                      >
+                        <Image
+                        key={principles[activeIndex].id}
+                          src={principles[activeIndex].image}
+                          alt="Dynasty principle"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                          priority
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
-
-                <div className="hidden lg:block relative w-[435px] h-[420px] rounded-xl overflow-hidden">
-                  <AnimatePresence>
-                    <motion.div
-                      key={principles[activeIndex].image}
-                      className="absolute inset-0 rounded-xl"
-                      initial={{ y: direction === 1 ? "100%" : "-100%", }}
-                      animate={{ y: "0%" }}
-                      exit={{ y: direction === 1 ? "-20%" : "20%", }}
-                      transition={{
-                        duration: 1.5,
-                        ease: [0.22, 1.5, 0.36, 1],
-                      }}
-                    >
-                      <Image
-                      key={principles[activeIndex].id}
-                        src={principles[activeIndex].image}
-                        alt="Dynasty principle"
-                        fill
-                        className="object-cover transition-opacity duration-500"
-                        priority
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+              </motion.div>
+            </div>
+          </section>
         </Reveal>
       </section>
 
@@ -416,7 +416,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="bg-primary text-black flex flex-col gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/img2.png" alt="img2" className="relative w-full object-cover" />
-              <p className="text-right text-[12px] lg:text-[14px]">
+              <p className="text-right text-[14px] lg:text-[18px] leading-tight tracking-tight">
                 Entrepreneurs struggle to access serious, verified, values-aligned investors.
               </p>
             </div>
@@ -425,26 +425,26 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           <Reveal variants={slideInFromBottom(0.2)}>
             <div className="bg-secondary flex flex-col gap-21 lg:gap-44 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
-              <p className="text-[12px] lg:text-[14px]">
+              <p className="text-[14px] lg:text-[18px] text-primary">
                 Investors face low-quality deal flow + overwhelming noise
               </p>
             </div>
           </Reveal>
           
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="bg-primary text-black text-[12px] lg:text-[14px] flex flex-col gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
+            <div className="bg-primary text-black text-[14px] lg:text-[18px] flex flex-col gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl p-5">
               <div className="flex gap-6">
                 <img src="/dynasty/img3.png" alt="img3" className="relative object-cover rounded-xl" />
                 <div className="flex flex-col gap-4">
                   <p>01</p>
-                  <p>Platforms prioritise volume over true curation.</p>
+                  <p className='leading-tight'>Platforms prioritise volume over true curation.</p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <img src="/dynasty/img4.png" alt="img4" className="relative object-cover rounded-xl" />
                 <div className="flex flex-col gap-4">
                   <p>02</p>
-                  <p>Platforms prioritise volume over true curation.</p>
+                  <p className='leading-tight tracking-tight'>Privacy and emotional depth are largely missing.</p>
                 </div>
               </div>
             </div>
@@ -461,8 +461,8 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               className="w-full h-full will-change-transform object-top object-cover"
             />
           </div>
-          <Reveal variants={slideInFromTop(0.2)}>
-            <p className="relative lg:text-center uppercase text-[20px] md:text-[28px] lg:text-[45px] w-[360px] md:w-[383px] lg:w-3xl leading-tight">
+          <Reveal variants={slideInFromTop(0.2)} className={`-mt-50 lg:mt-0`}>
+            <p className="relative lg:text-center uppercase text-[28px] lg:text-[45px] w-[360px] md:w-[383px] lg:w-3xl leading-tight">
               A Private Ecosystem Engineered for Enduring Value
             </p>
           </Reveal>

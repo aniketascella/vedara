@@ -24,7 +24,7 @@ export default async function page() {
     <div className="text-white relative flex flex-col items-center overflow-x-clip">
       <section className="flex flex-col justify-center w-[80vw] pt-40  ">
         <Reveal variants={slideInFromRight(0.2)}>
-          <h1 className="w-[300px] lg:w-auto text-[24px] lg:text-[36px] italic mb-4">
+          <h1 className="w-[300px] lg:w-auto text-[36px] md:text-[45px] lg:text-[64px] tracking-tight leading-tight italic mb-4">
             Cultural Prophecy And Sovereign Wisdom
           </h1>
         </Reveal>
@@ -37,7 +37,7 @@ export default async function page() {
 
       {featuredBlog && (
         <section className="flex justify-center w-[80vw] py-30">
-          <div className="relative w-full h-[300px] lg:h-auto rounded-xl transition-transform duration-700 hover:scale-105  ">
+          <div className="relative w-full h-[300px] lg:h-auto rounded-xl">
             <img
               src={featuredBlog.coverImage}
               alt={featuredBlog.title}
@@ -51,7 +51,7 @@ export default async function page() {
             </div>
 
             <div className="absolute flex flex-col lg:flex-row justify-between lg:items-end bottom-0 w-full py-5 lg:py-10 px-10 backdrop-blur-xs">
-              <div className="flex flex-col w-3/4">
+              <div className="flex flex-col w-full lg:w-3/4">
                 <p className="text-[18px] lg:text-[24px] font-medium mb-4">
                   {featuredBlog.title}
                 </p>
@@ -60,7 +60,7 @@ export default async function page() {
                 </p>
               </div>
 
-              <Link href={`/insights/${featuredBlog.slug}`} className="text-[14px] lg:text-[18px] font-medium">
+              <Link href={`/insights/${featuredBlog.slug}`} className="text-[14px] lg:text-[18px] font-medium mt-1">
                 Read →
               </Link>
             </div>

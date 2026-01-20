@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
+import Script from "next/script";
 import "./globals.css";
 
 import {ReactLenis} from "@/utils/lenis";
@@ -34,6 +35,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${ppEditorial.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VR6STD6WQT"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VR6STD6WQT');
+          `}
+        </Script>
+      </head>
       <ReactLenis root>
         <body className="antialiased">
           <Navbar/>

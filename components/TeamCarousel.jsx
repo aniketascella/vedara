@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from "react";
 import team from "@/app/constants/team";
 import { ArrowBackIosNewOutlined, ArrowForwardIosOutlined } from "@mui/icons-material";
 import TeamCard from "./TeamCard";
+import { slideInFromLeft } from "@/utils/motion";
+import Reveal from "@/utils/Reveal";
 
 export default function TeamCarousel() {
   const containerRef = useRef(null);
@@ -62,10 +64,11 @@ export default function TeamCarousel() {
   return (
     <section className="w-full flex flex-col justify-center items-center py-30 bg-primary overflow-hidden">
       <div className="flex flex-col lg:flex-row justify-between w-full lg:items-end items-center mb-15 lg:pl-33 lg:pr-35 text-black">
-        <h2 className="text-[24px] lg:text-[36px] w-[380px] lg:w-[840px] tracking-tight leading-tight">
-          <span className="italic font-semibold">Our Consultancy</span> Is Led By <span className="italic font-semibold">Experienced Strategists</span> Who Work Closely With Founders, Executives, And Leadership Teams.
-        </h2>
-
+        <Reveal variants={slideInFromLeft(0.2)}>
+          <h2 className="text-[24px] lg:text-[36px] w-[380px] lg:w-[840px] tracking-tight leading-tight">
+            <span className="italic font-semibold">Our Consultancy</span> Is Led By <span className="italic font-semibold">Experienced Strategists</span> Who Work Closely With Founders, Executives, And Leadership Teams.
+          </h2>
+        </Reveal>
         {!hideControls && (
           <div className="hidden lg:flex gap-3">
             <button

@@ -3,6 +3,8 @@
 import { motion, AnimatePresence, useScroll } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
+import Reveal from "@/utils/Reveal";
 
 export default function Section2({ data }) {
   const sectionRef = useRef(null)
@@ -60,23 +62,25 @@ export default function Section2({ data }) {
                 }}
                 className="flex flex-col justify-center px-16 pt-25 pb-10 lg:py-20 lg:px-35 gap-y-3 lg:gap-y-4 lg:max-w-[45%] text-[12px] lg:text-[14px]"
               >
-                <h2 className="italic text-[36px] lg:text-[45px] leading-10">
-                  {data[activeIndex].title}
-                </h2>
-                <p>{data[activeIndex].para1}</p>
-                <p>{data[activeIndex].para2}</p>
+                <Reveal variants={slideInFromTop(0.2)}>
+                  <h2 className="italic text-[36px] lg:text-[45px] leading-10">
+                    {data[activeIndex].title}
+                  </h2>
+                </Reveal>
+                <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].para1}</p></Reveal>
+                <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].para2}</p></Reveal>
                 {data[activeIndex].subtitle2 && (
-                  <p>{data[activeIndex].subtitle2}</p>
+                  <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].subtitle2}</p></Reveal>
                 )}
                 {data[activeIndex].points && (
                   <ul className="flex flex-col list-disc pl-5 space-y-1 lg:space-y-2">
                     {data[activeIndex].points.map((point,idx) => (
-                      <li key={idx}>{point}</li>
+                      <Reveal key={idx} variants={slideInFromLeft(0.2)}><li>{point}</li></Reveal>
                     ))}
                   </ul>
                 )}
-                <p className="font-medium mt-1 lg:mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p>
-                <p>{data[activeIndex].para3}</p>
+                <Reveal variants={slideInFromLeft(0.2)}><p className="font-medium mt-1 lg:mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p></Reveal>
+                <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].para3}</p></Reveal>
                 <button className={`rounded-full bg-black p-[11px] hover:cursor-pointer w-fit ${data[activeIndex].btnTextColor}`}>
                   <Link href={data[activeIndex].btnLink}>
                     {data[activeIndex].btnText}

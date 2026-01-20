@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-
+import { slideInFromLeft,slideInFromRight } from "@/utils/motion";
+import Reveal from "@/utils/Reveal";
 const ENGAGEMENTS = [
   {
     title: "Brand & Business Audits",
@@ -42,20 +43,24 @@ export default function KeyEngagements() {
       <div className="hidden lg:block pl-30 pr-40 py-32 w-screen">
         {/* Header */}
         <div className="mb-20 flex justify-between">
-          <p className="text-[36px] leading-tight">
-            Strategic Consultancy For <br /> Brands Ready To Scale
-          </p>
-          <p className="text-sm text-black/70 w-[438px] leading-relaxed">
-            Vedara Consultancy works closely with leadership teams to define
-            direction, solve complex challenges, and build frameworks for
-            sustainable growth.
-          </p>
+          <Reveal variants={slideInFromLeft(0.2)}>
+            <p className="text-[36px] leading-tight">
+              Strategic Consultancy For <br /> Brands Ready To Scale
+            </p>
+          </Reveal>
+          <Reveal variants={slideInFromRight(0.2)}>
+            <p className="text-[16px] w-[438px] leading-tight">
+              Vedara Consultancy works closely with leadership teams to define
+              direction, solve complex challenges, and build frameworks for
+              sustainable growth.
+            </p>
+          </Reveal>
         </div>
-
+        <Reveal variants={slideInFromLeft(0.2)}>
         <p className="text-[18px] mb-5">
           Key Engagements
         </p>
-
+        </Reveal>
         {/* Rows */}
         <div className="flex flex-col">
           {ENGAGEMENTS.map((item, index) => {
@@ -102,7 +107,7 @@ export default function KeyEngagements() {
                   <p className="text-[16px] font-medium mb-4">
                     {item.heading}
                   </p>
-                  <p className="text-sm leading-relaxed text-black/70">
+                  <p className="text-sm leading-tight">
                     {item.description}
                   </p>
                 </div>
