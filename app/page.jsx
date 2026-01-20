@@ -128,7 +128,7 @@ export default function Home() {
                 We design identities, experiences, and digital systems that move brands from recognition to resonance.
               </p>
               <Link href= "/atelier">
-                <button className="border-black border-b text-[12px] lg:text-[14px] w-[98px] lg:w-[118px] tracking-wide text-left">
+                <button className="border-black border-b text-[12px] lg:text-[14px] w-[98px] lg:w-[118px] tracking-wide text-left hover:cursor-pointer">
                   Enter the Studio
                 </button>
               </Link>

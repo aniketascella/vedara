@@ -689,9 +689,11 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 </p>
               
                 {text.text2 && (
-                  <button className="uppercase lg:text-[18px] border-b w-fit">
-                    {text.text2}
-                  </button>
+                  <a href="mailto:legacy@vedaracollective.ca">
+                    <button className="hover:cursor-pointer uppercase lg:text-[18px] border-b w-fit">
+                      {text.text2}
+                    </button>
+                  </a>
                 )}
               </div>
             </Reveal>))}
@@ -721,10 +723,11 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             Projects are chosen for longevity, environmental stewardship, and their ability to become markers of identity and inheritance for decades to come.
           </p>
         </Reveal>
+        
         <Reveal variants={slideInFromRight(0.2)}>
-          <p className="lg:hidden flex w-[300px] md:w-[500px] px-[5vw] md:px-20">
-            <span className='w-34 border-b border-black pb-1'>Request Invitation</span>
-          </p>
+          <button className="lg:hidden flex w-[300px] md:w-[500px] px-[5vw] md:px-20">
+            <a href="mailto:legacy@vedaracollective.ca" className='w-34 border-b border-black pb-1'>Request Invitation</a>
+          </button>
         </Reveal>
       </section>
 

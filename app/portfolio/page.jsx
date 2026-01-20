@@ -194,11 +194,11 @@ const page = () => {
           </div>
 
           <Reveal variants={slideInFromRight(0.2)}>
-          <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[18px]">
-            Every identity is built to endure, designed with the precision of an
-            archivist and the vision of a futurist. What emerges is not a
-            “brand,” but a cultural marker.
-          </p>
+            <p className="justify-self-end w-[300px] lg:w-[410px] text-right font-medium text-[14px] lg:text-[18px]">
+              Every identity is built to endure, designed with the precision of an
+              archivist and the vision of a futurist. What emerges is not a
+              “brand,” but a cultural marker.
+            </p>
           </Reveal>
         </div>
       <StickyPanelScroller panels={

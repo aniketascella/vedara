@@ -46,8 +46,8 @@ const Footer = () => {
           </div>
 
           <div className="hidden lg:flex flex-col justify-center items-end gap-y-1 text-right">
-            <Link href="/">LinkedIn</Link>
-            <Link href="/">Instagram</Link>
+            <Link href="https://www.linkedin.com/company/vedaracollective/">LinkedIn</Link>
+            <Link href="https://www.instagram.com/vedara_collective">Instagram</Link>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
           <p className="w-40">
             H.O : 20 Bay Street 11th Floor, Toronto, Canada
           </p>
-          <p className='t'>
+          <p className=''>
             © Vedara — Building Brands Worth Inheriting.
           </p>
           <div className="flex flex-col">
@@ -66,9 +66,9 @@ const Footer = () => {
 
         <div className="lg:hidden flex flex-col justify-center items-center gap-y-4">
           <div className="flex items-center gap-2">
-            <Link href="/">Instagram</Link>
+            <Link href="https://www.instagram.com/vedara_collective">Instagram</Link>
             <div className='border h-4'/>
-            <Link href="/">LinkedIn</Link>
+            <Link href="https://www.linkedin.com/company/vedaracollective/">LinkedIn</Link>
             <div className='border h-4'/>
             <Link href="/">Privacy Policy</Link>
             <div className='border h-4'/>

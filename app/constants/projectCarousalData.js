@@ -2,11 +2,12 @@
 const projectCarousalData = [
   {
     id: 1,
-    image: "/projectCarousal/bulgari.png",
-    title: "Bulgari - Case Study",
+    image: "/projectCarousal/bvlgari.png",
+    title: "Bvlgari - Case Study",
     description:
       "How a 140-year-old jeweler built a hospitality empire, and the mistakes emerging brands must avoid.",
     cta: "Read",
+    link: "/insights/how-a-140-year-old-jeweler-built-a-hospitality-empire",
   },
   {
     id: 2,
@@ -14,39 +15,17 @@ const projectCarousalData = [
     title: "Selhaya - Work",
     description:
       "Where a Modest-Wear Brand Became a Cultural Signal And a Digital Empire Found Its Architecture.",
-    cta: "View",
+    cta: "Read",
+    link:"/portfolio/selhaya",
   },
   {
     id: 3,
-    image: "/projectCarousal/case-study.png",
-    title: "Case Study",
+    image: "/projectCarousal/saint-laurent.png",
+    title: "Saint Laurent",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Convallis scelerisque phasellus arcu sit amet.",
+      "The Saint Laurent Transformation: How a Heritage Brand Redefined Luxury for the Digital Age",
     cta: "Read",
-  },
-  {
-    id: 4,
-    image: "/projectCarousal/bulgari.png",
-    title: "Bulgari - Case Study",
-    description:
-      "How a 140-year-old jeweler built a hospitality empire, and the mistakes emerging brands must avoid.",
-    cta: "Read",
-  },
-  {
-    id: 5,
-    image: "/projectCarousal/selhaya.png",
-    title: "Selhaya - Work",
-    description:
-      "Where a Modest-Wear Brand Became a Cultural Signal And a Digital Empire Found Its Architecture.",
-    cta: "View",
-  },
-  {
-    id: 6,
-    image: "/projectCarousal/case-study.png",
-    title: "Case Study",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Convallis scelerisque phasellus arcu sit amet.",
-    cta: "Read",
+    link: "/insights/the-saint-laurent-transformation-how-a-heritage-brand-redefined-luxury-for-the-digital-age",
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, useScroll } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 export default function Section2({ data }) {
   const sectionRef = useRef(null)
@@ -64,10 +65,22 @@ export default function Section2({ data }) {
                 </h2>
                 <p>{data[activeIndex].para1}</p>
                 <p>{data[activeIndex].para2}</p>
-                <p className="font-medium mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p>
+                {data[activeIndex].subtitle2 && (
+                  <p>{data[activeIndex].subtitle2}</p>
+                )}
+                {data[activeIndex].points && (
+                  <ul className="flex flex-col list-disc pl-5 space-y-1 lg:space-y-2">
+                    {data[activeIndex].points.map((point,idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                )}
+                <p className="font-medium mt-1 lg:mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p>
                 <p>{data[activeIndex].para3}</p>
-                <button className={`rounded-full bg-black p-[11px] w-fit ${data[activeIndex].btnTextColor}`}>
-                  {data[activeIndex].btnText}
+                <button className={`rounded-full bg-black p-[11px] hover:cursor-pointer w-fit ${data[activeIndex].btnTextColor}`}>
+                  <Link href={data[activeIndex].btnLink}>
+                    {data[activeIndex].btnText}
+                  </Link>
                 </button>
               </motion.div>
             </AnimatePresence>

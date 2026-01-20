@@ -8,12 +8,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowForwardIosOutlined } from "@mui/icons-material";
 import { AnimatedReadButton } from "@/components/AnimatedReadButton";
+import { getBlogBySlug } from "./getBlogBySlug";
 
 
 export default async function page() {
   const blogs = await getBlogs();
-  const featuredBlog = blogs[0];
-  const footerBlog = blogs[1];
+  const featuredBlog = blogs.find(blog =>
+    blog.tags.includes("featured")
+  );
+  const footerBlog = blogs.find(blog =>
+    blog.tags.includes("footer")
+  );
+
   return (
     <div className="text-white relative flex flex-col items-center overflow-x-clip">
       <section className="flex flex-col justify-center w-[80vw] pt-40  ">
@@ -45,7 +51,7 @@ export default async function page() {
             </div>
 
             <div className="absolute flex flex-col lg:flex-row justify-between lg:items-end bottom-0 w-full py-5 lg:py-10 px-10 backdrop-blur-xs">
-              <div className="flex flex-col">
+              <div className="flex flex-col w-3/4">
                 <p className="text-[18px] lg:text-[24px] font-medium mb-4">
                   {featuredBlog.title}
                 </p>
@@ -62,7 +68,7 @@ export default async function page() {
         </section>
       )}
 
-      <section className="w-[80vw]">
+      <section className="w-[80vw] pb-50">
         <Reveal variants={slideInFromRight(0.2)}>
         <p className="text-center uppercase text-[28px] lg:text-[45px] mb-5">
           Case Studies
@@ -74,9 +80,9 @@ export default async function page() {
         </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-40 py-30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-20 lg:gap-y-40 pt-30">
           {blogs.map((blog,idx) => (
-            <div key={idx} className="w-[300px] h-auto lg:w-[25vw] lg:h-[26vw] mx-auto">   
+            <div key={idx} className="w-[300px] h-auto lg:w-[25vw] lg:h-[26vw] mx-auto"> 
               <div className="relative group flex justify-center items-center w-full h-[300px] lg:h-[25vw] overflow-hidden mb-6">
                 <img
                   src={blog.coverImage}

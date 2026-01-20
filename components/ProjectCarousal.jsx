@@ -1,10 +1,10 @@
-// components/CaseStudyCarousel.js
 "use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projectCarousalData from "@/app/constants/projectCarousalData";
 import { ArrowForwardIosOutlined, ArrowBackIosNewOutlined } from "@mui/icons-material";
+import Link from "next/link";
 
 const CARD_WIDTH = 396;
 const GAP = 24;
@@ -117,7 +117,9 @@ export default function ProjectCarousal() {
                     <div className="flex justify-between items-end w-full">
                       <p className="text-[14px] w-62 text-white font-light">{item.description}</p>
                       <button className="w-[37px] h-[37px] rounded-full bg-primary/32 text-center">
-                        <ArrowForwardIosOutlined/>
+                        <Link href={item.link}>
+                          <ArrowForwardIosOutlined/>
+                        </Link>
                       </button>
                     </div>
                   </div>
@@ -165,7 +167,9 @@ export default function ProjectCarousal() {
                 {projectCarousalData[mobileIndex].description}
               </p>
               <button className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-sm">
-                {projectCarousalData[mobileIndex].cta}
+                <Link href={projectCarousalData[mobileIndex].link}>
+                  {projectCarousalData[mobileIndex].cta}
+                </Link>
               </button>
             </div>
           </motion.div>

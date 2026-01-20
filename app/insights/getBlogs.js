@@ -17,5 +17,9 @@ export async function getBlogs() {
     slug: item.slug,
     coverImage: item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,
     publishedAt: item.date,
+    tags:
+    item._embedded?.["wp:term"]
+      ?.find((term) => term[0]?.taxonomy === "post_tag")
+      ?.map((tag) => tag.slug) || [],
   }));
 }
