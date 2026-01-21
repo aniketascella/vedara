@@ -79,7 +79,7 @@ export default function ProjectCarousal() {
           </div>
         </div>
 
-        <div className="relative w-fit overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <div className="flex h-[395px] gap-6">
             <AnimatePresence initial={false} mode="popLayout">
               {visibleItems.map((item, i) => (
@@ -160,9 +160,9 @@ export default function ProjectCarousal() {
             <div className="absolute inset-0 bg-black/40" />
 
             <div className="absolute bottom-0 p-6 w-full text-white backdrop-blur-[3px]">
-              <h2 className="text-lg font-light mb-2">
+              <p className="text-lg font-light mb-2">
                 {projectCarousalData[mobileIndex].title}
-              </h2>
+              </p>
               <p className="text-sm text-white mb-2">
                 {projectCarousalData[mobileIndex].description}
               </p>

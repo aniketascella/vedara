@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, forwardRef } from "react";
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 
 const TeamCard = forwardRef(function TeamCard({member}, ref) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +31,10 @@ const TeamCard = forwardRef(function TeamCard({member}, ref) {
             {/* Toggle Button */}
             <button
               onClick={() => setIsOpen((v) => !v)}
-              className={`flex items-center justify-center w-[25px] h-[25px] rounded-full text-[18px] font-medium transition-colors
+              className={`flex justify-center items-center w-[26px] h-[26px] rounded-full text-[18px] transition-colors
                 ${isOpen ? "bg-black text-white" : "bg-white text-black"}`}
             >
-              {isOpen ? "−" : "+"}
+              {isOpen ? <RemoveOutlinedIcon/> : <AddOutlinedIcon/>}
             </button>
           </div>
         </div>

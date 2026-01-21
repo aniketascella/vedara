@@ -119,16 +119,16 @@ export default function KeyEngagements() {
         </div>
       </div>
 
-      <div className="lg:hidden flex flex-col justify-center p-17 gap-7 lg:gap-11">
-        <p className="text-[24px] w-[300px] leading-tight">Strategic consultancy for brands ready to scale</p>
-        <p className="font-light text-[12px] w-[260px]">
+      <div className="lg:hidden mx-auto flex flex-col justify-center items-center py-17 gap-7 w-[380px]">
+        <p className="text-[24px] w-full leading-tight">Strategic consultancy for brands ready to scale</p>
+        <p className="font-light text-[12px] w-full pr-20">
           Vedara Consultancy works closely with leadership teams to define direction, solve complex challenges, and build frameworks for sustainable growth.We don’t offer generic advice — we work as strategic partners embedded in your vision.
         </p>
-        <p>
+        <p className="w-full">
           Key Engagements
         </p>
 
-        <div className="-mt-3 w-70 border-b border-black/10"/>
+        <div className="-mt-3 w-full border-b border-black/10"/>
 
         {ENGAGEMENTS.map((item,idx) => (
           <div key={idx} className="flex flex-col justify-center gap-6 border-b border-black/10 pb-14">
@@ -138,7 +138,7 @@ export default function KeyEngagements() {
             <p className="font-light text-[12px]">
               {item.description}
             </p>
-            <img src={item.image} alt="img1" className="w-[300px] h-50 object-cover" />
+            <img src={item.image} alt="img1" className="w-full h-50 object-cover" />
           </div>
         ))}
       </div>

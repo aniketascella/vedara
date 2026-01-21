@@ -71,15 +71,15 @@ export default function LuxuryBrand() {
       <div className="hidden lg:block pl-30 pr-40 py-32 w-screen">
         {/* Header */}
         <div className="mb-20 flex justify-between">
-          <p className="text-4xl leading-tight">
+          <h2 className="text-[45px] leading-tight italic font-semibold">
             Luxury brand building for <br /> brands that seek distinction
-          </p>
-          <h2 className="text-sm text-black/70 w-[438px] leading-relaxed italic">
-            We craft the identity, strategy, and presence that moves your brand from competition to cultural dominion.
           </h2>
+          <p className="text-[24px] text-black/70 w-[438px] leading-tight">
+            We craft the identity, strategy, and presence that moves your brand from competition to cultural dominion.
+          </p>
         </div>
 
-        <p className="text-xs uppercase tracking-[0.2em] mb-10">
+        <p className="text-[14px] uppercase mb-10">
           What We Do
         </p>
 
@@ -98,13 +98,13 @@ export default function LuxuryBrand() {
                 {/* LEFT TITLE */}
                 <div className="flex flex-col">
 
-                <h3
-                  className={`italic text-[38px] transition-opacity duration-300 ${
+                <h2
+                  className={`italic text-[36px] transition-opacity duration-300 ${
                     isActive ? "opacity-100" : "opacity-40"
                   }`}
                 >
                   {item.title}
-                </h3>
+                </h2>
                 <p className="font-light text-[14px] leading-tight">{item.content}</p>
                 </div>
 
@@ -149,16 +149,16 @@ export default function LuxuryBrand() {
         </div>
       </div>
 
-      <div className="lg:hidden flex flex-col justify-center p-17 gap-8">
-        <p className="text-[24px] w-[300px] leading-tight">Luxury brand building <br /> for brands that seek distinction</p>
-        <h2 className="-mt-2 font-light text-[16px] w-[260px] italic">
+      <div className="lg:hidden mx-auto flex flex-col justify-center items-center py-17 gap-8 w-[380px]">
+        <h2 className="text-[32px] w-full leading-tight italic font-semibold">Luxury brand building <br /> for brands that seek distinction</h2>
+        <p className="-mt-2 font-light text-[16px] w-full pr-20">
           We craft the identity, strategy, and presence that moves your brand from competition to cultural dominion.
-        </h2>
-        <p className="mt-2">
+        </p>
+        <p className="mt-2 w-full text-[12px]">
           What We Do
         </p>
 
-        <div className="-mt-5 w-70 border-b border-black/10"/>
+        <div className="-mt-5 w-full border-b border-black/10"/>
 
         {SECTIONS.map((item,idx) => (
           <div key={idx} className="flex flex-col justify-center gap-6 border-b border-black/10 pb-14">
@@ -178,7 +178,7 @@ export default function LuxuryBrand() {
                 </p>
               </div>
             ))}
-            <img src={item.image} alt="img1" className="w-[300px] h-50 object-cover" />
+            <img src={item.image} alt="img1" className="w-full h-50 object-cover" />
           </div>
         ))}
       </div>

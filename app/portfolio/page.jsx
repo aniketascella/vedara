@@ -91,7 +91,7 @@ const page = () => {
           </motion.p>
         </Reveal> */}
 
-        <motion.div style={{y:s1}} className="flex flex-col gap-y-20 px-15 lg:flex-row lg:justify-between w-screen">
+        <motion.div style={{y:s1}} className="flex flex-col gap-y-20 px-15 lg:flex-row lg:justify-between w-screen mb-20">
           <Reveal variants={slideInFromLeft(0.2)}>
             <div className="flex flex-col"> 
               <h1 className="text-[45px] lg:text-[64px] italic font-semibold">Our Portfolio</h1>
@@ -99,7 +99,7 @@ const page = () => {
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <motion.div style={{y:s1}} className="flex flex-col items-end justify-end gap-y-11">
+            <div className="flex flex-col items-end justify-end gap-y-11">
               <p className="text-right text-[16px] lg:text-[18px]">
                 info@vedaracollective.com
               </p>
@@ -108,17 +108,17 @@ const page = () => {
                 becomes culture, design becomes memory, and vision becomes
                 permanence.
               </p>
-            </motion.div>
+            </div>
           </Reveal>
         </motion.div>
 
-        <Reveal variants={slideInFromLeft(0.2)}>
+        {/* <Reveal variants={slideInFromLeft(0.2)}>
           <motion.div style={{y:s1}} className="flex flex-col lg:flex-row gap-10 ml-15 mt-12 mb-20 text-[16px] lg:text-[18px]">
             <p>Branding 01</p>
             <p>Digital Marketing 01</p>
             <p>Development 01</p>
           </motion.div>
-        </Reveal>
+        </Reveal> */}
       </section>
 
       {/* section 2 */}

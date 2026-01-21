@@ -68,7 +68,7 @@ const page = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <h1 className="w-[300px] lg:w-[440px] text-[22px] lg:text-[36px] text-center italic">
+        <h1 className="w-[380px] lg:w-[840px] text-[45px] lg:text-[64px] text-center italic leading-tight">
           Together, we architect <br /> cultural immortality.
         </h1>
         <p className='text-center w-[300px] lg:w-[570px] text-[12px] lg:text-[14px]'>

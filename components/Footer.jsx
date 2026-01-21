@@ -11,11 +11,11 @@ const Footer = () => {
     <div className='w-screen relative h-auto'>
       {(!isNotVisibleRoute) && (
         <div className="w-screen h-[763px] lg:h-screen lg:p-23 flex flex-col justify-center items-center gap-y-8 bg-[url('/footerBG1.png')] bg-cover bg-center">
-          <h2 className="italic text-[20px] md:text-[24px] lg:text-[36px]">Designing presence that moves brands forward.</h2>
+          <h2 className="italic w-90 lg:w-full text-center text-[28px] md:text-[28px] lg:text-[45px]">Designing presence that moves brands forward.</h2>
           <div className='h-[133px] border'/>
           <p className="text-[14px] lg:text-[16px] font-medium w-70 lg:w-[414px] text-center">If you’re ready to build a distinctive brand identity, digital experience, or marketing presence, Vedara Studio is here to bring your vision to life.</p>
           <Link href="/contact">
-            <button className="bg-primary/36 rounded-full py-[7px] lg:py-3 px-3 lg:px-5 flex items-center gap-2 text-[12px] lg:text-[14px] tracking-wide hover:cursor-pointer">
+            <button className="bg-primary/36 rounded-full py-[7px] lg:py-3 px-3 lg:px-5 flex justify-between items-center gap-2 text-[12px] lg:text-[14px] tracking-wide hover:cursor-pointer">
               Start Your Project
               <ArrowForwardIosOutlined className='h-[11px] lg:h-[17px]'/>
             </button>

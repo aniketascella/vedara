@@ -2,22 +2,16 @@
 
 import Footer from "@/components/Footer";
 import Reveal from "@/utils/Reveal";
-import { slideInFromBottom, slideInFromLeft,slideInFromRight,slideInFromTop } from "@/utils/motion";
+import { slideInFromLeft,slideInFromRight } from "@/utils/motion";
 import { getBlogs } from "./getBlogs";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowForwardIosOutlined } from "@mui/icons-material";
 import { AnimatedReadButton } from "@/components/AnimatedReadButton";
-import { getBlogBySlug } from "./getBlogBySlug";
 
 
 export default async function page() {
   const blogs = await getBlogs();
   const featuredBlog = blogs.find(blog =>
     blog.tags.includes("featured")
-  );
-  const footerBlog = blogs.find(blog =>
-    blog.tags.includes("footer")
   );
 
   return (
@@ -105,7 +99,7 @@ export default async function page() {
         </div>
       </section>
 
-      <div className="w-screen relative h-[763px] lg:h-screen lg:p-23 flex flex-col justify-center items-center gap-y-8 bg-[url('/insight-footer.png')] bg-cover bg-center">
+      {/* <div className="w-screen relative h-[763px] lg:h-screen lg:p-23 flex flex-col justify-center items-center gap-y-8 bg-[url('/insight-footer.png')] bg-cover bg-center">
       <div className="absolute inset-0 bg-black/30"/>
         <h2 className="italic text-[20px] md:text-[24px] lg:text-[36px] z-1">Case Study - The Luxury Hospitality Trap</h2>
         <div className='h-[133px] border z-1'/>
@@ -116,7 +110,7 @@ export default async function page() {
             <ArrowForwardIosOutlined className='h-[11px] lg:h-[17px]'/>
           </button>
         </Link>
-      </div>
+      </div> */}
 
       <Footer/>
     </div>

@@ -34,8 +34,8 @@ export default function MobileNavOverlay({ open, onClose, active }) {
     >
 
       {/* Content */}
-      <div className={`relative h-full w-full flex flex-col items-center justify-center text-white
-      transition-transform duration-300 ease-out
+      <div className={`relative h-full w-full flex flex-col items-center justify-center
+      transition-transform duration-300 ease-out bg-black/60
           will-change-transform
           ${open ? "translate-y-0 scale-100" : "-translate-y-4 scale-[0.98]"}`}>
         
@@ -56,7 +56,7 @@ export default function MobileNavOverlay({ open, onClose, active }) {
         <div className="w-20 h-px bg-white mb-10" />
 
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center gap-6 text-lg font-semibold">
+        <nav className="flex flex-col items-center gap-6 text-[18px] font-semibold">
           {links.map(
             (link) => (
               <h2
@@ -76,12 +76,12 @@ export default function MobileNavOverlay({ open, onClose, active }) {
         <Link
           href="/contact"
           className="
-            mt-12 px-4 py-2 rounded-full
-            bg-primary text-black transition
+            mt-12 px-2 py-2 rounded-full
+            bg-tertiary text-black transition
             flex justify-between items-center gap-2
           "
         >
-          <h2 className="text-[16px] italic font-semibold">
+          <h2 className="text-[18px] italic font-semibold">
             Contact
           </h2>
           <ArrowForwardIosOutlined className="h-3"/>

@@ -34,8 +34,8 @@ export default function Home() {
       <section className="flex items-end w-screen h-screen relative">
         <img src="/homeImg.png" alt="home" className="absolute -z-1 inset-0 w-screen h-screen object-cover object-top" />
         <Reveal variants={slideInFromLeft(0.2)}>
-          <div className="flex flex-col gap-y-3 lg:gap-y-8 max-w-[364px] lg:max-w-[706px] mb-20 lg:mb-[130px] ml-[67px] lg:ml-[125px]">
-            <h1 className="text-[45px] lg:text-[64px] italic font-semibold leading-14 lg:leading-17">
+          <div className="flex flex-col gap-y-3 lg:gap-y-8 max-w-[380px] lg:max-w-[706px] mb-20 lg:mb-[130px] ml-10 lg:ml-[125px]">
+            <h1 className="text-[45px] lg:text-[64px] italic font-semibold leading-14 lg:leading-17 tracking-tighter">
               For Those Who <br /> Refuse to Be Forgotten.
             </h1>
             <p className="text-[16px] lg:text-[24px] font-light lg:w-[586px]">
@@ -45,21 +45,16 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section className="bg-black py-10 lg:py-19">
-        <div className="flex justify-between w-screen px-16 lg:px-32">
+      <section className="flex flex-col justify-center items-center bg-black py-15 lg:py-19">
+        <div className="flex w-[363px] lg:w-[1091px] max-w-screen">
           <Reveal variants={slideInFromLeft(0.2)}>
             <h2 className="italic text-[14px] lg:text-[16px]">
               About Vedara
             </h2>
           </Reveal>
-          <Reveal variants={slideInFromRight(0.2)}>
-            <p className="text-[14px] lg:text-[16px]">
-              Our Work
-            </p>
-          </Reveal>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between w-screen px-16 lg:px-32 mt-19">
+        <div className="flex flex-col lg:flex-row justify-center gap-x-10 items-center lg:items-start w-[363px] lg:w-full lg:px-32 mt-6 lg:mt-19">
           <Reveal variants={slideInFromLeft(0.2)}>
             <p className="lg:w-[510px] text-[24px] lg:text-[36px] mb-6 lg:mb-0 leading-tight">
               At Vedara, we exist to build clarity-driven brands and scalable ecosystems.
@@ -86,27 +81,27 @@ export default function Home() {
       
       <TeamCarousel/>
 
-      <section className='flex flex-col justify-center items-center py-35 gap-9 lg:gap-11 pl-8 md:pl-19 lg:px-50'>
-        <Reveal variants={slideInFromLeft(0.2)} className={`w-[320px] md:w-120 lg:w-[1104px] `}>
+      <section className='flex flex-col justify-center items-center py-35 gap-9 lg:gap-11'>
+        <Reveal variants={slideInFromLeft(0.2)} className={`w-[380px] md:w-120 lg:w-[1104px] `}>
           <h2 className="italic text-[16px] lg:text-[18px] text-left">
             How Vedara Works
           </h2>
         </Reveal>
-        <div className="flex flex-col gap-y-9 lg:flex-row justify-between items-center w-[320px] md:w-120 lg:w-[1104px]">
+        <div className="flex flex-col gap-y-9 lg:flex-row justify-between items-center w-[380px] md:w-120 lg:w-[1104px]">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <motion.p  className=" w-[320px] md:w-120 lg:w-[743px] text-[24px] lg:text-[36px]  leading-tight">
+            <motion.p  className=" w-full md:w-120 lg:w-[743px] text-[24px] lg:text-[36px]  leading-tight">
               A Structured Approach To Building, Executing, and Scaling Brands
             </motion.p>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <motion.p className="w-[320px] md:w-120 lg:w-[336px] text-[14px] lg:text-[16px]">
+            <motion.p className="w-full md:w-120 lg:w-[336px] text-[14px] lg:text-[16px]">
               Vedara follows a clear, step-by-step model that connects strategy, execution, and long-term growth. 
             </motion.p>
           </Reveal>
         </div>
         <motion.div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           <Reveal variants={slideInFromLeft(0.2)}>
-            <div className="bg-primary text-black flex flex-col items-end gap-4 w-[320px] md:w-120 lg:w-84 rounded-2xl px-5 pt-6 pb-12">
+            <div className="bg-primary text-black flex flex-col items-end gap-4 w-[380px] md:w-120 lg:w-84 rounded-2xl px-5 pt-6 pb-12">
               <img src="/home/img1.png" alt="img1" className="relative w-full object-cover" />
               <p className="text-[18px] lg:text-[24px] lg:w-[230px] tracking-tight">
                 Discover & Diagnose
@@ -118,7 +113,7 @@ export default function Home() {
           </Reveal>
           
           <Reveal variants={slideInFromBottom(0.2)}>
-            <div className="bg-secondary flex flex-col gap-2 lg:gap-6 w-[320px] md:w-120 lg:w-84 rounded-2xl px-8 pt-8 pb-13 text-primary">
+            <div className="bg-secondary flex flex-col gap-2 lg:gap-6 w-[380px] md:w-120 lg:w-84 rounded-2xl px-8 pt-8 pb-13 text-primary">
               <img src="/dynasty/quoteIcon.svg" alt="img2" className="relative w-13 h-9" />
               <p className="text-[18px] lg:text-[24px] mt-16">
                 Strategize & Align
@@ -130,7 +125,7 @@ export default function Home() {
           </Reveal>
           
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="bg-primary text-black flex flex-col gap-4 lg:gap-3 w-[320px] md:w-120 lg:w-84 rounded-2xl px-5 py-6">
+            <div className="bg-primary text-black flex flex-col gap-4 lg:gap-3 w-[380px] md:w-120 lg:w-84 rounded-2xl px-5 py-6">
               <img src="/home/img2.png" alt="img2" className="relative w-full object-cover" />
               <h2 className="italic text-[18px] lg:text-[24px] font-semibold">Build & Execute</h2>
               <p className="text-[14px] lg:text-[16px] leading-tight">

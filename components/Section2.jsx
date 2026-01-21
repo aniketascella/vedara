@@ -33,7 +33,7 @@ export default function Section2({ data }) {
   }, [scrollYProgress, data.length])
 
   return (
-    <section ref={sectionRef} className="h-[220vh]">
+    <section ref={sectionRef} className="h-[250vh]">
       <div className="sticky top-0 h-screen w-screen overflow-hidden">
         <AnimatePresence mode="sync">
           <div
@@ -41,7 +41,7 @@ export default function Section2({ data }) {
             className={`absolute inset-0 flex flex-col lg:flex-row justify-between items-center ${data[activeIndex].style}`}
           >
             {/* LEFT TEXT */}
-            <AnimatePresence mode="sync">
+            <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${activeIndex}`}
                 initial={{
@@ -60,7 +60,7 @@ export default function Section2({ data }) {
                   duration: 1.5,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex flex-col justify-center px-16 pt-25 pb-10 lg:py-20 lg:px-35 gap-y-3 lg:gap-y-4 lg:max-w-[45%] text-[12px] lg:text-[14px]"
+                className="flex flex-col justify-center w-[380px] lg:w-full pt-25 pb-10 lg:py-20 lg:pl-20 gap-y-3 lg:gap-y-4 lg:max-w-[45%] text-[12px] lg:text-[14px]"
               >
                 <Reveal variants={slideInFromTop(0.2)}>
                   <h2 className="italic text-[36px] lg:text-[45px] leading-10">
@@ -96,7 +96,7 @@ export default function Section2({ data }) {
                 src={data[activeIndex].imgSrc}
                 alt={data[activeIndex].title}
                 initial={{
-                  y: direction === 1 ? 120 : -120,
+                  y: direction === 1 ? "100%" : "-100%",
                   opacity: 0,
                 }}
                 animate={{
@@ -104,14 +104,14 @@ export default function Section2({ data }) {
                   opacity: 1,
                 }}
                 exit={{
-                  y: direction === 1 ? -120 : 120,
+                  y: direction === 1 ? "-100%" : "100%",
                   opacity: 0,
                 }}
                 transition={{
                   duration: 1.5,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.4, 0, 0.2, 1],
                 }}
-                className="h-fit lg:max-h-screen"
+                className="h-fit lg:h-screen lg:w-1/2"
               />
             </AnimatePresence>
           </div>
