@@ -2,8 +2,9 @@ import he from "he";
 import { htmlToText } from "html-to-text";
 
 export async function getBlogBySlug(slug) {
+  const baseUrl = process.env.NEXT_PUBLIC_BLOG_API_BASE;
   const res = await fetch(
-    `https://blogs.vedaracollective.ca/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    `${baseUrl}?slug=${slug}&_embed`,
     { cache: "no-store" }
   );
 

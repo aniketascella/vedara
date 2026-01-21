@@ -2,6 +2,7 @@
 
 import Footer from '@/components/Footer';
 import {useState}  from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 function Input({ label, ...props }) {
   return (
@@ -47,19 +48,83 @@ const page = () => {
     referral: "",
   });
 
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxh3gDjGy6d0eR_p_iLcysIZuBvBNRFe8hvpnGFUhgLkos3bzE36CMGq1S9ZUirSCuZTw/exec"
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
   function updateField(e) {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(form);
-    // integrate API / form backend here
+
+    for (const key in form) {
+      if (!form[key] || form[key].trim() === "") {
+        toast.error("All fields are mandatory");
+        return;
+      }
+    }
+
+    if (!isValidEmail(form.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      const params = new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        industry: form.industry,
+        movement: form.movement,
+        methodology: form.methodology,
+        success: form.success,
+        architect: form.architect,
+        commitment: form.commitment,
+        investment: form.investment,
+        budget: form.budget,
+        culture: form.culture,
+        referral: form.referral,
+      });
+
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded", },
+        body: params
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Form submitted successfully");
+        setForm({
+          name: "",
+          email: "",
+          industry: "",
+          movement: "",
+          methodology: "",
+          success: "",
+          architect: "",
+          commitment: "",
+          investment: "",
+          budget: "",
+          culture: "",
+          referral: "",
+        });
+      } else {
+        toast.error(data.message || "Submission failed");
+      }
+    } catch (error) {
+      toast.error("Network error. Please try again.");
+    }
   }
 
   return (
     <div className='relative w-full overflow-x-clip'>
+      <Toaster position='top-right'/>
       <div className='flex flex-col items-center justify-center gap-y-7 py-51'>
         <div className="absolute inset-0 w-full h-full -z-1">
           <img
@@ -99,6 +164,7 @@ const page = () => {
               name="name"
               value={form.name}
               onChange={updateField}
+              required
             />
 
             <Input
@@ -107,6 +173,7 @@ const page = () => {
               type="email"
               value={form.email}
               onChange={updateField}
+              required
             />
 
             <Input
@@ -114,6 +181,7 @@ const page = () => {
               name="industry"
               value={form.industry}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -121,6 +189,7 @@ const page = () => {
               name="movement"
               value={form.movement}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -129,6 +198,7 @@ const page = () => {
               value={form.methodology}
               onChange={updateField}
               dotted
+              required
             />
 
             <Textarea
@@ -136,6 +206,7 @@ const page = () => {
               name="success"
               value={form.success}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -143,6 +214,7 @@ const page = () => {
               name="architect"
               value={form.architect}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -150,6 +222,7 @@ const page = () => {
               name="commitment"
               value={form.commitment}
               onChange={updateField}
+              required
             />
 
             <Input
@@ -157,6 +230,7 @@ const page = () => {
               name="investment"
               value={form.investment}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -164,6 +238,7 @@ const page = () => {
               name="budget"
               value={form.budget}
               onChange={updateField}
+              required
             />
 
             <Textarea
@@ -171,6 +246,7 @@ const page = () => {
               name="culture"
               value={form.culture}
               onChange={updateField}
+              required
             />
 
             <Input
@@ -178,12 +254,14 @@ const page = () => {
               name="referral"
               value={form.referral}
               onChange={updateField}
+              required
             />
 
             {/* Submit */}
             <button
               type="submit"
-              className="mt-4 h-11 w-full bg-[#2A2927] rounded-[5px] text-[#F3F2EE] text-[14px] tracking-wide hover:opacity-90 transition"
+              onClick={handleSubmit}
+              className="mt-4 h-11 w-full bg-[#2A2927] rounded-[5px] text-[#F3F2EE] text-[14px] tracking-wide hover:opacity-90 transition hover:cursor-pointer"
             >
               Submit
             </button>
