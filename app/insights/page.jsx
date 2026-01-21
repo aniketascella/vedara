@@ -78,17 +78,19 @@ export default async function page() {
           {blogs.map((blog,idx) => (
             <div key={idx} className="w-[300px] h-auto lg:w-[25vw] lg:h-[26vw] mx-auto"> 
               <div className="relative group flex justify-center items-center w-full h-[300px] lg:h-[25vw] overflow-hidden mb-6">
+                <Link href={`/insights/${blog.slug}`} className="w-full h-full">
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
                   className="object-cover transition-transform duration-700 w-full h-full group-hover:scale-105"
                 />
+                </Link>
                 <AnimatedReadButton slug={blog.slug}/>
               </div>
 
               <div className="flex justify-between text-[16px] lg:text-[24px] mb-2 font-light">
                 <p className="text-lg font-light leading-snug w-54 lg:w-75 h-12 md:h-13 overflow-y-hidden">
-                  <Link href={`/inisghts/${blog.slug}`}>
+                  <Link href={`/insights/${blog.slug}`}>
                     {blog.title}
                   </Link>
                 </p>

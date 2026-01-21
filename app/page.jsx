@@ -31,14 +31,14 @@ show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] 
 export default function Home() {
   return (
     <div className="overflow-clip">
-      <section className="flex items-end w-screen h-screen relative">
+      <section className="flex justify-center md:justify-start items-end w-screen h-screen relative">
         <img src="/homeImg.png" alt="home" className="absolute -z-1 inset-0 w-screen h-screen object-cover object-top" />
         <Reveal variants={slideInFromLeft(0.2)}>
-          <div className="flex flex-col gap-y-3 lg:gap-y-8 max-w-[380px] lg:max-w-[706px] mb-20 lg:mb-[130px] ml-10 lg:ml-[125px]">
+          <div className="flex flex-col gap-y-3 lg:gap-y-8 max-w-[370px] lg:max-w-[706px] mb-20 lg:mb-[130px] md:ml-20 lg:ml-[125px]">
             <h1 className="text-[45px] lg:text-[64px] italic font-semibold leading-14 lg:leading-17 tracking-tighter">
               For Those Who <br /> Refuse to Be Forgotten.
             </h1>
-            <p className="text-[16px] lg:text-[24px] font-light lg:w-[586px]">
+            <p className="text-[16px] lg:text-[24px] font-light w-full lg:w-[586px]">
               We forge brands, real estate, and capital systems for visionaries who build for generations—not quarters.
             </p>
           </div>

@@ -59,8 +59,8 @@ const Footer = () => {
             © Vedara — Building Brands Worth Inheriting.
           </p>
           <div className="flex flex-col">
-            <p>Privacy Policy</p>
-            <p>Terms</p>
+            <Link href={`/privacy-policy`}>Privacy Policy</Link>
+            <Link href={`/terms`}>Terms</Link>
           </div>
         </div>
 
@@ -70,9 +70,9 @@ const Footer = () => {
             <div className='border h-4'/>
             <Link href="https://www.linkedin.com/company/vedaracollective/">LinkedIn</Link>
             <div className='border h-4'/>
-            <Link href="/">Privacy Policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
             <div className='border h-4'/>
-            <Link href="/">Terms</Link>
+            <Link href="/terms">Terms</Link>
           </div>
           <p className='font-extralight text-[12px] mt-[18px]'>
             H.O : 20 Bay Street 11th Floor, Toronto, Canada
