@@ -22,9 +22,8 @@ export default function Navbar() {
   return (
     <header className="w-screen fixed top-[42px] z-50 flex justify-between items-center px-12 lg:px-26">
 
-      <div className="flex items-center gap-1">
-        <img src="/vedara_logo.png" alt="logo" className="w-10 lg:w-13"/>
-        <Link href="/"><h2 className="text-[22px] lg:text-[30px] font-semibold">VEDARA</h2></Link>
+      <div className="flex items-center">
+        <Link href="/"><img src="/vedara-logo.svg" alt="logo" className="w-[134px] lg:w-[216px]"/></Link>
       </div>
 
       <div className="rounded-full backdrop-blur-[5px] hidden lg:flex gap-7 items-center px-8 py-2 text-white border border-white/25">

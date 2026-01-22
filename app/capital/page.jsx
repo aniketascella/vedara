@@ -300,8 +300,8 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
         <Reveal variants={slideInFromBottom(0.2)}>
           <section ref={sectionRef} className="relative h-[260vh]">
-            <div className="sticky top-0 h-screen overflow-hidden">
-              <motion.div className="h-auto mt-0 lg:mt-10 py-5">
+            <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center items-center">
+              <motion.div className="h-auto mt-0 lg:mt-10 py-5 ">
                 <p className="lg:hidden w-[380px] md:w-120 mx-auto text-[20px] leading-tight mb-24">
                   The Dynasty Is Governed By Principles
                   That Protect Purity, Rarity, And Meaning.
@@ -512,7 +512,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-screen">
           <div className="flex flex-col gap-3 w-screen lg:w-[502px] px-10 lg:pl-27 py-21 lg:pb-39">
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className="w-[380px] pr-4 lg:pr-0 md:w-120 lg:w-[509px] text-[24px] md:text-[28px] lg:text-[45px] ">
+              <p className="w-[380px] pr-4 lg:pr-0 md:w-120 lg:w-[509px] text-[24px] md:text-[28px] lg:text-[45px] leading-tight">
                 For Investors Seeking Meaningful Ownership
               </p>
             </Reveal>
@@ -593,7 +593,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center w-screen relative z-2 bg-black">
           <div className="flex flex-col gap-3 w-screen lg:w-[470px] px-10 lg:px-0 py-21 lg:pt-39 lg:mr-40">
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="w-[380px] md:w-120 lg:w-[509px] pr-6 lg:pr-0 text-[24px] md:text-[28px] lg:text-[45px] ">
+              <p className="w-[380px] md:w-120 lg:w-[509px] pr-6 lg:pr-0 text-[24px] md:text-[28px] lg:text-[45px] leading-tight">
                 For Founders Seeking a Worthy Circle
               </p>
             </Reveal> 
@@ -748,7 +748,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 </p>
                 <p className=''>(01)</p>
                 <p className="w-[337px] font-extralight text-[14px] lg:text-[18px]">
-                  All dossiers, communications, and project materials are safeguarded under strict mutual NDAs—preserving confidentiality of every interaction.
+                  All dossiers, communications, and project materials are safeguarded under strict mutual NDAs, preserving confidentiality of every interaction.
                 </p>
 
                 <p>(02)</p>

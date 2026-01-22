@@ -12,22 +12,6 @@ import Reveal from "@/utils/Reveal";
 import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import Footer from "@/components/Footer";
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-      when: "beforeChildren",
-    },
-  },
-};
-
-
-const item = {
-hidden: { opacity: 0, y: 5 },
-show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] } },
-};
-
 export default function Home() {
   return (
     <div className="overflow-clip">
@@ -39,7 +23,7 @@ export default function Home() {
               For Those Who <br /> Refuse to Be Forgotten.
             </h1>
             <p className="text-[16px] lg:text-[24px] font-light w-full lg:w-[586px]">
-              We forge brands, real estate, and capital systems for visionaries who build for generations—not quarters.
+              We forge brands, real estate, and capital systems for visionaries who build for generations, not quarters.
             </p>
           </div>
         </Reveal>
@@ -63,7 +47,7 @@ export default function Home() {
           <Reveal variants={slideInFromRight(0.2)}>
             <div className="flex flex-col lg:w-[541px] gap-y-5 lg:gap-y-6 text-[12px] lg:text-[14px]">
               <p className="">
-                Vedara operates as an integrated ecosystem where strategy, creativity, and capital come together. We work closely with brands at different stages — from early direction-setting to long-term growth and expansion.
+                Vedara operates as an integrated ecosystem where strategy, creativity, and capital come together. We work closely with brands at different stages, from early direction-setting to long-term growth and expansion.
               </p>
               <p className="">
                 Our work goes beyond execution. We partner deeply with founders and teams to define purpose, design meaningful brand experiences, and create systems that support sustainable scale. Every decision is guided by clarity, intent, and long-term thinking.
@@ -119,7 +103,7 @@ export default function Home() {
                 Strategize & Align
               </p>
               <p className="text-[14px] lg:text-[16px] leading-tight">
-                We define direction through clear strategy — aligning business goals, brand positioning, and operational priorities.
+                We define direction through clear strategy, aligning business goals, brand positioning, and operational priorities.
               </p>
             </div>
           </Reveal>

@@ -3,7 +3,7 @@ const section2Data = [
     id: 1,
     style:"bg-primary text-black",
     title: "Vedara Consultancy",
-    para1: "Vedara Consultancy partners with founders, leadership teams, and growing brands to bring clarity to complex decisions. We work at the intersection of business, brand, and growth — helping organizations define direction, align teams, and build strategies that scale.",
+    para1: "Vedara Consultancy partners with founders, leadership teams, and growing brands to bring clarity to complex decisions. We work at the intersection of business, brand, and growth, helping organizations define direction, align teams, and build strategies that scale.",
     para2: "Our role is not advisory at a distance. We engage deeply, challenge assumptions, and help leaders move forward with confidence and structure.",
     subtitle: "Ideal For",
     para3: "Brands at a crossroads, entering new markets, restructuring, or preparing for long-term scale.",
@@ -32,7 +32,7 @@ const section2Data = [
   {
     id: 3,
     title: "Vedara Capital",
-    para1: "It is Vedara’s capital and ecosystem-building arm. It focuses on supporting brands through strategic investment, partnerships, and long-term growth frameworks — extending beyond traditional consulting or studio services.",
+    para1: "It is Vedara’s capital and ecosystem-building arm. It focuses on supporting brands through strategic investment, partnerships, and long-term growth frameworks, extending beyond traditional consulting or studio services.",
     para2: "Capital is built for brands with ambition: those looking to scale sustainably, collaborate strategically, and become part of a larger brand ecosystem.",
     subtitle2: "Capabilities",
     points: ["Capital-backed brand growth", "Strategic partnerships & collaborations", "Long-term, scalable brand ecosystems"],

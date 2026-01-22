@@ -100,20 +100,6 @@ export default async function page() {
           ))}
         </div>
       </section>
-
-      {/* <div className="w-screen relative h-[763px] lg:h-screen lg:p-23 flex flex-col justify-center items-center gap-y-8 bg-[url('/insight-footer.png')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-black/30"/>
-        <h2 className="italic text-[20px] md:text-[24px] lg:text-[36px] z-1">Case Study - The Luxury Hospitality Trap</h2>
-        <div className='h-[133px] border z-1'/>
-        <p className="text-[14px] lg:text-[16px] font-medium w-70 lg:w-[414px] text-center z-1">How a 140-year-old jeweler built a hospitality empire, and the mistakes emerging brands must avoid.</p>
-        <Link href={`/insights/${footerBlog.slug}`} className="z-1">
-          <button className="bg-primary/36 rounded-full py-[7px] lg:py-3 flex justify-center items-center gap-2 text-[12px] lg:text-[14px] tracking-wide hover:cursor-pointer w-32 lg:w-41">
-            Read Now
-            <ArrowForwardIosOutlined className='h-[11px] lg:h-[17px]'/>
-          </button>
-        </Link>
-      </div> */}
-
       <Footer/>
     </div>
   )

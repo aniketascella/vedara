@@ -18,7 +18,7 @@ const page = () => {
     {
       title: "How Do You Ensure Your Work Remains Timeless, Not Trend-Driven?",
       body: `We anchor every project in heritage, philosophy, and long-term cultural relevance.
-  Design and strategy evolve from meaning—not from what's momentarily fashionable.
+  Design and strategy evolve from meaning, not from what's momentarily fashionable.
   The result: identities, systems, and experiences that hold power across decades.`,
     },
     {
@@ -31,7 +31,7 @@ const page = () => {
       title: "What Can I Expect From Working With Vedara?",
       body: `A deeply investigative, collaborative, and high-touch process that reveals your brand's cultural core.
   Expect rigorous thinking, elevated execution, and an obsession with meaning.
-  We don't just design—we define the future of your brand's legacy.`,
+  We don't just design, we define the future of your brand's legacy.`,
     },
   ];
 
