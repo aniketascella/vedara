@@ -71,7 +71,7 @@ export default function Section2({ data }) {
                 <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].para2}</p></Reveal>
                 <Reveal variants={slideInFromLeft(0.2)}><p className="font-medium mt-1 lg:mt-4 text-[16px] lg:text-[18px] uppercase">{data[activeIndex].subtitle}</p></Reveal>
                 <Reveal variants={slideInFromLeft(0.2)}><p>{data[activeIndex].para3}</p></Reveal>
-                <button className={`rounded-full bg-black p-[11px] hover:cursor-pointer w-fit ${data[activeIndex].btnTextColor}`}>
+                <button className = "border-b hover:cursor-pointer w-fit">
                   <Link href={data[activeIndex].btnLink}>
                     {data[activeIndex].btnText}
                   </Link>

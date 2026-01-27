@@ -104,25 +104,20 @@ export default function ProjectCarousal() {
                     ease: "easeInOut",
                   }}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                  <Link href={item.link}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
 
-                  <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-0 bg-black/30" />
 
-                  <div className="absolute bottom-0 p-6 w-full text-white backdrop-blur-[3px]">
-                    <p className="text-[20px] tracking-wide mb-2">{item.title}</p>
-                    <div className="flex justify-between items-end w-full">
+                    <div className="absolute bottom-0 p-6 w-full text-white backdrop-blur-[3px]">
+                      <p className="text-[20px] tracking-wide mb-2">{item.title}</p>
                       <p className="text-[14px] w-62 text-white font-light">{item.description}</p>
-                      <button className="w-[37px] h-[37px] rounded-full bg-primary/32 text-center">
-                        <Link href={item.link}>
-                          <ArrowForwardIosOutlined/>
-                        </Link>
-                      </button>
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>

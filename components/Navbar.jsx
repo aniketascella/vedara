@@ -20,7 +20,7 @@ export default function Navbar() {
   
 
   return (
-    <header className="w-screen fixed top-[42px] z-50 flex justify-between items-center px-12 lg:px-26">
+    <header className="w-screen fixed top-11 z-50 flex justify-between items-center px-12 lg:px-26">
 
       <div className="flex items-center">
         <Link href="/"><img src="/vedara-logo.svg" alt="logo" className="w-[134px] lg:w-[216px]"/></Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(null)} className="relative rounded-full backdrop-blur-[5px] hidden lg:flex gap-5 items-center py-2 text-white border border-white/25 w-[214px]">
+      <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(null)} className="relative rounded-full backdrop-blur-[5px] hidden lg:flex gap-7 items-center py-2 text-white border border-white/25 w-[214px] text-[18px]">
         {(isActiveRoute) && (
           <span
             className={`absolute inset-0 w-1/2 -z-2 rounded-full bg-primary/35 transition-transform duration-400 ease-out ${
@@ -56,10 +56,10 @@ export default function Navbar() {
             }`}
           />
         )}
-        <Link onMouseEnter={()=> setHovered("atelier")} href="/atelier" className={`pl-10 ${active === "atelier" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+        <Link onMouseEnter={()=> setHovered("atelier")} href="/atelier" className={`px-6 ${active === "atelier" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
           Atelier
         </Link>
-        <Link onMouseEnter={()=> setHovered("capital")} href="/capital" className={`px-5 ${active === "capital" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+        <Link onMouseEnter={()=> setHovered("capital")} href="/capital" className={`${active === "capital" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
           Capital
         </Link>
       </div>

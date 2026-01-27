@@ -83,7 +83,7 @@ export default function KeyEngagements() {
                 </h2>
 
                 {/* CENTER IMAGE WINDOW */}
-                <div className="relative">
+                <div className="relative z-1">
                   <div
                     className={`absolute left-0 right-0 -top-10 h-52
                       transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]

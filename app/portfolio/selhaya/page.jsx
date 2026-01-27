@@ -133,12 +133,10 @@ const page = () => {
             </div>
           </Reveal>
         </motion.div>
-        <Reveal variants={slideInFromBottom(0.2)} className={`mx-auto`}>
-          <motion.button style={{y:s1}} className="w-40 h-10 lg:w-45 lg:h-13 rounded-full bg-[#6b6256]/20 backdrop-blur-lg text-[12px] lg:text-[14px] mb-20 lg:mb-30 mt-12 relative">
-            <div className='flex justify-between items-center px-5'>
-              Visit Website
-              <ArrowForwardIosOutlined/>
-            </div>
+        <Reveal variants={slideInFromBottom(0.2)} className={`ml-15 lg:mx-auto`}>
+          <motion.button style={{y:s1}} className="w-40 h-10 lg:w-45 lg:h-13 rounded-full bg-[#6b6256]/20 backdrop-blur-lg text-[12px] lg:text-[14px] mb-20 lg:mb-30 mt-12 relative flex justify-between items-center px-5">
+            Visit Website
+            <ArrowForwardIosOutlined/>
           </motion.button>
         </Reveal>
       </section>

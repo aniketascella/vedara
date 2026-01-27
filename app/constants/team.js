@@ -1,29 +1,27 @@
-import { Description } from "@mui/icons-material";
-
 const team = [
   {
     name: "Abhinav Anand",
-    role: "Founder | Consultant - Strategy, Growth & Market Expansion",
+    role: "Founder | Founder & Cultural Brand Strategist - Strategy, Positioning & Market Expansion",
     image: "/home/team1.png",
-    description: "Abhinav works with founders and leadership teams on growth strategy, market entry, and business alignment. He supports brands navigating scale, ensuring strategic clarity, structured decision-making, and sustainable expansion."
+    description: "Abhinav works at the intersection of brand, culture, and power. He advises founders and leadership teams on long-term positioning, market authority, and legacy-driven growth. His work focuses on creating brands that command relevance, trust, and longevity rather than chasing attention."
   },
   {
     name: "Sarah Whatson",
-    role: "Luxury Consultant/Music | Event Professional",
+    role: "Strategic Growth & Client Partnerships Advisor | Business Development, Client Relations & Deal Closure",
     image: "/home/team4.png",
-    description: "Sara Watson connects luxury brands, investors, and founders through strategic partnerships and bespoke high-touch experiences. She curates exclusive events and client journeys for ultra-high-net-worth audiences across hospitality, fashion, art, and real estate."
+    description: "Sarah leads client relationship development and strategic growth initiatives. She works closely with founders and decision-makers to convert aligned opportunities into long-term partnerships. Her strength lies in trust-based sales, negotiation, and guiding high-value engagements to close with clarity and confidence."
   },
   {
     name: "Elena Falconer",
-    role: "Consultant - Luxury Client Experience & Brand Positioning",
+    role: "Luxury Client Experience & Brand Strategy Advisor | Retail Strategy, Revenue Growth & Market Training",
     image: "/home/team2.png",
-    description: "Elena designs world-class client journeys for ultra-high-net-worth and luxury lifestyle brands. Her work focuses on elevating brand perception, creating meaningful touchpoints, and transforming admiration into long-term loyalty."
+    description: "Elena brings deep expertise from the luxury fashion and retail ecosystem. She specializes in client experience design, commercial strategy, and revenue optimization across physical and experiential touchpoints. Her work supports brands in refining how they sell, train, and scale without compromising luxury standards."
   },
   {
     name: "Tatiana Poliarush",
-    role: "Principal Consultant - Luxury Brand Strategy & Creative Direction",
+    role: "Head of Design & Creative Direction | Luxury Brand Identity & Visual Systems",
     image: "/home/team3.png",
-    description: "Tatiana leads brand strategy and creative direction for luxury and heritage-driven ventures. She specializes in uncovering brand DNA, shaping emotional narratives, and crafting identities that achieve cultural distinction and timeless relevance."
+    description: "Tatiana leads creative direction and design execution across brand touchpoints. She translates strategic intent into refined visual identities, campaigns, and systems built for high-end markets. Her focus is precision, consistency, and aesthetic authority across every expression of the brand."
   },
   
 ];

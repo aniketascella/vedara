@@ -12,7 +12,7 @@ const projectCarousalData = [
   {
     id: 2,
     image: "/projectCarousal/selhaya.png",
-    title: "Selhaya - Work",
+    title: "Selhaya - Case Study",
     description:
       "Where a Modest-Wear Brand Became a Cultural Signal And a Digital Empire Found Its Architecture.",
     cta: "Read",

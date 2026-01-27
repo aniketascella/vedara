@@ -21,7 +21,7 @@ const TeamCard = forwardRef(function TeamCard({member}, ref) {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Bottom Content */}
-      <div className="relative z-2 flex flex-col justify-end  w-full text-white">
+      <div className="relative z-2 flex flex-col justify-end w-full text-white">
         <div className="flex flex-col pl-6 pr-4 pb-6 backdrop-blur-[2px]">
           <p className="text-[20px]">{member.name}</p>
 
@@ -48,14 +48,14 @@ const TeamCard = forwardRef(function TeamCard({member}, ref) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="absolute inset-0 z-1 backdrop-blur-[10px] flex justify-center items-center p-8 text-white"
+            className="absolute inset-0 z-1 backdrop-blur-[10px] flex pt-16 text-white"
           >
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ delay: 0.1, duration: 0.35 }}
-              className="text-left text-[14px] leading-tight font-light max-w-[260px]"
+              className="text-left text-[14px] leading-tight mx-auto font-light max-w-[260px]"
             >
               {member.description}
             </motion.p>

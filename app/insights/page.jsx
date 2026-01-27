@@ -15,10 +15,10 @@ export default async function page() {
   );
 
   return (
-    <div className="text-white relative flex flex-col items-center overflow-x-clip">
-      <section className="flex flex-col justify-center w-[80vw] pt-40  ">
+    <div className="text-white relative flex flex-col items-center px-13 md:px-23 overflow-x-clip">
+      <section className="flex flex-col justify-center w-full pt-40  ">
         <Reveal variants={slideInFromRight(0.2)}>
-          <h1 className="w-[300px] lg:w-auto text-[36px] md:text-[45px] lg:text-[64px] tracking-tight leading-tight italic mb-4">
+          <h1 className="w-[300px] md:w-100 lg:w-[686px] text-[36px] md:text-[45px] lg:text-[64px] tracking-tight leading-tight italic mb-4">
             Cultural Prophecy And Sovereign Wisdom
           </h1>
         </Reveal>
@@ -30,8 +30,8 @@ export default async function page() {
       </section>
 
       {featuredBlog && (
-        <section className="flex justify-center w-[80vw] py-30">
-          <div className="relative w-full h-[300px] lg:h-auto rounded-xl">
+        <section className="flex justify-center w-full py-30">
+          <div className="relative w-full h-[300px] lg:h-[796px] rounded-xl">
             <img
               src={featuredBlog.coverImage}
               alt={featuredBlog.title}
@@ -62,7 +62,7 @@ export default async function page() {
         </section>
       )}
 
-      <section className="w-[80vw] pb-50">
+      <section className="w-full pb-50">
         <Reveal variants={slideInFromRight(0.2)}>
         <p className="text-center uppercase text-[28px] lg:text-[45px] mb-5">
           Case Studies
@@ -74,10 +74,10 @@ export default async function page() {
         </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-20 lg:gap-y-40 pt-30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-9 gap-y-20 lg:gap-y-40 pt-30">
           {blogs.map((blog,idx) => (
-            <div key={idx} className="w-[300px] h-auto lg:w-[25vw] lg:h-[26vw] mx-auto"> 
-              <div className="relative group flex justify-center items-center w-full h-[300px] lg:h-[25vw] overflow-hidden mb-6">
+            <div key={idx} className="w-[300px] h-auto lg:w-[20vw] lg:h-[21vw] mx-auto"> 
+              <div className="relative group flex justify-center items-center w-full h-[300px] lg:h-[20vw] overflow-hidden mb-6">
                 <Link href={`/insights/${blog.slug}`} className="w-full h-full">
                 <img
                   src={blog.coverImage}
@@ -88,7 +88,7 @@ export default async function page() {
                 <AnimatedReadButton slug={blog.slug}/>
               </div>
 
-              <div className="flex justify-between text-[16px] lg:text-[24px] mb-2 font-light">
+              <div className="flex justify-between text-[16px] mb-2 font-light">
                 <p className="text-lg font-light leading-snug w-54 lg:w-75 h-12 md:h-13 overflow-y-hidden">
                   <Link href={`/insights/${blog.slug}`}>
                     {blog.title}
