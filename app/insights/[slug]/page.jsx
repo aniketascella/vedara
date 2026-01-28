@@ -38,7 +38,7 @@ export default async function BlogDetailPage({ params }) {
             <img
               src={blog.coverImage}
               alt={blog.title}
-              className="object-cover w-full h-full rounded-2xl"
+              className="object-cover object-center w-full h-full rounded-2xl"
             />
           </div>
         )}

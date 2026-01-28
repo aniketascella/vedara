@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const links=[
   {name:"Home", href:"/"},
   {name:"Atelier", href:"/atelier"},
-  {name:"Capital", href:"/capital"},
+  {name:"Dynasty", href:"/dynasty"},
   {name:"Portfolio", href:"/portfolio"},
   {name:"Insights", href:"/insights"},
 ]
@@ -72,19 +72,18 @@ export default function MobileNavOverlay({ open, onClose, active }) {
           )}
         </nav>
 
+        {/* Divider */}
+        <div className="w-20 h-px bg-white mt-10" />
+
         {/* CTA */}
         <Link
           href="/contact"
-          className="
-            mt-12 px-2 py-2 rounded-full
-            bg-tertiary text-black transition
-            flex justify-between items-center gap-2
-          "
+          className="mt-32 py-2 border-b flex justify-center items-center gap-2"
+          onClick={onClose}
         >
           <h2 className="text-[18px] italic font-semibold">
             Contact
           </h2>
-          <ArrowForwardIosOutlined className="h-3"/>
         </Link>
 
         {/* Footer */}

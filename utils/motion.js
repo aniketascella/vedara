@@ -54,3 +54,31 @@ export function slideInFromRight(delay){
     },
   };
 }
+
+export const fadeInText = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+}
+
+export const slideInImage = {
+  hidden: {
+    opacity: 0,
+    y: 120,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+}

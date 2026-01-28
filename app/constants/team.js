@@ -1,7 +1,7 @@
 const team = [
   {
     name: "Abhinav Anand",
-    role: "Founder | Founder & Cultural Brand Strategist - Strategy, Positioning & Market Expansion",
+    role: "Founder & Cultural Brand Strategist | Strategy, Positioning & Market Expansion",
     image: "/home/team1.png",
     description: "Abhinav works at the intersection of brand, culture, and power. He advises founders and leadership teams on long-term positioning, market authority, and legacy-driven growth. His work focuses on creating brands that command relevance, trust, and longevity rather than chasing attention."
   },

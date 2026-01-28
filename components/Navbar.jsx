@@ -1,11 +1,8 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Twitter } from "@mui/icons-material";
+import { usePathname } from "next/navigation";
 import MobileNavOverlay from "./MobileNavOverlay";
 
 export default function Navbar() {
@@ -14,9 +11,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   
-  const active = pathname.startsWith("/atelier") ? "atelier" : pathname.startsWith("/capital") ? "capital" : pathname === "/" ? "home" : pathname.startsWith("/portfolio") ? "portfolio" :  pathname === "/contact" ? "contact" : "insights";
+  const active = pathname.startsWith("/atelier") ? "atelier" : pathname.startsWith("/dynasty") ? "dynasty" : pathname === "/" ? "home" : pathname.startsWith("/portfolio") ? "portfolio" :  pathname === "/contact" ? "contact" : "insights";
   
-  const isActiveRoute = pathname === "/atelier" || pathname === "/capital";
+  const isActiveRoute = pathname === "/atelier" || pathname === "/dynasty";
   
 
   return (
@@ -45,22 +42,22 @@ export default function Navbar() {
         {(isActiveRoute) && (
           <span
             className={`absolute inset-0 w-1/2 -z-2 rounded-full bg-primary/35 transition-transform duration-400 ease-out ${
-              active === "capital" ? "translate-x-full" : "translate-x-0"
+              active === "dynasty" ? "translate-x-full" : "translate-x-0"
             }`}
           />
         )}
         {(!isActiveRoute && hovered) && (
           <span
             className={`absolute inset-0 w-1/2 -z-2 rounded-full bg-primary/35 transition-transform duration-400 ease-out ${
-              hovered === "capital" ? "translate-x-full" : "translate-x-0"
+              hovered === "dynasty" ? "translate-x-full" : "translate-x-0"
             }`}
           />
         )}
         <Link onMouseEnter={()=> setHovered("atelier")} href="/atelier" className={`px-6 ${active === "atelier" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
           Atelier
         </Link>
-        <Link onMouseEnter={()=> setHovered("capital")} href="/capital" className={`${active === "capital" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
-          Capital
+        <Link onMouseEnter={()=> setHovered("dynasty")} href="/dynasty" className={`${active === "dynasty" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+          Dynasty
         </Link>
       </div>
 

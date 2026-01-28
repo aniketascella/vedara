@@ -26,7 +26,7 @@ const TeamCard = forwardRef(function TeamCard({member}, ref) {
           <p className="text-[20px]">{member.name}</p>
 
           <div className="flex justify-between items-center">
-            <p className="text-[14px] w-50 lg:w-56">{member.role}</p>
+            <p className="text-[14px] w-58 lg:w-66">{member.role}</p>
 
             {/* Toggle Button */}
             <button
@@ -55,7 +55,7 @@ const TeamCard = forwardRef(function TeamCard({member}, ref) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ delay: 0.1, duration: 0.35 }}
-              className="text-left text-[14px] leading-tight mx-auto font-light max-w-[260px]"
+              className="text-left text-[14px] leading-tight mx-auto font-light max-w-70"
             >
               {member.description}
             </motion.p>

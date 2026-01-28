@@ -35,7 +35,7 @@ export default async function page() {
             <img
               src={featuredBlog.coverImage}
               alt={featuredBlog.title}
-              className="object-cover w-full h-full "
+              className="object-cover w-full h-full"
             />
 
             <div className="absolute inset-0 bg-black/20" />
