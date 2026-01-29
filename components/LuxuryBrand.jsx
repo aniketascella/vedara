@@ -68,7 +68,7 @@ export default function LuxuryBrand() {
 
   return (
     <section className="bg-primary text-black ">
-      <div className="hidden lg:block pl-30 pr-40 py-32 w-screen">
+      <div className="hidden lg:block px-35 xl:px-70 py-32 w-screen">
         {/* Header */}
         <div className="mb-20 flex justify-between">
           <h2 className="text-[45px] leading-tight italic font-semibold">
@@ -84,7 +84,7 @@ export default function LuxuryBrand() {
         </p>
 
         {/* Rows */}
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           {SECTIONS.map((item, index) => {
             const isActive = activeRow === index;
 
@@ -93,25 +93,24 @@ export default function LuxuryBrand() {
                 key={index}
                 onMouseEnter={() => setActiveRow(index)}
                 onMouseLeave={() => setActiveRow(null)}
-                className="relative grid grid-cols-[1fr_172px_1fr] gap-x-20 mx-auto py-12 border-t border-black/20 overflow-visible"
+                className="relative grid grid-cols-[1fr_1fr_1fr] py-12 border-t border-black/20 overflow-visible"
               >
                 {/* LEFT TITLE */}
                 <div className="flex flex-col">
-
-                <h2
-                  className={`italic text-[36px] transition-opacity duration-300 ${
-                    isActive ? "opacity-100" : "opacity-40"
-                  }`}
-                >
-                  {item.title}
-                </h2>
-                <p className="font-light text-[14px] leading-tight">{item.content}</p>
+                  <h2
+                    className={`italic text-[36px] transition-opacity duration-300 ${
+                      isActive ? "opacity-100" : "opacity-40"
+                    }`}
+                  >
+                    {item.title}
+                  </h2>
+                  <p className="font-light text-[14px] leading-tight">{item.content}</p>
                 </div>
 
                 {/* CENTER IMAGE WINDOW */}
-                <div className="relative mt-10">
+                <div className="relative z-1 lg:w-43 xl:w-[230px] justify-self-center">
                   <div
-                    className={`absolute left-0 right-0 -top-10 h-52
+                    className={`absolute left-0 right-0 lg:h-52 xl:h-[278px]
                       transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
                       ${
                         isActive
@@ -121,7 +120,7 @@ export default function LuxuryBrand() {
                   >
                     <Image
                       src={item.image}
-                      alt=""
+                      alt="img"
                       fill
                       className="object-cover"
                     />
@@ -129,7 +128,7 @@ export default function LuxuryBrand() {
                 </div>
 
                 {/* RIGHT CONTENT */}
-                <div className="relative w-md"> 
+                <div className="relative w-md justify-self-end"> 
                   {item.items.map((subItem, idx) => (
                     <div key={idx} className="mb-4">
                       <p className="text-[16px] font-medium mb-4">
@@ -145,7 +144,7 @@ export default function LuxuryBrand() {
             );
           })}
 
-          <div className="border-t border-black/20" />
+          <div className="border border-black/20" />
         </div>
       </div>
 

@@ -134,9 +134,9 @@ const page = () => {
       <section className="relative flex flex-col justify-center items-center lg:items-end">
         <div ref={sectionRef} className="relative h-[300vh] w-full">
       
-          <div className="sticky top-0 py-10 lg:py-30 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16">
+          <div className="sticky top-0 py-10 lg:py-30 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16 pl-10 lg:pl-24 lg:pr-20 xl:px-40">
           
-            <div className="flex flex-col lg:flex-row w-full gap-y-4 pl-10 lg:h-20 lg:pl-24 lg:pr-20 justify-between">
+            <div className="flex flex-col lg:flex-row w-full gap-y-4 lg:h-20 justify-between">
               <Reveal variants={slideInFromBottom(0.2)}>
                 <h2 className="hidden lg:flex italic text-[16px]">Vedara</h2>
               </Reveal>
@@ -153,7 +153,7 @@ const page = () => {
               </Reveal>
             </div>
 
-            <div className="flex flex-col xl:mr-95 lg:mr-50 gap-y-4 justify-center items-center lg:items-end">
+            <div className="flex flex-col gap-y-4 justify-center items-center lg:items-end">
               <div className="flex justify-between w-[345px] lg:w-[952px]">
                 <p>Ideal Clients</p>
                 <div className="flex gap-4">
@@ -471,7 +471,7 @@ const page = () => {
             <img
               src="/atelier/img7.png"
               alt="Featured project"
-              className="w-full h-full object-cover object-right"
+              className="w-full lg:h-screen object-cover object-right"
             />
 
             <Link href="/portfolio/selhaya">

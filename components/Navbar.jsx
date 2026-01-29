@@ -17,7 +17,7 @@ export default function Navbar() {
   
 
   return (
-    <header className="w-screen fixed top-11 z-50 flex justify-between items-center px-12 lg:px-26">
+    <header className="w-screen fixed top-6 lg:top-2 z-50 flex justify-between items-center px-12 lg:px-26">
 
       <div className="flex items-center">
         <Link href="/"><img src="/vedara-logo.svg" alt="logo" className="w-[134px] lg:w-[216px]"/></Link>
