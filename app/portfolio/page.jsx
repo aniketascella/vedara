@@ -99,8 +99,8 @@ const page = () => {
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
-            <div className="flex flex-col items-end justify-end gap-y-11">
-              <p className="text-right text-[16px] lg:text-[18px]">
+            <div className="flex flex-col lg:items-end justify-end gap-y-11">
+              <p className="lg:text-right text-[16px] lg:text-[18px]">
                 info@vedaracollective.com
               </p>
               <p className="w-[300px] md:w-[405px] tracking-tighter font-light lg:text-right text-[16px] lg:text-[18px]">
@@ -190,7 +190,7 @@ const page = () => {
         <div className="top-0 pt-[140px] mb-[140px] space-y-20">
           <div className="flex justify-between w-[300px] lg:w-[800px] text-[28px] lg:text-[45px] uppercase">
             <Reveal variants={slideInFromLeft(0.2)}><p>All Projects</p></Reveal>
-            <Reveal variants={slideInFromRight(0.2)}><p>01</p></Reveal>
+            <Reveal variants={slideInFromTop(0.2)}><p>01</p></Reveal>
           </div>
 
           <Reveal variants={slideInFromRight(0.2)}>

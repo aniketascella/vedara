@@ -474,17 +474,17 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-screen">
           <div className="flex flex-col gap-3 w-screen lg:w-[calc(100vw-720px)] items-center py-21 lg:pb-39">
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className="w-[380px] pr-4 lg:pr-0 md:w-120 lg:w-[509px] text-[24px] md:text-[28px] lg:text-[45px] leading-tight">
+              <p className="w-70 md:w-100 lg:w-121 text-[24px] md:text-[28px] lg:text-[45px] leading-tight mb-3">
                 For Investors Seeking Meaningful Ownership
               </p>
             </Reveal>
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className='w-70 md:[323px] lg:w-121 text-[14px] lg:text-[18px]'>
+              <p className='w-70 md:w-100 md:pr-20 lg:pr-0 lg:w-121 text-[14px] lg:text-[18px]'>
                 Ownership, at this level, is not transactional, it is civilizational. Vedara Dynasty offers access to rare, heritage-aligned assets whose value is measured in architectural truth. 
               </p>
             </Reveal>
             <Reveal variants={slideInFromLeft(0.2)}>
-              <p className="w-70 md:[323px] lg:w-121 text-[14px] lg:text-[18px]">
+              <p className="w-70 md:w-100 md:pr-20 lg:pr-0 lg:w-121 text-[14px] lg:text-[18px]">
                 Every opportunity is presented through a lens of long-term stewardship. Here, investment is something that carries your principles forward into time.
               </p>
             </Reveal>
@@ -555,19 +555,19 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-center w-screen">
           <div className="flex flex-col justify-center items-center gap-3 w-screen lg:w-[calc(100vw-720px)] py-21">
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="w-[380px] md:w-120 lg:w-[509px] pr-6 lg:pr-0 text-[24px] md:text-[28px] lg:text-[45px] leading-tight">
+              <p className="w-70 md:w-100 lg:w-121 text-[24px] md:text-[28px] lg:text-[45px] leading-tight mb-3">
                 For Founders Seeking a Worthy Circle
               </p>
             </Reveal> 
 
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className='w-70 md:[323px] lg:w-121 text-[14px] lg:text-[18px]'>
+              <p className='w-70 md:w-100 md:pr-20 lg:pr-0 lg:w-121 text-[14px] lg:text-[18px]'>
                 Visionaries building places worthy of reverence deserve a sanctuary of aligned capital. Vedara Dynasty elevates founders who create with intention and architectural authenticity.
               </p>
             </Reveal>
 
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="w-70 md:[323px] lg:w-121 text-[14px] lg:text-[18px]">
+              <p className="w-70 md:w-100 md:pr-20 lg:pr-0 lg:w-121 text-[14px] lg:text-[18px]">
                 Your project is not listed; it is honoured, refined, and positioned to meet investors who value soul, longevity, and significance.
               </p>
             </Reveal>
@@ -695,17 +695,17 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
 
       <section ref={container4} className="flex justify-center items-center py-20 lg:pt-27 lg:pb-55">
-        <div className="flex flex-col justify-center gap-12 lg:gap-18">
+        <div className="flex flex-col justify-center items-center lg:items-start gap-12 lg:gap-18">
           <Reveal variants={slideInFromTop(0.2)}>
-            <motion.p style={{y:s4}} className="uppercase w-[380px] md:w-90 lg:w-125 text-[28px] lg:text-[45px] leading-tight"> 
+            <motion.p className="uppercase w-90 md:w-115 lg:w-125 pr-20 lg:pr-0 text-[28px] lg:text-[45px] leading-tight"> 
               Confidentiality & Access Protocol
             </motion.p>
           </Reveal>
 
-          <motion.div style={{y:s4}} className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
+          <motion.div className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
             <Reveal variants={slideInFromRight(0.2)}>
               <div className="flex flex-col gap-6 lg:gap-5 text-[16px] lg:text-[24px]">
-                <p className="w-60 lg:w-75 lg:mb-14">
+                <p className="w-90 lg:w-75 lg:mb-14 pr-30">
                   Vedara Dynasty Operates Within a Closed Circle.
                 </p>
                 <p className=''>(01)</p>
@@ -722,7 +722,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             </Reveal>
             
             <Reveal variants={slideInFromLeft(0.2)}>
-              <img src="/dynasty/img15.png" alt="img15" className="w-[300px] md:w-115" />
+              <img src="/dynasty/img15.png" alt="img15" className="w-90 md:w-115" />
             </Reveal>
           </motion.div>
         </div>

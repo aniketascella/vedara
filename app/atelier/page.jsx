@@ -134,9 +134,9 @@ const page = () => {
       <section className="relative flex flex-col justify-center items-center lg:items-end">
         <div ref={sectionRef} className="relative h-[300vh] w-full">
       
-          <div className="sticky top-0 py-10 lg:py-30 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16 pl-10 lg:pl-24 lg:pr-20 xl:px-40">
+          <div className="sticky top-0 py-10 lg:py-30 w-full min-h-screen lg:h-screen flex flex-col justify-center items-center lg:items-end gap-y-6 lg:gap-y-16 lg:pl-24 lg:pr-20 xl:px-40">
           
-            <div className="flex flex-col lg:flex-row w-full gap-y-4 lg:h-20 justify-between">
+            <div className="flex flex-col lg:flex-row w-full gap-y-4 lg:h-20 justify-between items-center">
               <Reveal variants={slideInFromBottom(0.2)}>
                 <h2 className="hidden lg:flex italic text-[16px]">Vedara</h2>
               </Reveal>
@@ -146,14 +146,14 @@ const page = () => {
               </Reveal>
 
               <Reveal variants={slideInFromRight(0.2)}>
-                <p className="text-[14px] lg:text-[16px] lg:text-right w-[370px]">
+                <p className="text-[14px] lg:text-[16px] lg:text-right w-[345px] lg:w-[370px]">
                   Vedara works with a rare class of founders and institutions,
                   those building not for seasons, but for generations.
                 </p>
               </Reveal>
             </div>
 
-            <div className="flex flex-col gap-y-4 justify-center items-center lg:items-end">
+            <div className="flex flex-col gap-y-6 justify-center items-center lg:items-end">
               <div className="flex justify-between w-[345px] lg:w-[952px]">
                 <p>Ideal Clients</p>
                 <div className="flex gap-4">
@@ -169,7 +169,7 @@ const page = () => {
                 </div>
               </div>
 
-              <div className="w-[345px] lg:w-[952px] lg:h-[420px] grid grid-cols-1 lg:grid-cols-2 lg:gap-5 bg-primary text-black">
+              <div className="w-[345px] lg:w-[952px] h-fit lg:h-[420px] grid grid-cols-1 lg:grid-cols-2 lg:gap-5 bg-primary text-black">
                 <div className="flex p-5 lg:pl-10 lg:pr-0 items-center">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -188,7 +188,7 @@ const page = () => {
                           {SLIDES[index].id}
                         </span>
                       </div>
-                      <p className="text-[12px] lg:text-[14px] w-[271px] lg:w-[331px] opacity-80">
+                      <p className="text-[12px] lg:text-[14px] w-[271px] lg:w-[331px] opacity-80 tracking-tighter">
                         {SLIDES[index].text}
                       </p>
                       <span className="hidden lg:block text-4xl">{SLIDES[index].id}</span>
@@ -223,7 +223,7 @@ const page = () => {
 
         <motion.div style={{y:s2}} className="flex flex-col-reverse justify-center items-center lg:flex-row gap-x-23 gap-y-4 lg:mb-10">
           <div className="lg:hidden text-right flex justify-end font-light w-[380px]">
-            <p className="w-[380px] text-[14px]">Your brand deserves to become a reference point, not another
+            <p className="w-[380px] text-[14px]">Your brand deserves to become a reference <br /> point, not another
             participant.</p>
           </div>
           <Reveal variants={slideInFromLeft(0.2)}>
@@ -249,7 +249,7 @@ const page = () => {
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
               <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-54">
-                Your brand deserves to become a reference point, not another
+                Your brand deserves to become a reference <br /> point, not another
                 participant.
               </p>
             </Reveal>
@@ -480,7 +480,7 @@ const page = () => {
               <h3 className="text-[18px] lg:text-[20px] font-medium italic">
                 Selhaya World’s First Luxury Abaya Maison
               </h3>
-              <p className="text-[12px] lg:text-[14px] mt-2 opacity-90 w-[320px] lg:w-[474px]">
+              <p className="text-[12px] lg:text-[14px] mt-2 opacity-90 w-[320px] md:w-105 lg:w-[474px]">
                 Selhaya entered Vedara’s closed-circle ecosystem to evolve
                 from a promising luxury brand into an unforgettable maison.
               </p>

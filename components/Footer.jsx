@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:items-start gap-y-16 w-screen lg:px-22 relative">
           <div className="flex flex-col items-center lg:items-start gap-y-1 text-left font-light lg:font-normal">
             <Link href="/">Home</Link>
-            <Link href="/capital">Vedara Capital</Link>
+            <Link href="/dynasty">Vedara Dynasty</Link>
             <Link href="/atelier">Vedara Atelier</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/insights">Insights</Link>
