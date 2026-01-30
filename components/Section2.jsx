@@ -10,7 +10,7 @@ export default function Section2({ data }) {
       {data.map((item,idx) => (
         <div
           key={idx}
-          className={`flex flex-col ${idx==1?`lg:flex-row-reverse lg:gap-x-35`: `lg:flex-row lg:gap-x-40`} justify-center items-center ${item.style} h-screen`}
+          className={`flex flex-col ${idx==1?`lg:flex-row-reverse lg:gap-x-35`: `lg:flex-row lg:gap-x-40`} justify-center items-center ${item.style} lg:h-screen`}
         >
           {/* LEFT TEXT */}
           <motion.div
