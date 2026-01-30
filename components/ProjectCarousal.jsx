@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projectCarousalData from "@/app/constants/projectCarousalData";
 import { ArrowForwardIosOutlined, ArrowBackIosNewOutlined } from "@mui/icons-material";
@@ -13,7 +13,6 @@ export default function ProjectCarousal() {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [mobileIndex, setMobileIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const total = projectCarousalData.length;
   const visibleCount = 3;
@@ -52,20 +51,6 @@ export default function ProjectCarousal() {
     projectCarousalData[(startIndex + 1) % total],
     projectCarousalData[(startIndex + 2) % total],
   ];
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
 
   return (
     <div className="w-full bg-black py-16 relative overflow-hidden flex flex-col items-center gap-y-9">
@@ -118,29 +103,24 @@ export default function ProjectCarousal() {
                     duration: 0.5,
                     ease: "easeInOut",
                   }}
-                  onMouseEnter={item.id === 2 ? () => setIsHovered(true) : undefined}
-                  onMouseLeave={item.id === 2 ? () => setIsHovered(false) : undefined}
                 >
                   <Link href={item.link}>
-                    {item.id === 2 && (
+                    {item.id === 2 ? (
                       <video
                         src={item.video}
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-                          isHovered ? "opacity-100" : "opacity-0"
-                        }`}
+                        className={`absolute inset-0 h-full w-full object-cover`}
                       />
-                    )}
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-                        item.id === 2 && isHovered ? "opacity-0" : "opacity-100"
-                      }`}
-                    />
+                    ):
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300`}
+                      />
+                    }
 
                     <div className="absolute inset-0 bg-black/30" />
 

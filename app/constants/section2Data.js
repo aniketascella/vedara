@@ -29,6 +29,7 @@ const section2Data = [
 
   {
     id: 3,
+    style: "bg-[#2A2927] text-white",
     title: "Vedara Dynasty",
     para1: "It is Vedara’s dynasty and ecosystem-building arm. It focuses on supporting brands through strategic investment, partnerships, and long-term growth frameworks, extending beyond traditional consulting or studio services.",
     para2: "Dynasty is built for brands with ambition: those looking to scale sustainably, collaborate strategically, and become part of a larger brand ecosystem.",

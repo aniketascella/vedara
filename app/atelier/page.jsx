@@ -248,8 +248,8 @@ const page = () => {
               <img src="/atelier/img2.png" alt="img2" className="w-[380px] lg:my-10 lg:w-full object-cover object-center" />
             </Reveal>
             <Reveal variants={slideInFromRight(0.2)}>
-              <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-54">
-                Your brand deserves to become a reference <br /> point, not another
+              <p className="hidden text-right text-[12px] lg:text-[14px] lg:flex justify-self-end font-semibold lg:w-50">
+                Your brand deserves to become a reference point, not another
                 participant.
               </p>
             </Reveal>
@@ -477,7 +477,7 @@ const page = () => {
             <Link href="/portfolio/selhaya">
             <div className="absolute flex justify-between items-center bottom-0 backdrop-blur-[15px] w-full py-9 px-11 text-white">
               <div className="flex flex-col">
-              <h3 className="text-[18px] lg:text-[20px] font-medium italic">
+              <h3 className="text-[28px] lg:text-[36px] font-medium italic">
                 Selhaya World’s First Luxury Abaya Maison
               </h3>
               <p className="text-[12px] lg:text-[14px] mt-2 opacity-90 w-[320px] md:w-105 lg:w-[474px]">

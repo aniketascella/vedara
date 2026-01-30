@@ -247,14 +247,14 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
               <p className="uppercase text-[24px] lg:text-[45px] w-[380px] md:w-120 lg:w-[674px] tracking-tight leading-tight">
                 A Private Ecosystem Engineered for Excellence
               </p>
-              <p className="w-70 md:w-[335px] lg:w-116 text-[14px] lg:text-[16px] leading-tight">
+              <p className="w-70 md:w-[335px] lg:w-122 text-[14px] lg:text-[16px] leading-tight tracking-tight">
                 Vedara Dynasty operates through a protected, invitation-only infrastructure designed for absolute trust and emotional resonance.
               </p>
             </div>
           </Reveal>
           <Reveal variants={slideInFromRight(0.2)}>
             <p className="lg:text-right w-[380px] md:w-120 text-[14px] lg:text-[16px] leading-tight">
-              Every project is vetted for meaning, resonance, and <br /> a future measured in decades.
+              Every project is vetted for meaning, resonance, <br /> and a future measured in decades.
             </p>
           </Reveal>
         </motion.div>
@@ -705,7 +705,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
           <motion.div className="flex flex-col justify-center lg:flex-row-reverse lg:items-center gap-12 lg:gap-30">
             <Reveal variants={slideInFromRight(0.2)}>
               <div className="flex flex-col gap-6 lg:gap-5 text-[16px] lg:text-[24px]">
-                <p className="w-90 lg:w-75 lg:mb-14 pr-30">
+                <p className="w-90 lg:w-75 lg:mb-14 pr-30 lg:pr-0">
                   Vedara Dynasty Operates Within a Closed Circle.
                 </p>
                 <p className=''>(01)</p>
