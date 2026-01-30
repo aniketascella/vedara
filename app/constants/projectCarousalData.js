@@ -17,6 +17,7 @@ const projectCarousalData = [
       "Where a Modest-Wear Brand Became a Cultural Signal And a Digital Empire Found Its Architecture.",
     cta: "Read",
     link:"/portfolio/selhaya",
+    video:"/projectCarousal/vid.mp4",
   },
   {
     id: 3,

@@ -40,7 +40,7 @@ export default function KeyEngagements() {
 
   return (
     <section className="bg-primary text-black">
-      <div className="hidden lg:block px-35 xl:px-70 py-32 w-screen">
+      <div className="hidden lg:block mx-auto py-32 w-[1240px] max-w-310">
         {/* Header */}
         <div className="mb-20 flex justify-between">
           <Reveal variants={slideInFromLeft(0.2)}>

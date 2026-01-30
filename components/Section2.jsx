@@ -10,7 +10,7 @@ export default function Section2({ data }) {
       {data.map((item,idx) => (
         <div
           key={idx}
-          className={`flex flex-col lg:${idx==1?`flex-row-reverse`: `flex-row`} justify-end items-center ${item.style}`}
+          className={`flex flex-col ${idx==1?`lg:flex-row-reverse lg:gap-x-35`: `lg:flex-row lg:gap-x-40`} justify-center items-center ${item.style}`}
         >
           {/* LEFT TEXT */}
           <motion.div
@@ -18,7 +18,7 @@ export default function Section2({ data }) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col justify-center mx-auto w-[380px] lg:w-120 pt-25 pb-10 lg:py-20 lg:pl-20 gap-y-3 lg:gap-y-4 lg:max-w-[45%] text-[12px] lg:text-[14px]"
+            className="flex flex-col justify-center w-[380px] lg:w-120 pt-25 pb-10 lg:py-20 gap-y-3 lg:gap-y-4 text-[12px] lg:text-[14px]"
           >
             <h2 className="italic text-[36px] lg:text-[45px] leading-10">
               {item.title}
@@ -42,7 +42,7 @@ export default function Section2({ data }) {
             viewport={{ once: true, amount: "1" }}
             src={item.imgSrc}
             alt={item.title}
-            className="h-fit lg:h-screen lg:w-180"
+            className="w-screen h-fit lg:h-[765px] lg:w-155"
           />
         </div>
       ))}
