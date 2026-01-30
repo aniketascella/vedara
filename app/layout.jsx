@@ -36,6 +36,35 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${ppEditorial.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Corporation",
+              name: "Vedara Collective Corp.",
+              alternateName: "Vedara Collective",
+              url: "https://vedaracollective.com",
+              logo: "https://vedaracollective.com/vedara-logo.svg",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "",
+                contactType: "sales",
+                areaServed: [
+                  "CA","GB","US","AR","AU","AT","BR","FR","DE","IT","LU",
+                  "MC","NL","NZ","QA","SA","SG","ES","CH","SE","AE","UM"
+                ],
+                availableLanguage: "en",
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/vedaracollective/",
+                "https://vedaracollective.com",
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body className="antialiased">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VR6STD6WQT"
           strategy="afterInteractive"
@@ -49,13 +78,11 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-VR6STD6WQT');
           `}
         </Script>
-      </head>
-      <ReactLenis root>
-        <body className="antialiased">
+        <ReactLenis root>
           <Navbar/>
           {children}
-        </body>
-      </ReactLenis>
+        </ReactLenis>
+      </body>
     </html>
   );
 }

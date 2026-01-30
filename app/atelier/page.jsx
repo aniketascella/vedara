@@ -471,7 +471,7 @@ const page = () => {
             <img
               src="/atelier/img7.png"
               alt="Featured project"
-              className="w-full lg:h-screen object-cover object-right"
+              className="w-full lg:h-screen object-cover object-left"
             />
 
             <Link href="/portfolio/selhaya">
