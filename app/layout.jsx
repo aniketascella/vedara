@@ -27,6 +27,18 @@ const ppEditorial = localFont({
 });
 
 export const metadata = {
+  icons: {
+    icon: [
+      {
+        url: "/favicon_dark.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon_white.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
   title: "Vedara Collective | Luxury Fashion, Atelier & Creative Design",
   description: "Vedara Collective is a luxury fashion and creative studio blending craftsmanship, modern design, and curated portfolios across fashion, branding, and aesthetics.",
   keywords: ["luxury fashion studio", "creative atelier", "fashion design studio", "luxury creative brand", "vedara collective"],
